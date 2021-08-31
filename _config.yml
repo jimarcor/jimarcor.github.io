@@ -106,14 +106,14 @@ author:
   gitlab           :
   google_plus      :
   keybase          :
-  dove             : "https://www.inaturalist.org/people/jimarcor"
+  inaturalist      : "https://www.inaturalist.org/people/jimarcor"
   instagram        : "jimarcorr"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "jimarcor"
   pinterest        :
   publons  : "https://publons.com/researcher/1678591/jose-ignacio-marquez-corro/"
-  simple-icons:scopus : "57191070282"
+  scopus : "https://www.scopus.com/authid/detail.uri?authorId=57191070282"
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
