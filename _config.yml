@@ -103,11 +103,14 @@ author:
   gitlab           :
   google_plus      :
   keybase          :
+  inaturalist      : "https://www.inaturalist.org/people/jimarcor"
   instagram        : "jimarcorr"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "jimarcor"
   pinterest        :
+  publons          : "K-8844-2019"
+  scopus           : "57191070282"
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
@@ -118,7 +121,6 @@ author:
   xing             :
   youtube          :
   wikipedia        :
-  inaturalist      : "https://www.inaturalist.org/people/jimarcor"
 
 
 # Reading Files
