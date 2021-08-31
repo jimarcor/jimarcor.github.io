@@ -22,7 +22,7 @@
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">Contact</button>
     <ul class="author__urls social-icons">
-    <h4> Contact </h4>
+     <h5> Contact </h5>
       {% if author.location %}
         <li><i class="fa fa-fw fa-map-marker-alt" aria-hidden="true"></i> {{ author.location }}</li>
       {% endif %}
@@ -35,7 +35,7 @@
       {% if author.email %}
         <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
       {% endif %}
-    <h4> Research sites </h4>
+     <h5> Research sites </h5>
       {% if author.keybase %}
         <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase</a></li>
       {% endif %}
@@ -117,7 +117,7 @@
       {% if author.wikipedia %}
         <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
       {% endif %}
-    <h4> Social media </h4>
+     <h5> Social media </h5>
       {% if author.inaturalist %}
         <li><a href="{{ author.inaturalist }}"><i class="ai ai-inaturalist ai-fw"></i> iNaturalist</a></li>
       {% endif %}
