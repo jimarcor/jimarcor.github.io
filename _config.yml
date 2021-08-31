@@ -80,7 +80,10 @@ analytics:
     code		 : 
 
 
-# Site Author Take names from https://fontawesome.com/
+# Site Author
+# To put icons go to: jimarcor.github.io\_includes 
+# and add the icon as specified in https://jpswalsh.github.io/academicons/
+# and add it here with the same name
 author:
   name             : "José Ignacio Márquez-Corro"
   avatar           : "profile.png"
@@ -109,7 +112,7 @@ author:
   lastfm           :
   linkedin         : "jimarcor"
   pinterest        :
-  file-powerpoint  : "https://publons.com/researcher/1678591/jose-ignacio-marquez-corro/"
+  publons  : "https://publons.com/researcher/1678591/jose-ignacio-marquez-corro/"
   simple-icons:scopus : "57191070282"
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
