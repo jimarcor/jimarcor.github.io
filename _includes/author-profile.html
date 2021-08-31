@@ -123,6 +123,7 @@
       {% endif %}
       {% if author.wikipedia %}
         <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
+      {% endif %}
       {% if author.inaturalist %}
         <li><a href="{{ author.inaturalist }}"><i class="ai ai-inaturalist ai-fw"></i> iNaturalist</a></li>
       {% endif %}
@@ -131,7 +132,6 @@
       {% endif %}
          {% if author.publons %}
         <li><a href="{{ author.publons }}"><i class="ai ai-publons ai-fw"></i> Publons</a></li>
-      {% endif %}
 {% endif %}
     </ul>
   </div>
