@@ -8,18 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a Postdoctoral Research Fellow in the
-[Universidad Pablo de Olavide](https://www.upo.es/). I specialize
-in International Relations and Political Methodology. I earned my Ph.D in
-Political Science from the
-[University *of* North Carolina *at* Chapel Hill](https://www.unc.edu/) and my
-B.A. in Political Science from [Haverford College](https://www.haverford.edu/).
+I am a Postdoctoral Research Fellow in the [Universidad Pablo de Olavide](https://www.upo.es/). I specialized in evolutionary biology and the systematics of the family Cyperaceae (mainly focusing on *Carex*).
 
-My work has been [published](publications) or is forthcoming in
-*International Studies Quarterly*, *Conflict Management and Peace Science*,
-*Political Science Research and Methods*, and *PS: Political Science & Politics*,
-among other outlets. My [research](research) explores the causes and
-consequences of political violence using a broad variety of methods such as
+My work has been [published](publications) in journals such as *Journal of Systematics and Evolution*, *American Journal of Botany*, *Botanical Journal of the Linnean Society*, and *Molecular Phylogenetics and Evolution*, among other outlets. My [research](research) explores the causes and consequences of political violence using a broad variety of methods such as
 latent variable models, geospatial analysis, and big data. While I primarily
 focus on civil conflict, I also examine contentious political phenomena
 including terrorism and economic statecraft, and develop new measures of
