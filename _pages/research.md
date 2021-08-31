@@ -7,27 +7,8 @@ header:
   og_image: "research/ecdf.png"
 ---
 
-My research falls into two main areas: understanding the influence of geography
-on actor behavior before, during, and after civil conflict, and developing new
-tools to improve the study of institutions (both formal and informal) in peace
-and conflict. One strand of research in this first area explores how the
-territories that ethnic groups inhabit shape rebel group formation and condition
-their relationship with the state. My interest in geography also informs
-projects on active conflicts including the targeting of UN peacekeepers by
-insurgent groups, civilian victimization after rebel territorial conquest, and
-communal violence in fragile settings.
-
-My other main research agenda uses advanced methods to develop new measures of
-institutions. One project uses Bayesian item response theory to measure the
-strength of peace agreements as a latent variable and free researchers from
-post-treatment bias caused by using the duration of agreements as a proxy for
-their strength. In others, I apply unsupervised learning techniques to over a
-billion observations of product-level international trade data to measure
-economic interdependence and illicit economic exchange.
-
-In a new avenue of research, I leverage social media data to explore
-participation in extremist movements across multiple contexts, gaining insight
-into the early stages of radicalization.
+**UNDER CONSTRUCTION**
+Mi carrera científica empezó en 2014, durante mi último año en el Grado de Ciencias Ambientales de la Univ. Pablo de Olavide (UPO), donde obtuve una beca de iniciación a la investigación de 5 meses. Este periodo me estimuló a realizar el máster “Biodiversidad y Biología de la Conservación”. Entre 2015 y 2021 realicé el doctorado, durante el cual realicé estancias en la Univ. Federal de Pernambuco , Univ. Autónoma de Madrid, y una virtual en la Univ. de Coimbra. He colaborado en artículos relacionados con diferentes aspectos (filogeográficos, taxonómicos, cromosomáticos, conservación…) de la familia de las ciperáceas, especialmente género Carex, y otros organismos (briófitos). He organizado y realizado campañas de colecta de material vegetal dentro de la Península Ibérica (Sistema Central, Pirineos...) e internacionales (isla Réunion -Islas Mascareñas- y Sudáfrica). También estuve trabajando en el herbario de la UPO (2016) en el prensado, secado, montaje, almacenamiento y conservación del material vegetal. He publicado un total de 21 artículos científicos (18 con impacto internacional), un capítulo de libro y un libro, y tengo un índice h 8. He contribuido como revisor de 11 artículos para revistas de alto impacto, además de 2 revisiones para la lista roja de la IUCN. Respecto a la divulgación, cabe mencionar la publicación del libro "Plantas silvestres y ornamentales del campus de la Universidad Pablo de Olavide", así como la organización del "I Biomaratón de Flora Española" y realización de talleres para el mismo en la Univ. Autónoma de Madrid, así como la participación en la Feria de la Ciencia en Sevilla. En cuanto a la docencia, he impartido clases prácticas en la UPO (total de 18 ECTS hasta la fecha) y he tutelado a estudiantes internos y de fin de grado en el área de Botánica de la UPO. 
 
 <nbsp>
 
