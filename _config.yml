@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : jayrobw
+  username               : jimarcorr
 facebook:
   username               :
   app_id                 :
@@ -73,25 +73,25 @@ social:
 
 # Analytics
 analytics:
-  provider               : "goatcounter" # false (default), "google", "google-universal", "custom", "goatcounter"
+  provider               : # false (default), "google", "google-universal", "custom", "goatcounter"
   google:
     tracking_id          : 
   goatcounter:
-    code		 : jayrobwilliams
+    code		 : 
 
 
 # Site Author
 author:
-  name             : "Rob Williams"
+  name             : "José Ignacio Márquez-Corro"
   avatar           : "profile.png"
   bio              : "Postdoctoral Research Fellow"
-  location         : "St. Louis, MO"
+  location         : "Seville, ES"
   employer         :
   pubmed           :
-  orcid            : "http://orcid.org/0000-0001-9259-3883"
-  googlescholar    : "https://scholar.google.com/citations?user=fiaPSmgAAAAJ"
-  email            : "rob.williams@wustl.edu"
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  orcid            : "https://orcid.org/0000-0003-4277-2933"
+  googlescholar    : "https://scholar.google.es/citations?hl=en&user=OzjPbWEAAAAJ&view_op=list_works&sortby=pubdate"
+  email            : "jimarcorr@gmail.com"
+  researchgate     :  "https://www.researchgate.net/profile/Jose-Marquez-Corro"
   uri              :
   bitbucket        :
   codepen          :
@@ -99,20 +99,20 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "jayrobwilliams"
-  gitlab           : "jayrobwilliams"
+  github           : "jimarcor"
+  gitlab           :
   google_plus      :
   keybase          :
-  instagram        :
+  instagram        : "jimarcor"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "jimarcor"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "jayrobw"
+  twitter          : "jimarcorr"
   vine             :
   weibo            :
   xing             :
@@ -255,7 +255,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Chicago # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: 	Europe/Madrid # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
