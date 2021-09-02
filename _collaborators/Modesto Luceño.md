@@ -1,6 +1,6 @@
 ---
-title: "Marcial Escudero"
-excerpt: "Associate professor at Universidad de Sevilla (Spain)<br/><img src='/images/500x300.png'>"
+title: "Modesto Luceño"
+excerpt: "Professor at Universidad Pablo de Olavide (Spain)<br/><img src='/images/500x300.png'>"
 collection: collaborators
 ---
 
