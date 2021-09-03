@@ -1,15 +1,15 @@
 ---
-title: "Collaborators2"
-permalink: /collaborators2/
+title: "Collaborators"
+permalink: /collaborators/
 author_profile: true
 ---
 
 
-# [Marcial Escudero] (https://marcialescuderolab.weebly.com/)
+# [Marcial Escudero](https://marcialescuderolab.weebly.com/)
 Associate professor at Universidad de Sevilla (Spain)
 <br/><img src='/images/collaborators/escudero.jpg'>
 
-# [Santiago Martín-Bravo] (https://sites.google.com/site/smarbra/home)
+# [Santiago Martín-Bravo](https://sites.google.com/site/smarbra/home)
 Associate professor at Universidad Pablo de Olavide (Sevilla, Spain)
 <br/><img src='/images/collaborators/martin-bravo.jpg'>
 
