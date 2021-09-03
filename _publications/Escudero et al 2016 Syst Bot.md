@@ -11,3 +11,4 @@ link: 'https://doi.org/10.1600/036364416X692442'
 #figshare: 'https://figshare.com/...
 citation: 'Escudero M, <b>Márquez-Corro JI</b>, Hipp AL. 2016. &quot;The phylogenetic origins and evolutionary history of holocentric chromosomes&quot; <i>Systematic Botany</i> 41(3): 580-585. doi:10.1600/036364416X692442'
 ---
+<br/><img src='/images/500x300.png'>
