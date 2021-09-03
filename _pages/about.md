@@ -8,8 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-**Under construction**
-
 I am a Postdoctoral Research Fellow in the [Universidad Pablo de Olavide](https://www.upo.es/). I specialized in **evolutionary biology** (chromosome evolution) and the **systematics** of the family **Cyperaceae** (mainly focusing on ***Carex***), although I have also worked with bryophytes. I have collaborated in [research](research) articles involving different aspects such as phylogeographics, systematics/taxonomy, chromosomal or with conservation purposes. I have organized fieldwork and plant collection campains within the Iberian Peninsula (Central System, Pyrenees, Southern Spain and Portugal) and abroad (La Réunion -Mascarene islands- and South Africa).
 I am [coauthor](publications) of 21 scientific papers (18 with international impact), a book chapter and a book. I have also contributed as a reviewer of 11 high-impact journal manuscripts, together with 2 IUCN Red List revisions. Concerning dissemination, it is worth mentioning the publication of the book "Plantas silvestres y ornamentales del campus de la Universidad Pablo de Olavide" ["Wild and ornamental plants of the Univerisdad Pablo de Olavide Campus"], as well as the organization of the ["First Bioblitz of the Spanish Flora"](https://www.inaturalist.org/projects/i-biomaraton-de-flora-espanola) along with workshops at Universidad Autónoma de Madrid and "Feria de la Ciencia de Sevilla". Finally, in connection with [teaching](teaching), I lectured at Universidad Pablo de Olavide (18 ECTS up to date)in Botany, Convervaction Biology and Ecological Restoration, and also mentored several interns and end-of-degree project of BSc students in the Botany area.
 
