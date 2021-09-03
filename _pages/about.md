@@ -21,6 +21,6 @@ Overall, my [research](research) addresses the effect of a wide array of genomic
 <br/>
 
 **My observations**
-<iframe src="https://www.inaturalist.org/observations/map?user_id=jimarcor#2/0/0" width="100%" height="500" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe
+<iframe src="https://www.inaturalist.org/observations/map?user_id=jimarcor#2/0/0" width="100%" height="500%" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe
 
 </center>
