@@ -18,7 +18,6 @@ Overall, my [research](research) addresses the effect of a wide array of genomic
 
 <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
 <br/>
-<br/>
 <h3> My observations</h3>
 <iframe src="https://www.inaturalist.org/observations/map?user_id=jimarcor#2/0/0" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe
 
