@@ -16,3 +16,4 @@ You can download a PDF copy of my CV [here](/files/pdf/MarquezCorro CV.pdf).
     <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
     {% capture written_year %}{{ year }}{% endcapture %}
   {% endif %}
+{% endfor %}
