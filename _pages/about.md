@@ -16,8 +16,6 @@ Overall, my [research](research) addresses the effect of a wide array of genomic
 
 <center>
 
-<br/><img src='/images/android-chrome-192x192.png' width="20"/>
-<br/><img src='/images/android-chrome-192x192.png' width="20"/>
-<br/><img src='/images/android-chrome-192x192.png' width="20"/>
+<br/><img src='/images/android-chrome-192x192.png' width="20"/><br/><img src='/images/android-chrome-192x192.png' width="20"/><br/><img src='/images/android-chrome-192x192.png' width="20"/>
 
 </center>
