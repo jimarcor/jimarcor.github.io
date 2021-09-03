@@ -14,5 +14,5 @@ Chromosome evolution is one of the main drivers of lineage differentiation and, 
 
 <a href="/files/pdf/research/Márquez-Corro et al 2019 eLS.pdf"><img src='/images/research/Marquez-Corro et al 2019 eLS.JPG' width="200"/></a>
 <a href="/files/pdf/research/Márquez-Corro et al 2018 Chrom Res.pdf"><img src='/images/research/Marquez-Corro et al 2018.png' width="200"/></a>
-<a href="/files/pdf/research/Márquez-Corro et al 2019 MPE.pdf"><img src='/images/research/Marquez-Corro et al 2019.tif' width="200"/></a>
+<a href="/files/pdf/research/Márquez-Corro et al 2019 MPE.pdf"><img src='/images/research/Marquez-Corro et al 2019.jpg' width="200"/></a>
 <a href="/files/pdf/research/Márquez-Corro et al 2021 JSE.pdf"><img src='/images/research/Marquez-Corro et al 2021.jpg' width="200"/></a>
