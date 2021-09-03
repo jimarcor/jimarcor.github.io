@@ -12,8 +12,6 @@ Mi carrera científica empezó en 2014, durante mi último año en el Grado de C
 
 <nbsp>
 
-{% include base_path %}
-
 {% assign ordered_pages = site.research | sort:"order_number" %}
 
 {% for post in ordered_pages %}
