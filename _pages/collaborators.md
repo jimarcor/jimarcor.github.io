@@ -3,7 +3,6 @@ title: "Collaborators"
 permalink: /collaborators/
 author_profile: true
 ---
-
 ## [Marcial Escudero](https://marcialescuderolab.weebly.com/)
 Associate professor at Universidad de Sevilla (Spain)
 <br/><img src='/images/collaborators/escudero.jpg' width="400"/>
