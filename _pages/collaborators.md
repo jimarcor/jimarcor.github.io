@@ -1,5 +1,5 @@
 ---
-title: "Collaborators"
+title: "Mentors and collaborators"
 permalink: /collaborators/
 author_profile: true
 ---
