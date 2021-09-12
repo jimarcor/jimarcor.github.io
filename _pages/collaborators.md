@@ -16,4 +16,4 @@ Professor at Universidad Pablo de Olavide (Sevilla, Spain)
 
 ## [Tamara Villaverde](https://www.researchgate.net/profile/Tamara-Villaverde)
 Universidad Complutense de Madrid (Madrid, Spain)
-<br/><img src='/images/collaborators/tamara.jpg' width="400"/>
+<br/><img src='/images/collaborators/tamara.jpg' width="400" height="400"/>
