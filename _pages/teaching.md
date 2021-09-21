@@ -3,15 +3,79 @@ title: "Teaching experience"
 permalink: /teaching/
 ---
 
-|Academic year|Subject|Academic degree|University|ECTS|
-|--- |--- |--- |--- |--- |
-|: 2020-2021 :|Flora y Vegetación (203011)|Grado en Ciencias Ambientales|Universidad Pablo de Olavide|3.15|
-|^^|Gestión, Conservación y Explotación de Recursos Vegetales (203024)|Grado en Ciencias Ambientales|Universidad Pablo de Olavide|2.25|
-|^^|Recursos animales y vegetales en Biotecnología (202051)|Grado en Biotecnología|Universidad Pablo de Olavide|0.6|
-|: 2019-2020 :|Flora y Vegetación (203011)|Grado en Ciencias Ambientales|Universidad Pablo de Olavide|3.15|
-|^^|Gestión, Conservación y Explotación de Recursos Vegetales (203024)|Grado en Ciencias Ambientales|Universidad Pablo de Olavide|2.25|
-|^^|Recursos animales y vegetales en Biotecnología (202051)|Grado en Biotecnología|Universidad Pablo de Olavide|0.6|
-|: 2018-2019 :|Recursos animales y vegetales en Biotecnología (202051)|Grado en Biotecnología|Universidad Pablo de Olavide|0.9|
-|^^|Biorremediación y restauración (203030)|Grado en Ciencias Ambientales|Universidad Pablo de Olavide|0.9|
-|^^|Flora y Vegetación (203011)|Grado en Ciencias Ambientales|Universidad Pablo de Olavide|3.2|
-|^^|Especies y Formaciones Vegetales Amenazadas en la Península Ibérica (203039)|Grado en Ciencias Ambientales|Universidad Pablo de Olavide|1|
+<table>
+  <tr>
+    <th>Academic year</th>
+    <th>Subject</th>
+    <th>Academic degree</th>
+    <th>University</th>
+    <th>ECTS</th>
+  </tr>
+  <tr>
+    <td>2020/2021</th>
+    <td>Flora y Vegetación (203011)</th>
+    <td>Grado en Ciencias Ambientales</th>
+    <td>Universidad Pablo de Olavide</th>
+    <td>3.15</th>
+  </tr>
+    <tr>
+    <td></th>
+    <td>Gestión, Conservación y Explotación de Recursos Vegetales (203024)</th>
+    <td>Grado en Ciencias Ambientales</th>
+    <td>Universidad Pablo de Olavide</th>
+    <td>2.25</th>
+  </tr>
+    <tr>
+    <td></th>
+    <td>Recursos animales y vegetales en Biotecnología (202051)</th>
+    <td>Grado en Biotecnología</th>
+    <td>Universidad Pablo de Olavide</th>
+    <td>0.6</th>
+  </tr>
+  <tr>
+    <td>2019/2020</th>
+    <td>Flora y Vegetación (203011)</th>
+    <td>Grado en Ciencias Ambientales</th>
+    <td>Universidad Pablo de Olavide</th>
+    <td>3.15</th>
+  </tr>
+    <tr>
+    <td></th>
+    <td>Gestión, Conservación y Explotación de Recursos Vegetales (203024)</th>
+    <td>Grado en Ciencias Ambientales</th>
+    <td>Universidad Pablo de Olavide</th>
+    <td>2.25</th>
+  </tr>
+    <tr>
+    <td></th>
+    <td>Recursos animales y vegetales en Biotecnología (202051)</th>
+    <td>Grado en Biotecnología</th>
+    <td>Universidad Pablo de Olavide</th>
+    <td>0.6</th>
+  </tr>
+  <tr>
+    <td>2018/2019</th>
+    <td>Recursos animales y vegetales en Biotecnología (202051)</th>
+    <td>Grado en Biotecnología</th>
+    <td>Universidad Pablo de Olavide</th>
+    <td>0.9</th>
+      <tr>
+    <td></th>
+    <td>Biorremediación y restauración (203030)</th>
+    <td>Grado en Ciencias Ambientales</th>
+    <td>Universidad Pablo de Olavide</th>
+    <td>0.9</th>
+      <tr>
+    <td></th>
+    <td>Flora y Vegetación (203011)</th>
+    <td>Grado en Ciencias Ambientales</th>
+    <td>Universidad Pablo de Olavide</th>
+    <td>3.2</th>
+      <tr>
+    <td></th>
+    <td>Especies y Formaciones Vegetales Amenazadas en la Península Ibérica (203039)</th>
+    <td>Grado en Ciencias Ambientales</th>
+    <td>Universidad Pablo de Olavide</th>
+    <td>1</th>
+  </tr>
+</table>
