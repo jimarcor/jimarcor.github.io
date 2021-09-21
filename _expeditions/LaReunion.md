@@ -13,7 +13,7 @@ header:
 This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borbonica</i> for genomic studies.
 
 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="align-content: center">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
