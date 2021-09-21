@@ -1,5 +1,5 @@
 ---
-title: "Holocentric chromosomes evolution"
+title: "La Reunion island"
 layout: single-portfolio
 excerpt: "<img src='/images/expeditions/LaReunion.jpg' alt=''>"
 collection: expeditions
