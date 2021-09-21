@@ -34,22 +34,14 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
 	  <li data-target="#myCarousel" data-slide-to="4"></li>
 	  <li data-target="#myCarousel" data-slide-to="5"></li>
 	  <li data-target="#myCarousel" data-slide-to="6"></li>
-	  <li data-target="#myCarousel" data-slide-to="7"></li>
-      <li data-target="#myCarousel" data-slide-to="8"></li>
-	  <li data-target="#myCarousel" data-slide-to="9"></li>
-	  <li data-target="#myCarousel" data-slide-to="10"></li>
-	  <li data-target="#myCarousel" data-slide-to="11"></li>
-	  <li data-target="#myCarousel" data-slide-to="12"></li>
-	  <li data-target="#myCarousel" data-slide-to="13"></li>
-	  <li data-target="#myCarousel" data-slide-to="14"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img class= "img-responsive center-block" src="imagenes/zurich.png" alt="zurich">
+        <a href="https://www.inaturalist.org/observations/6192873" target="_blank"><img src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772992/medium.jpeg?1494687677' alt="Carex borbonica"/></a>
 		  <div class="carousel-caption">
-        <p> Presentación de Manuel J. García Pérez y José Ferreirós en el 5º congreso de la APMP, Zurich</p>
+        <p>Carex borbonica</p>
       </div>
       </div>
 		
