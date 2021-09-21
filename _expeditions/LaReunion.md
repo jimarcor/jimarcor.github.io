@@ -27,7 +27,7 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <a href="https://www.inaturalist.org/observations/6192873" target="_blank"><img src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772992/medium.jpeg?1494687677' alt="Carex borbonica"/></a>
+        <a href="https://www.inaturalist.org/observations/6192873" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772992/medium.jpeg?1494687677' alt="Carex borbonica"/></a>
 		  <div class="carousel-caption">
         <p>Carex borbonica</p>
       </div>
