@@ -12,4 +12,8 @@ header:
 
 This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borbonica</i> for genomic studies.
 
-<a href="https://www.inaturalist.org/observations/6192873" target="_blank"><img src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772992/original.jpeg?1494687677' width="200" alt="Carex borbonica"/></a>
+
+<figure>
+<a href="https://www.inaturalist.org/observations/6192873" target="_blank"><img src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772992/original.jpeg?1494687677' width="200" /></a>
+    <figcaption>Carex borbonica</figcaption>
+</figure>
