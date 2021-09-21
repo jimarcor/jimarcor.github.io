@@ -34,9 +34,9 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
       </div>
 		
 		<div class="item">
-        <img class= "img-responsive center-block" src="imagenes/final discussion.png" alt="final discussion">
+        <a href="https://www.inaturalist.org/observations/6193472" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7773893/medium.jpeg?1494691751' alt="Trichonephila inaurata"/></a>
 		  <div class="carousel-caption">
-        <p> Discusión final y clausura del Novembertagung</p>
+        <p>Carex borbonica</p>
       </div>
       </div>
 		
@@ -66,5 +66,14 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
         <p> Pausa para el café durante el III Encuentro Ibérico</p>
       </div>
       </div>
-
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
       </div>
