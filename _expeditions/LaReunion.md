@@ -25,7 +25,7 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
  .carousel-inner > .item > a > img {
      display: block;
      max-width: 100%;
-     height: 400px !important;
+     height: 500px !important;
  }
  </style>
  
