@@ -4,9 +4,6 @@ title: "Teaching"
 permalink: /teaching/
 author_profile: true
 ---
-
-
-
 ##Teaching experience
 
 |Academic year|Subject|Academic degree|University|ECTS|
