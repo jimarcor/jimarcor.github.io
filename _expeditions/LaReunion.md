@@ -22,6 +22,10 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
 	  <li data-target="#myCarousel" data-slide-to="3"></li>
 	  <li data-target="#myCarousel" data-slide-to="4"></li>
 	  <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+      <li data-target="#myCarousel" data-slide-to="7"></li>
+	  <li data-target="#myCarousel" data-slide-to="8"></li>
+	  <li data-target="#myCarousel" data-slide-to="9"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -41,29 +45,53 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
       </div>
 		
 		 <div class="item">
-        <a href="https://www.inaturalist.org/observations/6193084" target="_blank"><img  class= "img-responsive center-block" src='https://www.inaturalist.org/photos/7773390?size=medium' alt="Phelsuma laticauda"/></a>
+        <a href="https://www.inaturalist.org/observations/6193084" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7773390/medium.jpeg?1494689225' alt="Phelsuma laticauda"/></a>
 		  <div class="carousel-caption">
         <p>Phelsuma laticauda</p>
       </div>
       </div>
 
       <div class="item">
-        <img class= "img-responsive center-block" src="imagenes/group.png" alt="Group">
+        <a href="https://www.inaturalist.org/observations/6192787" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772858/medium.jpeg?1494686936' alt="Carex wahlenbergiana"/></a>
 		  <div class="carousel-caption">
-        <p> Foto de grupo del Novembertagung</p>
+        <p>Carex wahlenbergiana</p>
       </div>
       </div>
     
       <div class="item">
-        <img class="img-responsive center-block" src="imagenes/encuentro.png" alt="Encuentro">
+        <a href="https://www.inaturalist.org/observations/6192786" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772851/medium.jpeg?1494686916' alt="Carex ramosa"/></a>
 		  <div class="carousel-caption">
-        <p> Foto de grupo del III Encuentro Ibérico</p>
+        <p>Carex ramosa</p>
       </div>
       </div>
 		<div class="item">
-        <img class="img-responsive center-block" src="imagenes/Descanso.png" alt="Descanso">
+        <a href="https://www.inaturalist.org/observations/6192677" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772713/medium.jpeg?1494686290' alt="Hedychium gardnerianum"/></a>
 		  <div class="carousel-caption">
-        <p> Pausa para el café durante el III Encuentro Ibérico</p>
+        <p>Hedychium gardnerianum</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/6092538" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7620002/medium.jpeg?1493927601' alt="Carex boryana"/></a>
+		  <div class="carousel-caption">
+        <p>Carex boryana</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/6087549" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7613372/medium.jpeg?1493897066' alt="Costularia cadetii"/></a>
+		  <div class="carousel-caption">
+        <p>Costularia cadetii</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/6087402" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7613141/medium.jpeg?1493893309' alt="Satyrium amoenum"/></a>
+		  <div class="carousel-caption">
+        <p>Satyrium amoenum</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/5647897" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/6990066/medium.jpg?1491916113' alt="Cratopus sumptuosus"/></a>
+		  <div class="carousel-caption">
+        <p>Cratopus sumptuosus</p>
       </div>
       </div>
   <!-- Left and right controls -->
