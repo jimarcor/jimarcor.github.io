@@ -36,14 +36,14 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
 		<div class="item">
         <a href="https://www.inaturalist.org/observations/6193472" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7773893/medium.jpeg?1494691751' alt="Trichonephila inaurata"/></a>
 		  <div class="carousel-caption">
-        <p>Carex borbonica</p>
+        <p>Trichonephila inaurata</p>
       </div>
       </div>
 		
 		 <div class="item">
-        <img class= "img-responsive center-block" src="imagenes/opening.png" alt="Opening">
+        <a href="https://www.inaturalist.org/observations/6193084" target="_blank"><img  class= "img-responsive center-block" src='https://www.inaturalist.org/photos/7773390?size=medium' alt="Phelsuma laticauda"/></a>
 		  <div class="carousel-caption">
-        <p> Sesión de apertura del Novembertagung</p>
+        <p>Phelsuma laticauda</p>
       </div>
       </div>
 
