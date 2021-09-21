@@ -22,7 +22,6 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
 	  <li data-target="#myCarousel" data-slide-to="3"></li>
 	  <li data-target="#myCarousel" data-slide-to="4"></li>
 	  <li data-target="#myCarousel" data-slide-to="5"></li>
-	  <li data-target="#myCarousel" data-slide-to="6"></li>
     </ol>
 
     <!-- Wrapper for slides -->
