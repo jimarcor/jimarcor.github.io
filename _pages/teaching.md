@@ -1,8 +1,7 @@
 ---
-title: "Teaching"
+title: "Teaching experience"
 permalink: /teaching/
 ---
-## Teaching experience
 
 |Academic year|Subject|Academic degree|University|ECTS|
 |--- |--- |--- |--- |--- |
