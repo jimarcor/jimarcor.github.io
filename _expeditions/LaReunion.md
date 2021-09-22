@@ -27,6 +27,7 @@ Day 6 ([March 10th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/10
 Day 7 ([March 11th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/11)): Exploring the Cirque du Salazie area (Hell-Bourg and the Riviere du Mat)
 
 Day 8 ([March 12th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/12)): Exploring some more tropical habitats (eg. Bassin des Aigrettes)
+
 Day 9 ([March 13th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/13)): Back to Spain
 
 <head>
