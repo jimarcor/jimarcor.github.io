@@ -6,11 +6,14 @@ main:
   - title: "Research"
     url: /research/
     
-  - title: "Collaborators"
+  - title: "People"
     url: /collaborators/
 
   - title: "Teaching"
     url: /teaching/
+
+  - title: "Expeditions"
+    url: /expeditions/
 
 #  - title: "Software"
 #    url: /software/
