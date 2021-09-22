@@ -14,20 +14,20 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
 
 Day 1 (March 05th 2017): Arrival to La Réunion
 
-Day 2 (March 06th 2017): Col de Bellevue and Pas de Bellecombe
+Day 2 ([March 06th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/6)): Col de Bellevue and Pas de Bellecombe
 
-Day 3 (March 07th 2017): Le Maïdo
+Day 3 ([March 07th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/7)): Le Maïdo
 
-Day 4 (March 08th 2017): Fenêtre des Makes and back to the Cratère Commerson surroundings
+Day 4 ([March 08th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/8)): Fenêtre des Makes and back to the Cratère Commerson surroundings
 
-Day 5 (March 09th 2017): Tough day, up to Le Piton des Neiges
+Day 5 ([March 09th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/9)): Tough day, up to Le Piton des Neiges
 
-Day 6 (March 10th 2017): Back to Le Maïdo to search for further intermediate specimens of <i>C. boryana x borbonica</i>
+Day 6 ([March 10th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/10)): Back to Le Maïdo to search for further intermediate specimens of <i>C. boryana x borbonica</i>
 
-Day 7 (March 11th 2017): Exploring the Cirque du Salazie area (Hell-Bourg and the Riviere du Mat)
+Day 7 ([March 11th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/11)): Exploring the Cirque du Salazie area (Hell-Bourg and the Riviere du Mat)
 
-Day 8 (March 12th 2017): Exploring some more tropical habitats (eg. Bassin des Aigrettes)
-Day 9 (March 13th 2017): Back to Spain
+Day 8 ([March 12th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/12)): Exploring some more tropical habitats (eg. Bassin des Aigrettes)
+Day 9 ([March 13th 2017](https://www.inaturalist.org/calendar/jimarcor/2017/3/13)): Back to Spain
 
 <head>
   <meta charset="utf-8">
