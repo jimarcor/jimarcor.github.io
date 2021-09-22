@@ -7,7 +7,7 @@ order_number: 20
 header: 
   og_image: "expeditions/LaReunion.jpg"
 ---
-<h2>La Réunion, overseas department and region of France</h2>
+<h2>Mascarene Islands</h2>
 <h4>Expedition associated with the project funded by the Ministry of Science, Innovation and Universities (PIs: Modesto Luceño and Santiago Martín-Bravo)</h4>
 
 This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borbonica</i> for genomic studies.

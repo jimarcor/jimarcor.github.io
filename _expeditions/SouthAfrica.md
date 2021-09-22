@@ -7,7 +7,7 @@ order_number: 10
 header: 
   og_image: "expeditions/SouthAfrica.jpg"
 ---
-<h2>South Africa</h2>
+<h2>From Cape Town to Porth Elizabeth</h2>
 <h4>Expedition associated with the project funded by the Ministry of Science, Innovation and Universities (PIs: Modesto Luceño and Santiago Martín-Bravo)</h4>
 
 This trip aimed to collect specimens from <i>Carex</i> sect. <i>Schoenoxiphium</i> for genomic, cytological and morphological studies.
