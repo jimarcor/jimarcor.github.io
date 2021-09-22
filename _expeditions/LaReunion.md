@@ -1,11 +1,11 @@
 ---
 title: "La Réunion island"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/LaReunion.jpg' alt=''"
+excerpt: "<img src='/images/expeditions/LaReunion.jpg' alt=''>"
 collection: expeditions
 order_number: 20
 header: 
-  og_image: "<img src='/images/expeditions/LaReunion.jpg' alt=''"
+  og_image: "expeditions/LaReunion.jpg"
 ---
 <h2>La Réunion, France</h2>
 <h4>PhD associated with the project funded by the Ministry of Science, Innovation and Universities (PIs: Modesto Luceño and Santiago Martín-Bravo)</h4>
