@@ -245,6 +245,15 @@ defaults:
       author_profile: true
       share: true
       comment: true
+  # _expeditions
+  - scope:
+      path: ""
+      type: expeditions
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: true
   # _talks
   - scope:
       path: ""
