@@ -1,16 +1,16 @@
 ---
-title: "La Reunion island"
+title: "South Africa"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/LaReunion.jpg' alt=''>"
+excerpt: "<img src='/images/expeditions/SouthAfrica.jpg' alt=''>"
 collection: expeditions
 order_number: 10
 header: 
-  og_image: "expeditions/LaReuion.jpg"
+  og_image: "expeditions/SouthAfrica.jpg"
 ---
-<h2>La Réunion, France</h2>
+<h2>South Africa</h2>
 <h4>PhD associated with the project funded by the Ministry of Science, Innovation and Universities (PIs: Modesto Luceño and Santiago Martín-Bravo)</h4>
 
-This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borbonica</i> for genomic studies.
+This trip aimed to collect specimens from <i>Carex</i> sect. <i>Schoenoxiphium</i> for genomic, cytological and morphological studies.
 
 
 <head>
@@ -49,67 +49,67 @@ This trip aimed to collect specimens from <i>Carex boryana</i> and <i>Carex borb
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <a href="https://www.inaturalist.org/observations/6192873" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772992/original.jpeg?1494687677' alt="Carex borbonica"/></a>
+        <a href="https://www.inaturalist.org/observations/8476560" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/11302550/original.jpeg?1508501477' alt="Carpha glomerata"/></a>
 		  <div class="carousel-caption">
-        <p>Carex borbonica</p>
+        <p>Carpha glomerata</p>
       </div>
       </div>
 		
 		<div class="item">
-        <a href="https://www.inaturalist.org/observations/6193472" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7773893/original.jpeg?1494691751' alt="Trichonephila inaurata"/></a>
+        <a href="https://www.inaturalist.org/observations/65279517" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/105039253/original.jpeg?1605888823' alt="Carex sciocapensis"/></a>
 		  <div class="carousel-caption">
-        <p>Trichonephila inaurata</p>
+        <p>Carex sciocapensis</p>
       </div>
       </div>
 		
 		 <div class="item">
-        <a href="https://www.inaturalist.org/observations/6193084" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7773390/original.jpeg?1494689225' alt="Phelsuma laticauda"/></a>
+        <a href="https://www.inaturalist.org/observations/8759038" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/11762414/original.jpeg?1510392004' alt="Loxodonta africana"/></a>
 		  <div class="carousel-caption">
-        <p>Phelsuma laticauda</p>
+        <p>Loxodonta africana</p>
       </div>
       </div>
 
       <div class="item">
-        <a href="https://www.inaturalist.org/observations/6192787" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772858/original.jpeg?1494686936' alt="Carex wahlenbergiana"/></a>
+        <a href="https://www.inaturalist.org/observations/8691363" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/11649504/original.jpeg?1509876556' alt="Carex aethiopica"/></a>
 		  <div class="carousel-caption">
-        <p>Carex wahlenbergiana</p>
+        <p>Carex aethiopica</p>
       </div>
       </div>
     
       <div class="item">
-        <a href="https://www.inaturalist.org/observations/6192786" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772851/original.jpeg?1494686916' alt="Carex ramosa"/></a>
+        <a href="https://www.inaturalist.org/observations/8641460" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/11568310/original.jpeg?1509533615' alt="Carex capensis"/></a>
 		  <div class="carousel-caption">
-        <p>Carex ramosa</p>
+        <p>Carex capensis</p>
       </div>
       </div>
 		<div class="item">
-        <a href="https://www.inaturalist.org/observations/6192677" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772713/original.jpeg?1494686290' alt="Hedychium gardnerianum"/></a>
+        <a href="https://www.inaturalist.org/observations/8645609" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/11575026/original.jpeg?1509565150' alt="Fuirena hirsuta"/></a>
 		  <div class="carousel-caption">
-        <p>Hedychium gardnerianum</p>
+        <p>Fuirena hirsuta</p>
       </div>
       </div>
 		<div class="item">
-        <a href="https://www.inaturalist.org/observations/6092538" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7620002/original.jpeg?1493927601' alt="Carex boryana"/></a>
+        <a href="https://www.inaturalist.org/observations/8641299" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/11568152/original.jpeg?1509531483' alt="Equus quagga"/></a>
 		  <div class="carousel-caption">
-        <p>Carex boryana</p>
+        <p>Equus quagga</p>
       </div>
       </div>
 		<div class="item">
-        <a href="https://www.inaturalist.org/observations/6087549" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7613372/original.jpeg?1493897066' alt="Costularia cadetii"/></a>
+        <a href="https://www.inaturalist.org/observations/8558678" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/11438505/original.jpeg?1509037465' alt="Pseudoschoenus inanis"/></a>
 		  <div class="carousel-caption">
-        <p>Costularia cadetii</p>
+        <p>Pseudoschoenus inanis</p>
       </div>
       </div>
 		<div class="item">
-        <a href="https://www.inaturalist.org/observations/6087402" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7613141/original.jpeg?1493893309' alt="Satyrium amoenum"/></a>
+        <a href="https://www.inaturalist.org/observations/8506049" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/11350226/original.jpeg?1508690371' alt="Carex acocksii"/></a>
 		  <div class="carousel-caption">
-        <p>Satyrium amoenum</p>
+        <p>Carex acocksii</p>
       </div>
       </div>
 		<div class="item">
-        <a href="https://www.inaturalist.org/observations/5647897" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/6990066/original.jpg?1491916113' alt="Cratopus sumptuosus"/></a>
+        <a href="https://www.inaturalist.org/observations/8505223" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/11349009/original.jpeg?1508687597' alt="Drosera trinervia"/></a>
 		  <div class="carousel-caption">
-        <p>Cratopus sumptuosus</p>
+        <p>Drosera trinervia</p>
       </div>
       </div>
   <!-- Left and right controls -->
