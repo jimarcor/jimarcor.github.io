@@ -13,15 +13,25 @@ header:
 This trip aimed to collect specimens from <i>Carex</i> sect. <i>Schoenoxiphium</i> for genomic, cytological and morphological studies.
 
 Day 0 (October 07th 2017): Due to different delayed flights we started the expedition one day late, so we had to stay at Johannesburg
+
 Day 1 (October 08th 2017): Arrival to Cape Town and ascent to Table Mountain
+
 Day 2 (October 09th 2017): Koue Bokkeveld Mountain Catchment area
+
 Day 3 (October 10th 2017): Cederberg Wilderness Area
+
 Day 4 (October 11th 2017): Calvinia (Hantam Mountains)
+
 Day 5 (October 12th 2017): Towerkop Nature Reserve
+
 Day 6 (October 13th 2017): From Ladismith to Mosselbaai, collecting everything in between
+
 Day 7 (October 14th 2017): Surroundings of Gondwana Game Reserve
+
 Day 8 (October 15th 2017): Porth Elizabeth
+
 Day 9 (October 16th 2017): Surroundings of Addo Elephant National Park
+
 Day 10 (October 17th 2017): Back to Spain
 
 <head>
