@@ -1,11 +1,11 @@
 ---
-title: "La Reunion island"
+title: "La Réunion island"
 layout: single-portfolio
-excerpt: "<img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/6990066/original.jpg?1491916113' alt="Cratopus sumptuosus"/>"
+excerpt: "<img src='https://inaturalist-open-data.s3.amazonaws.com/photos/6990066/original.jpg?1491916113' alt="Cratopus sumptuosus"/>"
 collection: expeditions
 order_number: 10
 header: 
-  og_image: "<img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/6990066/original.jpg?1491916113' alt="Cratopus sumptuosus"/>"
+  og_image: "<img src='https://inaturalist-open-data.s3.amazonaws.com/photos/6990066/original.jpg?1491916113' alt="Cratopus sumptuosus"/>"
 ---
 <h2>La Réunion, France</h2>
 <h4>PhD associated with the project funded by the Ministry of Science, Innovation and Universities (PIs: Modesto Luceño and Santiago Martín-Bravo)</h4>
