@@ -3,9 +3,14 @@ title: "Mentors and collaborators"
 permalink: /collaborators/
 author_profile: true
 ---
+## [Isabel Larridon](https://www.kew.org/science/our-science/people/isabel-larridon)
+Research Leader Africa (London, United Kingdom)
+<br/><img src='/images/collaborators/larridon.jpg' width="400"/>
+
 ## [Marcial Escudero](https://marcialescuderolab.weebly.com/)
 Associate professor at Universidad de Sevilla (Sevilla, Spain)
 <br/><img src='/images/collaborators/escudero.jpg' width="400"/>
+
 ## [Santiago Martín-Bravo](https://sites.google.com/site/smarbra/home)
 Associate professor at Universidad Pablo de Olavide (Sevilla, Spain)
 <br/><img src='/images/collaborators/martin-bravo.jpg' width="400"/>
