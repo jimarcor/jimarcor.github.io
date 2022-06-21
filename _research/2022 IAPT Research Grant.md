@@ -1,5 +1,5 @@
 ---
-title: "Ploidy in Carex sect. Uncinia"
+title: "2022 IAPT Research Grant"
 layout: single-portfolio
 excerpt: "<img src='/images/research/xxxxxxxxxxxxx.jpg' alt=''>"
 collection: research
@@ -8,7 +8,7 @@ header:
   og_image: "research/xxxxxxxxxxxx.jpg"
 ---
 <h2>Towards an integrative study of <i>Carex</i> sect. <i>Uncinia</i> in South America: completing a mosaic of diversification processes in the Chilean Andes</h2>
-<h4>IAPT Research Grant 2022 (PI: José Ignacio Márquez-Corro, US$2,000)</h4>
+<h4>2022 IAPT Research Grant (PI: José Ignacio Márquez-Corro, US$2,000)</h4>
 <h4>Main colaborators: Pedro Jiménez-Mejías and Jaume Pellicer</h4>
 
 
