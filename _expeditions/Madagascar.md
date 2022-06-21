@@ -1,5 +1,5 @@
 ---
-title: "La Réunion island"
+title: "Madagascar"
 layout: single-portfolio
 excerpt: "<img src='/images/expeditions/Madagascar.jpg'>"
 collection: expeditions
