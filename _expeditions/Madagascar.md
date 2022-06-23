@@ -8,7 +8,7 @@ header:
   og_image: "expeditions/Madagascar.jpg"
 ---
 <h2>Andasibe and Mantadia National Parks</h2>
-<h4>Fieldwork associated with the stay at RBG Kew and the MSc trip lead by Isabel Larridon, Richard Gianfrancesco, Nina Davies, Lee Davies and the KMCC team</h4>
+<h4>Fieldwork associated with the stay at RBG Kew and the MSc trip lead by Isabel Larridon, Richard Gianfrancesco, Nina Davies, Lee Davies and the KMCC team, with the help of Ben Newbery</h4>
 
 This trip aimed to collect Cyperaceae species of the Andasibe and Mantadia National Parks, with special focus on <i>Carex</i> sect. <i>Indicae</i> for genomic, morphological and chromosomal studies.
 
