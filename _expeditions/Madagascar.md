@@ -1,7 +1,7 @@
 ---
 title: "Madagascar"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/Madagascar.jpg'>"
+excerpt: "<img src='/images/expeditions/Madagascar.jpeg'>"
 collection: expeditions
 order_number: 10
 header: 
@@ -83,7 +83,7 @@ Day 17 (July 10th 2022): Arrival to London.
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img  class= "img-responsive center-block" src='/images/expeditions/Madagascar.jpg' alt="MSc students, KMCC and Kew staff"/>
+        <img  class= "img-responsive center-block" src='/images/expeditions/Madagascar.jpeg' alt="MSc students, KMCC and Kew staff"/>
 		  <div class="carousel-caption">
         <p>MSc students, KMCC and Kew staff</p>
       </div>
