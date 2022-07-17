@@ -63,3 +63,104 @@ Day 17 (July 10th 2022): Arrival to London.
  </style>
  
 </head>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="align-content: center">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+	  <li data-target="#myCarousel" data-slide-to="3"></li>
+	  <li data-target="#myCarousel" data-slide-to="4"></li>
+	  <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+      <li data-target="#myCarousel" data-slide-to="7"></li>
+	  <li data-target="#myCarousel" data-slide-to="8"></li>
+	  <li data-target="#myCarousel" data-slide-to="9"></li>
+      <li data-target="#myCarousel" data-slide-to="10"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img  class= "img-responsive center-block" src='/images/expeditions/Madagascar.jpg' alt="MSc students, KMCC and Kew staff"/>
+		  <div class="carousel-caption">
+        <p>MSc students, KMCC and Kew staff</p>
+      </div>
+      </div>
+      
+		<div class="item">
+       <a href="https://www.inaturalist.org/observations/126094397" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/213906845/large.jpeg' alt="Dicrurus forficatusa"/></a>
+		  <div class="carousel-caption">
+        <p>Dicrurus forficatusa</p>
+      </div>
+      </div>
+		
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/126381180" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/214424607/original.jpeg' alt="Cyperus haspan"/></a>
+		  <div class="carousel-caption">
+        <p>Cyperus haspan</p>
+      </div>
+      </div>
+		
+		 <div class="item">
+        <a href="https://www.inaturalist.org/observations/126094402" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/213907565/large.jpeg' alt="Terpsiphone mutata"/></a>
+		  <div class="carousel-caption">
+        <p>Terpsiphone mutata</p>
+      </div>
+      </div>
+
+      <div class="item">
+        <a href="https://www.inaturalist.org/observations/125950007" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/213644917/original.jpeg' alt="Eulemur fulvus"/></a>
+		  <div class="carousel-caption">
+        <p>Eulemur fulvus</p>
+      </div>
+      </div>
+    
+      <div class="item">
+        <a href="https://www.inaturalist.org/observations/126094391" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/213904884/large.jpeg' alt="Scleria sp."/></a>
+		  <div class="carousel-caption">
+        <p>Scleria sp.</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/125952605" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/213652610/large.jpeg' alt="Carex sp."/></a>
+		  <div class="carousel-caption">
+        <p>Carex sp.</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/125946340" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/213640558/large.jpeg' alt="Carex sp."/></a>
+		  <div class="carousel-caption">
+        <p>Carex sp.</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/125786311" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/213349813/original.jpeg' alt="Costularia pantopoda"/></a>
+		  <div class="carousel-caption">
+        <p>Costularia pantopoda</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/125160179" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/212227994/large.jpeg' alt="Microcoelia gilpiniae"/></a>
+		  <div class="carousel-caption">
+        <p>Microcoelia gilpiniae</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/125824480" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/213393862/large.jpeg' alt="Pauridiantha paucinervis"/></a>
+		  <div class="carousel-caption">
+        <p>Pauridiantha paucinervis</p>
+      </div>
+      </div>
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+      </div>
