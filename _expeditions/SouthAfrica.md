@@ -1,7 +1,7 @@
 ---
 title: "South Africa"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/SouthAfrica.jpg' height="400">"
+excerpt: "<img src='/images/expeditions/SouthAfrica.jpg' height="400"/>"
 collection: expeditions
 order_number: 20
 header: 
