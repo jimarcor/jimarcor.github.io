@@ -83,9 +83,9 @@ Day 17 (July 10th 2022): Arrival to London.
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img  class= "img-responsive center-block" src='/images/expeditions/Madagascar.jpeg' alt="MSc students, KMCC and Kew staff"/>
+        <img  class= "img-responsive center-block" src='/images/expeditions/Fitiavana.jpeg' alt="MSc students, KMCC and Kew staff"/>
 		  <div class="carousel-caption">
-        <p>MSc students, KMCC and Kew staff</p>
+        <p>With the sedge expert Fitiavana</p>
       </div>
       </div>
       
