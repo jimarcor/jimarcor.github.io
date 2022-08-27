@@ -1,7 +1,7 @@
 ---
 title: "La Réunion island"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/LaReunion.jpg'>"
+excerpt: "<img src='/images/expeditions/LaReunion.jpg' height="400">"
 collection: expeditions
 order_number: 30
 header: 

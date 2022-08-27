@@ -1,7 +1,7 @@
 ---
 title: "Madagascar"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/Madagascar.jpeg'>"
+excerpt: "<img src='/images/expeditions/Madagascar.jpeg' height="400">"
 collection: expeditions
 order_number: 10
 header: 
