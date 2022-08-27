@@ -3,7 +3,7 @@ title: "Madagascar"
 layout: single-portfolio
 excerpt: "<img src='/images/expeditions/Madagascar.jpeg'>"
 collection: expeditions
-order_number: 10
+order_number: 20
 header: 
   og_image: "expeditions/Madagascar.jpg"
 ---

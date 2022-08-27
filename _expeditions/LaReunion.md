@@ -3,7 +3,7 @@ title: "La Réunion island"
 layout: single-portfolio
 excerpt: "<img src='/images/expeditions/LaReunion.jpg'>"
 collection: expeditions
-order_number: 30
+order_number: 40
 header: 
   og_image: "expeditions/LaReunion.jpg"
 ---
