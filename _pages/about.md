@@ -21,6 +21,4 @@ I am [coauthor](publications) of 22 scientific and divulgation papers (18 with i
 <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
 <br/>
 
-<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=939393&w=300&t=m&d=jFh-VSJ1D4KohtjtmxFhi3puZaEjdGY1HtSpKwLg5jY&co=ffffff&cmn=9acd32&cmo=006400&ct=006400'></script>
-
 </center>
