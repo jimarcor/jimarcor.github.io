@@ -18,4 +18,9 @@ I am [coauthor](publications) of 22 scientific and divulgation papers (18 with i
 <h3> My observations</h3>
 <iframe src="https://www.inaturalist.org/observations/map?user_id=jimarcor#2/0/0" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe
 
+<img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
+<br/>
+
+<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=939393&w=300&t=m&d=jFh-VSJ1D4KohtjtmxFhi3puZaEjdGY1HtSpKwLg5jY&co=ffffff&cmn=9acd32&cmo=006400&ct=006400'></script>
+
 </center>
