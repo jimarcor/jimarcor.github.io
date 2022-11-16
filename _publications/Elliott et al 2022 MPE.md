@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/Elliott et al 2022 MPE
 date: 2022-11-07
 venue: 'Annals of Botany'
-paperurl: '/files/pdf/research/Elliott et al 2021 MPE.pdf'
+paperurl: '/files/pdf/research/Elliott et al 2022 MPE.pdf'
 link: 'https://doi.org/10.1016/j.ympev.2022.107665'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'
