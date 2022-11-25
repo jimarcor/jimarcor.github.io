@@ -4,7 +4,7 @@ permalink: /collaborators/
 author_profile: true
 ---
 ## [Isabel Larridon](https://www.kew.org/science/our-science/people/isabel-larridon)
-Research Leader Africa (London, United Kingdom)
+Senior Research Leader in Integrated Monography (London, United Kingdom)
 <br/><img src='/images/collaborators/larridon.jpg' width="400"/>
 
 ## [Marcial Escudero](https://marcialescuderolab.weebly.com/)
