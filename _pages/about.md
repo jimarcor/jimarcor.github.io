@@ -21,4 +21,22 @@ I am [coauthor](publications) of 22 scientific and divulgation papers (18 with i
 <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
 <br/>
 
+<h1>My iNaturalist Observations</h1>
+
+<p id="observation-count"></p>
+
+<script>
+  // Use the iNaturalist API to retrieve your observations
+  fetch('https://www.inaturalist.org/observations/user/jimarcor.json')
+    .then(response => response.json())
+    .then(data => {
+      // Get the total number of observations
+      var count = data.total_results;
+
+      // Display the number of observations on the page
+      document.getElementById('observation-count').innerHTML = `I have made ${count} observations on iNaturalist.`;
+    });
+</script>
+
+
 </center>
