@@ -21,6 +21,7 @@ I am [coauthor](publications) of 22 scientific and divulgation papers (18 with i
 <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
 <br/>
 
+</center>
 <h1>My iNaturalist Observations</h1>
 
 <p id="observation-count"></p>
@@ -37,6 +38,3 @@ I am [coauthor](publications) of 22 scientific and divulgation papers (18 with i
       document.getElementById('observation-count').innerHTML = `I have made ${count} observations on iNaturalist.`;
     });
 </script>
-
-
-</center>
