@@ -18,8 +18,8 @@ df <- fromJSON(r,flatten = TRUE)
 obs <- df[["most_observations"]][["count"]]
 spp <- df[["most_species"]][["count"]]
 
-cat(paste0("Number of observations: ", obs))
-cat(paste0("Number of species: ", spp))
+cat(paste0("Number of observations: ", obs), sep = "\n")
+cat(paste0("Number of species: ", spp), sep = "\n")
 ```
 
 
