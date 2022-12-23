@@ -9,5 +9,5 @@ link: 'https://doi.org/10.15366/cv2021.25'
 #code: 'http://doi.org/'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
-citation: '<B>Márquez-Corro JI</B>, Jiménez-Mejías P, Fernández-Mazuecos M,Ramos-Gutiérrez I, Martín-Hernanz S, Martín-Bravo S, Alfaro-Saiz E, Blanco-Salas J, Borras J, Capó M, Carrera-Bonet D, De La Fuente Brun  P, Fernandez-Lesaga A, Garnatje T, Gorriz-Huarte L, Molino S, Nualart N, Mairal M. 2021. &quot;I Biomaratón de Flora Española: ciencia ciudadana para visibilizar la biodiversidad vegetal&quot; <i>Conservación Vegetal</i> 25: 33-37'
+citation: '<B>Márquez-Corro JI</B>, Jiménez-Mejías P, Fernández-Mazuecos M, Ramos-Gutiérrez I, Martín-Hernanz S, Martín-Bravo S, Alfaro-Saiz E, Blanco-Salas J, Borras J, Capó M, Carrera-Bonet D, De La Fuente Brun P, Fernandez-Lesaga A, Garnatje T, Gorriz-Huarte L, Molino S, Nualart N, Mairal M. 2021. &quot;I Biomaratón de Flora Española: ciencia ciudadana para visibilizar la biodiversidad vegetal&quot; <i>Conservación Vegetal</i> 25: 33-37'
 ---
