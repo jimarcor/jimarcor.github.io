@@ -74,16 +74,16 @@ Day 30 ([January 30th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1
 
 Day 31 ([January 31st 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/31)):
 
-Day 1 ([February 1st 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/1)):
+Day 32 ([February 1st 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/1)):
 
-Day 2 ([February 2nd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/2)):
+Day 33 ([February 2nd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/2)):
 
-Day 3 ([February 3rd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/3)):
+Day 34 ([February 3rd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/3)):
 
-Day 4 ([February 4th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/4)):
+Day 35 ([February 4th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/4)):
 
-Day 5 ([February 5th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/5)):
+Day 36 ([February 5th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/5)):
 
-Day 6 ([February 6th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/6)): Departure from Concepción.
+Day 37 ([February 6th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/6)): Departure from Concepción.
 
-Day 7 ([February 7th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/7)): Arrival to London.
+Day 38 (February 7th 2023): Arrival to London.
