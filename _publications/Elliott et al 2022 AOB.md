@@ -1,4 +1,6 @@
 ---
+layout: archive
+---
 title: "Chromosome size matters: genome evolution in the cyperid clade"
 collection: publications
 permalink: /publication/Elliott et al 2022 AOB
