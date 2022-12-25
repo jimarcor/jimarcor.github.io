@@ -61,7 +61,6 @@
 }
 
 .archive__item-excerpt {
-  text-align: justify;
   margin-top: 0;
   font-size: $type-size-6;
 
@@ -71,6 +70,7 @@
 }
 
 .archive__item-teaser {
+  text-align: justify;
   border-radius: $border-radius;
   overflow: hidden;
   img {
