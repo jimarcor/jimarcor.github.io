@@ -70,7 +70,6 @@
 }
 
 .archive__item-teaser {
-  text-align: justify;
   border-radius: $border-radius;
   overflow: hidden;
   img {
@@ -85,6 +84,7 @@
 .list__item {
 
   .page__meta {
+  text-align: justify;
     margin: 0 0 4px;
   }
 }
