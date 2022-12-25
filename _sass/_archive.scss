@@ -4,6 +4,7 @@
 
 .archive {
   margin-bottom: 2em;
+  text-align: justify;
 
   @include breakpoint($medium) {
     padding-right: $right-sidebar-width-narrow;
