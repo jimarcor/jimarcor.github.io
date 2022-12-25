@@ -4,7 +4,7 @@ permalink: /collaborators/
 author_profile: true
 ---
 ## [Pedro Jiménez-Mejías](https://www.researchgate.net/profile/Pedro-Jimenez-Mejias)
-Ramón y Cajal Researcher (Sevilla, Spain)
+Ramón y Cajal Researcher at Universidad Pablo de Olavide (Sevilla, Spain)
 <br/>Role: 2nd year 'Margarita Salas' Fellowship supervisor (2023)
 <br/><img src='/images/collaborators/jimenez-mejias.jpg' width="400"/>
 
