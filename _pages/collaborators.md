@@ -1,7 +1,7 @@
 ---
 title: "Mentors and collaborators"
 permalink: /collaborators/
-author_profile: false
+author_profile: true
 ---
 ## [Pedro Jiménez-Mejías](https://www.researchgate.net/profile/Pedro-Jimenez-Mejias)
 Ramón y Cajal Researcher (Sevilla, Spain)
