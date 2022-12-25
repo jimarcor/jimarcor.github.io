@@ -16,7 +16,7 @@ Day 1 (January 1st 2023): Departure from London.
 
 Day 2 (January 2nd 2023): Arrival to Concepción and accomodation.
 
-Day 3 ([January 3rd 2022](https://www.inaturalist.org/calendar/jimarcor/2023/1/3))):
+Day 3 ([January 3rd 2022](https://www.inaturalist.org/calendar/jimarcor/2023/1/3)):
 
 Day 4 ([January 4th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/4)):
 
