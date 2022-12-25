@@ -7,7 +7,9 @@
 
   @include breakpoint($medium) {
     padding-right: $right-sidebar-width-narrow;
-    @include span(12 of 12);
+    @include span(10 of 12 last);
+    @include prefix(0.5 of 12);
+    @include suffix(0.5 of 12);
   }
 
   @include breakpoint($large) {
