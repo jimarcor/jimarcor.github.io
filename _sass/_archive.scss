@@ -54,7 +54,6 @@
 /* remove border*/
 .page__content {
 
-  text-align: justify;
   .archive__item-title {
     margin-top: 1em;
     border-bottom: none;
@@ -62,6 +61,7 @@
 }
 
 .archive__item-excerpt {
+  text-align: justify;
   margin-top: 0;
   font-size: $type-size-6;
 
