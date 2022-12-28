@@ -30,7 +30,7 @@ Day 8 ([January 8th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/8
 
 Day 9 ([January 9th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/9)): Departure from Concepción to Santiago.
 
-Day 10 ([January 10th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/10)): Regroup with the team! Pedro, Santi, María, Pablo and Diego arrived to Santiago.
+Day 10 ([January 10th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/10)): Regroup with part of the team: Pedro and Santi arrived to Santiago.
 
 Day 11 ([January 11th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/11)):
 
@@ -44,7 +44,7 @@ Day 15 ([January 15th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1
 
 Day 16 ([January 16th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/16)):
 
-Day 17 ([January 17th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/17)):
+Day 17 ([January 17th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/17)): Completing the team: María, Pablo and Diego join us near Santiago .
 
 Day 18 ([January 18th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/18)):
 
