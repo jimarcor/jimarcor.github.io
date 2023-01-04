@@ -14,11 +14,11 @@ This trip aimed to teach local students cytological techniques and to collect Cy
 
 Day 1 (January 1st 2023): Departure from London.
 
-Day 2 (January 2nd 2023): Arrival to Concepción and accomodation.
+Day 2 (January 2nd 2023): Arrival to Concepción, accomodation and planning with Paulo Muñoz.
 
-Day 3 ([January 3rd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/3)):
+Day 3 ([January 3rd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/3)): Collecting <i>Carex</i> sect. <i>Uncinia</i> in Cerro Caracol near the Universidad de Concepción. Preparation of roots for chromosome number counting, leaves for genome size estimation and drying the specimens.
 
-Day 4 ([January 4th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/4)):
+Day 4 ([January 4th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/4)): Incorporating field notes to the database and preparing the lab for the analysis.
 
 Day 5 ([January 5th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/5)):
 
