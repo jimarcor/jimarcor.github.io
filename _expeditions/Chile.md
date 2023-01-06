@@ -20,15 +20,15 @@ Day 3 ([January 3rd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/3
 
 Day 4 ([January 4th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/4)): Incorporating field notes to the database and preparing the lab for the analysis.
 
-Day 5 ([January 5th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/5)):
+Day 5 ([January 5th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/5)): Root fixation. Purchase of materials for fielwork.
 
-Day 6 ([January 6th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/6)):
+Day 6 ([January 6th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/6)): Chromosome counting went wrong! Luckily, we have seeds from most of the species :) Finishing the preparation of the material for fieldwork.
 
 Day 7 ([January 7th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/7)):
 
 Day 8 ([January 8th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/8)):
 
-Day 9 ([January 9th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/9)): Departure from Concepción to Santiago.
+Day 9 ([January 9th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/9)): Departure from Concepción to Santiago overnight.
 
 Day 10 ([January 10th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/10)): Regroup with part of the team: Pedro and Santi arrived to Santiago.
 
