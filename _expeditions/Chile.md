@@ -18,15 +18,15 @@ Day 2 (January 2nd 2023): Arrival to Concepción, accomodation and planning with
 
 Day 3 ([January 3rd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/3)): Collecting <i>Carex</i> sect. <i>Uncinia</i> in Cerro Caracol near the Universidad de Concepción. Preparation of roots for chromosome number counting, leaves for genome size estimation and drying the specimens.
 
-Day 4 ([January 4th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/4)): Incorporating field notes to the database and preparing the lab for the analysis. I had the chance to meet Glenda Fuentes Arce and Patricio López Sepúlveda, from the team of botanists at the university.
+Day 4 (January 4th 2023)): Incorporating field notes to the database and preparing the lab for the analysis. I had the chance to meet Glenda Fuentes Arce and Patricio López Sepúlveda, from the team of botanists at the university.
 
-Day 5 ([January 5th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/5)): Root fixation. Purchase of materials for fielwork. Meeting with Carlos Baeza, karyological expert at UdeC.
+Day 5 (January 5th 2023): Root fixation. Purchase of materials for fielwork. Meeting with Carlos Baeza, karyological expert at UdeC.
 
-Day 6 ([January 6th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/6)): Chromosome counting went wrong! Luckily, we have seeds from most of the species :) Finishing the preparation of the material for fieldwork.
+Day 6 (January 6th 2023): Chromosome counting went wrong! Luckily, we have seeds from most of the species :) Finishing the preparation of the material for fieldwork.
 
-Day 7 ([January 7th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/7)): Sorting out some minor logistic issues, and preparing everything to transport on Monday evening.
+Day 7 (January 7th 2023): Sorting out some minor logistic issues, and preparing everything to transport on Monday evening.
 
-Day 8 ([January 8th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/8)): A bit of rest plus packing personal luggage.
+Day 8 (January 8th 2023): A bit of rest plus packing personal luggage.
 
 Day 9 ([January 9th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/9)): Departure from Concepción to Santiago overnight.
 
