@@ -7,7 +7,7 @@ header:
   og_image: "expeditions/ecdf.png"
 ---
 
-Here there are the funded expeditions in which I have been part of. Find photographs and brief explanations of the fieldwork purposes in each folder. Please, take into account that not all the photographs have been uploaded here, and you can see more directly in [iNaturalist](https://www.inaturalist.org/people/jimarcor).
+Here there are the funded expeditions in which I have been part of. Find photographs and brief explanations of the fieldwork purposes in each folder. Please, take into account that not all the photographs have been uploaded here, and you can see more directly on [iNaturalist](https://www.inaturalist.org/people/jimarcor).
 
 <nbsp>
 
