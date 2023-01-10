@@ -28,9 +28,9 @@ Day 7 (January 7th 2023): Sorting out some minor logistic issues, and preparing 
 
 Day 8 (January 8th 2023): A bit of rest plus packing personal luggage.
 
-Day 9 ([January 9th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/9)): Departure from Concepción to Santiago overnight.
+Day 9 (January 9th 2023): Departure from Concepción to Santiago overnight.
 
-Day 10 ([January 10th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/10)): Regroup with part of the team: Pedro and Santi arrived to Santiago.
+Day 10 ([January 10th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/10)): Regroup with part of the team: Pedro and Santi arrived to Santiago. Travel to Coquimbo.
 
 Day 11 ([January 11th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/11)):
 
