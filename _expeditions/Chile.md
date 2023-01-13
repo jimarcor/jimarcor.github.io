@@ -32,9 +32,11 @@ Day 9 (January 9th 2023): Departure from Concepción to Santiago overnight.
 
 Day 10 ([January 10th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/10)): Regroup with part of the team: Pedro and Santi arrived to Santiago. Travel to Coquimbo.
 
-Day 11 ([January 11th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/11)):
+Day 11 ([January 11th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/11)): More purchase of materials and some collecting in Humedal 'El Culebrón'
 
-Day 12 ([January 12th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/12)):
+Day 12 ([January 12th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/12)): An earthquake woke us up during the night! In the morning we went to Parque Nacional Fray Jorge, where we collected <i>Carex quinquin</i>, <i>
+  
+C. setifolia</i> and other sedges in company of the park guide Juan Monardez Robles.
 
 Day 13 ([January 13th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/13)):
 
