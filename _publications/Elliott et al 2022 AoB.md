@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/Elliott et al 2022 AoB
 date: 2022-11-07
 venue: 'Annals of Botany'
-paperurl: '/files/pdf/research/Elliott et al 2021 AoB.pdf'
+paperurl: '/files/pdf/research/Elliott et al 2022 AoB.pdf'
 link: 'https://doi.org/10.1093/aob/mcac136'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'
