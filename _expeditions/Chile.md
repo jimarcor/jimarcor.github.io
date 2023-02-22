@@ -72,18 +72,17 @@ Day 29 ([January 29th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1
 
 Day 30 ([January 30th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/30)): We collected in a peatland around the Pudidí river and the eolic farm entrance. Pedro, María and I also went south to the coast, around Chonchi, but couldn't find any <i>C. trifida</i> there either.
 
-Day 31 ([January 31st 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/31)):
+Day 31 (January 31st 2023): We left Chiloé back to mainland and rested for the evening in San Pablo village.
 
-Day 32 ([February 1st 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/1)):
+Day 32 ([February 1st 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/1)): We went to Alerce Costero National Park (Cordillera Pelada) and collected in a peatland. We also collected <i>Carex dolichophylla</i>. What a remarkable plant! We finally arrived to Concepción.
 
-Day 33 ([February 2nd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/2)):
+Day 33 ([February 2nd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/2)): We worked at the university, preparing the [specimens](https://twitter.com/pjimmej/status/1621477048995676162), silica, soils, etc. In the afternoon, we visited a queule (<i>Gomortega keule</i>) population with Dr. Diego Alarcón. We had a farewell dinner, as the rest of the team was leaving the following day.
+Day 34 (February 3rd 2023): I had my farewell with the rest of the UPOS team in the morning. Paulo and I continued working at the university, preparing the following days and updating the data of the specimens collected.
 
-Day 34 ([February 3rd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/3)):
+Day 35 ([February 4th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/4)): Paulo and I went to collect <i>Carex bonariensis</i> in Hualpén.
 
-Day 35 ([February 4th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/4)):
+Day 36 (February 5th 2023): Paulo and I collected some other interesting lineages of plants in the sourroundings of the university. We also went through some herbarium specimens.
 
-Day 36 ([February 5th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/5)):
-
-Day 37 ([February 6th 2023](https://www.inaturalist.org/calendar/jimarcor/2023/2/6)): Departure from Concepción.
+Day 37 (February 6th 2023): Departure from Concepción. I had a farewell lunch with Paulo and took the plane to Santiago. There, I came across the UPOS team in the airport.
 
 Day 38 (February 7th 2023): Arrival to London.
