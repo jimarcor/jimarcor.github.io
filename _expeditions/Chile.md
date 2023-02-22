@@ -86,3 +86,114 @@ Day 36 (February 5th 2023): Paulo and I collected some other interesting lineage
 Day 37 (February 6th 2023): Departure from Concepción. I had a farewell lunch with Paulo and took the plane to Santiago. There, I came across the UPOS team in the airport.
 
 Day 38 (February 7th 2023): Arrival to London.
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+   <style>
+ .carousel-inner > .item > img,
+ .carousel-inner > .item > a > img {
+     display: block;
+     max-width: 100%;
+     height: 500px !important;
+ }
+ </style>
+ 
+</head>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="align-content: center">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+	  <li data-target="#myCarousel" data-slide-to="3"></li>
+	  <li data-target="#myCarousel" data-slide-to="4"></li>
+	  <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+      <li data-target="#myCarousel" data-slide-to="7"></li>
+	  <li data-target="#myCarousel" data-slide-to="8"></li>
+	  <li data-target="#myCarousel" data-slide-to="9"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <a href="https://www.inaturalist.org/observations/149258989" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/257169547/original.jpeg' alt="Carex dolichophylla"/></a>
+		  <div class="carousel-caption">
+        <p>Carex dolichophylla</p>
+      </div>
+      </div>
+		
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/149258662" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/257167703/original.jpeg' alt="Marsippospermum grandiflorum"/></a>
+		  <div class="carousel-caption">
+        <p>Marsippospermum grandiflorum</p>
+      </div>
+      </div>
+		
+		 <div class="item">
+        <a href="https://www.inaturalist.org/observations/149257709" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/257163823/original.jpeg' alt="Carex firmula"/></a>
+		  <div class="carousel-caption">
+        <p>Carex firmula</p>
+      </div>
+      </div>
+
+      <div class="item">
+        <a href="https://www.inaturalist.org/observations/149255480" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/257162771/original.jpeg' alt="Carex magellanica"/></a>
+		  <div class="carousel-caption">
+        <p>Carex magellanica</p>
+      </div>
+      </div>
+    
+      <div class="item">
+        <a href="https://www.inaturalist.org/observations/149254513" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/257161432/original.jpeg' alt="Carex pumila"/></a>
+		  <div class="carousel-caption">
+        <p>Carex pumila</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/6192677" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772713/original.jpeg?1494686290' alt="Hedychium gardnerianum"/></a>
+		  <div class="carousel-caption">
+        <p>Hedychium gardnerianum</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/6092538" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7620002/original.jpeg?1493927601' alt="Carex boryana"/></a>
+		  <div class="carousel-caption">
+        <p>Carex boryana</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/6087549" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7613372/original.jpeg?1493897066' alt="Costularia cadetii"/></a>
+		  <div class="carousel-caption">
+        <p>Costularia cadetii</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/6087402" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7613141/original.jpeg?1493893309' alt="Satyrium amoenum"/></a>
+		  <div class="carousel-caption">
+        <p>Satyrium amoenum</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/5647897" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/6990066/original.jpg?1491916113' alt="Cratopus sumptuosus"/></a>
+		  <div class="carousel-caption">
+        <p>Cratopus sumptuosus</p>
+      </div>
+      </div>
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+      </div>
