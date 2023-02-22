@@ -16,4 +16,5 @@ header:
 Taxonomically complex groups are usually tackled using an array of approaches. Certainly, historically straightforward methods include histological studies such as those involving karyotype and genome size characterizations. New insights in the section for genome size, in combination with the chromosome numbers available up to date led us think that different ploidies may be occuring with implications in diversification. Based on that, it seems clear that it is urged to complete this “mosaic” of systematic, genomic and karyological knowledge for South American representatives. Given that Chile harbors most of the South American species of the section, a sampling effort focusing on this country seems the most reasonable start of this enterprise.
 
 <a href="https://www.iaptglobal.org/awarded-grants/#comp-l6cslx3u__1b04625f-f39b-4915-b398-15ee48f79498">Awarded IAPT page</a>
+
 <a href="https://jimarcor.github.io/expeditions/Chile/">Read about the expedition here</a>
