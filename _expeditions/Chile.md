@@ -118,6 +118,7 @@ Day 38 (February 7th 2023): Arrival to London.
       <li data-target="#myCarousel" data-slide-to="7"></li>
 	  <li data-target="#myCarousel" data-slide-to="8"></li>
 	  <li data-target="#myCarousel" data-slide-to="9"></li>
+	  <li data-target="#myCarousel" data-slide-to="10"></li>
     </ol>
 
     <!-- Wrapper for slides -->
