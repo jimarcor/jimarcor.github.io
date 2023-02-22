@@ -163,27 +163,33 @@ Day 38 (February 7th 2023): Arrival to London.
       </div>
       </div>
 		<div class="item">
-        <a href="https://www.inaturalist.org/observations/6092538" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7620002/original.jpeg?1493927601' alt="Carex boryana"/></a>
+        <a href="https://www.inaturalist.org/observations/148859568" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/256420082/original.jpeg' alt="Carex fuscula"/></a>
 		  <div class="carousel-caption">
-        <p>Carex boryana</p>
+        <p>Carex fuscula</p>
       </div>
       </div>
 		<div class="item">
-        <a href="https://www.inaturalist.org/observations/6087549" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7613372/original.jpeg?1493897066' alt="Costularia cadetii"/></a>
+        <a href="https://www.inaturalist.org/observations/147789129" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/254369628/original.jpeg' alt="Carex turbaria"/></a>
 		  <div class="carousel-caption">
-        <p>Costularia cadetii</p>
+        <p>Carex turbaria</p>
       </div>
       </div>
 		<div class="item">
-        <a href="https://www.inaturalist.org/observations/6087402" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7613141/original.jpeg?1493893309' alt="Satyrium amoenum"/></a>
+        <a href="https://www.inaturalist.org/observations/147784500" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/254361070/original.jpeg' alt="Carex macrotrichoides"/></a>
 		  <div class="carousel-caption">
-        <p>Satyrium amoenum</p>
+        <p>Carex macrotrichoides</p>
       </div>
       </div>
 		<div class="item">
-        <a href="https://www.inaturalist.org/observations/5647897" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/6990066/original.jpg?1491916113' alt="Cratopus sumptuosus"/></a>
+        <a href="https://www.inaturalist.org/observations/147733777" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/254263672/original.jpeg' alt="Carex chillanensis"/></a>
 		  <div class="carousel-caption">
-        <p>Cratopus sumptuosus</p>
+        <p>Carex chillanensis</p>
+      </div>
+      </div>
+		<div class="item">
+        <a href="https://www.inaturalist.org/observations/147725045" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/254247663/original.jpeg' alt="Carex vallis-pulchrae"/></a>
+		  <div class="carousel-caption">
+        <p>Carex vallis-pulchrae</p>
       </div>
       </div>
   <!-- Left and right controls -->
