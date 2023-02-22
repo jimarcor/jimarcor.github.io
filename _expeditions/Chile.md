@@ -118,7 +118,6 @@ Day 38 (February 7th 2023): Arrival to London.
       <li data-target="#myCarousel" data-slide-to="7"></li>
 	  <li data-target="#myCarousel" data-slide-to="8"></li>
 	  <li data-target="#myCarousel" data-slide-to="9"></li>
-	  <li data-target="#myCarousel" data-slide-to="10"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -155,12 +154,6 @@ Day 38 (February 7th 2023): Arrival to London.
         <a href="https://www.inaturalist.org/observations/149254513" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/257161432/original.jpeg' alt="Carex pumila"/></a>
 		  <div class="carousel-caption">
         <p>Carex pumila</p>
-      </div>
-      </div>
-		<div class="item">
-        <a href="https://www.inaturalist.org/observations/6192677" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/7772713/original.jpeg?1494686290' alt="Hedychium gardnerianum"/></a>
-		  <div class="carousel-caption">
-        <p>Hedychium gardnerianum</p>
       </div>
       </div>
 		<div class="item">
