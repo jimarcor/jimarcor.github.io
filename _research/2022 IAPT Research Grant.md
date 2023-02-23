@@ -1,11 +1,11 @@
 ---
 title: "2022 IAPT Research Grant"
 layout: single-portfolio
-excerpt: "<img src='/images/research/xxxxxxxxxxxxx.jpg' alt=''>"
+excerpt: "<img src='/images/research/Citometro.png' alt=''>"
 collection: research
 order_number: 10
 header: 
-  og_image: "research/xxxxxxxxxxxx.jpg"
+  og_image: "research/Citometro.png"
 ---
 <h2>Towards an integrative study of <i>Carex</i> sect. <i>Uncinia</i> in South America: completing a mosaic of diversification processes in the Chilean Andes</h2>
 <h4>2022 IAPT Research Grant (PI: José Ignacio Márquez-Corro, US$2,000)</h4>
