@@ -17,6 +17,7 @@ Day 1 (January 1st 2023): Departure from London.
 Day 2 (January 2nd 2023): Arrival to Concepción, accommodation and planning with Paulo Muñoz.
 
 Day 3 ([January 3rd 2023](https://www.inaturalist.org/calendar/jimarcor/2023/1/3)): Collecting <i>Carex</i> sect. <i>Uncinia</i> in Cerro Caracol near the Universidad de Concepción. [Preparation of roots](https://twitter.com/jimarcorr/status/1610743500328558592) for chromosome number counting, leaves for genome size estimation and drying of the specimens.
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I have finally seen Carex sect. Uncinia on the field!! Yesterday was a great fieldwork and labwork combo to start counting chromosomes of these species with <a href="https://twitter.com/paulaceae1?ref_src=twsrc%5Etfw">@paulaceae1</a> at <a href="https://twitter.com/udeconcepcion?ref_src=twsrc%5Etfw">@udeconcepcion</a> <a href="https://t.co/JepWLSBf9u">pic.twitter.com/JepWLSBf9u</a></p>&mdash; José Ignacio Márquez-Corro (@jimarcorr) <a href="https://twitter.com/jimarcorr/status/1610743500328558592?ref_src=twsrc%5Etfw">January 4, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Day 4 (January 4th 2023): Incorporating field notes into the database and preparing the lab for the analysis. I had the chance to meet Glenda Fuentes Arce and Patricio López Sepúlveda, from the team of botanists at the university.
 
