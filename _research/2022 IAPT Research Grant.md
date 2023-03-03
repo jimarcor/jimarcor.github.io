@@ -24,6 +24,9 @@ As a summary for the general project, we collected more than 400 Cyperaceae spec
 Overall, IAPT Grant Research 2022 has allowed a considerable increase in the knowledge of sedges, especially for Chile and South America, as most of the sources for karyological and genomic data are countries from the Global North. I expect two scientific publications using the data collected using this grant.
 
 
+<img src='/images/research/Chile_report.png' alt=''>
+<b>A.</b> The awardee collecting root tips for chromosome counting at Universidad de Concepción (Biobío, Chile). <b>B.</b> The DANZ team (left to right: S. Martín-Bravo, P. Muñoz-Schüler, M. Sanz-Arnal, J.I. Márquez-Corro, P. García-Moro, and P. Jiménez-Mejías) with the Chillán volcano in the background (Ñuble, Chile). <b>C.</b> Team collecting sedges in Aguas Calientes (Ñuble, Chile). <b>D.</b> The team delighted by a <i>Carex</i> species in D. Penneckamp’s private living collection. <b>E.</b> <i>Carex turbaria</i> (sect. <i>Uncinia</i>. Los Lagos, Chile).
+
 <a href="https://www.iaptglobal.org/awarded-grants/#comp-l6cslx3u__1b04625f-f39b-4915-b398-15ee48f79498">Awarded IAPT page</a>
 
 <a href="https://jimarcor.github.io/expeditions/Chile/">Read about the expedition here</a>
