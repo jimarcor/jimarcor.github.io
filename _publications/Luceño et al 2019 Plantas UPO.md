@@ -3,7 +3,6 @@ title: "Plantas silvestres y ornamentales del campus de la Universidad Pablo de 
 collection: publications
 permalink: /publication/Luceño et al 2019 Plantas UPO
 date: 2019-01-17
-venue: 'Acta Botanica Malacitana'
 #paperurl: '/files/pdf/research/Luceño et al 2019 Plantas UPO.pdf'
 #link: 'https://doi.org/...'
 #code: 'https://doi.org/...'
