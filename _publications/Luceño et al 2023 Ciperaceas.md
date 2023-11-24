@@ -1,8 +1,8 @@
 ---
 title: "Guía de campo de las ciperáceas de España y Portugal <sup>[Book]</sup>"
 collection: publications
-permalink: /publication/Luceño et al 2019 Plantas UPO
-date: 2023-01-17
+permalink: /publication/Luceño et al 2023 Ciperaceas
+date: 2023-05-01
 #paperurl: '/files/pdf/research/Luceño et al 2023 Ciperaceas.pdf'
 #link: 'https://doi.org/...'
 #code: 'https://doi.org/...'
