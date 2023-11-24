@@ -9,7 +9,7 @@ Ramón y Cajal Researcher at Universidad Pablo de Olavide (Sevilla, Spain)
 <br/><img src='/images/collaborators/jimenez-mejias.jpg' width="400"/>
 
 ## [Isabel Larridon](https://www.kew.org/science/our-science/people/isabel-larridon)
-Senior Research Leader in Integrated Monography (London, United Kingdom)
+Priority Leader Accelerated Taxonomy (London, United Kingdom)
 <br/>Role: 1st year 'Margarita Salas' Fellowship supervisor (2022)
 <br/><img src='/images/collaborators/larridon.jpg' width="400"/>
 
