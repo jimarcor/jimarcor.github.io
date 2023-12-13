@@ -9,5 +9,5 @@ link: 'https://doi.org/10.15366/cv2023.27'
 #code: 'http://doi.org/'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
-citation: 'Ramos-Gutiérrez I, <B>Márquez-Corro JI</B>, Martín-Hernanz S. 2021. &quot;SEBOTA: un encuentro para conocer de cerca la diversidad de nuestra flora&quot; <i>Conservación Vegetal</i> 27: 50-51'
+citation: 'Ramos-Gutiérrez I, <B>Márquez-Corro JI</B>, Martín-Hernanz S. 2023. &quot;SEBOTA: un encuentro para conocer de cerca la diversidad de nuestra flora&quot; <i>Conservación Vegetal</i> 27: 50-51'
 ---
