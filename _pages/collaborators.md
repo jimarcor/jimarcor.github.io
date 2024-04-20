@@ -3,13 +3,18 @@ title: "Mentors and collaborators"
 permalink: /collaborators/
 author_profile: true
 ---
+## [Ilia J. Leitch](https://www.kew.org/science/our-science/people/ilia-j-leitch)
+Senior Research Leader - Character Evolution at RBG Kew (London, United Kingdom)
+<br/>Role: Darwin Tree of Life - Plant supervisor (2023)
+<br/><img src='/images/collaborators/leitch.jpg' width="400"/>
+
 ## [Pedro Jiménez-Mejías](https://www.researchgate.net/profile/Pedro-Jimenez-Mejias)
 Ramón y Cajal Researcher at Universidad Pablo de Olavide (Sevilla, Spain)
 <br/>Role: 2nd year 'Margarita Salas' Fellowship supervisor (2023)
 <br/><img src='/images/collaborators/jimenez-mejias.jpg' width="400"/>
 
 ## [Isabel Larridon](https://www.kew.org/science/our-science/people/isabel-larridon)
-Priority Leader Accelerated Taxonomy (London, United Kingdom)
+Priority Leader Accelerated Taxonomy at RBG Kew (London, United Kingdom)
 <br/>Role: 1st year 'Margarita Salas' Fellowship supervisor (2022)
 <br/><img src='/images/collaborators/larridon.jpg' width="400"/>
 
