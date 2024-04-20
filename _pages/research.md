@@ -11,12 +11,7 @@ My scientific career started in 2014 during my last year of BSc in Environmental
 
 Overall, my research addresses the effect of a wide array of genomic, chromosomal, morphological and bioclimatic characters in clade-specific differences of diversification rates. 
 
-If you are interested in donating to support sedge research in priority areas for biodiversity conservation, please consider doing so through [this link](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3D7GLE4PGNZQ).
-<form action="https://www.paypal.com/donate" method="post" target="_top">
-<input type="hidden" name="hosted_button_id" value="U3D7GLE4PGNZQ" />
-<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
-</form>
+If you are interested in donating to support sedge research in priority areas for biodiversity conservation, please consider doing so through this link: [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3D7GLE4PGNZQ)
 
 
 <nbsp>
