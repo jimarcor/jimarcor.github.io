@@ -19,4 +19,4 @@ Overall, my research addresses the effect of a wide array of genomic, chromosoma
   {% include archive-single.html type="grid" %}
 {% endfor %}
 
-[![PayPal - The safer, easier way to pay online!](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif "PayPal – The safer, easier way to pay online!")](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3D7GLE4PGNZQ)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3D7GLE4PGNZQ)
