@@ -5,7 +5,7 @@ author_profile: true
 ---
 ## [Ilia J. Leitch](https://www.kew.org/science/our-science/people/ilia-j-leitch)
 Senior Research Leader - Character Evolution at RBG Kew (London, United Kingdom)
-<br/>Role: Darwin Tree of Life - Plant supervisor (2023)
+<br/>Role: Darwin Tree of Life - Plant supervisor (2023-2024)
 <br/><img src='/images/collaborators/leitch.jpg' width="400"/>
 
 ## [Pedro Jiménez-Mejías](https://www.researchgate.net/profile/Pedro-Jimenez-Mejias)
