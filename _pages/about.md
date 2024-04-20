@@ -22,13 +22,4 @@ I am [coauthor](publications) of 29 papers (24 in international high-impact jour
 <center>
 <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
 <br/>
-
-<div>
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U3D7GLE4PGNZQ" 
-target="_blank">
-<img src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" alt="PayPal - The safer, easier way to pay online!" 
-title="PayPal – The safer, easier way to pay online!" border="0" />
-</a>
-</div>
-
 </center>
