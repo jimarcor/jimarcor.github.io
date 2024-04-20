@@ -332,3 +332,10 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+# Nacho: Added 20.04.2024 to deploy the page
+- name: Deploy to GitHub Pages              
+  uses: JamesIves/github-pages-deploy-action@v4.6.0
+
+
+            
