@@ -1,6 +1,6 @@
 ---
 title: "2024"
-subtitle: "Global analysis of Poales diversification – parallel evolution in space and time into open and closed habitats"
+Description: "Global analysis of Poales diversification – parallel evolution in space and time into open and closed habitats"
 collection: publications
 permalink: /publication/Elliott et al 2024 NewPhytol
 date: 2024-03-21
