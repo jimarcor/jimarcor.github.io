@@ -1,13 +1,13 @@
 ---
-title: "<i>Carex recondita</i> Muñoz-Schüler, Martín-Bravo & Jim. Mejías (<i>Carex</i> section <i>Junciformes</i> Kük., Cyperaceae), a new sedge species from the Andes of central Chile"
+title: "The 2030 Declaration on Scientific Plant and Fungal Collecting"
 collection: publications
-permalink: /publication/Muñoz-Schüler et al 2024 Phytokeys
-date: 2024-06-19
-venue: 'PhytoKeys'
-paperurl: '/files/pdf/research/Muñoz-Schüler et al 2024 Phytokeys.pdf'
-link: 'https://doi.org/10.3897/phytokeys.243.115991'
+permalink: /publication/Antonelli et al 2024 The 2030 Declaration
+date: 2024-09-30
+venue: 'Plants, People, Planet'
+paperurl: '/files/pdf/research/Antonelli et al 2024 The 2030 Declaration.pdf'
+link: 'https://doi.org/10.1002/ppp3.10569'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
-citation: 'Muñoz-Schüler P, Morales-Alonso A, <B>Márquez-Corro JI</B>, Arroyo MTK, Martín-Bravo S, Jiménez-Mejías P. 2024. &quot;<i>Carex recondita</i> Muñoz-Schüler, Martín-Bravo & Jim. Mejías (<i>Carex</i> section <i>Junciformes</i> Kük., Cyperaceae), a new sedge species from the Andes of central Chile&quot; <i>PhytoKeys</i> 243: 15-30. doi:10.3897/phytokeys.243.115991'
+citation: 'Antonelli A, Teisher JK, Smith RJ, Ainsworth AM, Furci G, Gaya E, Gonçalves SC, Hawksworth DL, Larridon I, Sessa EB, Simões AR, Suz LM, Acedo C, Aghayeva DN, Agorini AA, Al Harthy LS, Bacon KL, Chávez-Hernández MG, Colli-Silva M, Crosier J, Davey AH, Silva J, Govaerts RHA, Grace OM, Gudžinskas Z, Hailemikael TG, Ibadullayeva SJ, Idohou R, <B>Márquez-Corro JI</B>, Müller SP, Negrão R, Ondo I, Paton AJ, Pellegrini MOO, Penneys DS, Pironon S, Rafidimanana D, Silvestro D, Simmonds MSJ, Soto Gomez M, Souza JL, Taura L, Taylor A, Vasco-Palacios AM, Vasques DT, Weigelt P, Wieczorkowski JD, Williams C. 2024. &quot;The 2030 Declaration on Scientific Plant and Fungal Collecting&quot; <i>Plants, People, Planet</i> 00: 1-12. doi:10.1002/ppp3.10569'
 ---
