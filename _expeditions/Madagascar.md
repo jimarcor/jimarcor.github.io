@@ -1,7 +1,7 @@
 ---
 title: "Madagascar"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/Madagascar.jpeg' style='width: auto; height: 300px;'>"
+excerpt: "<img src='/images/expeditions/Madagascar.jpeg' style='width: auto; max-width: 100%; height: 200px;'>"
 collection: expeditions
 date: 2022-06-24
 header: 
