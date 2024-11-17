@@ -1,7 +1,7 @@
 ---
 title: "Holocentric evolution"
 layout: single-portfolio
-excerpt: "<img src='/images/research/Marquez-Corro et al 2021.jpg' style='height: 200px; width: 100%; object-fit: cover;'>"
+excerpt: "<img src='/images/research/Marquez-Corro et al 2021.jpg' style='height: 250px; width: 100%; object-fit: cover;'>"
 collection: research
 date: 2018-01-01
 header: 
