@@ -3,7 +3,7 @@ title: "South Africa"
 layout: single-portfolio
 excerpt: "<img src='/images/expeditions/SouthAfrica.jpg'>"
 collection: expeditions
-order_number: 20
+date: 2017-10-07
 header: 
   og_image: "expeditions/SouthAfrica.jpg"
 ---

@@ -3,7 +3,7 @@ title: "Chile"
 layout: single-portfolio
 excerpt: "<img src='/images/expeditions/Chile.jpg'>"
 collection: expeditions
-order_number: 10
+date: 2023-01-01
 header: 
   og_image: "expeditions/Chile.jpg"
 ---
