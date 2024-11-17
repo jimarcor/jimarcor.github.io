@@ -1,7 +1,7 @@
 ---
 title: "2022 IAPT Research Grant"
 layout: single-portfolio
-excerpt: "<img src='/images/research/Citometro.png' width: 300px>"
+excerpt: "<img src='/images/research/Citometro.png' height: 300px>"
 collection: research
 date: 2022-01-01
 header: 
