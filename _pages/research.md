@@ -16,7 +16,7 @@ If you are interested in donating to support sedge research in priority areas fo
 
 <nbsp>
 
-{% assign ordered_pages = site.research | sort:"order_number" %}
+{% assign ordered_pages = site.research | sort:"order_number" | reverse %}
 
 {% for post in ordered_pages %}
   {% include archive-single.html type="grid" %}
