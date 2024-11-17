@@ -163,12 +163,14 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
         <p>Mapania palustris</p>
       </div>
       </div>
+      </div>
 		
 		<div class="carousel-item">
         <div class="d-flex justify-content-center">
         <a href="https://www.inaturalist.org/observations/225272543" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/399381924/original.jpeg' alt="Paramapania gracillima"/></a>
 		  <div class="carousel-caption">
         <p>Paramapania gracillima</p>
+      </div>
       </div>
       </div>
 		
@@ -179,12 +181,14 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
         <p>Machaerina disticha</p>
       </div>
       </div>
+      </div>
 
       <div class="carousel-item">
         <div class="d-flex justify-content-center">
         <a href="https://www.inaturalist.org/observations/220886307" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/391118796/original.jpeg' alt="Carex graeffeana"/></a>
 		  <div class="carousel-caption">
         <p>Carex graeffeana</p>
+      </div>
       </div>
       </div>
          <div class="carousel-item">
@@ -194,11 +198,13 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
         <p>Nepenthes mindanaoensis</p>
       </div>
       </div>
+      </div>
 		<div class="carousel-item">
         <div class="d-flex justify-content-center">
         <a href="https://www.inaturalist.org/observations/222803768" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/394713968/original.jpeg' alt="Phalaenopsis sanderiana"/></a>
 		  <div class="carousel-caption">
         <p>Phalaenopsis sanderiana</p>
+      </div>
       </div>
       </div>
 		<div class="carousel-item">
@@ -208,11 +214,13 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
         <p>Carlito syrichta</p>
       </div>
       </div>
+      </div>
 		<div class="carousel-item">
         <div class="d-flex justify-content-center">
         <img src='/images/expeditions/leg1Talomo.jpg'>
 		  <div class="carousel-caption">
         <p>Expedition leg 1 - Teams</p>
+      </div>
       </div>
       </div>
 		<div class="carousel-item">
@@ -222,6 +230,7 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
         <p>Expedition leg 2 - Part of the Seed Plant 1 team</p>
       </div>
       </div>
+      </div>
 		<div class="carousel-item">
         <div class="d-flex justify-content-center">
         <img src='/images/expeditions/leg2Lilingayon_1.jpg'>
@@ -229,11 +238,13 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
         <p>Expedition leg 2 - Seed Plant 1 team</p>
       </div>
       </div>
+      </div>
 	  		<div class="carousel-item">
         <div class="d-flex justify-content-center">
         <img src='/images/expeditions/leg3Dinagat.jpg'>
 		  <div class="carousel-caption">
         <p>Expedition leg 3 - Teams</p>
+      </div>
       </div>
       </div>
   <!-- Left and right controls -->
