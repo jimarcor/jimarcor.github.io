@@ -1,7 +1,7 @@
 ---
 title: "Chile"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/Chile.jpg'>"
+excerpt: "<img src='/images/expeditions/Chile.jpg' style='width: auto; height: 300px;'>"
 collection: expeditions
 date: 2023-01-01
 header: 

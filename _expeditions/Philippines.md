@@ -1,7 +1,7 @@
 ---
 title: "The Philippines"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/Philippines.jpeg'>"
+excerpt: "<img src='/images/expeditions/Philippines.jpeg' style='width: auto; height: 300px;'>"
 collection: expeditions
 date: 2024-05-09
 header: 
