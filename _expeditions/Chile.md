@@ -1,7 +1,7 @@
 ---
 title: "Chile 2023"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/Chile.jpg' style='max-height: 200px; width: 100%; object-fit: contain;'>"
+excerpt: "<img src='/images/expeditions/Chile.jpg' style='max-height: 200px; width: 100%; object-fit: cover;'>"
 collection: expeditions
 date: 2023-01-01
 header: 
