@@ -157,95 +157,73 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-        <div class="d-flex justify-content-center">
       <div class="item active">
         <a href="https://www.inaturalist.org/observations/222815632" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/394733752/original.jpeg' alt="Mapania palustris"/></a>
 		  <div class="carousel-caption">
         <p>Mapania palustris</p>
       </div>
       </div>
-      </div>
 		
-		<div class="carousel-item">
-        <div class="d-flex justify-content-center">
+		<div class="item">
         <a href="https://www.inaturalist.org/observations/225272543" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/399381924/original.jpeg' alt="Paramapania gracillima"/></a>
 		  <div class="carousel-caption">
         <p>Paramapania gracillima</p>
       </div>
       </div>
-      </div>
 		
-		 <div class="carousel-item">
-        <div class="d-flex justify-content-center">
+		 <div class="item">
         <a href="https://www.inaturalist.org/observations/225273528" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/399382757/original.jpeg' alt="Machaerina disticha"/></a>
 		  <div class="carousel-caption">
         <p>Machaerina disticha</p>
       </div>
       </div>
-      </div>
 
-      <div class="carousel-item">
-        <div class="d-flex justify-content-center">
+      <div class="item">
         <a href="https://www.inaturalist.org/observations/220886307" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/391118796/original.jpeg' alt="Carex graeffeana"/></a>
 		  <div class="carousel-caption">
         <p>Carex graeffeana</p>
       </div>
       </div>
-      </div>
-         <div class="carousel-item">
-        <div class="d-flex justify-content-center">
+         <div class="item">
         <a href="https://www.inaturalist.org/observations/225271762" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/399380568/original.jpeg' alt="Nepenthes mindanaoensis"/></a>
 		  <div class="carousel-caption">
         <p>Nepenthes mindanaoensis</p>
       </div>
       </div>
-      </div>
-		<div class="carousel-item">
-        <div class="d-flex justify-content-center">
+		<div class="item">
         <a href="https://www.inaturalist.org/observations/222803768" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/394713968/original.jpeg' alt="Phalaenopsis sanderiana"/></a>
 		  <div class="carousel-caption">
         <p>Phalaenopsis sanderiana</p>
       </div>
       </div>
-      </div>
-		<div class="carousel-item">
-        <div class="d-flex justify-content-center">
+		<div class="item">
         <a href="https://www.inaturalist.org/observations/216466939" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/382842017/original.jpeg' alt="Carlito syrichta"/></a>
 		  <div class="carousel-caption">
         <p>Carlito syrichta</p>
       </div>
       </div>
-      </div>
-		<div class="carousel-item">
-        <div class="d-flex justify-content-center">
-        <img src='/images/expeditions/leg1Talomo.jpg'>
+		<div class="item">
+        <img src='/images/expeditions/leg1Talomo.jpg' class= "img-responsive center-block">
 		  <div class="carousel-caption">
         <p>Expedition leg 1 - Teams</p>
       </div>
       </div>
-      </div>
-		<div class="carousel-item">
-        <div class="d-flex justify-content-center">
-        <img src='/images/expeditions/leg2Lilingayon.jpg'>
+		<div class="item">
+        <img src='/images/expeditions/leg2Lilingayon.jpg' class= "img-responsive center-block">
 		  <div class="carousel-caption">
         <p>Expedition leg 2 - Part of the Seed Plant 1 team</p>
       </div>
       </div>
-      </div>
-		<div class="carousel-item">
-        <div class="d-flex justify-content-center">
-        <img src='/images/expeditions/leg2Lilingayon_1.jpg'>
+		<div class="item">
+        <img src='/images/expeditions/leg2Lilingayon_1.jpg' class= "img-responsive center-block">
 		  <div class="carousel-caption">
         <p>Expedition leg 2 - Seed Plant 1 team</p>
       </div>
       </div>
-      </div>
-	  		<div class="carousel-item">
-        <div class="d-flex justify-content-center">
-        <img src='/images/expeditions/leg3Dinagat.jpg'>
+	  		<div class="item">
+        <img src='/images/expeditions/leg3Dinagat.jpg' class= "img-responsive center-block">
 		  <div class="carousel-caption">
         <p>Expedition leg 3 - Teams</p>
-      </div>
       </div>
       </div>
   <!-- Left and right controls -->
