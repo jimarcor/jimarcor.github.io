@@ -3,7 +3,7 @@ title: "Holocentric chromosomes evolution"
 layout: single-portfolio
 excerpt: "<img src='/images/research/Marquez-Corro et al 2021.jpg' style='height: 200px; width: 100%; object-fit: cover;'>"
 collection: research
-order_number: 20
+date: 2018-01-01
 header: 
   og_image: "research/Marquez-Corro et al 2021.jpg"
 ---
