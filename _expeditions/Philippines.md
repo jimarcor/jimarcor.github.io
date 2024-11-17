@@ -3,18 +3,18 @@ title: "The Philippines"
 layout: single-portfolio
 excerpt: "<img src='/images/expeditions/Philippines.jpeg'>"
 collection: expeditions
-order_number: 10
+date: 2024-05-09
 header: 
   og_image: "expeditions/Philippines.jpg"
 ---
 <h2>Luzon, Visayas and Mindanao</h2>
-<h4>Fieldwork associated with '<a href="https://jimarcor.github.io/research/">The Global Cyperaceae Database (GCypD)</a>' (PI: Pedro Jiménez-Mejías)</h4>
+<h4>Fieldwork associated with '<a href="https://jimarcor.github.io/research/">The Global Cyperaceae Database (GCypD)</a>' project (PI: Pedro Jiménez-Mejías)</h4>
 
 In this trip I aimed to visit some of the main herbaria in the Philippines (PNH, USTH, CAHUP, CMUH) and to collect Cyperaceae from this undercollected archipelago to enhance sedge knowledge.
 
 **Day 1 (May 9<sup>th</sup>, 2024):** I started my trip with a flight from Sevilla (SVQ) to Vienna (VIE).
 
-**Day 2 (May 10<sup>th</sup>, 2024):** After arriving in Vienna (VIE), I flew to Bangkok (BKK) and then continued on to Manila (MNL), arriving at 23:40.
+**Day 2 (May 10<sup>th</sup>, 2024):** After arriving in Vienna (VIE), I flew to Bangkok (BKK) and then continued on to Manila (MNL), arriving late at night.
 
 **Day 3 (May 11<sup>th</sup>, 2024):** The day was spent buying food and preparing for the following days.
 
@@ -46,7 +46,7 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
 
 **Day 14 (May 22<sup>nd</sup>, 2024):** I traveled from Los Baños to Manila.
 
-**Day 15 (May 23^rd^, 2024):** I went again to the **PNH**.
+**Day 15 (May 23<sub>rd</sub>, 2024):** I went again to the **PNH**.
 
 **Day 16 (May 24<sup>th</sup>, 2024):** Spent the day working from home (as PNH was closed).
 
@@ -68,7 +68,7 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
 
 **Day 25 ([June 2<sup>nd</sup>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/2)):** The day was spent buying more supplies for the field and finishing the plans.
 
-**Day 26 ([June 3^rd^, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/3)):** We traveled to the northern area of Mt. Kitanglad, around the Dahilayan IP Eco Park & Resort.
+**Day 26 ([June 3<sub>rd</sub>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/3)):** We traveled to the northern area of Mt. Kitanglad, around the Dahilayan IP Eco Park & Resort.
 
 **Day 27 ([June 4<sup>th</sup>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/4)):** Spent the day sampling.
 
@@ -108,7 +108,7 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
 
 **Day 45 ([June 22<sup>nd</sup>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/22)):** First full day of collecting in Mt. Redondo, we went to a site north of the camp.
 
-**Day 46 ([June 23^rd^, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/23)):** We went again to the same place as the previous day, continuing further.
+**Day 46 ([June 23<sub>rd</sub>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/23)):** We went again to the same place as the previous day, continuing further.
 
 **Day 47 ([June 24<sup>th</sup>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/24)):** Last day of collecting, we did an even further journey to collect at top site of the highest peaks. Covered by leaches and with a terrible weather, we made it back safely.
 
