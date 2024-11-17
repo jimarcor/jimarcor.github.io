@@ -1,5 +1,5 @@
 ---
-title: "Holocentric chromosomes evolution"
+title: "Holocentric evolution"
 layout: single-portfolio
 excerpt: "<img src='/images/research/Marquez-Corro et al 2021.jpg' style='height: 200px; width: 100%; object-fit: cover;'>"
 collection: research
