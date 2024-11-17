@@ -157,6 +157,7 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
+        <div class="d-flex justify-content-center">
       <div class="item active">
         <a href="https://www.inaturalist.org/observations/222815632" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/394733752/original.jpeg' alt="Mapania palustris"/></a>
 		  <div class="carousel-caption">
