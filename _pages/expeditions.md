@@ -11,7 +11,7 @@ Here there are the funded expeditions in which I have been part of. Find photogr
 
 <nbsp>
 
-{% assign ordered_pages = site.expeditions | sort:"order_number" %}
+{% assign ordered_pages = site.expeditions | sort:"order_number" | reverse %}
 
 {% for post in ordered_pages %}
   {% include archive-single.html type="grid" %}
