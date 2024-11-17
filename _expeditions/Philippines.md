@@ -20,7 +20,7 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
 
 **Day 4 (May 12<sup>th</sup>, 2024):** Day off, a bit of sightseeing.
 
-**Day 5 (May 13<sup>th</sup>, 2024):** I visited **USTH**, where I got to meet some of the amazing researchers and students, while going through the sedge collection.
+**Day 5 (May 13<sup>th</sup>, 2024):** I visited University of Santo Tomás Herbarium (**USTH**), where I got to meet some of the amazing researchers and students, while going through the sedge collection.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">But I also visited the lovely University of Santo Tomas Herbarium (USTH) <a href="https://twitter.com/UST1611official?ref_src=twsrc%5Etfw">@UST1611official</a> where I was welcomed by ate Cecila Moran and herbarium technicians, and got the opportunity to meet kuya Jayson Chavez, a Rubiaceae expert! Salamat po! <a href="https://t.co/84uso9HesQ">pic.twitter.com/84uso9HesQ</a></p>&mdash; José Ignacio Márquez-Corro (@jimarcorr) <a href="https://twitter.com/jimarcorr/status/1792938098235695433?ref_src=twsrc%5Etfw">May 21, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
