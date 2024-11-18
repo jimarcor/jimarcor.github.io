@@ -1,5 +1,5 @@
 ---
-title: "State of the world's Plants and Fungi, 2023. Tackling the nature emergency: evidence, gaps and priorities <sup>[Book]</sup>"
+title: "State of the World's Plants and Fungi, 2023 <sup>[Book]</sup>"
 collection: publications
 permalink: /publication/Antonelli et al 2023 State of the World's Plants and Fungi
 date: 2024-09-30
