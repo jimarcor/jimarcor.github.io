@@ -1,7 +1,7 @@
 ---
 title: "Holocentric chromosomes evolution"
 layout: single-portfolio
-excerpt: "<img src='/images/research/Marquez-Corro et al 2021.jpg' style=height: 300px>"
+excerpt: "<img src='/images/research/Marquez-Corro et al 2021.jpg' style='height: 300px'>"
 collection: research
 date: 2018-01-01
 header: 
