@@ -4,7 +4,7 @@ permalink: /teaching/
 ---
 
 | **Academic year**     | **Subject**                                                                                           | **Academic degree**                                                   | **University**                                               | **ECTS** |
-|:---------------------:|:-----------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------:|:------------------------------------------------------------:|:--------:|
+|:---------------------:|:------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|:-------------------------------------------------------------|:--------:|
 | **2021/2022**         | Field Study Skills in a Biodiversity Hotspot (BIO775P)                                                | MSc in Plant and Fungal Taxonomy, Diversity and Conservation          | Royal Botanic Gardens, Kew / Queen Mary University of London | NA       |
 | ^^                    | Trabajo Fin de Grado (203034) <br> Diego Herrero Doblado <br> Co-supervisor: S. Martín Bravo          | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 0.7      |
 | **2020/2021**         | Flora y Vegetación (203011)                                                                           | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 3.15     |
