@@ -24,3 +24,16 @@ td, th {
 |                       | Biorremediación y restauración (203030)                                                               | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 0.9      |
 |                       | Flora y Vegetación (203011)                                                                           | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 3.2      |
 |                       | Especies y Formaciones Vegetales Amenazadas en la Península Ibérica (203039)                          | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 1        |
+
+
+
++---------------------+-----------------------+
+| Location            | Temperature 1961-1990 |
+|                     | in degree Celsius     |
+|                     +-------+-------+-------+
+|                     | min   | mean  | max   |
++=====================+=======+=======+=======+
+| Antarctica          | -89.2 | 19.8          |
++---------------------+-------+-------+-------+
+| Earth               | -89.2 | 14    | 56.7  |
++---------------------+-------+-------+-------+
