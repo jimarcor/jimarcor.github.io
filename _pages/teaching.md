@@ -4,10 +4,6 @@ permalink: /teaching/
 ---
 
 <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
         .border-row {
             height: 1px;
             background-color: black; /* Create a black border row */
