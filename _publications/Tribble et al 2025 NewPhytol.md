@@ -1,10 +1,10 @@
 ---
 title: "Macroevolutionary inference of complex modes of chromosomal speciation in a cosmopolitan plant lineage"
 collection: publications
-permalink: /publication/Tribble et al 2025 NewPhytol
+permalink: /publication/Tribble & Márquez-Corro et al 2025 NewPhytol
 date: 2025-01-30
 venue: 'New Phytologist'
-paperurl: '/files/pdf/research/Tribble et al 2025 NewPhytol.pdf'
+paperurl: '/files/pdf/research/Tribble & Márquez-Corro et al 2025 NewPhytol.pdf'
 link: 'https://doi.org/10.1111/nph.20353'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'
