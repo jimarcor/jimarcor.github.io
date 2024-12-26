@@ -5,7 +5,7 @@ permalink: /publication/Shabdin et al 2025 BJLS Mapania
 date: 2025-01-30
 venue: 'Botanical Journal of the Linnean Society'
 paperurl: '/files/pdf/research/Shabdin et al 2025 BJLS Mapania.pdf'
-link: 'https://doi.org/10.1093/botlinnean/boaa100'
+link: 'https://doi.org/'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...
