@@ -1,0 +1,270 @@
+#Nodes with GAIN events with expectation above 0.5
+N2: 23.344
+Lepironia_articulata: 20.9553
+Chrysitrix_capensis: 22.6051
+N3: 1.82587
+N4: 5.17051
+Calyptrocarya_glomerulata: 34.0237
+Scleria_foliosa: 34.0237
+N5: 0.613804
+N6: 7.8036
+N7: 29.2481
+Cladium_mariscus: 4.99211
+Cladium_mariscoides: 5.94691
+N8: 5.61735
+N9: 5.46077
+Schoenus_brevifolius: 25.2504
+N10: 7.04513
+Schoenus_apogon: 10.6852
+Schoenus_nigricans: 16.4849
+N11: 0.96033
+Oreobolus_pectinatus: 28.1946
+N12: 1.94743
+Gahnia_aspera: 27.5064
+N13: 11.1205
+Tetraria_capillaris: 11.8904
+N14: 6.16526
+Machaerina_mariscoides: 9.76562
+Baumea_articulata: 6.59543
+N15: 9.07745
+N16: 13.765
+Rhynchospora_corniculata: 14.8478
+N17: 4.88242
+Rhynchospora_albiceps: 10.4747
+N18: 2.72232
+Rhynchospora_barbata: 5.50621
+N19: 3.42547
+Rhynchospora_globosa: 5.24312
+Rhynchospora_rubra: 4.34107
+N20: 1.36695
+Rhynchospora_cephalotes: 27.2624
+N21: 3.18969
+N22: 16.7686
+Rhynchospora_chinensis: 11.2162
+N24: 3.87944
+Rhynchospora_fusca: 5.30479
+Rhynchospora_alba: 5.30479
+N25: 2.76899
+Rhynchospora_rugosa: 7.88451
+N26: 0.79184
+Rhynchospora_marisculus: 2.69204
+Rhynchospora_brownii: 6.67982
+N27: 5.27179
+N28: 1.33925
+Rhynchospora_riparia: 14.6956
+Rhynchospora_tenerrima: 17.3759
+N29: 1.15264
+Rhynchospora_nervosa: 14.7686
+N30: 0.891451
+Rhynchospora_robusta: 13.8554
+N31: 1.40813
+Rhynchospora_latifolia: 12.3302
+Rhynchospora_pubera: 12.3302
+Total number of gain events: 630.08
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 17.5197
+Lepironia_articulata: 18.2011
+Chrysitrix_capensis: 17.0474
+N3: 1.73322
+N4: 4.60209
+Calyptrocarya_glomerulata: 30.4052
+Scleria_foliosa: 30.4052
+N5: 0.506989
+N6: 5.26418
+N7: 22.7289
+Cladium_mariscus: 5.15551
+Cladium_mariscoides: 4.36869
+N8: 4.08663
+N9: 4.71548
+Schoenus_brevifolius: 18.4552
+N10: 8.26938
+Schoenus_apogon: 15.9789
+Schoenus_nigricans: 10.9931
+N11: 0.698985
+Oreobolus_pectinatus: 22.7612
+N12: 1.49913
+Gahnia_aspera: 20.432
+N13: 10.6878
+Tetraria_capillaris: 13.4623
+N14: 4.47939
+Machaerina_mariscoides: 5.7694
+Baumea_articulata: 8.41282
+N15: 9.28207
+N16: 12.2232
+Rhynchospora_corniculata: 12.5148
+N17: 4.13276
+Rhynchospora_albiceps: 8.01531
+N18: 2.47588
+Rhynchospora_barbata: 7.74952
+N19: 1.8681
+Rhynchospora_globosa: 2.98738
+Rhynchospora_rubra: 3.64688
+N20: 1.37095
+Rhynchospora_cephalotes: 23.4691
+N21: 3.03244
+N22: 11.2317
+Rhynchospora_chinensis: 6.87287
+N24: 3.32731
+Rhynchospora_fusca: 4.62528
+Rhynchospora_alba: 4.62528
+N25: 3.08867
+Rhynchospora_rugosa: 4.34622
+N26: 1.43312
+Rhynchospora_marisculus: 8.14894
+Rhynchospora_brownii: 3.39138
+N27: 6.20078
+N28: 1.06498
+Rhynchospora_riparia: 13.5779
+Rhynchospora_tenerrima: 12.2441
+N29: 1.31919
+Rhynchospora_nervosa: 13.1937
+N30: 0.913202
+Rhynchospora_robusta: 12.205
+N31: 1.29576
+Rhynchospora_latifolia: 10.7713
+Rhynchospora_pubera: 10.7713
+Total number of loss events: 536.081
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+N2: 2.33358
+Chrysitrix_capensis: 0.590666
+N4: 1.09696
+Calyptrocarya_glomerulata: 2.95967
+Scleria_foliosa: 2.95967
+N6: 1.0515
+N7: 1.14704
+Cladium_mariscoides: 1.0169
+Schoenus_brevifolius: 2.10015
+Schoenus_apogon: 0.808661
+Schoenus_nigricans: 0.823252
+Oreobolus_pectinatus: 0.68588
+Gahnia_aspera: 1.55069
+Machaerina_mariscoides: 1.25393
+N15: 2.04857
+N16: 2.11777
+Rhynchospora_corniculata: 0.743993
+Rhynchospora_cephalotes: 2.70999
+N21: 0.677966
+N22: 1.26427
+Rhynchospora_chinensis: 1.09209
+N27: 1.28309
+Rhynchospora_riparia: 2.31633
+Rhynchospora_tenerrima: 1.44844
+Rhynchospora_nervosa: 2.52862
+Rhynchospora_robusta: 2.36154
+Rhynchospora_latifolia: 2.0122
+Rhynchospora_pubera: 2.0122
+Total number of duplication events: 51.0149
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	23.344	17.5197	2.33358	0
+Lepironia_articulata	20.9553	18.2011	0.366272	0
+Chrysitrix_capensis	22.6051	17.0474	0.590666	0
+N3	1.82587	1.73322	0.477712	0
+N4	5.17051	4.60209	1.09696	0
+Calyptrocarya_glomerulata	34.0237	30.4052	2.95967	0
+Scleria_foliosa	34.0237	30.4052	2.95967	0
+N5	0.613804	0.506989	0.144453	0
+N6	7.8036	5.26418	1.0515	0
+N7	29.2481	22.7289	1.14704	0
+Cladium_mariscus	4.99211	5.15551	0.00754463	0
+Cladium_mariscoides	5.94691	4.36869	1.0169	0
+N8	5.61735	4.08663	0.305224	0
+N9	5.46077	4.71548	0.158484	0
+Schoenus_brevifolius	25.2504	18.4552	2.10015	0
+N10	7.04513	8.26938	0.176891	0
+Schoenus_apogon	10.6852	15.9789	0.808661	0
+Schoenus_nigricans	16.4849	10.9931	0.823252	0
+N11	0.96033	0.698985	0.0348961	0
+Oreobolus_pectinatus	28.1946	22.7612	0.68588	0
+N12	1.94743	1.49913	0.0621934	0
+Gahnia_aspera	27.5064	20.432	1.55069	0
+N13	11.1205	10.6878	0.237119	0
+Tetraria_capillaris	11.8904	13.4623	0.132277	0
+N14	6.16526	4.47939	0.123732	0
+Machaerina_mariscoides	9.76562	5.7694	1.25393	0
+Baumea_articulata	6.59543	8.41282	0.0261438	0
+N15	9.07745	9.28207	2.04857	0
+N16	13.765	12.2232	2.11777	0
+Rhynchospora_corniculata	14.8478	12.5148	0.743993	0
+N17	4.88242	4.13276	0.344342	0
+Rhynchospora_albiceps	10.4747	8.01531	0.28245	0
+N18	2.72232	2.47588	0.0977584	0
+Rhynchospora_barbata	5.50621	7.74952	0.185547	0
+N19	3.42547	1.8681	0.108839	0
+Rhynchospora_globosa	5.24312	2.98738	0.100375	0
+Rhynchospora_rubra	4.34107	3.64688	0.0340693	0
+N20	1.36695	1.37095	0.317297	0
+Rhynchospora_cephalotes	27.2624	23.4691	2.70999	0
+N21	3.18969	3.03244	0.677966	0
+N22	16.7686	11.2317	1.26427	0
+Rhynchospora_chinensis	11.2162	6.87287	1.09209	0
+N23	0.0231555	0.0249691	0.000119614	0
+N24	3.87944	3.32731	0.0272465	0
+Rhynchospora_fusca	5.30479	4.62528	0.0237329	0
+Rhynchospora_alba	5.30479	4.62528	0.0237329	0
+N25	2.76899	3.08867	0.0105005	0
+Rhynchospora_rugosa	7.88451	4.34622	0.371445	0
+N26	0.79184	1.43312	0.00118281	0
+Rhynchospora_marisculus	2.69204	8.14894	0.00909729	0
+Rhynchospora_brownii	6.67982	3.39138	0.474437	0
+N27	5.27179	6.20078	1.28309	0
+N28	1.33925	1.06498	0.335354	0
+Rhynchospora_riparia	14.6956	13.5779	2.31633	0
+Rhynchospora_tenerrima	17.3759	12.2441	1.44844	0
+N29	1.15264	1.31919	0.346963	0
+Rhynchospora_nervosa	14.7686	13.1937	2.52862	0
+N30	0.891451	0.913202	0.270183	0
+Rhynchospora_robusta	13.8554	12.205	2.36154	0
+N31	1.40813	1.29576	0.401712	0
+Rhynchospora_latifolia	12.3302	10.7713	2.0122	0
+Rhynchospora_pubera	12.3302	10.7713	2.0122	0
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Lepironia_articulata	44.2993	35.7208	2.69985	0
+Chrysitrix_capensis	45.9492	34.5671	2.92425	0
+Calyptrocarya_glomerulata	41.02	36.7405	4.53434	0
+Scleria_foliosa	41.02	36.7405	4.53434	0
+Cladium_mariscus	44.4835	35.3888	2.82826	0
+Cladium_mariscoides	45.4383	34.602	3.83761	0
+Schoenus_brevifolius	46.5718	34.7617	4.23753	0
+Schoenus_apogon	39.0517	40.5548	3.12293	0
+Schoenus_nigricans	44.8514	35.5689	3.13752	0
+Oreobolus_pectinatus	45.0155	35.0512	2.69967	0
+Gahnia_aspera	46.2748	34.2211	3.62667	0
+Tetraria_capillaris	41.7792	37.9392	2.44538	0
+Machaerina_mariscoides	45.8197	34.7257	3.69076	0
+Baumea_articulata	42.6495	37.3692	2.46298	0
+Rhynchospora_corniculata	40.13	36.2602	5.53249	0
+Rhynchospora_albiceps	40.6393	35.8935	5.41529	0
+Rhynchospora_barbata	38.3931	38.1036	5.41615	0
+Rhynchospora_globosa	41.5555	35.2096	5.43982	0
+Rhynchospora_rubra	40.6534	35.8691	5.37351	0
+Rhynchospora_cephalotes	40.1465	36.3624	5.69802	0
+Rhynchospora_chinensis	44.0586	34.0302	6.02236	0
+Rhynchospora_fusca	42.0497	35.1349	4.98137	0
+Rhynchospora_alba	42.0497	35.1349	4.98137	0
+Rhynchospora_rugosa	43.519	34.6172	5.31233	0
+Rhynchospora_marisculus	39.1184	39.8531	4.95117	0
+Rhynchospora_brownii	43.1062	35.0955	5.41651	0
+Rhynchospora_riparia	37.3804	36.7693	7.60076	0
+Rhynchospora_tenerrima	40.0607	35.4356	6.73288	0
+Rhynchospora_nervosa	37.2668	36.6393	7.82467	0
+Rhynchospora_robusta	37.2451	36.5638	7.92777	0
+Rhynchospora_latifolia	37.128	36.4259	7.98014	0
+Rhynchospora_pubera	37.128	36.4259	7.98014	0

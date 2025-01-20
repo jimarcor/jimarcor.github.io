@@ -1,0 +1,70 @@
+#Nodes with GAIN events with expectation above 0.5
+Total number of gain events: 0
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 14.4994
+Kyllinga_bulbosa: 50.9924
+Kyllinga_brevifolia: 50.1981
+N3: 4.4894
+Cyperus_capitatus: 61.472
+N4: 8.01404
+Cyperus_esculentus: 52.9197
+N5: 4.72841
+Cyperus_longus: 48.0648
+N6: 31.0843
+Cyperus_iria: 17.745
+Pycreus_flavescens: 18.216
+Total number of loss events: 362.424
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+Total number of duplication events: 0.188686
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0.185622
+#+++++++++++++++++++++++++++++
+
+#+++++++++++++++++++++++++++++
+
+#Nodes with transitions in base number with expectation above 0.5
+Kyllinga_bulbosa: 0.941002
+Kyllinga_brevifolia: 1.8104
+Cyperus_capitatus: 1.91528
+Cyperus_esculentus: 1.75882
+Cyperus_longus: 1.62346
+N6: 0.98744
+Cyperus_iria: 0.751371
+Total number of transitions in base number: 11.2638
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION	BASE-NUMBER
+N2	0	14.4994	0.00834828	0.00841673	0.476497
+Kyllinga_bulbosa	0	50.9924	0.0135995	0.0296355	0.941002
+Kyllinga_brevifolia	0	50.1981	0.0331176	0.0249731	1.8104
+N3	0	4.4894	0.00344939	0.00339733	0.184564
+Cyperus_capitatus	0	61.472	0.0331027	0.0263565	1.91528
+N4	0	8.01404	0.00538674	0.00489231	0.302876
+Cyperus_esculentus	0	52.9197	0.0282935	0.0217544	1.75882
+N5	0	4.72841	0.00274652	0.00250047	0.16055
+Cyperus_longus	0	48.0648	0.0320049	0.0193687	1.62346
+N6	0	31.0843	0.0152206	0.0127217	0.98744
+Cyperus_iria	0	17.745	0.00795352	0.00360562	0.751371
+Pycreus_flavescens	0	18.216	0.00546283	0.0279998	0.351534
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION	BASE-NUMBER
+Kyllinga_bulbosa	0	65.4919	0.0219478	0.0380522	1.4175
+Kyllinga_brevifolia	0	64.6975	0.0414659	0.0333898	2.2869
+Cyperus_capitatus	0	65.9614	0.0365521	0.0297538	2.09984
+Cyperus_esculentus	0	65.4231	0.0371296	0.030044	2.24626
+Cyperus_longus	0	65.2967	0.0435875	0.0301588	2.27145
+Cyperus_iria	0	66.0612	0.0347567	0.0271174	2.3868
+Pycreus_flavescens	0	66.5322	0.0322661	0.0515116	1.98696

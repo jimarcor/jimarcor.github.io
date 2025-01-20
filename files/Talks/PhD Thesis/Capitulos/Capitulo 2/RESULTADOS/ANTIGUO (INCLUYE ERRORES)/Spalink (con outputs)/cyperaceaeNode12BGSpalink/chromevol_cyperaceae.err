@@ -1,0 +1,468 @@
+chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013
+
+Optimizing parameters
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+chromEvol Version: 2.0. Last updated December 2013
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
+
+The sequence name: Carex_aquatilis_var_minor was found in the tree file but not found in the sequence file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013
+
+
+Optimizing parameters
+Optimizing parameters
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+/opt/sge/default/spool/nodo91/job_scripts/5852: línea 7:  5621 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE_DEMI_EST
+
+The sequence name: Carex_aquatilis_var_minor was found in the tree file but not found in the sequence file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/nodo91/job_scripts/5851: línea 7:  5622 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_BASE_NUM
+
+The sequence name: Carex_aquatilis_var_minor was found in the tree file but not found in the sequence file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/nova13/job_scripts/5855: línea 7: 27568 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE_NO_DUPL
+
+The sequence name: Carex_aquatilis_var_minor was found in the tree file but not found in the sequence file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/nova13/job_scripts/5854: línea 7: 27569 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE
+
+The sequence name: Carex_aquatilis_var_minor was found in the tree file but not found in the sequence file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/nova13/job_scripts/5853: línea 7: 27570 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE_DEMI
+
+The sequence name: Carex_aquatilis_var_minor was found in the tree file but not found in the sequence file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/nodo171/job_scripts/5850: línea 7:  7938 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_BASE_NUM_DUPL
+chromEvol Version: 2.0. Last updated December 2013
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
+chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013
+
+
+Optimizing parameters
+Optimizing parameters
+Optimizing parameters
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++
+chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013
+
+Optimizing parameters
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+
+The sequence name: Pycreus_flavescens was found in the sequence file but not found in the tree file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+
+The sequence name: Pycreus_flavescens was found in the sequence file but not found in the tree file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/chuck3/job_scripts/5858: línea 7: 20463 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE_DEMI_EST
+/opt/sge/default/spool/chuck3/job_scripts/5859: línea 7: 20461 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE_DEMI
+
+The sequence name: Pycreus_flavescens was found in the sequence file but not found in the tree file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/chuck3/job_scripts/5857: línea 7: 20462 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_BASE_NUM
+
+The sequence name: Pycreus_flavescens was found in the sequence file but not found in the tree file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/chuck1/job_scripts/5856: línea 7: 16840 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_BASE_NUM_DUPL
+
+The sequence name: Pycreus_flavescens was found in the sequence file but not found in the tree file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/gazpacho/job_scripts/5861: línea 7:  5205 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE_NO_DUPL
+
+The sequence name: Pycreus_flavescens was found in the sequence file but not found in the tree file.
+ Please, Re-run program with _intersectTreeAndSeq to produce new MSA and Tree.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/gazpacho/job_scripts/5860: línea 7:  5204 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE
+chromEvol Version: 2.0. Last updated December 2013
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
+chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013
+
+
+Optimizing parameters
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
+chromEvol Version: 2.0. Last updated December 2013
+chromEvol Version: 2.0. Last updated December 2013
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+Inferring ancestral states
+
+running 10000 simulations
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+finished simulations
++++++++++++++++++++++++++++++++++++++++++
+
+total expectations
+dupl=65.3941
+gain=3631.37
+loss=3578.78
+halFDupl=0
+baseNumber=0
+toMaxChr=0.00748264
+
+TOTAL RUNNING TIME = 11784
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+Inferring ancestral states
+
+running 10000 simulations
++++++++++++++++++++++++++++++++++++++++++
+finished simulations
++++++++++++++++++++++++++++++++++++++++++
+
+total expectations
+dupl=89.7272
+gain=3673.98
+loss=3512.64
+halFDupl=4.06061
+baseNumber=0
+toMaxChr=0.632049
+
+TOTAL RUNNING TIME = 21766
+Inferring ancestral states
+
+running 10000 simulations
+Inferring ancestral states
+
+running 10000 simulations
+finished simulations
+
+total expectations
+dupl=87.8671
+gain=3635.01
+loss=3493.2
+halFDupl=0
+baseNumber=0.0264426
+toMaxChr=1.01834
+
+TOTAL RUNNING TIME = 24691
+finished simulations
+
+total expectations
+dupl=88.9593
+gain=3507.28
+loss=3313.81
+halFDupl=0
+baseNumber=0
+toMaxChr=0.882932
+
+TOTAL RUNNING TIME = 27929
++++++++++++++++++++++++++++++++++++++++++
+Inferring ancestral states
+
+running 10000 simulations
+finished simulations
+
+total expectations
+dupl=77.718
+gain=2955.59
+loss=2702.04
+halFDupl=0.128504
+baseNumber=4.90327
+toMaxChr=0.973053
+
+TOTAL RUNNING TIME = 41752
+Inferring ancestral states
+
+running 10000 simulations
+finished simulations
+
+total expectations
+dupl=84.6824
+gain=3283.84
+loss=3090.37
+halFDupl=4.44154
+baseNumber=0
+toMaxChr=0.461035
+
+TOTAL RUNNING TIME = 54353
+chromEvol Version: 2.0. Last updated December 2013
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
+chromEvol Version: 2.0. Last updated December 2013
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
+chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013
+
+Optimizing parameters
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013
+
+Optimizing parameters
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+Inferring ancestral states
+
+running 10000 simulations
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+finished simulations
+
+total expectations
+dupl=50.5814
+gain=2255.15
+loss=2041.95
+halFDupl=0
+baseNumber=0
+toMaxChr=0.0258778
+
+TOTAL RUNNING TIME = 5154
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+Inferring ancestral states
+
+running 10000 simulations
+finished simulations
+
+total expectations
+dupl=23.9579
+gain=464.954
+loss=321.532
+halFDupl=9.89517
+baseNumber=0
+toMaxChr=0.0159561
+
+TOTAL RUNNING TIME = 7213
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+Inferring ancestral states
+Inferring ancestral states
+
+running 10000 simulations
+
+running 10000 simulations
+finished simulations
+
+total expectations
+dupl=0.458603
+gain=0
+loss=613.64
+halFDupl=0.272271
+baseNumber=8.64379
+toMaxChr=0.652645
+
+TOTAL RUNNING TIME = 9053
+finished simulations
+
+total expectations
+dupl=41.6304
+gain=888.727
+loss=746.493
+halFDupl=0
+baseNumber=0
+toMaxChr=0.196977
+
+TOTAL RUNNING TIME = 9256
++++++++++++++++++++++++++++++++++++++++++
+Inferring ancestral states
+
+running 10000 simulations
+finished simulations
+
+total expectations
+dupl=26.5543
+gain=391.088
+loss=227.648
+halFDupl=0
+baseNumber=0
+toMaxChr=0.00329776
+
+TOTAL RUNNING TIME = 13448
+Inferring ancestral states
+
+running 10000 simulations
+finished simulations
+
+total expectations
+dupl=34.4378
+gain=663.181
+loss=511.246
+halFDupl=0
+baseNumber=0.0550267
+toMaxChr=0.10724
+
+TOTAL RUNNING TIME = 14625

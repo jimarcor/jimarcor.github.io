@@ -1,0 +1,9 @@
+#$ -S /bin/bash
+#$ -N chromEvol_param_BASE_NUM_DUPL_centaurium
+#$ -wd /home/aescudero/PIP/centaurium
+#$ -o chromevol_centaurium.salida
+#$ -e chromevol_centaurium.err
+#$ -q diaria_simple
+/home/aescudero/PIP/chromEvol param_BASE_NUM_DUPL
+
+

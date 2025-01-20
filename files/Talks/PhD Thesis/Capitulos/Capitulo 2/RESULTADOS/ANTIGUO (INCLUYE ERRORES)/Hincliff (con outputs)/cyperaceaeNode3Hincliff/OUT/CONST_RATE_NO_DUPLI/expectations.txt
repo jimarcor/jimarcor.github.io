@@ -1,0 +1,69 @@
+#Nodes with GAIN events with expectation above 0.5
+N2: 21.2467
+Kyllinga_bulbosa: 67.3882
+Kyllinga_brevifolia: 90.0259
+N3: 7.09873
+Cyperus_capitatus: 95.3972
+N4: 13.22
+Cyperus_esculentus: 86.0273
+N5: 7.57293
+Cyperus_longus: 79.8544
+N6: 48.2266
+Cyperus_iria: 32.713
+Pycreus_flavescens: 23.0025
+Total number of gain events: 571.774
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 30.1535
+Kyllinga_bulbosa: 113.804
+Kyllinga_brevifolia: 87.5805
+N3: 7.79277
+Cyperus_capitatus: 118.298
+N4: 14.0806
+Cyperus_esculentus: 96.7131
+N5: 8.60926
+Cyperus_longus: 84.6362
+N6: 59.9824
+Cyperus_iria: 27.7785
+Pycreus_flavescens: 38.9802
+Total number of loss events: 688.409
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+Total number of duplication events: 0.140612
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	21.2467	30.1535	8.27723e-16	0
+Kyllinga_bulbosa	67.3882	113.804	0.140612	0
+Kyllinga_brevifolia	90.0259	87.5805	0	0
+N3	7.09873	7.79277	7.9607e-25	0
+Cyperus_capitatus	95.3972	118.298	1.90807e-21	0
+N4	13.22	14.0806	2.14577e-24	0
+Cyperus_esculentus	86.0273	96.7131	0	0
+N5	7.57293	8.60926	1.41501e-22	0
+Cyperus_longus	79.8544	84.6362	0	0
+N6	48.2266	59.9824	3.53704e-16	0
+Cyperus_iria	32.713	27.7785	0	0
+Pycreus_flavescens	23.0025	38.9802	0	0
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Kyllinga_bulbosa	88.635	143.958	0.140612	0
+Kyllinga_brevifolia	111.273	117.734	8.27723e-16	0
+Cyperus_capitatus	102.496	126.091	1.90886e-21	0
+Cyperus_esculentus	106.346	118.586	2.94184e-24	0
+Cyperus_longus	107.746	115.119	1.44442e-22	0
+Cyperus_iria	108.831	118.244	3.53704e-16	0
+Pycreus_flavescens	99.1207	129.445	3.53704e-16	0

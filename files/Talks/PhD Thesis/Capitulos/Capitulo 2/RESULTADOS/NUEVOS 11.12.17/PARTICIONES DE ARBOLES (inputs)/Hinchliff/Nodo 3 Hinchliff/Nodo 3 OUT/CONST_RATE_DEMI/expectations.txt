@@ -1,0 +1,58 @@
+#Nodes with GAIN events with expectation above 0.5
+Total number of gain events: 3.6261e-005
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 8.7907
+Kyllinga_bulbosa: 29.5568
+Kyllinga_brevifolia: 28.2874
+N3: 2.21436
+Cyperus_capitatus: 32.4211
+N4: 4.38044
+Cyperus_esculentus: 28.7567
+N5: 2.66659
+Cyperus_longus: 25.3971
+N6: 17.8199
+Cyperus_iria: 9.98312
+Pycreus_flavescens: 9.67872
+Total number of loss events: 199.953
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+Total number of duplication events: 0.736899
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Cyperus_iria: 0.830075
+Total number of demi-dulications events: 2.19814
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	3.35167e-016	8.7907	0.000159673	0.00440561
+Kyllinga_bulbosa	3.04229e-005	29.5568	0.0502201	0.127332
+Kyllinga_brevifolia	5.83808e-006	28.2874	0.0712853	0.184901
+N3	7.39481e-024	2.21436	0.0246216	0.126242
+Cyperus_capitatus	0	32.4211	0.22071	0.294842
+N4	3.52749e-022	4.38044	0.0432175	0.117371
+Cyperus_esculentus	0	28.7567	0.0986945	0.226657
+N5	4.24284e-021	2.66659	0.013152	0.0243513
+Cyperus_longus	0	25.3971	0.097218	0.18804
+N6	6.3565e-014	17.8199	0.0420159	0.0557536
+Cyperus_iria	0	9.98312	0.0726393	0.830075
+Pycreus_flavescens	0	9.67872	0.00296479	0.0181755
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Kyllinga_bulbosa	3.04229e-005	38.3475	0.0503798	0.131737
+Kyllinga_brevifolia	5.83808e-006	37.0781	0.071445	0.189306
+Cyperus_capitatus	7.39481e-024	34.6354	0.245332	0.421084
+Cyperus_esculentus	3.60144e-022	35.3515	0.166534	0.47027
+Cyperus_longus	4.60299e-021	34.6585	0.178209	0.456004
+Cyperus_iria	6.3565e-014	37.0644	0.195646	1.15379
+Pycreus_flavescens	6.3565e-014	36.76	0.125972	0.341893

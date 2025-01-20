@@ -1,0 +1,58 @@
+#Nodes with GAIN events with expectation above 0.5
+Total number of gain events: 0.000528158
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 14.2284
+Kyllinga_bulbosa: 50.9576
+Kyllinga_brevifolia: 47.0707
+N3: 4.0951
+Cyperus_capitatus: 57.8756
+N4: 7.53048
+Cyperus_esculentus: 49.4559
+N5: 4.47659
+Cyperus_longus: 44.6063
+N6: 29.3449
+Cyperus_iria: 16.9635
+Pycreus_flavescens: 16.8984
+Total number of loss events: 343.503
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+Total number of duplication events: 1.43424
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Kyllinga_brevifolia: 0.549118
+Total number of demi-dulications events: 3.01396
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	2.26459e-13	14.2284	0.00850689	0.0460852
+Kyllinga_bulbosa	0.00052814	50.9576	0.212756	0.409707
+Kyllinga_brevifolia	0	47.0707	0.328455	0.549118
+N3	3.1937e-19	4.0951	0.00288619	0.01575
+Cyperus_capitatus	0	57.8756	0.256424	0.472479
+N4	8.90619e-17	7.53048	0.00685903	0.0339341
+Cyperus_esculentus	0	49.4559	0.200271	0.424001
+N5	4.09858e-16	4.47659	0.00409973	0.0212605
+Cyperus_longus	0	44.6063	0.18446	0.390686
+N6	1.84305e-08	29.3449	0.0914496	0.225576
+Cyperus_iria	0	16.9635	0.10832	0.325133
+Pycreus_flavescens	0	16.8984	0.029751	0.100229
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Kyllinga_bulbosa	0.00052814	65.186	0.221263	0.455792
+Kyllinga_brevifolia	2.26459e-13	61.299	0.336962	0.595203
+Cyperus_capitatus	3.1937e-19	61.9707	0.25931	0.488229
+Cyperus_esculentus	8.93812e-17	61.0814	0.210016	0.473685
+Cyperus_longus	4.99239e-16	60.7085	0.198305	0.461631
+Cyperus_iria	1.84305e-08	62.4105	0.213614	0.621653
+Pycreus_flavescens	1.84305e-08	62.3454	0.135046	0.39675

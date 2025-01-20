@@ -1,0 +1,71 @@
+#Nodes with GAIN events with expectation above 0.5
+N2: 23.2901
+Kyllinga_bulbosa: 88.0908
+Kyllinga_brevifolia: 89.3652
+N3: 10.2132
+Cyperus_capitatus: 118.733
+N4: 18.3543
+Cyperus_esculentus: 106.827
+N5: 10.1983
+Cyperus_longus: 99.6808
+N6: 59.7266
+Cyperus_iria: 38.4873
+Pycreus_flavescens: 27.8201
+Total number of gain events: 690.787
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 33.5011
+Kyllinga_bulbosa: 104.622
+Kyllinga_brevifolia: 103.898
+N3: 7.10131
+Cyperus_capitatus: 114.759
+N4: 13.219
+Cyperus_esculentus: 95.185
+N5: 8.2993
+Cyperus_longus: 84.3896
+N6: 58.6188
+Cyperus_iria: 27.7105
+Pycreus_flavescens: 38.0291
+Total number of loss events: 689.332
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+Kyllinga_bulbosa: 2.44011
+Kyllinga_brevifolia: 1.68054
+Total number of duplication events: 4.12342
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	23.2901	33.5011	0.00264598	0
+Kyllinga_bulbosa	88.0908	104.622	2.44011	0
+Kyllinga_brevifolia	89.3652	103.898	1.68054	0
+N3	10.2132	7.10131	2.28273e-008	0
+Cyperus_capitatus	118.733	114.759	0.000125691	0
+N4	18.3543	13.219	9.00409e-009	0
+Cyperus_esculentus	106.827	95.185	2.58158e-010	0
+N5	10.1983	8.2993	4.55497e-010	0
+Cyperus_longus	99.6808	84.3896	0	0
+N6	59.7266	58.6188	2.56654e-008	0
+Cyperus_iria	38.4873	27.7105	0	0
+Pycreus_flavescens	27.8201	38.0291	2.68366e-015	0
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Kyllinga_bulbosa	111.381	138.123	2.44276	0
+Kyllinga_brevifolia	112.655	137.399	1.68318	0
+Cyperus_capitatus	128.947	121.86	0.000125714	0
+Cyperus_esculentus	135.394	115.505	3.20895e-008	0
+Cyperus_longus	138.447	113.009	3.22869e-008	0
+Cyperus_iria	136.98	114.949	5.79523e-008	0
+Pycreus_flavescens	126.313	125.267	5.79523e-008	0

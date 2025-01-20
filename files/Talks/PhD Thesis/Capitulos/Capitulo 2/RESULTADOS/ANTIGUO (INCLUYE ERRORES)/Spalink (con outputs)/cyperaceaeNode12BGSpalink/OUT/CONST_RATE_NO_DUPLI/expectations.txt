@@ -1,0 +1,328 @@
+#Nodes with GAIN events with expectation above 0.5
+N2: 103.176
+Chrysitrix_capensis: 46.2468
+Lepironia_articulata: 43.0946
+N3: 13.6515
+N4: 1.31942
+N5: 6.5593
+Lagenocarpus_guianensis: 124.34
+N6: 2.35567
+N7: 10.7309
+Oreobolus_pectinatus: 113.143
+N8: 5.92655
+N9: 9.60128
+N10: 23.9801
+Schoenus_brevifolius: 94.3058
+Schoenus_nigricans: 76.3498
+Gahnia_aspera: 109.795
+N11: 44.7713
+Tetraria_capillaris: 57.9069
+N12: 32.7418
+Machaerina_articulata: 26.9512
+Machaerina_mariscoides: 40.7826
+N13: 11.6093
+N14: 33.0269
+N15: 51.3458
+Dulichium_arundinaceum: 26.0454
+N16: 14.1328
+Blysmus_compressus: 15.0388
+Blysmus_rufus: 13.9745
+N17: 10.3786
+N18: 18.5738
+N19: 27.0752
+Scirpus_pendulus: 23.7887
+N20: 14.2526
+N21: 1.84918
+N22: 3.53511
+N23: 2.68677
+Scirpus_expansus: 7.53984
+N24: 3.18067
+Scirpus_sylvaticus: 3.7746
+Scirpus_microcarpus: 4.30762
+Scirpus_maximowiczii: 10.2994
+N25: 1.23586
+N26: 4.74386
+Scirpus_polystachyus: 6.75037
+Scirpus_cyperinus: 8.42211
+N27: 3.28024
+N28: 3.7737
+Eriophorum_virginicum: 3.7901
+Eriophorum_gracile: 4.35232
+Eriophorum_angustifolium_subsp_angustifolium: 7.63978
+Scirpus_radicans: 13.5612
+Scirpus_divaricatus: 47.5933
+N29: 1.87159
+N30: 55.8594
+Carex_pachygyna: 3.63829
+Carex_siderosticta: 3.63829
+N31: 51.9626
+Trichophorum_cespitosum: 31.9989
+Trichophorum_alpinum: 20.9579
+N32: 26.0276
+N33: 52.8464
+Rhynchospora_albiceps: 26.3715
+N34: 12.7787
+Rhynchospora_rubra: 13.6233
+Rhynchospora_globosa: 14.6917
+N35: 23.8337
+N36: 47.7949
+Rhynchospora_chinensis: 20.2151
+N37: 4.48203
+Rhynchospora_capillacea: 5.89699
+Rhynchospora_alba: 5.89699
+N38: 27.0217
+Rhynchospora_nervosa: 24.5334
+Rhynchospora_robusta: 24.5334
+N39: 31.7834
+Calyptrocarya_glomerulata: 93.9752
+Scleria_foliosa: 93.9752
+N40: 133.204
+Cladium_mariscus: 2.36013
+Cladium_mariscoides: 10.0914
+Total number of gain events: 2255.15
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 93.6406
+Chrysitrix_capensis: 39.191
+Lepironia_articulata: 42.0387
+N3: 12.5594
+N4: 1.26059
+N5: 5.59064
+Lagenocarpus_guianensis: 115.869
+N6: 1.91675
+N7: 7.57723
+Oreobolus_pectinatus: 106.27
+N8: 3.97797
+N9: 5.92244
+N10: 16.9892
+Schoenus_brevifolius: 59.4782
+Schoenus_nigricans: 79.1318
+Gahnia_aspera: 87.5666
+N11: 44.1619
+Tetraria_capillaris: 62.5944
+N12: 26.5734
+Machaerina_articulata: 35.7795
+Machaerina_mariscoides: 22.884
+N13: 11.798
+N14: 28.3863
+N15: 47.9842
+Dulichium_arundinaceum: 26.8266
+N16: 11.7179
+Blysmus_compressus: 12.2356
+Blysmus_rufus: 13.1713
+N17: 8.53519
+N18: 16.873
+N19: 21.1013
+Scirpus_pendulus: 26.7288
+N20: 9.1455
+N21: 1.09021
+N22: 2.35165
+N23: 2.05173
+Scirpus_expansus: 6.17374
+N24: 2.74442
+Scirpus_sylvaticus: 3.84481
+Scirpus_microcarpus: 3.37783
+Scirpus_maximowiczii: 8.2982
+N25: 1.01311
+N26: 3.55213
+Scirpus_polystachyus: 6.98026
+Scirpus_cyperinus: 5.652
+N27: 3.32634
+N28: 3.54294
+Eriophorum_virginicum: 4.01279
+Eriophorum_gracile: 3.575
+Eriophorum_angustifolium_subsp_angustifolium: 7.63171
+Scirpus_radicans: 13.6169
+Scirpus_divaricatus: 50.5581
+N29: 1.5531
+N30: 65.4741
+Carex_pachygyna: 3.6054
+Carex_siderosticta: 3.6054
+N31: 33.4211
+Trichophorum_cespitosum: 15.6973
+Trichophorum_alpinum: 26.1763
+N32: 27.1667
+N33: 52.0567
+Rhynchospora_albiceps: 24.8008
+N34: 11.6653
+Rhynchospora_rubra: 13.166
+Rhynchospora_globosa: 12.2343
+N35: 23.1883
+N36: 37.5539
+Rhynchospora_chinensis: 8.07866
+N37: 8.2099
+Rhynchospora_capillacea: 7.676
+Rhynchospora_alba: 7.676
+N38: 29.9066
+Rhynchospora_nervosa: 24.9319
+Rhynchospora_robusta: 24.9319
+N39: 31.4605
+Calyptrocarya_glomerulata: 91.8578
+Scleria_foliosa: 91.8578
+N40: 113.131
+Cladium_mariscus: 10.0034
+Cladium_mariscoides: 1.99571
+Total number of loss events: 2041.95
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+N2: 4.32798
+N3: 1.15278
+Lagenocarpus_guianensis: 3.68142
+Oreobolus_pectinatus: 1.69516
+N11: 0.686578
+Tetraria_capillaris: 1.22272
+N13: 0.573017
+N14: 1.00609
+N30: 2.2047
+N32: 1.75672
+N33: 3.5211
+Rhynchospora_albiceps: 0.728183
+N35: 1.66595
+N36: 0.799107
+N38: 2.48196
+Rhynchospora_nervosa: 2.76966
+Rhynchospora_robusta: 2.76966
+N39: 2.34013
+Calyptrocarya_glomerulata: 4.88657
+Scleria_foliosa: 4.88657
+N40: 2.44341
+Total number of duplication events: 50.5814
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	103.176	93.6406	4.32798	0
+Chrysitrix_capensis	46.2468	39.191	0.0804063	0
+Lepironia_articulata	43.0946	42.0387	0.152037	0
+N3	13.6515	12.5594	1.15278	0
+N4	1.31942	1.26059	0.0908102	0
+N5	6.5593	5.59064	0.367	0
+Lagenocarpus_guianensis	124.34	115.869	3.68142	0
+N6	2.35567	1.91675	0.100945	0
+N7	10.7309	7.57723	0.263486	0
+Oreobolus_pectinatus	113.143	106.27	1.69516	0
+N8	5.92655	3.97797	0.0618726	0
+N9	9.60128	5.92244	0.041339	0
+N10	23.9801	16.9892	0.0255536	0
+Schoenus_brevifolius	94.3058	59.4782	0	0
+Schoenus_nigricans	76.3498	79.1318	0.0467844	0
+Gahnia_aspera	109.795	87.5666	0.0707383	0
+N11	44.7713	44.1619	0.686578	0
+Tetraria_capillaris	57.9069	62.5944	1.22272	0
+N12	32.7418	26.5734	0.136012	0
+Machaerina_articulata	26.9512	35.7795	0.0216474	0
+Machaerina_mariscoides	40.7826	22.884	0	0
+N13	11.6093	11.798	0.573017	0
+N14	33.0269	28.3863	1.00609	0
+N15	51.3458	47.9842	0.494208	0
+Dulichium_arundinaceum	26.0454	26.8266	0.0117541	0
+N16	14.1328	11.7179	0.00238602	0
+Blysmus_compressus	15.0388	12.2356	4.00005e-07	0
+Blysmus_rufus	13.9745	13.1713	1.47772e-06	0
+N17	10.3786	8.53519	0.071838	0
+N18	18.5738	16.873	0.0628495	0
+N19	27.0752	21.1013	0.0136793	0
+Scirpus_pendulus	23.7887	26.7288	9.73545e-06	0
+N20	14.2526	9.1455	1.83117e-07	0
+N21	1.84918	1.09021	9.49118e-27	0
+N22	3.53511	2.35165	5.07915e-34	0
+N23	2.68677	2.05173	2.59369e-38	0
+Scirpus_expansus	7.53984	6.17374	0	0
+N24	3.18067	2.74442	1.53688e-44	0
+Scirpus_sylvaticus	3.7746	3.84481	0	0
+Scirpus_microcarpus	4.30762	3.37783	0	0
+Scirpus_maximowiczii	10.2994	8.2982	0	0
+N25	1.23586	1.01311	7.79341e-35	0
+N26	4.74386	3.55213	2.57087e-34	0
+Scirpus_polystachyus	6.75037	6.98026	0	0
+Scirpus_cyperinus	8.42211	5.652	0	0
+N27	3.28024	3.32634	1.54415e-34	0
+N28	3.7737	3.54294	1.9448e-36	0
+Eriophorum_virginicum	3.7901	4.01279	0	0
+Eriophorum_gracile	4.35232	3.575	0	0
+Eriophorum_angustifolium_subsp_angustifolium	7.63978	7.63171	0	0
+Scirpus_radicans	13.5612	13.6169	0	0
+Scirpus_divaricatus	47.5933	50.5581	0.185088	0
+N29	1.87159	1.5531	0.0063212	0
+N30	55.8594	65.4741	2.2047	0
+Carex_pachygyna	3.63829	3.6054	0.042617	0
+Carex_siderosticta	3.63829	3.6054	0.042617	0
+N31	51.9626	33.4211	0.023768	0
+Trichophorum_cespitosum	31.9989	15.6973	0	0
+Trichophorum_alpinum	20.9579	26.1763	1.72435e-11	0
+N32	26.0276	27.1667	1.75672	0
+N33	52.8464	52.0567	3.5211	0
+Rhynchospora_albiceps	26.3715	24.8008	0.728183	0
+N34	12.7787	11.6653	0.401984	0
+Rhynchospora_rubra	13.6233	13.166	0.0929967	0
+Rhynchospora_globosa	14.6917	12.2343	0.071153	0
+N35	23.8337	23.1883	1.66595	0
+N36	47.7949	37.5539	0.799107	0
+Rhynchospora_chinensis	20.2151	8.07866	0	0
+N37	4.48203	8.2099	2.82641e-06	0
+Rhynchospora_capillacea	5.89699	7.676	5.10462e-07	0
+Rhynchospora_alba	5.89699	7.676	5.10462e-07	0
+N38	27.0217	29.9066	2.48196	0
+Rhynchospora_nervosa	24.5334	24.9319	2.76966	0
+Rhynchospora_robusta	24.5334	24.9319	2.76966	0
+N39	31.7834	31.4605	2.34013	0
+Calyptrocarya_glomerulata	93.9752	91.8578	4.88657	0
+Scleria_foliosa	93.9752	91.8578	4.88657	0
+N40	133.204	113.131	2.44341	0
+Cladium_mariscus	2.36013	10.0034	0	0
+Cladium_mariscoides	10.0914	1.99571	0	0
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Chrysitrix_capensis	149.423	132.832	4.40838	0
+Lepironia_articulata	146.271	135.679	4.48001	0
+Lagenocarpus_guianensis	145.87	135.28	5.29201	0
+Oreobolus_pectinatus	147.76	135.174	3.67018	0
+Schoenus_brevifolius	168.43	115.272	2.10379	0
+Schoenus_nigricans	150.474	134.926	2.15057	0
+Gahnia_aspera	159.94	126.372	2.14897	0
+Tetraria_capillaris	143.221	139.639	3.94619	0
+Machaerina_articulata	145.008	139.397	2.88113	0
+Machaerina_mariscoides	158.839	126.502	2.85948	0
+Dulichium_arundinaceum	145.913	136.322	3.79661	0
+Blysmus_compressus	149.04	133.449	3.78724	0
+Blysmus_rufus	147.975	134.385	3.78724	0
+Scirpus_pendulus	148.338	134.75	3.43902	0
+Scirpus_expansus	154.413	128.834	3.43901	0
+Scirpus_sylvaticus	153.829	129.249	3.43901	0
+Scirpus_microcarpus	154.362	128.782	3.43901	0
+Scirpus_maximowiczii	154.486	128.907	3.43901	0
+Scirpus_polystachyus	153.381	129.802	3.43901	0
+Scirpus_cyperinus	155.053	128.474	3.43901	0
+Eriophorum_virginicum	152.731	130.152	3.43901	0
+Eriophorum_gracile	153.294	129.714	3.43901	0
+Eriophorum_angustifolium_subsp_angustifolium	152.807	130.228	3.43901	0
+Scirpus_radicans	152.363	130.784	3.43901	0
+Scirpus_divaricatus	145.068	137.478	3.61042	0
+Carex_pachygyna	140.27	140.679	5.61612	0
+Carex_siderosticta	140.27	140.679	5.61612	0
+Trichophorum_cespitosum	164.734	120.718	3.39257	0
+Trichophorum_alpinum	153.693	131.197	3.39257	0
+Rhynchospora_albiceps	140.741	137.15	8.29056	0
+Rhynchospora_rubra	140.771	137.18	8.05736	0
+Rhynchospora_globosa	141.84	136.248	8.03551	0
+Rhynchospora_chinensis	153.367	129.113	6.50633	0
+Rhynchospora_capillacea	143.53	136.92	6.50634	0
+Rhynchospora_alba	143.53	136.92	6.50634	0
+Rhynchospora_nervosa	136.912	138.319	10.9588	0
+Rhynchospora_robusta	136.912	138.319	10.9588	0
+Calyptrocarya_glomerulata	140.73	137.138	8.47029	0
+Scleria_foliosa	140.73	137.138	8.47029	0
+Cladium_mariscus	149.216	135.694	3.59619	0
+Cladium_mariscoides	156.947	127.686	3.59619	0

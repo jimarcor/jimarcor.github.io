@@ -1,0 +1,492 @@
+#Nodes with GAIN events with expectation above 0.5
+N2: 5.27831
+N3: 14.1963
+Dulichium_arundinaceum: 6.39258
+N4: 4.14673
+Blysmus_compressus: 4.51256
+Blysmus_rufus: 3.34711
+N5: 2.44914
+N6: 5.08172
+N7: 7.16872
+Scirpus_pendulus: 7.42657
+N8: 3.36755
+N9: 0.565747
+N10: 1.16841
+N11: 0.758418
+Scirpus_expansus: 2.04712
+N12: 0.755425
+Scirpus_sylvaticus: 0.654594
+Scirpus_microcarpus: 1.24437
+Scirpus_maximowiczii: 2.85239
+N14: 1.36662
+Scirpus_polystachyus: 1.22217
+Scirpus_cyperinus: 3.17583
+N15: 0.54754
+N16: 0.771031
+Eriophorum_virginicum: 0.625095
+Eriophorum_gracile: 1.13822
+Eriophorum_angustifolium_subsp_angustifolium: 1.44357
+Scirpus_radicans: 2.47321
+Scirpus_divaricatus: 12.9177
+N18: 13.4287
+Carex_pachygyna: 0.792047
+Carex_siderosticta: 0.792047
+N19: 12.6649
+Trichophorum_cespitosum: 5.79223
+Trichophorum_alpinum: 7.26971
+N20: 2.06615
+N21: 1.69523
+N22: 3.10454
+N23: 3.75311
+N24: 2.63954
+N25: 2.82995
+Fimbristylis_autumnalis: 4.84851
+Fimbristylis_complanata: 4.84851
+N26: 6.25136
+Fimbristylis_aestivalis: 1.37903
+Fimbristylis_squarrosa: 1.37903
+Fimbristylis_ovata: 10.4185
+N27: 7.7231
+Bulbostylis_barbata: 6.81903
+N28: 3.72642
+N29: 0.620832
+Bulbostylis_juncoides: 6.16212
+Bulbostylis_densa: 5.1447
+Bulbostylis_hispidula: 3.26801
+N30: 8.1449
+Eleocharis_dulcis: 14.4473
+N31: 3.83622
+N32: 3.83459
+Eleocharis_uniglumis: 5.85413
+Eleocharis_acicularis: 4.51348
+N33: 1.82855
+N34: 3.67298
+Eleocharis_mamillata_subsp_mamillata: 1.95918
+Eleocharis_compressa_var_compressa: 2.46695
+Eleocharis_flavescens_var_olivacea: 6.55385
+N35: 3.53672
+N36: 1.52777
+N37: 1.41091
+N39: 9.50546
+N40: 6.33878
+Schoenoplectus_pungens: 2.14926
+Schoenoplectus_acutus_var_acutus: 1.30245
+Schoenoplectus_lacustris: 2.0736
+Schoenoplectus_heterochaetus: 0.829541
+Actinoscirpus_grossus: 9.47748
+N43: 2.87407
+N44: 2.23372
+N45: 1.32913
+Scirpus_ficinioides: 11.9581
+N46: 3.45623
+N47: 1.24795
+Isolepis_crassiuscula: 7.25956
+N48: 3.46761
+Ficinia_spiralis: 2.85258
+Ficinia_nodosa: 2.85258
+N49: 2.39471
+Isolepis_prolifera: 6.46222
+Isolepis_setacea: 4.70697
+Scirpoides_holoschoenus: 13.6034
+N50: 4.04419
+N51: 3.80598
+Cyperus_fuscus: 8.00744
+Cyperus_eragrostis: 7.29943
+N52: 1.19682
+N53: 2.07244
+N54: 0.638869
+N55: 0.826285
+N56: 5.07036
+Cyperus_schweinitzii: 0.647879
+Lipocarpha_micrantha: 6.79943
+Lipocarpha_microcephala: 6.7419
+N57: 1.12134
+N58: 1.30202
+Kyllinga_brevifolia: 2.42348
+Kyllinga_bulbosa: 1.65976
+N59: 0.639938
+Cyperus_papyrus: 4.80233
+Cyperus_longus: 7.1904
+N60: 9.1261
+N61: 11.0798
+Schoenoplectus_hallii: 5.10469
+N62: 1.38718
+Schoenoplectus_articulatus: 5.26972
+N63: 5.11647
+N64: 1.00428
+Schoenoplectiella_hotarui: 1.74859
+Schoenoplectus_purshianus_var_purshianus: 0.670231
+Fuirena_ciliaris: 19.8251
+N65: 20.1285
+Bolboschoenus_planiculmis: 3.64883
+Bolboschoenus_fluviatilis: 0.76494
+Total number of gain events: 535.012
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 3.51644
+N3: 9.32864
+Dulichium_arundinaceum: 5.9855
+N4: 2.17839
+Blysmus_compressus: 2.13037
+Blysmus_rufus: 2.81883
+N5: 1.84403
+N6: 3.27205
+N7: 4.34531
+Scirpus_pendulus: 4.9983
+N8: 2.25578
+Scirpus_expansus: 1.03154
+N12: 0.507632
+Scirpus_sylvaticus: 0.886805
+Scirpus_maximowiczii: 1.4128
+N14: 0.570349
+Scirpus_polystachyus: 1.76547
+Scirpus_cyperinus: 0.719166
+N15: 0.904186
+N16: 0.770797
+Eriophorum_virginicum: 1.01556
+Eriophorum_gracile: 0.528695
+Eriophorum_angustifolium_subsp_angustifolium: 1.8338
+Scirpus_radicans: 3.7937
+Scirpus_divaricatus: 10.1164
+N18: 14.4873
+Carex_pachygyna: 0.694519
+Carex_siderosticta: 0.694519
+N19: 7.44498
+Trichophorum_cespitosum: 4.96146
+Trichophorum_alpinum: 3.96265
+N20: 1.57211
+N21: 1.8077
+N22: 3.47987
+N23: 4.04407
+N24: 2.65178
+N25: 2.49528
+Fimbristylis_autumnalis: 3.59422
+Fimbristylis_complanata: 3.59422
+N26: 5.01412
+Fimbristylis_aestivalis: 1.05308
+Fimbristylis_squarrosa: 1.05308
+Fimbristylis_ovata: 8.94644
+N27: 6.4031
+Bulbostylis_barbata: 7.15105
+N28: 2.03393
+Bulbostylis_juncoides: 2.81348
+Bulbostylis_densa: 3.29872
+Bulbostylis_hispidula: 5.61144
+N30: 5.57078
+Eleocharis_dulcis: 9.01428
+N31: 3.51484
+N32: 2.5376
+Eleocharis_uniglumis: 3.30819
+Eleocharis_acicularis: 4.32748
+N33: 1.85577
+N34: 3.55698
+Eleocharis_mamillata_subsp_mamillata: 2.10623
+Eleocharis_compressa_var_compressa: 1.65848
+Eleocharis_flavescens_var_olivacea: 4.98763
+N35: 1.77448
+N36: 0.871705
+N37: 0.820022
+N39: 6.00444
+N40: 4.92442
+Schoenoplectus_pungens: 1.6247
+Schoenoplectus_acutus_var_acutus: 1.52615
+Schoenoplectus_lacustris: 0.528498
+Schoenoplectus_heterochaetus: 1.28443
+Actinoscirpus_grossus: 6.09266
+N43: 1.80476
+N44: 1.35867
+N45: 0.858101
+Scirpus_ficinioides: 8.65263
+N46: 2.40664
+N47: 0.891525
+Isolepis_crassiuscula: 4.84714
+N48: 3.0496
+Ficinia_spiralis: 2.34024
+Ficinia_nodosa: 2.34024
+N49: 1.76784
+Isolepis_prolifera: 3.77674
+Isolepis_setacea: 5.0559
+Scirpoides_holoschoenus: 9.35066
+N50: 3.12092
+N51: 2.42468
+Cyperus_fuscus: 4.94777
+Cyperus_eragrostis: 5.47587
+N52: 1.07581
+N53: 2.01141
+N55: 0.567982
+N56: 4.40178
+Cyperus_houghtonii: 0.572342
+Lipocarpha_micrantha: 3.5567
+Lipocarpha_microcephala: 4.70228
+N57: 1.1857
+N58: 3.89441
+Kyllinga_brevifolia: 2.47412
+Kyllinga_bulbosa: 3.67782
+Cyperus_papyrus: 3.91179
+Cyperus_longus: 2.99252
+N60: 6.28709
+N61: 8.93517
+Schoenoplectus_hallii: 5.87667
+N62: 0.712309
+Schoenoplectus_articulatus: 3.95214
+N63: 2.4813
+Schoenoplectus_smithii_var_smithii: 0.641078
+Schoenoplectus_purshianus_var_purshianus: 1.2331
+Fuirena_ciliaris: 13.9594
+N65: 13.5573
+Bolboschoenus_fluviatilis: 2.25085
+Total number of loss events: 399.634
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+N2: 1.19634
+N3: 1.19071
+N7: 0.521938
+N8: 0.835915
+N18: 1.21779
+N19: 1.47484
+Trichophorum_cespitosum: 1.12872
+N20: 0.655725
+N22: 0.92301
+N23: 1.18344
+N24: 0.831939
+N25: 0.740102
+Fimbristylis_autumnalis: 0.600577
+Fimbristylis_complanata: 0.600577
+N26: 1.16846
+Fimbristylis_ovata: 1.8871
+N27: 1.54566
+Bulbostylis_barbata: 0.64978
+Bulbostylis_juncoides: 1.85807
+Bulbostylis_densa: 1.53528
+N30: 1.21362
+Eleocharis_dulcis: 2.02134
+Eleocharis_uniglumis: 1.08828
+N35: 0.628732
+N39: 0.68286
+Schoenoplectus_pungens: 1.00035
+Actinoscirpus_grossus: 1.1227
+Scirpus_ficinioides: 1.90748
+Isolepis_crassiuscula: 1.02684
+Isolepis_prolifera: 1.01994
+Scirpoides_holoschoenus: 0.551702
+N56: 1.19306
+Cyperus_papyrus: 1.66608
+Cyperus_longus: 1.68875
+Fuirena_ciliaris: 1.04888
+N65: 1.63189
+Bolboschoenus_fluviatilis: 1.01125
+Total number of duplication events: 51.0655
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	5.27831	3.51644	1.19634	0
+N3	14.1963	9.32864	1.19071	0
+Dulichium_arundinaceum	6.39258	5.9855	0.105756	0
+N4	4.14673	2.17839	0.229973	0
+Blysmus_compressus	4.51256	2.13037	0.0579364	0
+Blysmus_rufus	3.34711	2.81883	0.0482626	0
+N5	2.44914	1.84403	0.280619	0
+N6	5.08172	3.27205	0.412076	0
+N7	7.16872	4.34531	0.521938	0
+Scirpus_pendulus	7.42657	4.9983	0.170349	0
+N8	3.36755	2.25578	0.835915	0
+N9	0.565747	0.18568	0.0244456	0
+N10	1.16841	0.329204	0.0011699	0
+N11	0.758418	0.334382	0.000118872	0
+Scirpus_expansus	2.04712	1.03154	1.41917e-005	0
+N12	0.755425	0.507632	1.34709e-005	0
+Scirpus_sylvaticus	0.654594	0.886805	7.19771e-007	0
+Scirpus_microcarpus	1.24437	0.476583	7.19776e-007	0
+Scirpus_maximowiczii	2.85239	1.4128	0.000133086	0
+N13	0.255873	0.229432	0.00106051	0
+N14	1.36662	0.570349	0.00020383	0
+Scirpus_polystachyus	1.22217	1.76547	3.53626e-005	0
+Scirpus_cyperinus	3.17583	0.719166	3.53627e-005	0
+N15	0.54754	0.904186	0.000219462	0
+N16	0.771031	0.770797	1.83481e-005	0
+Eriophorum_virginicum	0.625095	1.01556	8.29963e-007	0
+Eriophorum_gracile	1.13822	0.528695	8.29963e-007	0
+Eriophorum_angustifolium_subsp_angustifolium	1.44357	1.8338	1.91782e-005	0
+Scirpus_radicans	2.47321	3.7937	0.0258392	0
+Scirpus_divaricatus	12.9177	10.1164	0.415286	0
+N17	0.4232	0.355351	0.0366261	0
+N18	13.4287	14.4873	1.21779	0
+Carex_pachygyna	0.792047	0.694519	0.00884373	0
+Carex_siderosticta	0.792047	0.694519	0.00884373	0
+N19	12.6649	7.44498	1.47484	0
+Trichophorum_cespitosum	5.79223	4.96146	1.12872	0
+Trichophorum_alpinum	7.26971	3.96265	0.138969	0
+N20	2.06615	1.57211	0.655725	0
+N21	1.69523	1.8077	0.464382	0
+N22	3.10454	3.47987	0.92301	0
+N23	3.75311	4.04407	1.18344	0
+N24	2.63954	2.65178	0.831939	0
+N25	2.82995	2.49528	0.740102	0
+Fimbristylis_autumnalis	4.84851	3.59422	0.600577	0
+Fimbristylis_complanata	4.84851	3.59422	0.600577	0
+N26	6.25136	5.01412	1.16846	0
+Fimbristylis_aestivalis	1.37903	1.05308	0.035258	0
+Fimbristylis_squarrosa	1.37903	1.05308	0.035258	0
+Fimbristylis_ovata	10.4185	8.94644	1.8871	0
+N27	7.7231	6.4031	1.54566	0
+Bulbostylis_barbata	6.81903	7.15105	0.64978	0
+N28	3.72642	2.03393	0.306967	0
+N29	0.620832	0.158876	0.326297	0
+Bulbostylis_juncoides	6.16212	2.81348	1.85807	0
+Bulbostylis_densa	5.1447	3.29872	1.53528	0
+Bulbostylis_hispidula	3.26801	5.61144	0.0641345	0
+N30	8.1449	5.57078	1.21362	0
+Eleocharis_dulcis	14.4473	9.01428	2.02134	0
+N31	3.83622	3.51484	0.176367	0
+N32	3.83459	2.5376	0.139475	0
+Eleocharis_uniglumis	5.85413	3.30819	1.08828	0
+Eleocharis_acicularis	4.51348	4.32748	0.0546062	0
+N33	1.82855	1.85577	0.0452972	0
+N34	3.67298	3.55698	0.0721278	0
+Eleocharis_mamillata_subsp_mamillata	1.95918	2.10623	0.0172741	0
+Eleocharis_compressa_var_compressa	2.46695	1.65848	0.0246317	0
+Eleocharis_flavescens_var_olivacea	6.55385	4.98763	0.1634	0
+N35	3.53672	1.77448	0.628732	0
+N36	1.52777	0.871705	0.14493	0
+N37	1.41091	0.820022	0.101951	0
+N38	0.494599	0.259206	0.0372677	0
+N39	9.50546	6.00444	0.68286	0
+N40	6.33878	4.92442	0.104547	0
+Schoenoplectus_pungens	2.14926	1.6247	1.00035	0
+N41	0.389265	0.306138	0.000323445	0
+Schoenoplectus_acutus_var_acutus	1.30245	1.52615	2.70586e-005	0
+N42	0.4784	0.24723	2.39753e-005	0
+Schoenoplectus_lacustris	2.0736	0.528498	3.88661e-006	0
+Schoenoplectus_heterochaetus	0.829541	1.28443	3.22968e-006	0
+Actinoscirpus_grossus	9.47748	6.09266	1.1227	0
+N43	2.87407	1.80476	0.139299	0
+N44	2.23372	1.35867	0.0993032	0
+N45	1.32913	0.858101	0.0423455	0
+Scirpus_ficinioides	11.9581	8.65263	1.90748	0
+N46	3.45623	2.40664	0.0567225	0
+N47	1.24795	0.891525	0.0083912	0
+Isolepis_crassiuscula	7.25956	4.84714	1.02684	0
+N48	3.46761	3.0496	0.0105368	0
+Ficinia_spiralis	2.85258	2.34024	0.00304515	0
+Ficinia_nodosa	2.85258	2.34024	0.00304515	0
+N49	2.39471	1.76784	0.0130272	0
+Isolepis_prolifera	6.46222	3.77674	1.01994	0
+Isolepis_setacea	4.70697	5.0559	0.0103228	0
+Scirpoides_holoschoenus	13.6034	9.35066	0.551702	0
+N50	4.04419	3.12092	0.0950182	0
+N51	3.80598	2.42468	0.382845	0
+Cyperus_fuscus	8.00744	4.94777	0.381145	0
+Cyperus_eragrostis	7.29943	5.47587	0.256747	0
+N52	1.19682	1.07581	0.0130933	0
+N53	2.07244	2.01141	0.0177331	0
+N54	0.638869	0.420991	0.343078	0
+N55	0.826285	0.567982	0.143564	0
+N56	5.07036	4.40178	1.19306	0
+Cyperus_houghtonii	0.122883	0.572342	0.00162449	0
+Cyperus_schweinitzii	0.647879	0.0976102	0.00162512	0
+Lipocarpha_micrantha	6.79943	3.5567	0.427452	0
+Lipocarpha_microcephala	6.7419	4.70228	0.483436	0
+N57	1.12134	1.1857	0.00188094	0
+N58	1.30202	3.89441	0.00092273	0
+Kyllinga_brevifolia	2.42348	2.47412	0.00957923	0
+Kyllinga_bulbosa	1.65976	3.67782	0.00347784	0
+N59	0.639938	0.190591	0.323324	0
+Cyperus_papyrus	4.80233	3.91179	1.66608	0
+Cyperus_longus	7.1904	2.99252	1.68875	0
+N60	9.1261	6.28709	0.191116	0
+Cyperus_involucratus	0.469931	0.337847	0.000714519	0
+Cyperus_alternifolius	0.469931	0.337847	0.000714519	0
+N61	11.0798	8.93517	0.416829	0
+Schoenoplectus_hallii	5.10469	5.87667	0.0405873	0
+N62	1.38718	0.712309	0.0891509	0
+Schoenoplectus_articulatus	5.26972	3.95214	0.0991966	0
+N63	5.11647	2.4813	0.404009	0
+N64	1.00428	0.196796	0.00314455	0
+Schoenoplectus_smithii_var_smithii	0.268449	0.641078	0.000274538	0
+Schoenoplectiella_hotarui	1.74859	0.121449	0.000274567	0
+Schoenoplectus_purshianus_var_purshianus	0.670231	1.2331	0.00340769	0
+Fuirena_ciliaris	19.8251	13.9594	1.04888	0
+N65	20.1285	13.5573	1.63189	0
+Bolboschoenus_planiculmis	3.64883	0.384236	0.0123533	0
+Bolboschoenus_fluviatilis	0.76494	2.25085	1.01125	0
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Dulichium_arundinaceum	25.8672	18.8306	2.4928	0
+Blysmus_compressus	28.1339	17.1538	2.67495	0
+Blysmus_rufus	26.9685	17.8423	2.66528	0
+Scirpus_pendulus	27.4045	17.9761	2.58132	0
+Scirpus_expansus	27.8851	17.1144	3.27263	0
+Scirpus_sylvaticus	27.248	17.4773	3.27263	0
+Scirpus_microcarpus	27.8378	17.0671	3.27263	0
+Scirpus_maximowiczii	27.932	17.1613	3.27263	0
+Scirpus_polystachyus	26.7559	17.9845	3.27263	0
+Scirpus_cyperinus	28.7095	16.9382	3.27263	0
+Eriophorum_virginicum	26.1107	18.3393	3.27263	0
+Eriophorum_gracile	26.6239	17.8524	3.27263	0
+Eriophorum_angustifolium_subsp_angustifolium	26.1582	18.3867	3.27263	0
+Scirpus_radicans	25.8187	19.0273	3.27273	0
+Scirpus_divaricatus	25.7269	18.7489	2.30432	0
+Carex_pachygyna	22.3713	20.8976	2.74022	0
+Carex_siderosticta	22.3713	20.8976	2.74022	0
+Trichophorum_cespitosum	26.6077	18.1223	4.11714	0
+Trichophorum_alpinum	28.0852	17.1234	3.12739	0
+Fimbristylis_autumnalis	20.937	19.645	5.39918	0
+Fimbristylis_complanata	20.937	19.645	5.39918	0
+Fimbristylis_aestivalis	20.889	19.6227	5.26221	0
+Fimbristylis_squarrosa	20.889	19.6227	5.26221	0
+Fimbristylis_ovata	21.0375	19.8502	5.11366	0
+Bulbostylis_barbata	21.4081	20.4138	4.23856	0
+Bulbostylis_juncoides	25.0984	18.2691	6.0801	0
+Bulbostylis_densa	24.081	18.7543	5.75732	0
+Bulbostylis_hispidula	21.5835	20.9081	3.95988	0
+Eleocharis_dulcis	26.3536	17.9649	4.35507	0
+Eleocharis_uniglumis	25.4312	18.3112	3.73785	0
+Eleocharis_acicularis	24.0906	19.3305	2.70418	0
+Eleocharis_mamillata_subsp_mamillata	23.2032	19.9844	2.6448	0
+Eleocharis_compressa_var_compressa	23.711	19.5367	2.65215	0
+Eleocharis_flavescens_var_olivacea	24.1249	19.3088	2.71879	0
+Schoenoplectus_pungens	27.0297	17.8511	3.35636	0
+Schoenoplectus_acutus_var_acutus	26.5721	18.0587	2.35636	0
+Schoenoplectus_lacustris	27.8217	17.3082	2.35636	0
+Schoenoplectus_heterochaetus	26.5776	18.0642	2.35636	0
+Actinoscirpus_grossus	28.0191	17.3946	3.37416	0
+Scirpus_ficinioides	27.4312	17.9717	3.75703	0
+Isolepis_crassiuscula	27.4368	17.4644	2.94151	0
+Ficinia_spiralis	26.4974	18.0071	1.92825	0
+Ficinia_nodosa	26.4974	18.0071	1.92825	0
+Isolepis_prolifera	27.7862	17.2703	2.93924	0
+Isolepis_setacea	26.031	18.5494	1.92963	0
+Scirpoides_holoschoenus	27.7473	17.8116	2.35891	0
+Cyperus_fuscus	27.7678	17.5956	2.56691	0
+Cyperus_eragrostis	27.0598	18.1237	2.44251	0
+Cyperus_houghtonii	25.8821	19.2735	3.51508	0
+Cyperus_schweinitzii	26.4071	18.7988	3.51508	0
+Lipocarpha_micrantha	27.4883	17.8561	2.74784	0
+Lipocarpha_microcephala	26.6044	18.4337	2.66026	0
+Kyllinga_brevifolia	24.0705	20.8647	1.84613	0
+Kyllinga_bulbosa	23.3068	22.0684	1.84003	0
+Cyperus_papyrus	25.7873	18.5985	3.82503	0
+Cyperus_longus	28.1754	17.6792	3.84771	0
+Cyperus_involucratus	26.7473	17.9239	2.00785	0
+Cyperus_alternifolius	26.7473	17.9239	2.00785	0
+Schoenoplectus_hallii	24.726	19.8502	1.98875	0
+Schoenoplectus_articulatus	26.2782	18.6379	2.13651	0
+Schoenoplectus_smithii_var_smithii	27.3977	18.005	2.44475	0
+Schoenoplectiella_hotarui	28.8779	17.4853	2.44475	0
+Schoenoplectus_purshianus_var_purshianus	26.7952	18.4002	2.44473	0
+Fuirena_ciliaris	26.9558	18.1777	2.47827	0
+Bolboschoenus_planiculmis	29.3802	17.2881	2.9287	0
+Bolboschoenus_fluviatilis	26.4963	19.1547	3.92759	0

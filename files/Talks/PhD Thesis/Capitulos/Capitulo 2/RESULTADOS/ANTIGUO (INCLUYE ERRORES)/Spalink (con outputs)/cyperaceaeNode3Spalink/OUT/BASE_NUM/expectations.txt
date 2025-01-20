@@ -1,0 +1,71 @@
+#Nodes with GAIN events with expectation above 0.5
+Total number of gain events: 0
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 1.16156
+N3: 1.47357
+N4: 11.1951
+Cyperus_houghtonii: 1.32968
+Lipocarpha_micrantha: 10.7301
+Lipocarpha_microcephala: 14.9119
+N5: 3.12504
+N6: 6.34944
+Kyllinga_brevifolia: 5.65673
+Kyllinga_bulbosa: 7.6555
+N7: 0.945014
+Cyperus_papyrus: 15.2562
+Cyperus_longus: 10.6192
+Total number of loss events: 90.7388
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+Total number of duplication events: 0.140758
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0.115222
+#+++++++++++++++++++++++++++++
+
+#+++++++++++++++++++++++++++++
+
+#Nodes with transitions in base number with expectation above 0.5
+N4: 1.04674
+Lipocarpha_micrantha: 0.623349
+Lipocarpha_microcephala: 0.718358
+Cyperus_papyrus: 0.87926
+Total number of transitions in base number: 4.34079
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION	BASE-NUMBER
+N2	0	1.16156	9.32448e-07	0.000307308	0.278682
+N3	0	1.47357	8.1502e-06	7.96595e-05	0.100573
+N4	0	11.1951	0.00429819	0.113683	1.04674
+Cyperus_houghtonii	0	1.32968	0	0	0.00115007
+Cyperus_schweinitzii	0	0.329685	0	5.29626e-10	0.00113777
+Lipocarpha_micrantha	0	10.7301	0.0520713	0.000194015	0.623349
+Lipocarpha_microcephala	0	14.9119	0.05278	9.97231e-06	0.718358
+N5	0	3.12504	5.30157e-06	1.72086e-10	0.0088617
+N6	0	6.34944	2.56809e-06	2.37154e-15	0.00313231
+Kyllinga_brevifolia	0	5.65673	0	0	0.000119571
+Kyllinga_bulbosa	0	7.6555	0	0	3.81345e-05
+N7	0	0.945014	0.000416738	3.02879e-05	0.190518
+Cyperus_papyrus	0	15.2562	0.0155749	0.00059356	0.87926
+Cyperus_longus	0	10.6192	0.0156	0.000324107	0.48887
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION	BASE-NUMBER
+Cyperus_houghtonii	0	15.1599	0.00430727	0.11407	1.42714
+Cyperus_schweinitzii	0	14.1599	0.00430727	0.11407	1.42713
+Lipocarpha_micrantha	0	13.3652	0.0520803	0.000580982	1.0026
+Lipocarpha_microcephala	0	16.0735	0.0527809	0.00031728	0.99704
+Kyllinga_brevifolia	0	15.1312	7.86966e-06	1.72089e-10	0.0121136
+Kyllinga_bulbosa	0	17.13	7.86966e-06	1.72089e-10	0.0120321
+Cyperus_papyrus	0	19.3263	0.015997	0.000623848	1.07864
+Cyperus_longus	0	14.6893	0.0160221	0.000354395	0.688249

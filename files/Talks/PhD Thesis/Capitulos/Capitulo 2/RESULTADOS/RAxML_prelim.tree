@@ -1,0 +1,449 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=347;
+	taxlabels
+	Actinoscirpus_grossus
+	Baumea_articulata
+	Blysmus_compressus
+	Blysmus_rufus
+	Bolboschoenus_fluviatilis
+	Bolboschoenus_maritimus
+	Bolboschoenus_planiculmis
+	Bolboschoenus_robustus
+	Bulbostylis_barbata
+	Bulbostylis_burchellii
+	Bulbostylis_capillaris
+	Bulbostylis_ciliatifolia
+	Bulbostylis_densa
+	Bulbostylis_funckii
+	Bulbostylis_hispidula
+	Bulbostylis_juncoides
+	Bulbostylis_stenophylla
+	Bulbostylis_warei
+	Calyptrocarya_glomerulata
+	Carex_albursina
+	Carex_aquatilis
+	Carex_arcta
+	Carex_atrofusca
+	Carex_baccans
+	Carex_backii
+	Carex_canescens
+	Carex_capillacea
+	Carex_capillaris
+	Carex_capitata
+	Carex_cephalophora
+	Carex_chordorrhiza
+	Carex_comans
+	Carex_conferta
+	Carex_cruciata
+	Carex_debilis
+	Carex_deweyana
+	Carex_diandra
+	Carex_dissitiflora
+	Carex_distans
+	Carex_disticha
+	Carex_divulsa
+	Carex_eburnea
+	Carex_echinata
+	Carex_echinochloe
+	Carex_extensa
+	Carex_foenea
+	Carex_fuliginosa
+	Carex_gibba
+	Carex_glacialis
+	Carex_granularis
+	Carex_grayi
+	Carex_halleriana
+	Carex_heterolepis
+	Carex_hochstetteriana
+	Carex_hostiana
+	Carex_humilis
+	Carex_kiotensis
+	Carex_lachenalii
+	Carex_lamprocarpa
+	Carex_leptalea
+	Carex_livida
+	Carex_macrocephala
+	Carex_magellanica
+	Carex_marina
+	Carex_maritima
+	Carex_membranacea
+	Carex_microglochin
+	Carex_nardina
+	Carex_nigra
+	Carex_obtusata
+	Carex_oligosperma
+	Carex_otrubae
+	Carex_ovalis
+	Carex_pachygyna
+	Carex_pairae
+	Carex_paleacea
+	Carex_pallescens
+	Carex_panicea
+	Carex_pauciflora
+	Carex_pendula
+	Carex_peregrina
+	Carex_pilulifera
+	Carex_pseudocyperus
+	Carex_pulicaris
+	Carex_punctata
+	Carex_radiata
+	Carex_rariflora
+	Carex_recta
+	Carex_richardsonii
+	Carex_rostrata
+	Carex_rupestris
+	Carex_saxatilis
+	Carex_scirpoidea
+	Carex_shimidzensis
+	Carex_siderosticta
+	Carex_viridula
+	Carex_xerantica
+	Chrysitrix_capensis
+	Cladium_mariscoides
+	Cladium_mariscus
+	Cyperus_alopecuroides
+	Cyperus_alternifolius
+	Cyperus_articulatus
+	Cyperus_capitatus
+	Cyperus_compressus
+	Cyperus_conglomeratus
+	Cyperus_cuspidatus
+	Cyperus_cyperoides
+	Cyperus_dentatus
+	Cyperus_difformis
+	Cyperus_digitatus
+	Cyperus_distans
+	Cyperus_elegans
+	Cyperus_eragrostis
+	Cyperus_erythrorhizos
+	Cyperus_esculentus
+	Cyperus_exaltatus
+	Cyperus_filicinus
+	Cyperus_fuscus
+	Cyperus_grayi
+	Cyperus_grayoides
+	Cyperus_haspan
+	Cyperus_houghtonii
+	Cyperus_imbricatus
+	Cyperus_iria
+	Cyperus_laevigatus
+	Cyperus_longus
+	Cyperus_lupulinus
+	Cyperus_microiria
+	Cyperus_nutans
+	Cyperus_papyrus
+	Cyperus_pilosus
+	Cyperus_rotundus
+	Cyperus_rubicundus
+	Cyperus_schweinitzii
+	Cyperus_serotinus
+	Cyperus_squarrosus
+	Cyperus_tenuispica
+	Dulichium_arundinaceum
+	Eleocharis_acicularis
+	Eleocharis_acuta
+	Eleocharis_atropurpurea
+	Eleocharis_attenuata
+	Eleocharis_brittonii
+	Eleocharis_coloradoensis
+	Eleocharis_compressa
+	Eleocharis_confervoides
+	Eleocharis_congesta
+	Eleocharis_debilis
+	Eleocharis_dietrichiana
+	Eleocharis_dulcis
+	Eleocharis_elliptica
+	Eleocharis_engelmannii
+	Eleocharis_erythropoda
+	Eleocharis_fallax
+	Eleocharis_flavescens
+	Eleocharis_geniculata
+	Eleocharis_gracilis
+	Eleocharis_intermedia
+	Eleocharis_interstincta
+	Eleocharis_kamtschatica
+	Eleocharis_lanceolata
+	Eleocharis_macrostachya
+	Eleocharis_mamillata
+	Eleocharis_microcarpa
+	Eleocharis_montevidensis
+	Eleocharis_multicaulis
+	Eleocharis_obtusa
+	Eleocharis_ovata
+	Eleocharis_pachycarpa
+	Eleocharis_pallens
+	Eleocharis_palustris
+	Eleocharis_parishii
+	Eleocharis_parvula
+	Eleocharis_quinqueflora
+	Eleocharis_retroflexa
+	Eleocharis_tenuis
+	Eleocharis_tetraquetra
+	Eleocharis_tuberculosa
+	Eleocharis_uniglumis
+	Eleocharis_valleculosa
+	Eleocharis_wichurae
+	Eriophorum_angustifolium
+	Eriophorum_brachyantherum
+	Eriophorum_callitrix
+	Eriophorum_chamissonis
+	Eriophorum_comosum
+	Eriophorum_gracile
+	Eriophorum_latifolium
+	Eriophorum_scheuchzeri
+	Eriophorum_vaginatum
+	Eriophorum_virginicum
+	Eriophorum_viridicarinatum
+	Ficinia_nodosa
+	Ficinia_spiralis
+	Fimbristylis_acuminata
+	Fimbristylis_aestivalis
+	Fimbristylis_autumnalis
+	Fimbristylis_caroliniana
+	Fimbristylis_complanata
+	Fimbristylis_cymosa
+	Fimbristylis_dichotoma
+	Fimbristylis_diphylloides
+	Fimbristylis_ferruginea
+	Fimbristylis_littoralis
+	Fimbristylis_ovata
+	Fimbristylis_polytrichoides
+	Fimbristylis_puberula
+	Fimbristylis_schoenoides
+	Fimbristylis_sieboldii
+	Fimbristylis_spadicea
+	Fimbristylis_squarrosa
+	Fimbristylis_tetragona
+	Fimbristylis_thermalis
+	Fimbristylis_velata
+	Fuirena_breviseta
+	Fuirena_ciliaris
+	Fuirena_pumila
+	Fuirena_scirpoidea
+	Fuirena_simplex
+	Fuirena_umbellata
+	Gahnia_aspera
+	Hypolytrum_longifolium
+	Hypolytrum_nemorum
+	Isolepis_aucklandica
+	Isolepis_cernua
+	Isolepis_crassiuscula
+	Isolepis_fluitans
+	Isolepis_marginata
+	Isolepis_prolifera
+	Isolepis_setacea
+	Juncus_acutus
+	Juncus_effusus
+	Kobresia_fragilis
+	Kobresia_myosuroides
+	Kobresia_nepalensis
+	Kobresia_royleana
+	Kobresia_schoenoides
+	Kobresia_simpliciuscula
+	Kyllinga_brevifolia
+	Kyllinga_bulbosa
+	Kyllinga_odorata
+	Kyllinga_pumila
+	Kyllingiella_microcephala
+	Lagenocarpus_guianensis
+	Lepironia_articulata
+	Lipocarpha_drummondii
+	Lipocarpha_micrantha
+	Lipocarpha_microcephala
+	Machaerina_articulata
+	Machaerina_mariscoides
+	Morelotia_affinis
+	Oreobolus_pectinatus
+	Pycreus_flavescens
+	Pycreus_flavidus
+	Pycreus_polystachyos
+	Pycreus_sanguinolentus
+	Queenslandiella_hyalina
+	Remirea_maritima
+	Rhynchospora_alba
+	Rhynchospora_albiceps
+	Rhynchospora_brownii
+	Rhynchospora_capillacea
+	Rhynchospora_chinensis
+	Rhynchospora_corniculata
+	Rhynchospora_corymbosa
+	Rhynchospora_fusca
+	Rhynchospora_latifolia
+	Rhynchospora_marisculus
+	Rhynchospora_microcarpa
+	Rhynchospora_nervosa
+	Rhynchospora_robusta
+	Rhynchospora_rubra
+	Rhynchospora_rugosa
+	Schoenoplectiella_articulata
+	Schoenoplectiella_erecta
+	Schoenoplectiella_hallii
+	Schoenoplectiella_hotarui
+	Schoenoplectiella_juncoides
+	Schoenoplectiella_lineolata
+	Schoenoplectiella_mucronata
+	Schoenoplectiella_purshiana
+	Schoenoplectiella_saximontana
+	Schoenoplectiella_senegalensis
+	Schoenoplectiella_smithii
+	Schoenoplectiella_supina
+	Schoenoplectiella_wallichii
+	Schoenoplectus_acutus
+	Schoenoplectus_americanus
+	Schoenoplectus_articulatus
+	Schoenoplectus_californicus
+	Schoenoplectus_deltarum
+	Schoenoplectus_heterochaetus
+	Schoenoplectus_lacustris
+	Schoenoplectus_litoralis
+	Schoenoplectus_pungens
+	Schoenoplectus_subterminalis
+	Schoenoplectus_tabernaemontani
+	Schoenoplectus_torreyi
+	Schoenoplectus_triqueter
+	Schoenoplectus_validus
+	Schoenoxiphium_burkei
+	Schoenoxiphium_ecklonii
+	Schoenoxiphium_filiforme
+	Schoenoxiphium_ludwigii
+	Schoenoxiphium_sparteum
+	Schoenus_apogon
+	Schoenus_brevifolius
+	Schoenus_nigricans
+	Scirpoides_holoschoenus
+	Scirpus_ancistrochaetus
+	Scirpus_atrocinctus
+	Scirpus_atrovirens
+	Scirpus_cyperinus
+	Scirpus_divaricatus
+	Scirpus_expansus
+	Scirpus_ficinioides
+	Scirpus_flaccidifolius
+	Scirpus_georgianus
+	Scirpus_hattorianus
+	Scirpus_lineatus
+	Scirpus_longii
+	Scirpus_maximowiczii
+	Scirpus_microcarpus
+	Scirpus_orientalis
+	Scirpus_pallidus
+	Scirpus_pedicellatus
+	Scirpus_pendulus
+	Scirpus_polyphyllus
+	Scirpus_polystachyus
+	Scirpus_radicans
+	Scirpus_sylvaticus
+	Scirpus_wichurae
+	Scleria_foliosa
+	Scleria_microcarpa
+	Scleria_pergracilis
+	Scleria_terrestris
+	Scleria_tessellata
+	Tetraria_capillaris
+	Trichophorum_alpinum
+	Trichophorum_cespitosum
+	Trichophorum_pumilum
+	Trichophorum_uniflorum
+	Uncinia_banksii
+	Uncinia_filiformis
+	Uncinia_phleoides
+	Uncinia_uncinata
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] ((((Rhynchospora_corymbosa:0.050012,(Chrysitrix_capensis:0.07229,Lepironia_articulata:0.121464)[&label=94]:0.091229)[&label=57]:0.0332,(Hypolytrum_nemorum:0.031154,Hypolytrum_longifolium:0.114976)[&label=50]:0.022353)[&label=99]:0.050067,((Calyptrocarya_glomerulata:0.258255,(Scleria_pergracilis:0.233661,((Scleria_microcarpa:0.065942,Scleria_terrestris:0.037505)[&label=99]:0.037353,(Scleria_tessellata:0.080252,Scleria_foliosa:0.050017)[&label=100]:0.046499)[&label=100]:0.161102)[&label=100]:0.184456)[&label=100]:0.134157,((Cladium_mariscoides:0.019406,Cladium_mariscus:0.004424)[&label=98]:0.062446,(((((((((Carex_pachygyna:0.010913,Carex_siderosticta:0.012517)[&label=100]:0.024149,((Carex_pulicaris[&!color=#ff0000]:0.031529,(Schoenoxiphium_ludwigii[&!color=#ff0000]:0.034332,((Schoenoxiphium_burkei[&!color=#ff0000]:0.007497,Schoenoxiphium_filiforme[&!color=#ff0000]:0.00687)[&label=100,!color=#ff0000]:0.01429,(Schoenoxiphium_ecklonii[&!color=#ff0000]:0.015014,Schoenoxiphium_sparteum[&!color=#ff0000]:0.013832)[&label=92,!color=#ff0000]:0.004507)[&label=61,!color=#ff0000]:0.002793)[&label=92,!color=#ff0000]:0.004163)[&label=76,!color=#ff0000]:0.006103,(((Carex_gibba[&!color=#ff0000]:0.014869,((Carex_radiata[&!color=#ff0000]:0.024932,Carex_macrocephala[&!color=#ff0000]:0.022131)[&label=51,!color=#ff0000]:0.004765,(((Carex_ovalis[&!color=#ff0000]:0.010464,(Carex_foenea[&!color=#ff0000]:0.002926,Carex_xerantica[&!color=#ff0000]:0.00481)[&label=89,!color=#ff0000]:0.001085)[&label=79,!color=#ff0000]:0.007231,((((Carex_pairae[&!color=#ff0000]:0.263086,((Carex_lachenalii[&!color=#ff0000]:0.00795,Carex_marina[&!color=#ff0000]:0.002508)[&label=75,!color=#ff0000]:0.001288,Carex_canescens[&!color=#ff0000]:0.005295)[&label=94,!color=#ff0000]:0.016327)[&label=13,!color=#ff0000]:8.69E-4,(Carex_cephalophora[&!color=#ff0000]:0.019043,Carex_diandra[&!color=#ff0000]:0.024004)[&label=99,!color=#ff0000]:0.022374)[&label=14,!color=#ff0000]:0.014321,(((Carex_maritima[&!color=#ff0000]:0.021555,Carex_disticha[&!color=#ff0000]:0.008972)[&label=62,!color=#ff0000]:0.007702,Carex_chordorrhiza[&!color=#ff0000]:0.011831)[&label=55,!color=#ff0000]:0.004931,(((Carex_hochstetteriana[&!color=#ff0000]:1.0E-6,Carex_echinata[&!color=#ff0000]:0.0058)[&label=26,!color=#ff0000]:0.005,((Carex_lamprocarpa[&!color=#ff0000]:1.0E-6,Carex_otrubae[&!color=#ff0000]:0.003132)[&label=48,!color=#ff0000]:0.00134,Carex_divulsa[&!color=#ff0000]:0.003364)[&label=57,!color=#ff0000]:0.00748)[&label=7,!color=#ff0000]:0.008035,Carex_arcta[&!color=#ff0000]:0.009989)[&label=4,!color=#ff0000]:0.00178)[&label=4,!color=#ff0000]:0.00146)[&label=4,!color=#ff0000]:0.002456,(Carex_peregrina[&!color=#ff0000]:0.010478,Carex_deweyana[&!color=#ff0000]:1.0E-6)[&label=14,!color=#ff0000]:0.020246)[&label=2,!color=#ff0000]:0.001126)[&label=3,!color=#ff0000]:0.002843,Carex_conferta[&!color=#ff0000]:0.023359)[&label=9,!color=#ff0000]:0.003833)[&label=26,!color=#ff0000]:0.01033)[&label=29,!color=#ff0000]:0.020218,((((((Carex_atrofusca[&!color=#ff0000]:0.017451,(Carex_richardsonii[&!color=#ff0000]:0.012236,Carex_glacialis[&!color=#ff0000]:0.018699)[&label=34,!color=#ff0000]:0.002337)[&label=15,!color=#ff0000]:0.001041,(((((((Carex_pilulifera[&!color=#ff0000]:0.026711,(Carex_rariflora[&!color=#ff0000]:0.005794,(((Carex_oligosperma[&!color=#ff0000]:0.006193,((Carex_membranacea[&!color=#ff0000]:0.003898,Carex_rostrata[&!color=#ff0000]:9.65E-4)[&label=59,!color=#ff0000]:0.001015,Carex_saxatilis[&!color=#ff0000]:0.003455)[&label=53,!color=#ff0000]:0.002136)[&label=47,!color=#ff0000]:0.002508,Carex_pseudocyperus[&!color=#ff0000]:0.005931)[&label=61,!color=#ff0000]:0.002926,Carex_grayi[&!color=#ff0000]:0.015823)[&label=71,!color=#ff0000]:0.004993)[&label=27,!color=#ff0000]:0.002185)[&label=4,!color=#ff0000]:1.0E-6,(Carex_magellanica[&!color=#ff0000]:0.013265,(Carex_heterolepis[&!color=#ff0000]:0.005715,((Carex_paleacea[&!color=#ff0000]:1.0E-6,Carex_nigra[&!color=#ff0000]:1.0E-6)[&label=35,!color=#ff0000]:0.002863,((Carex_shimidzensis[&!color=#ff0000]:0.01599,(Carex_kiotensis[&!color=#ff0000]:0.011439,Carex_aquatilis[&!color=#ff0000]:1.0E-6)[&label=15,!color=#ff0000]:1.0E-6)[&label=14,!color=#ff0000]:0.001044,Carex_recta[&!color=#ff0000]:0.008205)[&label=14,!color=#ff0000]:0.001767)[&label=17,!color=#ff0000]:1.0E-6)[&label=81,!color=#ff0000]:0.009633)[&label=38,!color=#ff0000]:0.002359)[&label=6,!color=#ff0000]:4.84E-4,Carex_scirpoidea[&!color=#ff0000]:0.014304)[&label=10,!color=#ff0000]:0.003475,((Carex_halleriana[&!color=#ff0000]:0.018086,((Carex_humilis[&!color=#ff0000]:0.23863,Carex_pallescens[&!color=#ff0000]:4.56E-4)[&label=12,!color=#ff0000]:0.013246,Carex_debilis[&!color=#ff0000]:0.011003)[&label=8,!color=#ff0000]:0.001877)[&label=4,!color=#ff0000]:0.002421,((Carex_distans[&!color=#ff0000]:0.02428,Carex_extensa[&!color=#ff0000]:0.030058)[&label=59,!color=#ff0000]:0.011073,(Carex_pendula[&!color=#ff0000]:0.030707,Carex_granularis[&!color=#ff0000]:0.030385)[&label=21,!color=#ff0000]:0.00243)[&label=20,!color=#ff0000]:0.003853)[&label=2,!color=#ff0000]:7.4E-4)[&label=2,!color=#ff0000]:0.002758,Carex_capillaris[&!color=#ff0000]:0.015606)[&label=1,!color=#ff0000]:7.01E-4,(Carex_viridula[&!color=#ff0000]:0.002117,Carex_hostiana[&!color=#ff0000]:0.003284)[&label=97,!color=#ff0000]:0.016358)[&label=4,!color=#ff0000]:0.001494,(Carex_panicea[&!color=#ff0000]:0.008403,(Carex_albursina[&!color=#ff0000]:0.012447,Carex_livida[&!color=#ff0000]:0.008491)[&label=100,!color=#ff0000]:0.009845)[&label=100,!color=#ff0000]:0.011716)[&label=4,!color=#ff0000]:0.001602)[&label=2,!color=#ff0000]:0.001955,(Carex_fuliginosa[&!color=#ff0000]:0.012331,(Carex_comans[&!color=#ff0000]:0.01413,(Carex_punctata[&!color=#ff0000]:0.0076,Carex_echinochloe[&!color=#ff0000]:0.017937)[&label=56,!color=#ff0000]:0.014595)[&label=38,!color=#ff0000]:0.012213)[&label=9,!color=#ff0000]:0.001314)[&label=7,!color=#ff0000]:0.001545,Carex_baccans[&!color=#ff0000]:0.023138)[&label=33,!color=#ff0000]:0.008258,(Carex_cruciata[&!color=#ff0000]:0.018626,Carex_eburnea[&!color=#ff0000]:0.01698)[&label=90,!color=#ff0000]:0.006531)[&label=35,!color=#ff0000]:0.006514,Carex_dissitiflora[&!color=#ff0000]:0.109992)[&label=35,!color=#ff0000]:0.009712)[&label=71,!color=#ff0000]:0.004239,(((Carex_backii[&!color=#ff0000]:0.025612,((Carex_microglochin[&!color=#ff0000]:0.029225,((Carex_nardina[&!color=#ff0000]:0.036078,((Uncinia_uncinata[&!color=#ff0000]:0.01072,(Uncinia_banksii[&!color=#ff0000]:1.0E-6,Uncinia_filiformis[&!color=#ff0000]:0.024235)[&label=77,!color=#ff0000]:0.009936)[&label=100,!color=#ff0000]:0.010194,Uncinia_phleoides[&!color=#ff0000]:0.01558)[&label=95,!color=#ff0000]:0.023178)[&label=39,!color=#ff0000]:0.0033,(Carex_capillacea[&!color=#ff0000]:0.042355,Carex_leptalea[&!color=#ff0000]:0.030289)[&label=51,!color=#ff0000]:0.004303)[&label=47,!color=#ff0000]:0.004613)[&label=12,!color=#ff0000]:0.003648,((Carex_pauciflora[&!color=#ff0000]:0.026176,Carex_capitata[&!color=#ff0000]:0.018784)[&label=62,!color=#ff0000]:0.002928,(Carex_obtusata[&!color=#ff0000]:0.019407,Carex_rupestris[&!color=#ff0000]:0.006389)[&label=98,!color=#ff0000]:0.007084)[&label=73,!color=#ff0000]:0.005124)[&label=24,!color=#ff0000]:0.004215)[&label=8,!color=#ff0000]:0.002506,((Kobresia_simpliciuscula[&!color=#ff0000]:0.004405,Kobresia_royleana[&!color=#ff0000]:0.015806)[&label=99,!color=#ff0000]:0.024428,(Kobresia_schoenoides[&!color=#ff0000]:0.003598,(Kobresia_myosuroides[&!color=#ff0000]:0.011152,Kobresia_nepalensis[&!color=#ff0000]:1.0E-6)[&label=20,!color=#ff0000]:1.0E-6)[&label=46,!color=#ff0000]:0.012025)[&label=19,!color=#ff0000]:0.003157)[&label=56,!color=#ff0000]:0.005718,Kobresia_fragilis[&!color=#ff0000]:0.042624)[&label=32,!color=#ff0000]:1.0E-6)[&label=51,!color=#ff0000]:0.003731)[&label=95,!color=#ff0000]:0.019531)[&label=95]:0.026737,((Trichophorum_cespitosum:0.029283,(Trichophorum_uniflorum:0.010651,(Trichophorum_alpinum:0.018655,Trichophorum_pumilum:0.01283)[&label=55]:0.005192)[&label=31]:1.0E-6)[&label=98]:0.020594,((Scirpus_pendulus:0.00338,Scirpus_lineatus:0.008302)[&label=95]:0.029671,(((Eriophorum_latifolium:0.003882,(Eriophorum_angustifolium:0.011015,(((Scirpus_hattorianus:1.0E-6,Eriophorum_vaginatum:0.009271)[&label=13]:2.15E-4,(Eriophorum_gracile:0.014114,Eriophorum_callitrix:0.001582)[&label=98]:0.008847)[&label=27]:0.008452,(Eriophorum_chamissonis:0.005837,(Eriophorum_brachyantherum:0.01375,Eriophorum_scheuchzeri:0.007506)[&label=97]:0.002103)[&label=84]:0.004217)[&label=37]:6.87E-4)[&label=56]:0.004857)[&label=56]:0.018979,Eriophorum_virginicum:0.026748)[&label=44]:0.004632,((Eriophorum_viridicarinatum:0.00647,(((Scirpus_atrovirens:0.004625,(Scirpus_georgianus:0.007678,(Scirpus_pallidus:1.0E-6,Scirpus_flaccidifolius:0.002188)[&label=55]:3.3E-5)[&label=92]:0.003041)[&label=98]:0.013947,(Scirpus_polyphyllus:0.007728,Scirpus_ancistrochaetus:0.009181)[&label=36]:0.001521)[&label=92]:0.008164,(Scirpus_maximowiczii:0.019779,(Scirpus_radicans:0.017707,(Scirpus_expansus:0.010037,(Scirpus_sylvaticus:1.0E-6,Scirpus_microcarpus:0.009787)[&label=76]:0.001655)[&label=84]:0.004439)[&label=37]:1.15E-4)[&label=17]:0.001247)[&label=39]:0.003356)[&label=0]:1.0E-6,((Scirpus_orientalis:1.0E-6,(Scirpus_polystachyus:0.004906,Scirpus_wichurae:0.008244)[&label=99]:0.009734)[&label=2]:6.66E-4,(Scirpus_longii:0.002694,((Scirpus_pedicellatus:0.002632,Scirpus_cyperinus:0.00557)[&label=96]:0.003488,Scirpus_atrocinctus:0.006458)[&label=96]:0.004512)[&label=81]:0.003877)[&label=4]:0.007151)[&label=9]:0.002291)[&label=12]:0.004719)[&label=47]:0.024397)[&label=18]:0.002508)[&label=49]:0.010234,Scirpus_divaricatus:0.241572)[&label=84]:0.009255,((Blysmus_compressus:0.012834,Blysmus_rufus:0.023426)[&label=100]:0.010639,Dulichium_arundinaceum:0.033366)[&label=99]:0.03407)[&label=97]:0.044326,((((((((Eriophorum_comosum[&!color=#ffcc00]:0.032356,Scirpoides_holoschoenus[&!color=#ffcc00]:0.088481)[&label=78,!color=#ffcc00]:0.013523,(Scirpus_ficinioides[&!color=#ffcc00]:0.015632,(Isolepis_marginata[&!color=#ffcc00]:0.093359,((((Isolepis_cernua[&!color=#ffcc00]:0.036778,Isolepis_setacea[&!color=#ffcc00]:0.030251)[&label=94,!color=#ffcc00]:0.031536,(Isolepis_prolifera[&!color=#ffcc00]:0.026217,Isolepis_aucklandica[&!color=#ffcc00]:0.007806)[&label=36,!color=#ffcc00]:0.002694)[&label=42,!color=#ffcc00]:0.00375,Isolepis_fluitans[&!color=#ffcc00]:0.105402)[&label=96,!color=#ffcc00]:0.022858,(Isolepis_crassiuscula[&!color=#ffcc00]:0.026455,(Ficinia_nodosa[&!color=#ffcc00]:0.027881,Ficinia_spiralis[&!color=#ffcc00]:0.044468)[&label=77,!color=#ffcc00]:0.014787)[&label=30,!color=#ffcc00]:0.009898)[&label=48,!color=#ffcc00]:0.02138)[&label=90,!color=#ffcc00]:0.031695)[&label=86,!color=#ffcc00]:0.013291)[&label=91,!color=#ffcc00]:0.009979,((Cyperus_eragrostis[&!color=#ffcc00]:0.083511,((Cyperus_difformis[&!color=#ffcc00]:0.01542,Cyperus_fuscus[&!color=#ffcc00]:0.025697)[&label=81,!color=#ffcc00]:0.052403,(Cyperus_alternifolius[&!color=#ffcc00]:0.062234,(Kyllingiella_microcephala[&!color=#ffcc00]:0.04488,(((((Cyperus_grayi[&!color=#33cc00]:0.012187,((Cyperus_houghtonii[&!color=#33cc00]:1.0E-6,Cyperus_schweinitzii[&!color=#33cc00]:1.0E-6)[&label=95,!color=#33cc00]:0.005152,(Cyperus_grayoides[&!color=#33cc00]:0.001371,Cyperus_lupulinus[&!color=#33cc00]:0.001354)[&label=65,!color=#33cc00]:1.0E-6)[&label=61,!color=#33cc00]:0.00438)[&label=74,!color=#33cc00]:0.012678,(((Cyperus_rubicundus[&!color=#33cc00]:1.0E-6,Remirea_maritima[&!color=#33cc00]:0.016743)[&label=27,!color=#33cc00]:4.2E-5,Cyperus_tenuispica[&!color=#33cc00]:0.028082)[&label=5,!color=#33cc00]:0.020371,Cyperus_cyperoides[&!color=#33cc00]:0.006964)[&label=13,!color=#33cc00]:0.017189)[&label=14,!color=#33cc00]:0.006462,(Queenslandiella_hyalina[&!color=#33cc00]:1.0E-6,((((((Cyperus_articulatus[&!color=#33cc00]:1.0E-6,((Cyperus_erythrorhizos[&!color=#33cc00]:0.047965,Cyperus_digitatus[&!color=#33cc00]:0.006181)[&label=48,!color=#33cc00]:0.001982,(Cyperus_papyrus[&!color=#33cc00]:0.007441,Cyperus_pilosus[&!color=#33cc00]:0.007786)[&label=55,!color=#33cc00]:0.007726)[&label=50,!color=#33cc00]:0.005312)[&label=10,!color=#33cc00]:0.004127,(Cyperus_nutans[&!color=#33cc00]:0.005025,Cyperus_rotundus[&!color=#33cc00]:1.0E-6)[&label=23,!color=#33cc00]:0.024059)[&label=4,!color=#33cc00]:0.005373,(((Cyperus_filicinus[&!color=#33cc00]:0.012599,Pycreus_polystachyos[&!color=#33cc00]:0.013993)[&label=82,!color=#33cc00]:0.049374,((Cyperus_iria[&!color=#33cc00]:1.0E-6,Cyperus_microiria[&!color=#33cc00]:1.0E-6)[&label=98,!color=#33cc00]:0.010562,((Pycreus_flavidus[&!color=#33cc00]:0.067597,(Pycreus_sanguinolentus[&!color=#33cc00]:0.018693,Pycreus_flavescens[&!color=#33cc00]:0.06045)[&label=52,!color=#33cc00]:0.017134)[&label=32,!color=#33cc00]:0.00908,Cyperus_laevigatus[&!color=#33cc00]:0.0856)[&label=60,!color=#33cc00]:0.018529)[&label=38,!color=#33cc00]:0.005705)[&label=20,!color=#33cc00]:0.01269,(Cyperus_exaltatus[&!color=#33cc00]:0.005234,((Cyperus_imbricatus[&!color=#33cc00]:0.00593,(Cyperus_esculentus[&!color=#33cc00]:0.027342,(Cyperus_compressus[&!color=#33cc00]:0.027258,Cyperus_alopecuroides[&!color=#33cc00]:0.023458)[&label=68,!color=#33cc00]:0.009009)[&label=48,!color=#33cc00]:1.0E-6)[&label=13,!color=#33cc00]:1.62E-4,Cyperus_serotinus[&!color=#33cc00]:0.010495)[&label=0,!color=#33cc00]:1.0E-6)[&label=0,!color=#33cc00]:0.003356)[&label=2,!color=#33cc00]:0.008472)[&label=1,!color=#33cc00]:0.004178,Cyperus_longus[&!color=#33cc00]:0.008404)[&label=2,!color=#33cc00]:0.004646,(((Kyllinga_pumila[&!color=#33cc00]:1.0E-6,Kyllinga_odorata[&!color=#33cc00]:1.0E-6)[&label=100,!color=#33cc00]:0.02424,Kyllinga_bulbosa[&!color=#33cc00]:0.021449)[&label=67,!color=#33cc00]:0.007264,Kyllinga_brevifolia[&!color=#33cc00]:0.032199)[&label=78,!color=#33cc00]:0.020045)[&label=1,!color=#33cc00]:0.002201,((Cyperus_distans[&!color=#33cc00]:1.0E-6,Cyperus_elegans[&!color=#33cc00]:0.022079)[&label=6,!color=#33cc00]:1.0E-6,Cyperus_squarrosus[&!color=#33cc00]:0.034431)[&label=4,!color=#33cc00]:0.002779)[&label=5,!color=#33cc00]:0.004144)[&label=4,!color=#33cc00]:1.0E-6)[&label=31,!color=#33cc00]:0.010052,((Lipocarpha_micrantha[&!color=#33cc00]:0.054554,Lipocarpha_drummondii[&!color=#33cc00]:0.031628)[&label=58,!color=#33cc00]:0.012682,Lipocarpha_microcephala[&!color=#33cc00]:0.021711)[&label=36,!color=#33cc00]:0.009822)[&label=52,!color=#33cc00]:0.031114,((Cyperus_conglomeratus[&!color=#ffcc00]:0.012668,Cyperus_capitatus[&!color=#ffcc00]:1.0E-6)[&label=46,!color=#ffcc00]:0.002592,Cyperus_cuspidatus[&!color=#ffcc00]:0.01724)[&label=49,!color=#ffcc00]:0.023975)[&label=57,!color=#ffcc00]:0.025175)[&label=46,!color=#ffcc00,!hilight={46,0.06258702088087276,#66ffcc}]:0.006851)[&label=52,!color=#ffcc00]:0.018741)[&label=47,!color=#ffcc00]:0.005331)[&label=91,!color=#ffcc00]:0.020971,(Cyperus_haspan[&!color=#ffcc00]:0.095016,Cyperus_dentatus[&!color=#ffcc00]:0.016138)[&label=29,!color=#ffcc00]:1.0E-6)[&label=72,!color=#ffcc00]:0.028845)[&label=74,!color=#ffcc00]:0.038606,((Schoenoplectiella_articulata[&!color=#ffcc00]:0.061459,Schoenoplectiella_senegalensis[&!color=#ffcc00]:0.005544)[&label=60,!color=#ffcc00]:0.018328,(((Schoenoplectiella_supina[&!color=#ffcc00]:1.0E-6,((Schoenoplectiella_hallii[&!color=#ffcc00]:0.005408,Schoenoplectiella_saximontana[&!color=#ffcc00]:0.005484)[&label=91,!color=#ffcc00]:0.01474,Schoenoplectiella_erecta[&!color=#ffcc00]:0.038497)[&label=80,!color=#ffcc00]:0.037519)[&label=47,!color=#ffcc00]:0.028306,((((Schoenoplectiella_mucronata[&!color=#ffcc00]:0.012378,Schoenoplectiella_hotarui[&!color=#ffcc00]:0.014541)[&label=79,!color=#ffcc00]:1.0E-6,Schoenoplectiella_smithii[&!color=#ffcc00]:1.0E-6)[&label=60,!color=#ffcc00]:0.011284,Schoenoplectiella_juncoides[&!color=#ffcc00]:1.0E-6)[&label=38,!color=#ffcc00]:0.007946,(Schoenoplectiella_wallichii[&!color=#ffcc00]:1.0E-6,(Schoenoplectiella_purshiana[&!color=#ffcc00]:2.68E-4,Schoenoplectiella_lineolata[&!color=#ffcc00]:1.0E-6)[&label=9,!color=#ffcc00]:1.0E-6)[&label=14,!color=#ffcc00]:2.64E-4)[&label=49,!color=#ffcc00]:0.031925)[&label=19,!color=#ffcc00]:0.001008,Schoenoplectus_articulatus[&!color=#ffcc00]:0.054294)[&label=54,!color=#ffcc00]:0.01241)[&label=100,!color=#ffcc00]:0.126954)[&label=18,!color=#ffcc00]:0.002025,(Actinoscirpus_grossus[&!color=#ffcc00]:0.076913,((Schoenoplectus_torreyi[&!color=#ffcc00]:0.005584,Schoenoplectus_subterminalis[&!color=#ffcc00]:0.008638)[&label=100,!color=#ffcc00]:0.018166,(((Schoenoplectus_deltarum[&!color=#ffcc00]:0.002099,Schoenoplectus_pungens[&!color=#ffcc00]:0.009848)[&label=98,!color=#ffcc00]:0.012985,(Schoenoplectus_americanus[&!color=#ffcc00]:0.043489,Schoenoplectus_californicus[&!color=#ffcc00]:0.016404)[&label=17,!color=#ffcc00]:0.002696)[&label=41,!color=#ffcc00]:0.003018,(Schoenoplectus_acutus[&!color=#ffcc00]:0.027671,(Schoenoplectus_lacustris[&!color=#ffcc00]:0.010821,((Schoenoplectus_validus[&!color=#ffcc00]:0.003166,Schoenoplectus_triqueter[&!color=#ffcc00]:1.0E-6)[&label=88,!color=#ffcc00]:0.004555,(Schoenoplectus_litoralis[&!color=#ffcc00]:0.010165,(Schoenoplectus_tabernaemontani[&!color=#ffcc00]:1.0E-6,Schoenoplectus_heterochaetus[&!color=#ffcc00]:1.0E-6)[&label=54,!color=#ffcc00]:1.0E-6)[&label=65,!color=#ffcc00]:0.002958)[&label=86,!color=#ffcc00]:0.007806)[&label=84,!color=#ffcc00]:0.003551)[&label=43,!color=#ffcc00]:0.002679)[&label=98,!color=#ffcc00]:0.020192)[&label=100,!color=#ffcc00]:0.041521)[&label=100,!color=#ffcc00]:0.053735)[&label=75,!color=#ffcc00]:0.013686,(Fuirena_simplex[&!color=#ffcc00]:0.038741,(Fuirena_umbellata[&!color=#ffcc00]:0.050312,((Fuirena_breviseta[&!color=#ffcc00]:0.003393,(Fuirena_pumila[&!color=#ffcc00]:1.0E-6,Fuirena_scirpoidea[&!color=#ffcc00]:0.00312)[&label=98,!color=#ffcc00]:0.004214)[&label=98,!color=#ffcc00]:0.005481,Fuirena_ciliaris[&!color=#ffcc00]:0.042482)[&label=94,!color=#ffcc00]:0.004022)[&label=84,!color=#ffcc00]:0.005885)[&label=99,!color=#ffcc00]:0.11275)[&label=73,!color=#ffcc00]:0.006426,(Bolboschoenus_maritimus[&!color=#ffcc00]:0.017945,((Bolboschoenus_fluviatilis[&!color=#ffcc00]:0.00582,Bolboschoenus_robustus[&!color=#ffcc00]:0.006904)[&label=100,!color=#ffcc00]:0.012006,Bolboschoenus_planiculmis[&!color=#ffcc00]:0.003851)[&label=100,!color=#ffcc00]:0.004299)[&label=100,!color=#ffcc00]:0.078046)[&label=82,!color=#ffcc00]:0.016715,(((Bulbostylis_barbata[&!color=#ffcc00]:0.055284,((Bulbostylis_warei[&!color=#ffcc00]:1.0E-6,Bulbostylis_stenophylla[&!color=#ffcc00]:1.0E-6)[&label=100,!color=#ffcc00]:0.014592,(Bulbostylis_capillaris[&!color=#ffcc00]:1.0E-6,(((Bulbostylis_ciliatifolia[&!color=#ffcc00]:1.0E-6,Bulbostylis_juncoides[&!color=#ffcc00]:1.0E-6)[&label=99,!color=#ffcc00]:0.026071,(Bulbostylis_hispidula[&!color=#ffcc00]:0.016297,Bulbostylis_burchellii[&!color=#ffcc00]:1.0E-6)[&label=97,!color=#ffcc00]:0.016766)[&label=36,!color=#ffcc00]:1.0E-6,(Bulbostylis_funckii[&!color=#ffcc00]:0.041856,Bulbostylis_densa[&!color=#ffcc00]:0.036891)[&label=55,!color=#ffcc00]:0.007166)[&label=53,!color=#ffcc00]:0.007356)[&label=17,!color=#ffcc00]:1.0E-6)[&label=39,!color=#ffcc00]:0.013688)[&label=53,!color=#ffcc00]:0.060405,(Fimbristylis_ovata[&!color=#ffcc00]:0.070843,(Fimbristylis_littoralis[&!color=#ffcc00]:0.045222,((((Fimbristylis_schoenoides[&!color=#ffcc00]:1.0E-6,(Fimbristylis_autumnalis[&!color=#ffcc00]:0.032451,Fimbristylis_complanata[&!color=#ffcc00]:0.013275)[&label=94,!color=#ffcc00]:0.014883)[&label=51,!color=#ffcc00]:0.016476,((Fimbristylis_spadicea[&!color=#ffcc00]:0.002978,(Fimbristylis_thermalis[&!color=#ffcc00]:1.0E-6,(Fimbristylis_caroliniana[&!color=#ffcc00]:0.009605,Fimbristylis_puberula[&!color=#ffcc00]:1.0E-6)[&label=80,!color=#ffcc00]:1.0E-6)[&label=88,!color=#ffcc00]:0.0156)[&label=32,!color=#ffcc00]:0.003105,(Fimbristylis_dichotoma[&!color=#ffcc00]:0.033769,(Fimbristylis_squarrosa[&!color=#ffcc00]:0.023688,(Fimbristylis_aestivalis[&!color=#ffcc00]:0.023818,(Fimbristylis_polytrichoides[&!color=#ffcc00]:0.025381,Fimbristylis_velata[&!color=#ffcc00]:0.006709)[&label=65,!color=#ffcc00]:0.002876)[&label=41,!color=#ffcc00]:0.00413)[&label=89,!color=#ffcc00]:0.023151)[&label=23,!color=#ffcc00]:0.013231)[&label=16,!color=#ffcc00]:1.0E-6)[&label=8,!color=#ffcc00]:1.0E-6,Fimbristylis_sieboldii[&!color=#ffcc00]:0.005194)[&label=65,!color=#ffcc00]:0.017224,(Fimbristylis_tetragona[&!color=#ffcc00]:0.132543,((Fimbristylis_cymosa[&!color=#ffcc00]:0.046956,(Fimbristylis_diphylloides[&!color=#ffcc00]:1.0E-6,Fimbristylis_ferruginea[&!color=#ffcc00]:0.017011)[&label=43,!color=#ffcc00]:0.015461)[&label=30,!color=#ffcc00]:0.002265,Fimbristylis_acuminata[&!color=#ffcc00]:0.048013)[&label=39,!color=#ffcc00]:0.004992)[&label=27,!color=#ffcc00]:0.004187)[&label=39,!color=#ffcc00]:0.011559)[&label=66,!color=#ffcc00]:0.01796)[&label=64,!color=#ffcc00]:0.066139)[&label=94,!color=#ffcc00]:0.068373,((Eleocharis_interstincta[&!color=#ffcc00]:0.034836,Eleocharis_dulcis[&!color=#ffcc00]:0.047185)[&label=100,!color=#ffcc00]:0.069079,((Eleocharis_tuberculosa[&!color=#ffcc00]:0.02254,Eleocharis_quinqueflora[&!color=#ffcc00]:0.045122)[&label=79,!color=#ffcc00]:0.0091,(Eleocharis_confervoides[&!color=#ffcc00]:0.147676,((Eleocharis_gracilis[&!color=#ffcc00]:0.029678,Eleocharis_acicularis[&!color=#ffcc00]:0.039081)[&label=57,!color=#ffcc00]:0.006378,((((Eleocharis_debilis[&!color=#ffcc00]:0.022229,Eleocharis_atropurpurea[&!color=#ffcc00]:0.029398)[&label=93,!color=#ffcc00]:0.010599,(Eleocharis_geniculata[&!color=#ffcc00]:0.057958,Eleocharis_flavescens[&!color=#ffcc00]:0.071172)[&label=58,!color=#ffcc00]:0.005553)[&label=86,!color=#ffcc00]:0.015721,Eleocharis_retroflexa[&!color=#ffcc00]:0.085192)[&label=82,!color=#ffcc00]:0.015723,(((((Eleocharis_compressa[&!color=#ffcc00]:0.007124,(Eleocharis_elliptica[&!color=#ffcc00]:0.006118,Eleocharis_tenuis[&!color=#ffcc00]:0.002036)[&label=88,!color=#ffcc00]:0.003762)[&label=89,!color=#ffcc00]:0.004186,Eleocharis_montevidensis[&!color=#ffcc00]:0.014298)[&label=67,!color=#ffcc00]:0.00434,(((((Eleocharis_lanceolata[&!color=#ffcc00]:0.00754,Eleocharis_engelmannii[&!color=#ffcc00]:0.001879)[&label=100,!color=#ffcc00]:0.006877,(Eleocharis_ovata[&!color=#ffcc00]:0.001849,Eleocharis_obtusa[&!color=#ffcc00]:0.002311)[&label=51,!color=#ffcc00]:8.57E-4)[&label=93,!color=#ffcc00]:0.005603,((Eleocharis_acuta[&!color=#ffcc00]:0.03227,Eleocharis_pallens[&!color=#ffcc00]:0.024156)[&label=30,!color=#ffcc00]:0.017698,((Eleocharis_attenuata[&!color=#ffcc00]:0.00849,Eleocharis_wichurae[&!color=#ffcc00]:0.019925)[&label=90,!color=#ffcc00]:0.012713,((Eleocharis_dietrichiana[&!color=#ffcc00]:0.044863,Eleocharis_fallax[&!color=#ffcc00]:0.01061)[&label=21,!color=#ffcc00]:0.001176,(Eleocharis_congesta[&!color=#ffcc00]:9.11E-4,Eleocharis_tetraquetra[&!color=#ffcc00]:0.018294)[&label=86,!color=#ffcc00]:0.006393)[&label=30,!color=#ffcc00]:0.004634)[&label=21,!color=#ffcc00]:0.002206)[&label=18,!color=#ffcc00]:0.005488)[&label=12,!color=#ffcc00]:0.00255,((Eleocharis_kamtschatica[&!color=#ffcc00]:0.02453,(Eleocharis_mamillata[&!color=#ffcc00]:0.002968,(Eleocharis_multicaulis[&!color=#ffcc00]:0.062939,Eleocharis_uniglumis[&!color=#ffcc00]:0.006742)[&label=50,!color=#ffcc00]:0.025024)[&label=48,!color=#ffcc00]:0.006376)[&label=30,!color=#ffcc00]:0.008467,(((Eleocharis_valleculosa[&!color=#ffcc00]:1.0E-6,Eleocharis_palustris[&!color=#ffcc00]:1.0E-6)[&label=26,!color=#ffcc00]:0.006385,Eleocharis_parishii[&!color=#ffcc00]:0.014362)[&label=36,!color=#ffcc00]:0.014087,(Eleocharis_macrostachya[&!color=#ffcc00]:1.0E-6,Eleocharis_erythropoda[&!color=#ffcc00]:0.002039)[&label=89,!color=#ffcc00]:0.00265)[&label=52,!color=#ffcc00]:0.009661)[&label=5,!color=#ffcc00]:0.004073)[&label=4,!color=#ffcc00]:0.002637,Eleocharis_pachycarpa[&!color=#ffcc00]:0.006895)[&label=4,!color=#ffcc00]:0.002468)[&label=5,!color=#ffcc00]:0.003409,(Eleocharis_coloradoensis[&!color=#ffcc00]:0.006892,Eleocharis_parvula[&!color=#ffcc00]:0.024733)[&label=98,!color=#ffcc00]:0.01899)[&label=32,!color=#ffcc00]:0.012864,(Eleocharis_brittonii[&!color=#ffcc00]:0.010186,(Eleocharis_microcarpa[&!color=#ffcc00]:7.25E-4,Eleocharis_intermedia[&!color=#ffcc00]:0.005264)[&label=52,!color=#ffcc00]:0.004819)[&label=100,!color=#ffcc00]:0.028911)[&label=48,!color=#ffcc00]:0.01236)[&label=21,!color=#ffcc00]:0.006509)[&label=58,!color=#ffcc00]:0.009754)[&label=74,!color=#ffcc00]:0.017059)[&label=88,!color=#ffcc00]:0.025265)[&label=89,!color=#ffcc00]:0.049182)[&label=81,!color=#ffcc00]:0.025459)[&label=98,!color=#ffcc00]:0.036064)[&label=98]:0.044165,(((Rhynchospora_albiceps:0.030262,Rhynchospora_rubra:0.049134)[&label=100]:0.02953,Rhynchospora_corniculata:0.042589)[&label=100]:0.085919,(((Rhynchospora_chinensis:0.008523,((Rhynchospora_rugosa:0.031428,(Rhynchospora_marisculus:1.0E-6,Rhynchospora_brownii:1.0E-6)[&label=88]:0.003484)[&label=72]:0.010572,(Rhynchospora_capillacea:0.016063,(Rhynchospora_alba:0.015868,Rhynchospora_fusca:0.009782)[&label=54]:0.003022)[&label=67]:0.004534)[&label=18]:1.0E-6)[&label=5]:1.0E-6,Rhynchospora_microcarpa:0.015481)[&label=100]:0.049278,(Rhynchospora_robusta:0.028544,(Rhynchospora_nervosa:0.052902,Rhynchospora_latifolia:0.081121)[&label=100]:0.02853)[&label=100]:0.070325)[&label=100]:0.025898)[&label=100]:0.056281)[&label=99]:0.060044,(((Tetraria_capillaris:0.058847,(Machaerina_mariscoides:0.051743,(Machaerina_articulata:1.0E-6,Baumea_articulata:1.0E-6)[&label=100]:0.045708)[&label=100]:0.055953)[&label=100]:0.040437,(Schoenus_brevifolius:0.158811,(Schoenus_apogon:0.141447,Schoenus_nigricans:0.092286)[&label=100]:0.053771)[&label=100]:0.040501)[&label=71]:0.00857,(Oreobolus_pectinatus:0.129086,Gahnia_aspera:0.108232)[&label=52]:0.007577)[&label=41]:0.01232)[&label=32]:0.008355,(Morelotia_affinis:1.0E-6,Lagenocarpus_guianensis:0.230587)[&label=23]:0.101774)[&label=83]:0.023389)[&label=34]:9.4E-5)[&label=96]:0.038252)[&label=100]:0.163675,(Juncus_acutus:0.223719,Juncus_effusus:0.234098)[&label=100]:0.163675);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="Agency FB";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="POLAR";
+	set layout.zoom=288;
+	set legend.attribute="label";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="Node ages";
+	set nodeLabels.fontName="Agency FB";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=false;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="Agency FB";
+	set tipLabels.fontSize=19;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="increasing";
+	set trees.rooting=false;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

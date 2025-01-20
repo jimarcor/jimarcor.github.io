@@ -1,0 +1,62 @@
+#Nodes with GAIN events with expectation above 0.5
+Total number of gain events: 2.08191e-06
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 3.96722
+N3: 5.43078
+N4: 37.2315
+Cyperus_houghtonii: 3.11958
+Cyperus_schweinitzii: 2.11988
+Lipocarpha_micrantha: 40.7129
+Lipocarpha_microcephala: 46.1785
+N5: 10.2128
+N6: 22.6205
+Kyllinga_brevifolia: 22.1529
+Kyllinga_bulbosa: 23.8044
+N7: 2.82186
+Cyperus_papyrus: 36.8076
+Cyperus_longus: 36.2597
+Total number of loss events: 293.44
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+Total number of duplication events: 0.946653
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 1.79742
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	1.86114e-27	3.96722	0.000108046	0.00134685
+N3	2.15054e-23	5.43078	0.000189492	0.00681075
+N4	2.08724e-16	37.2315	0.155883	0.293442
+Cyperus_houghtonii	0	3.11958	0.000456962	0.000736823
+Cyperus_schweinitzii	0	2.11988	0.000466392	0.000726088
+Lipocarpha_micrantha	0	40.7129	0.111135	0.259134
+Lipocarpha_microcephala	0	46.1785	0.104457	0.237016
+N5	1.10633e-22	10.2128	0.000138868	0.00228978
+N6	1.50124e-14	22.6205	0.000938458	0.00866318
+Kyllinga_brevifolia	2.03891e-06	22.1529	0.0325717	0.0914005
+Kyllinga_bulbosa	4.29993e-08	23.8044	0.0225247	0.0623085
+N7	4.12657e-23	2.82186	0.000918247	0.0258952
+Cyperus_papyrus	0	36.8076	0.254189	0.410487
+Cyperus_longus	0	36.2597	0.262677	0.39716
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Cyperus_houghtonii	2.08724e-16	49.7491	0.156637	0.302336
+Cyperus_schweinitzii	2.08724e-16	48.7494	0.156647	0.302326
+Lipocarpha_micrantha	2.15073e-23	50.111	0.111432	0.267292
+Lipocarpha_microcephala	1.86114e-27	50.1457	0.104565	0.238363
+Kyllinga_brevifolia	2.03891e-06	54.9862	0.033649	0.102353
+Kyllinga_bulbosa	4.29993e-08	56.6378	0.0236021	0.0732614
+Cyperus_papyrus	1.51899e-22	49.8423	0.255246	0.438671
+Cyperus_longus	1.51899e-22	49.2944	0.263734	0.425345

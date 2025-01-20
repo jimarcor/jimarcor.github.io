@@ -1,0 +1,60 @@
+#Nodes with GAIN events with expectation above 0.5
+Total number of gain events: 6.10957e-020
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 9.81212
+Kyllinga_bulbosa: 31.978
+Kyllinga_brevifolia: 30.4598
+N3: 2.17118
+Cyperus_capitatus: 34.209
+N4: 4.2072
+Cyperus_esculentus: 29.6719
+N5: 2.59771
+Cyperus_longus: 25.8214
+N6: 18.0303
+Cyperus_iria: 9.54033
+Pycreus_flavescens: 10.0802
+Total number of loss events: 208.579
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+Total number of duplication events: 1.91204e-022
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Cyperus_capitatus: 0.772065
+Cyperus_esculentus: 0.503061
+Cyperus_iria: 0.985601
+Total number of demi-dulications events: 3.97875
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	1.13124e-020	9.81212	1.80163e-022	0.0040831
+Kyllinga_bulbosa	0	31.978	0	0.236894
+Kyllinga_brevifolia	0	30.4598	0	0.281851
+N3	2.9399e-031	2.17118	3.11906e-036	0.305205
+Cyperus_capitatus	0	34.209	0	0.772065
+N4	1.34904e-029	4.2072	9.29401e-034	0.267936
+Cyperus_esculentus	0	29.6719	0	0.503061
+N5	1.49593e-028	2.59771	4.99625e-034	0.0491991
+Cyperus_longus	0	25.8214	0	0.461405
+N6	4.97833e-020	18.0303	1.1041e-023	0.101717
+Cyperus_iria	0	9.54033	0	0.985601
+Pycreus_flavescens	0	10.0802	0	0.00973151
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Kyllinga_bulbosa	1.13124e-020	41.7902	1.80163e-022	0.240977
+Kyllinga_brevifolia	1.13124e-020	40.2719	1.80163e-022	0.285934
+Cyperus_capitatus	2.9399e-031	36.3802	3.11906e-036	1.07727
+Cyperus_esculentus	1.37844e-029	36.0502	9.3252e-034	1.0762
+Cyperus_longus	1.63378e-028	34.7975	1.43215e-033	1.08374
+Cyperus_iria	4.97833e-020	36.5467	1.1041e-023	1.70966
+Pycreus_flavescens	4.97833e-020	37.0866	1.1041e-023	0.733788

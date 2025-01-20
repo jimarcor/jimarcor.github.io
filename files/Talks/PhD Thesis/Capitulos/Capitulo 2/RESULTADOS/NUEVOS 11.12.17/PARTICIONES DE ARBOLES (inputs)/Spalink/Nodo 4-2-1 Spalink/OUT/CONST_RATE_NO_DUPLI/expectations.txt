@@ -1,0 +1,156 @@
+#Nodes with GAIN events with expectation above 0.5
+N2: 43.4501
+Dulichium_arundinaceum: 22.2828
+N3: 12.3066
+Blysmus_compressus: 13.2496
+Blysmus_rufus: 12.1083
+N4: 8.54235
+N5: 15.7009
+N6: 23.8088
+Scirpus_pendulus: 20.222
+N7: 12.9216
+N8: 1.69982
+N9: 3.21384
+N10: 2.40518
+Scirpus_expansus: 6.68079
+N11: 2.80318
+Scirpus_sylvaticus: 3.23069
+Scirpus_microcarpus: 3.81738
+Scirpus_maximowiczii: 9.11255
+N12: 1.09536
+N13: 4.24761
+Scirpus_polystachyus: 5.80167
+Scirpus_cyperinus: 7.62506
+N14: 2.83141
+N15: 3.29538
+Eriophorum_virginicum: 3.28007
+Eriophorum_gracile: 3.84508
+Eriophorum_angustifolium_subsp_angustifolium: 6.59949
+Scirpus_radicans: 11.8295
+Scirpus_divaricatus: 40.5161
+N16: 1.61437
+N17: 46.5225
+Carex_pachygyna: 3.01962
+Carex_siderosticta: 3.01962
+N18: 46.5727
+Trichophorum_cespitosum: 30.3821
+Trichophorum_alpinum: 17.4631
+Total number of gain events: 457.117
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 34.9186
+Dulichium_arundinaceum: 19.8998
+N3: 8.45866
+Blysmus_compressus: 8.71456
+Blysmus_rufus: 9.57327
+N4: 6.14354
+N5: 12.33
+N6: 15.1031
+Scirpus_pendulus: 19.7831
+N7: 6.32927
+N8: 0.746878
+N9: 1.62525
+N10: 1.43741
+Scirpus_expansus: 4.35081
+N11: 1.94533
+Scirpus_sylvaticus: 2.75855
+Scirpus_microcarpus: 2.34525
+Scirpus_maximowiczii: 5.81475
+N12: 0.720368
+N13: 2.48537
+Scirpus_polystachyus: 5.05237
+Scirpus_cyperinus: 3.87576
+N14: 2.41062
+N15: 2.54209
+Eriophorum_virginicum: 2.94254
+Eriophorum_gracile: 2.50756
+Eriophorum_angustifolium_subsp_angustifolium: 5.50868
+Scirpus_radicans: 9.98847
+Scirpus_divaricatus: 37.3714
+N16: 1.09728
+N17: 48.8392
+Carex_pachygyna: 2.70417
+Carex_siderosticta: 2.70417
+N18: 23.5215
+Trichophorum_cespitosum: 10.3592
+Trichophorum_alpinum: 19.5452
+Total number of loss events: 346.454
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+N2: 1.52638
+N4: 0.602244
+N17: 2.5841
+Total number of duplication events: 5.75402
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	43.4501	34.9186	1.52638	0
+Dulichium_arundinaceum	22.2828	19.8998	0.0104465	0
+N3	12.3066	8.45866	0.00299154	0
+Blysmus_compressus	13.2496	8.71456	4.23559e-007	0
+Blysmus_rufus	12.1083	9.57327	3.90411e-007	0
+N4	8.54235	6.14354	0.602244	0
+N5	15.7009	12.33	0.397082	0
+N6	23.8088	15.1031	0.0571076	0
+Scirpus_pendulus	20.222	19.7831	1.42065e-005	0
+N7	12.9216	6.32927	1.86638e-007	0
+N8	1.69982	0.746878	4.99936e-028	0
+N9	3.21384	1.62525	1.12536e-036	0
+N10	2.40518	1.43741	1.96914e-041	0
+Scirpus_expansus	6.68079	4.35081	0	0
+N11	2.80318	1.94533	6.72486e-049	0
+Scirpus_sylvaticus	3.23069	2.75855	0	0
+Scirpus_microcarpus	3.81738	2.34525	0	0
+Scirpus_maximowiczii	9.11255	5.81475	0	0
+N12	1.09536	0.720368	9.24311e-037	0
+N13	4.24761	2.48537	6.67651e-037	0
+Scirpus_polystachyus	5.80167	5.05237	0	0
+Scirpus_cyperinus	7.62506	3.87576	0	0
+N14	2.83141	2.41062	4.11647e-038	0
+N15	3.29538	2.54209	3.09435e-039	0
+Eriophorum_virginicum	3.28007	2.94254	0	0
+Eriophorum_gracile	3.84508	2.50756	0	0
+Eriophorum_angustifolium_subsp_angustifolium	6.59949	5.50868	0	0
+Scirpus_radicans	11.8295	9.98847	0	0
+Scirpus_divaricatus	40.5161	37.3714	0.329511	0
+N16	1.61437	1.09728	0.0540272	0
+N17	46.5225	48.8392	2.5841	0
+Carex_pachygyna	3.01962	2.70417	0.0217986	0
+Carex_siderosticta	3.01962	2.70417	0.0217986	0
+N18	46.5727	23.5215	0.146523	0
+Trichophorum_cespitosum	30.3821	10.3592	0	0
+Trichophorum_alpinum	17.4631	19.5452	1.53947e-012	0
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Dulichium_arundinaceum	65.7329	54.8184	1.53683	0
+Blysmus_compressus	69.0062	52.0918	1.52937	0
+Blysmus_rufus	67.865	52.9506	1.52937	0
+Scirpus_pendulus	68.274	53.3598	1.05645	0
+Scirpus_expansus	74.9732	48.0662	1.05643	0
+Scirpus_sylvaticus	74.3263	48.4193	1.05643	0
+Scirpus_microcarpus	74.913	48.006	1.05643	0
+Scirpus_maximowiczii	74.9998	48.0927	1.05643	0
+Scirpus_polystachyus	73.818	48.9109	1.05643	0
+Scirpus_cyperinus	75.6414	47.7342	1.05643	0
+Eriophorum_virginicum	73.1756	49.2684	1.05643	0
+Eriophorum_gracile	73.7406	48.8334	1.05643	0
+Eriophorum_angustifolium_subsp_angustifolium	73.1997	49.2924	1.05643	0
+Scirpus_radicans	72.8031	49.8943	1.05643	0
+Scirpus_divaricatus	64.7593	55.845	1.32884	0
+Carex_pachygyna	59.6988	58.7841	3.26217	0
+Carex_siderosticta	59.6988	58.7841	3.26217	0
+Trichophorum_cespitosum	87.1115	41.1215	0.802794	0
+Trichophorum_alpinum	74.1925	50.3075	0.802794	0

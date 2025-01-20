@@ -1,0 +1,62 @@
+#Nodes with GAIN events with expectation above 0.5
+Total number of gain events: 3.32793e-08
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 3.84921
+N3: 5.35553
+N4: 37.3071
+Cyperus_houghtonii: 3.10704
+Cyperus_schweinitzii: 2.10728
+Lipocarpha_micrantha: 39.5132
+Lipocarpha_microcephala: 44.734
+N5: 10.1936
+N6: 22.8788
+Kyllinga_brevifolia: 22.1037
+Kyllinga_bulbosa: 23.9352
+N7: 2.7684
+Cyperus_papyrus: 35.669
+Cyperus_longus: 36.3923
+Total number of loss events: 289.914
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+Total number of duplication events: 1.58219
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+N2	7.412e-28	3.84921	0.000235689	0
+N3	4.25449e-24	5.35553	0.000255676	0
+N4	3.67815e-18	37.3071	0.261301	0
+Cyperus_houghtonii	0	3.10704	0.00147657	0
+Cyperus_schweinitzii	0	2.10728	0.0014764	0
+Lipocarpha_micrantha	0	39.5132	0.216448	0
+Lipocarpha_microcephala	0	44.734	0.165074	0
+N5	1.76863e-24	10.1936	0.000381607	0
+N6	1.46775e-14	22.8788	0.00186414	0
+Kyllinga_brevifolia	0	22.1037	0.049068	0
+Kyllinga_bulbosa	3.32793e-08	23.9352	0.0336378	0
+N7	1.38781e-24	2.7684	0.00103379	0
+Cyperus_papyrus	0	35.669	0.42445	0
+Cyperus_longus	0	36.3923	0.425488	0
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION
+Cyperus_houghtonii	3.67815e-18	49.6189	0.263269	0
+Cyperus_schweinitzii	3.67815e-18	48.6191	0.263269	0
+Lipocarpha_micrantha	4.25524e-24	48.718	0.21694	0
+Lipocarpha_microcephala	7.412e-28	48.5832	0.165309	0
+Kyllinga_brevifolia	1.46775e-14	55.1761	0.0513137	0
+Kyllinga_bulbosa	3.32793e-08	57.0076	0.0358835	0
+Cyperus_papyrus	3.15643e-24	48.631	0.425865	0
+Cyperus_longus	3.15643e-24	49.3543	0.426904	0

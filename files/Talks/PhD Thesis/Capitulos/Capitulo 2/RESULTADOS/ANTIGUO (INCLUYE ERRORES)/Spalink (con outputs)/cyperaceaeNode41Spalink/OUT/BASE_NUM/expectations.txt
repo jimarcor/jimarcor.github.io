@@ -1,0 +1,386 @@
+#Nodes with GAIN events with expectation above 0.5
+N2: 76.0954
+Dulichium_arundinaceum: 40.2229
+N3: 20.9643
+Blysmus_compressus: 22.3558
+Blysmus_rufus: 21.3796
+N4: 14.6771
+N5: 27.1814
+N6: 39.6658
+Scirpus_pendulus: 37.2877
+N7: 20.4402
+N8: 2.63377
+N9: 5.14414
+N10: 4.01125
+Scirpus_expansus: 11.3902
+N11: 4.83907
+Scirpus_sylvaticus: 5.88101
+Scirpus_microcarpus: 6.48205
+Scirpus_maximowiczii: 15.4517
+N12: 1.87081
+N13: 7.03495
+Scirpus_polystachyus: 10.6075
+Scirpus_cyperinus: 12.2153
+N14: 5.11919
+N15: 5.81976
+Eriophorum_virginicum: 6.00724
+Eriophorum_gracile: 6.52837
+Eriophorum_angustifolium_subsp_angustifolium: 11.9547
+Scirpus_radicans: 21.0921
+Scirpus_divaricatus: 73.4703
+N16: 2.77675
+N17: 10.2149
+N18: 41.5279
+N19: 9.20326
+N20: 5.07135
+N21: 12.2891
+Carex_eburnea: 26.7788
+Carex_cruciata: 23.6346
+N22: 10.3108
+N23: 2.80189
+N24: 2.55366
+N25: 1.99289
+Carex_richardsonii: 20.7899
+N26: 2.73774
+Carex_capillaris: 10.5197
+Carex_baccans: 16.6996
+N27: 4.48624
+Carex_granularis: 15.8031
+N28: 10.9225
+Carex_pseudocyperus: 11.5483
+Carex_oligosperma: 14.69
+N29: 8.62022
+Carex_pallescens: 20.173
+Carex_albursina: 14.6766
+N30: 6.88716
+Carex_pendula: 22.9594
+N31: 2.62163
+Carex_hostiana: 19.7282
+Carex_echinochloe: 16.0807
+Carex_dissitiflora: 40.0707
+N32: 4.36765
+N33: 11.5064
+N34: 11.841
+N35: 25.3602
+Uncinia_uncinata: 10.2674
+Uncinia_phleoides: 12.7473
+N36: 1.72956
+N37: 2.27866
+Carex_pauciflora: 18.0246
+Carex_leptalea_subsp_leptalea: 21.3282
+Carex_capitata: 23.144
+N38: 14.217
+Kobresia_myosuroides: 24.5063
+Kobresia_simpliciuscula: 27.811
+N39: 16.1037
+Carex_gibba: 27.9904
+N40: 8.79734
+N41: 12.6193
+Carex_radiata: 12.6778
+Carex_macrocephala: 17.2902
+N42: 4.99825
+Carex_satsumensis: 15.2832
+Carex_diandra: 20.9226
+N44: 6.09559
+N45: 3.81984
+Carex_foenea: 17.959
+N46: 2.51099
+Carex_conferta: 6.53621
+Carex_arcta: 7.03397
+N47: 4.48006
+N48: 2.60523
+Carex_disticha: 8.18203
+Carex_chordorrhiza: 8.18203
+Carex_deweyana_var_deweyana: 8.78257
+N49: 76.6127
+Carex_pachygyna: 5.62387
+Carex_siderosticta: 5.62387
+N50: 73.8166
+Trichophorum_cespitosum: 46.2328
+Trichophorum_alpinum: 33.2884
+Total number of gain events: 1610.19
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 68.3008
+Dulichium_arundinaceum: 37.912
+N3: 17.1697
+Blysmus_compressus: 17.8395
+Blysmus_rufus: 18.8633
+N4: 12.2989
+N5: 24.3032
+N6: 31.1662
+Scirpus_pendulus: 36.9382
+N7: 13.9166
+N8: 1.69078
+N9: 3.56242
+N10: 3.04551
+Scirpus_expansus: 9.05821
+N11: 3.98246
+Scirpus_sylvaticus: 5.40566
+Scirpus_microcarpus: 5.0067
+Scirpus_maximowiczii: 12.1539
+N12: 1.49349
+N13: 5.27008
+Scirpus_polystachyus: 9.87017
+Scirpus_cyperinus: 8.47801
+N14: 4.7035
+N15: 5.07144
+Eriophorum_virginicum: 5.66903
+Eriophorum_gracile: 5.19016
+Eriophorum_angustifolium_subsp_angustifolium: 10.8682
+Scirpus_radicans: 19.2686
+Scirpus_divaricatus: 70.6212
+N16: 2.19242
+N17: 9.62249
+N18: 32.5666
+N19: 8.91717
+N20: 4.26587
+N21: 10.9302
+Carex_eburnea: 20.6396
+Carex_cruciata: 23.4955
+N22: 8.40526
+N23: 2.44103
+N24: 2.49418
+N25: 2.97727
+Carex_richardsonii: 15.632
+N26: 4.67781
+Carex_capillaris: 20.4078
+Carex_baccans: 12.5952
+N27: 2.52965
+Carex_granularis: 18.589
+N28: 4.52228
+Carex_pseudocyperus: 8.75998
+Carex_oligosperma: 6.90469
+N29: 6.62866
+Carex_pallescens: 11.9335
+Carex_albursina: 16.4369
+N30: 5.55517
+Carex_pendula: 16.6991
+N31: 2.50712
+Carex_hostiana: 14.5822
+Carex_echinochloe: 17.9346
+Carex_dissitiflora: 39.767
+N32: 3.03257
+N33: 7.7639
+N34: 9.1108
+N35: 10.4599
+Uncinia_uncinata: 7.60833
+Uncinia_phleoides: 6.08943
+N36: 2.78841
+N37: 3.14663
+Carex_pauciflora: 23.3107
+Carex_leptalea_subsp_leptalea: 19.6178
+Carex_capitata: 23.303
+N38: 10.7464
+Kobresia_myosuroides: 22.4679
+Kobresia_simpliciuscula: 19.7727
+N39: 14.2885
+Carex_gibba: 32.5525
+N40: 5.78421
+N41: 8.06337
+Carex_radiata: 12.8135
+Carex_macrocephala: 9.42626
+N42: 4.435
+Carex_satsumensis: 21.4245
+Carex_diandra: 16.064
+N44: 3.73199
+N45: 2.32871
+Carex_foenea: 6.08966
+N46: 3.92347
+Carex_conferta: 8.12036
+Carex_arcta: 7.61812
+N47: 3.87477
+N48: 1.72256
+Carex_disticha: 6.17615
+Carex_chordorrhiza: 6.17615
+Carex_deweyana_var_deweyana: 9.89384
+N49: 80.4719
+Carex_pachygyna: 5.21393
+Carex_siderosticta: 5.21393
+N50: 51.2163
+Trichophorum_cespitosum: 25.7652
+Trichophorum_alpinum: 35.7473
+Total number of loss events: 1382.08
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+N2: 3.28274
+N4: 1.07268
+N5: 1.06366
+Scirpus_divaricatus: 1.38118
+N49: 4.62527
+Total number of duplication events: 13.8311
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0
+#+++++++++++++++++++++++++++++
+
+#+++++++++++++++++++++++++++++
+
+#Nodes with transitions in base number with expectation above 0.5
+Total number of transitions in base number: 0
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION	BASE-NUMBER
+N2	76.0954	68.3008	3.28274	0	0
+Dulichium_arundinaceum	40.2229	37.912	0.166968	0	0
+N3	20.9643	17.1697	0.0610117	0	0
+Blysmus_compressus	22.3558	17.8395	0.000333697	0	0
+Blysmus_rufus	21.3796	18.8633	0.000545891	0	0
+N4	14.6771	12.2989	1.07268	0	0
+N5	27.1814	24.3032	1.06366	0	0
+N6	39.6658	31.1662	0.330631	0	0
+Scirpus_pendulus	37.2877	36.9382	0.00543451	0	0
+N7	20.4402	13.9166	0.000277369	0	0
+N8	2.63377	1.69078	8.64796e-17	0	0
+N9	5.14414	3.56242	2.54986e-21	0	0
+N10	4.01125	3.04551	5.50755e-24	0	0
+Scirpus_expansus	11.3902	9.05821	0	0	0
+N11	4.83907	3.98246	4.81237e-28	0	0
+Scirpus_sylvaticus	5.88101	5.40566	0	0	0
+Scirpus_microcarpus	6.48205	5.0067	0	0	0
+Scirpus_maximowiczii	15.4517	12.1539	0	0	0
+N12	1.87081	1.49349	2.79713e-22	0	0
+N13	7.03495	5.27008	1.23543e-21	0	0
+Scirpus_polystachyus	10.6075	9.87017	0	0	0
+Scirpus_cyperinus	12.2153	8.47801	0	0	0
+N14	5.11919	4.7035	3.38516e-21	0	0
+N15	5.81976	5.07144	1.33249e-23	0	0
+Eriophorum_virginicum	6.00724	5.66903	0	0	0
+Eriophorum_gracile	6.52837	5.19016	0	0	0
+Eriophorum_angustifolium_subsp_angustifolium	11.9547	10.8682	0	0	0
+Scirpus_radicans	21.0921	19.2686	5.19802e-14	0	0
+Scirpus_divaricatus	73.4703	70.6212	1.38118	0	0
+N16	2.77675	2.19242	0.11908	0	0
+N17	10.2149	9.62249	0.41796	0	0
+N18	41.5279	32.5666	0.473476	0	0
+N19	9.20326	8.91717	0.000114643	0	0
+N20	5.07135	4.26587	1.28241e-05	0	0
+N21	12.2891	10.9302	1.91687e-05	0	0
+Carex_eburnea	26.7788	20.6396	4.12836e-06	0	0
+Carex_cruciata	23.6346	23.4955	1.40824e-05	0	0
+N22	10.3108	8.40526	1.39265e-06	0	0
+N23	2.80189	2.44103	7.42273e-12	0	0
+N24	2.55366	2.49418	2.28238e-13	0	0
+N25	1.99289	2.97727	1.1361e-12	0	0
+Carex_richardsonii	20.7899	15.632	5.82157e-11	0	0
+N26	2.73774	4.67781	9.99981e-09	0	0
+Carex_capillaris	10.5197	20.4078	0.000213049	0	0
+Carex_baccans	16.6996	12.5952	9.0942e-09	0	0
+N27	4.48624	2.52965	9.51041e-14	0	0
+Carex_granularis	15.8031	18.589	5.37747e-08	0	0
+N28	10.9225	4.52228	5.11738e-15	0	0
+Carex_pseudocyperus	11.5483	8.75998	0	0	0
+Carex_oligosperma	14.69	6.90469	0	0	0
+N29	8.62022	6.62866	6.21135e-11	0	0
+Carex_pallescens	20.173	11.9335	0	0	0
+Carex_albursina	14.6766	16.4369	8.48099e-12	0	0
+N30	6.88716	5.55517	1.55787e-10	0	0
+Carex_pendula	22.9594	16.6991	2.21515e-12	0	0
+N31	2.62163	2.50712	2.00442e-11	0	0
+Carex_hostiana	19.7282	14.5822	0	0	0
+Carex_echinochloe	16.0807	17.9346	6.33957e-07	0	0
+Carex_dissitiflora	40.0707	39.767	0.00448209	0	0
+N32	4.36765	3.03257	1.89262e-05	0	0
+N33	11.5064	7.7639	4.758e-06	0	0
+N34	11.841	9.1108	1.60477e-08	0	0
+N35	25.3602	10.4599	2.32933e-15	0	0
+Uncinia_uncinata	10.2674	7.60833	0	0	0
+Uncinia_phleoides	12.7473	6.08943	0	0	0
+N36	1.72956	2.78841	9.22172e-13	0	0
+N37	2.27866	3.14663	8.22437e-12	0	0
+Carex_pauciflora	18.0246	23.3107	8.42798e-08	0	0
+Carex_leptalea_subsp_leptalea	21.3282	19.6178	6.90367e-11	0	0
+Carex_capitata	23.144	23.303	2.54219e-10	0	0
+N38	14.217	10.7464	8.39865e-08	0	0
+Kobresia_myosuroides	24.5063	22.4679	7.4848e-10	0	0
+Kobresia_simpliciuscula	27.811	19.7727	0	0	0
+N39	16.1037	14.2885	3.76058e-05	0	0
+Carex_gibba	27.9904	32.5525	0.000188346	0	0
+N40	8.79734	5.78421	1.37254e-07	0	0
+N41	12.6193	8.06337	1.65548e-12	0	0
+Carex_radiata	12.6778	12.8135	0	0	0
+Carex_macrocephala	17.2902	9.42626	0	0	0
+N42	4.99825	4.435	9.60092e-13	0	0
+Carex_satsumensis	15.2832	21.4245	1.35611e-11	0	0
+N43	0	0	0	0	0
+Carex_diandra	20.9226	16.064	0	0	0
+N44	6.09559	3.73199	1.39578e-17	0	0
+N45	3.81984	2.32871	9.89729e-26	0	0
+Carex_foenea	17.959	6.08966	0	0	0
+N46	2.51099	3.92347	1.2486e-26	0	0
+Carex_conferta	6.53621	8.12036	0	0	0
+Carex_arcta	7.03397	7.61812	0	0	0
+N47	4.48006	3.87477	2.84516e-25	0	0
+N48	2.60523	1.72256	4.79974e-29	0	0
+Carex_disticha	8.18203	6.17615	0	0	0
+Carex_chordorrhiza	8.18203	6.17615	0	0	0
+Carex_deweyana_var_deweyana	8.78257	9.89384	0	0	0
+N49	76.6127	80.4719	4.62527	0	0
+Carex_pachygyna	5.62387	5.21393	0.169698	0	0
+Carex_siderosticta	5.62387	5.21393	0.169698	0	0
+N50	73.8166	51.2163	0.485297	0	0
+Trichophorum_cespitosum	46.2328	25.7652	0	0	0
+Trichophorum_alpinum	33.2884	35.7473	4.61364e-07	0	0
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION	BASE-NUMBER
+Dulichium_arundinaceum	116.318	106.213	3.44971	0	0
+Blysmus_compressus	119.416	103.31	3.34408	0	0
+Blysmus_rufus	118.439	104.334	3.3443	0	0
+Scirpus_pendulus	118.812	104.707	2.47241	0	0
+Scirpus_expansus	125.144	99.0418	2.46725	0	0
+Scirpus_sylvaticus	124.474	99.3717	2.46725	0	0
+Scirpus_microcarpus	125.075	98.9727	2.46725	0	0
+Scirpus_maximowiczii	125.194	99.0919	2.46725	0	0
+Scirpus_polystachyus	124.112	100.009	2.46725	0	0
+Scirpus_cyperinus	125.719	98.6172	2.46725	0	0
+Eriophorum_virginicum	123.415	100.313	2.46725	0	0
+Eriophorum_gracile	123.936	99.8342	2.46725	0	0
+Eriophorum_angustifolium_subsp_angustifolium	123.543	100.441	2.46725	0	0
+Scirpus_radicans	123.057	100.953	2.46725	0	0
+Scirpus_divaricatus	115.329	107.223	3.51752	0	0
+Carex_eburnea	122.539	101.433	2.08335	0	0
+Carex_cruciata	119.395	104.289	2.08336	0	0
+Carex_richardsonii	121.92	101.813	2.08333	0	0
+Carex_capillaris	114.388	111.267	2.08354	0	0
+Carex_baccans	120.568	103.454	2.08333	0	0
+Carex_granularis	119.427	104.323	2.08333	0	0
+Carex_pseudocyperus	126.095	99.0159	2.08333	0	0
+Carex_oligosperma	129.236	97.1606	2.08333	0	0
+Carex_pallescens	125.377	99.2719	2.08333	0	0
+Carex_albursina	119.881	103.775	2.08333	0	0
+Carex_pendula	123.629	100.523	2.08333	0	0
+Carex_hostiana	123.019	100.913	2.08333	0	0
+Carex_echinochloe	119.372	104.266	2.08333	0	0
+Carex_dissitiflora	118.471	105.365	2.08779	0	0
+Uncinia_uncinata	132.539	94.6559	2.08322	0	0
+Uncinia_phleoides	135.019	93.137	2.08322	0	0
+Carex_pauciflora	118.945	105.833	2.08322	0	0
+Carex_leptalea_subsp_leptalea	122.248	102.141	2.08322	0	0
+Carex_capitata	121.785	102.679	2.08322	0	0
+Kobresia_myosuroides	123.794	100.691	2.08322	0	0
+Kobresia_simpliciuscula	127.099	97.996	2.08322	0	0
+Carex_gibba	117.658	106.554	2.08344	0	0
+Carex_radiata	123.763	100.663	2.08325	0	0
+Carex_macrocephala	128.375	97.2753	2.08325	0	0
+Carex_satsumensis	118.747	105.645	2.08325	0	0
+Carex_diandra	124.386	100.285	2.08325	0	0
+Carex_foenea	131.338	96.3711	2.08325	0	0
+Carex_conferta	122.426	102.325	2.08325	0	0
+Carex_arcta	122.924	101.823	2.08325	0	0
+Carex_disticha	124.827	99.7262	2.08325	0	0
+Carex_chordorrhiza	124.827	99.7262	2.08325	0	0
+Carex_deweyana_var_deweyana	122.822	101.721	2.08325	0	0
+Carex_pachygyna	109.905	109.8	6.40469	0	0
+Carex_siderosticta	109.905	109.8	6.40469	0	0
+Trichophorum_cespitosum	137.503	91.4728	1.67706	0	0
+Trichophorum_alpinum	124.559	101.455	1.67706	0	0

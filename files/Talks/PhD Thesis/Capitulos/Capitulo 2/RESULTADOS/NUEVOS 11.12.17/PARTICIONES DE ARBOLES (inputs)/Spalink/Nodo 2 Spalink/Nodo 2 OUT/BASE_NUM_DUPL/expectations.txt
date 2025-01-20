@@ -1,0 +1,252 @@
+#Nodes with GAIN events with expectation above 0.5
+N2: 13.4621
+N3: 7.35426
+N4: 18.5404
+Carex_eburnea: 40.09
+Carex_cruciata: 36.6764
+N5: 15.3315
+N6: 4.25029
+N7: 3.94851
+N8: 3.28382
+Carex_richardsonii: 31.2117
+N9: 4.57972
+Carex_capillaris: 17.4239
+Carex_baccans: 24.9691
+N10: 6.44159
+Carex_granularis: 25.1408
+N11: 15.0271
+Carex_pseudocyperus: 17.2464
+Carex_oligosperma: 20.5246
+N12: 12.9047
+Carex_pallescens: 29.0063
+Carex_albursina: 23.2071
+N13: 10.3603
+Carex_pendula: 34.0096
+N14: 4.05044
+Carex_hostiana: 29.3719
+Carex_echinochloe: 25.3567
+Carex_dissitiflora: 61.2498
+N15: 5.97725
+N16: 16.4563
+N17: 17.5633
+N18: 34.9774
+Uncinia_uncinata: 15.247
+Uncinia_phleoides: 17.9073
+N19: 2.8683
+N20: 3.7026
+Carex_pauciflora: 28.9221
+Carex_leptalea_subsp_leptalea: 32.6817
+Carex_capitata: 35.8151
+N21: 21.0852
+Kobresia_myosuroides: 37.4757
+Kobresia_simpliciuscula: 40.9824
+N22: 23.9873
+Carex_gibba: 44.269
+N23: 12.7666
+N24: 18.3656
+Carex_radiata: 19.7417
+Carex_macrocephala: 24.5478
+N25: 7.60742
+Carex_satsumensis: 25.0538
+Carex_diandra: 31.3225
+N27: 8.84651
+N28: 5.55291
+Carex_foenea: 24.1463
+N29: 4.17612
+Carex_conferta: 10.5544
+Carex_arcta: 11.011
+N30: 6.84907
+N31: 3.8385
+Carex_disticha: 12.3052
+Carex_chordorrhiza: 12.3052
+Carex_deweyana_var_deweyana: 13.8296
+Total number of gain events: 1167.76
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 10.7116
+N3: 5.45929
+N4: 13.7339
+Carex_eburnea: 26.5324
+Carex_cruciata: 29.1189
+N5: 10.7543
+N6: 3.09874
+N7: 3.11382
+N8: 3.50236
+Carex_richardsonii: 20.191
+N9: 5.38295
+Carex_capillaris: 22.5837
+Carex_baccans: 16.1407
+N10: 3.3943
+Carex_granularis: 22.39
+N11: 6.33566
+Carex_pseudocyperus: 11.1949
+Carex_oligosperma: 9.47329
+N12: 8.50217
+Carex_pallescens: 15.7738
+Carex_albursina: 19.9746
+N13: 7.08549
+Carex_pendula: 21.4978
+N14: 3.12137
+Carex_hostiana: 18.7889
+Carex_echinochloe: 21.7737
+Carex_dissitiflora: 48.9909
+N15: 3.86064
+N16: 10.1882
+N17: 11.7453
+N18: 14.7717
+Uncinia_uncinata: 9.7475
+Uncinia_phleoides: 8.40817
+N19: 3.23701
+N20: 3.72754
+Carex_pauciflora: 27.7151
+Carex_leptalea_subsp_leptalea: 24.4747
+Carex_capitata: 28.6354
+N21: 13.8545
+Kobresia_myosuroides: 28.0826
+Kobresia_simpliciuscula: 25.5893
+N22: 17.9392
+Carex_gibba: 39.4245
+N23: 7.62636
+N24: 10.6112
+Carex_radiata: 15.7932
+Carex_macrocephala: 12.6002
+N25: 5.60635
+Carex_satsumensis: 25.3514
+Carex_diandra: 20.62
+N27: 4.9694
+N28: 3.10009
+Carex_foenea: 8.806
+N29: 4.56688
+Carex_conferta: 9.79107
+Carex_arcta: 9.24776
+N30: 4.90816
+N31: 2.26849
+Carex_disticha: 7.99141
+Carex_chordorrhiza: 7.99141
+Carex_deweyana_var_deweyana: 11.9457
+Total number of loss events: 833.817
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+N2: 1.28587
+Carex_dissitiflora: 0.872147
+N15: 0.616678
+N22: 0.642028
+Total number of duplication events: 4.66391
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0
+#+++++++++++++++++++++++++++++
+
+#+++++++++++++++++++++++++++++
+
+#Nodes with transitions in base number with expectation above 0.5
+Total number of transitions in base number: 0
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION	BASE-NUMBER
+N2	13.4621	10.7116	1.28587	0	0
+N3	7.35426	5.45929	0.26912	0	0
+N4	18.5404	13.7339	0.215208	0	0
+Carex_eburnea	40.09	26.5324	0.0197329	0	0
+Carex_cruciata	36.6764	29.1189	0.0358655	0	0
+N5	15.3315	10.7543	0.121964	0	0
+N6	4.25029	3.09874	0.000600565	0	0
+N7	3.94851	3.11382	9.01467e-05	0	0
+N8	3.28382	3.50236	5.29154e-05	0	0
+Carex_richardsonii	31.2117	20.191	0.000316218	0	0
+N9	4.57972	5.38295	0.000410343	0	0
+Carex_capillaris	17.4239	22.5837	0.0288272	0	0
+Carex_baccans	24.9691	16.1407	0.000823708	0	0
+N10	6.44159	3.3943	1.87977e-05	0	0
+Carex_granularis	25.1408	22.39	2.95685e-05	0	0
+N11	15.0271	6.33566	5.6928e-07	0	0
+Carex_pseudocyperus	17.2464	11.1949	0	0	0
+Carex_oligosperma	20.5246	9.47329	0	0	0
+N12	12.9047	8.50217	0.000343623	0	0
+Carex_pallescens	29.0063	15.7738	2.127e-05	0	0
+Carex_albursina	23.2071	19.9746	5.07921e-05	0	0
+N13	10.3603	7.08549	0.00156737	0	0
+Carex_pendula	34.0096	21.4978	0.000162112	0	0
+N14	4.05044	3.12137	7.11373e-05	0	0
+Carex_hostiana	29.3719	18.7889	5.88182e-05	0	0
+Carex_echinochloe	25.3567	21.7737	0.000151196	0	0
+Carex_dissitiflora	61.2498	48.9909	0.872147	0	0
+N15	5.97725	3.86064	0.616678	0	0
+N16	16.4563	10.1882	0.356581	0	0
+N17	17.5633	11.7453	0.0174753	0	0
+N18	34.9774	14.7717	7.93946e-06	0	0
+Uncinia_uncinata	15.247	9.7475	0	0	0
+Uncinia_phleoides	17.9073	8.40817	0	0	0
+N19	2.8683	3.23701	4.40575e-05	0	0
+N20	3.7026	3.72754	7.64038e-05	0	0
+Carex_pauciflora	28.9221	27.7151	0.00137523	0	0
+Carex_leptalea_subsp_leptalea	32.6817	24.4747	0.000227059	0	0
+Carex_capitata	35.8151	28.6354	0.000392711	0	0
+N21	21.0852	13.8545	0.0239668	0	0
+Kobresia_myosuroides	37.4757	28.0826	0.000392082	0	0
+Kobresia_simpliciuscula	40.9824	25.5893	0.000215053	0	0
+N22	23.9873	17.9392	0.642028	0	0
+Carex_gibba	44.269	39.4245	0.13817	0	0
+N23	12.7666	7.62636	0.0126941	0	0
+N24	18.3656	10.6112	3.80065e-05	0	0
+Carex_radiata	19.7417	15.7932	1.34081e-10	0	0
+Carex_macrocephala	24.5478	12.6002	0	0	0
+N25	7.60742	5.60635	1.8089e-05	0	0
+Carex_satsumensis	25.0538	25.3514	2.91401e-05	0	0
+N26	2.0945e-18	8.96285e-11	0	0	0
+Carex_diandra	31.3225	20.62	5.70519e-07	0	0
+N27	8.84651	4.9694	2.2293e-08	0	0
+N28	5.55291	3.10009	9.77392e-14	0	0
+Carex_foenea	24.1463	8.806	0	0	0
+N29	4.17612	4.56688	4.14807e-16	0	0
+Carex_conferta	10.5544	9.79107	0	0	0
+Carex_arcta	11.011	9.24776	0	0	0
+N30	6.84907	4.90816	1.63786e-13	0	0
+N31	3.8385	2.26849	5.83932e-17	0	0
+Carex_disticha	12.3052	7.99141	0	0	0
+Carex_chordorrhiza	12.3052	7.99141	0	0	0
+Carex_deweyana_var_deweyana	13.8296	11.9457	0	0	0
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION	BASE-NUMBER
+Carex_eburnea	79.4467	56.4373	1.78993	0	0
+Carex_cruciata	76.0331	59.0237	1.80606	0	0
+Carex_richardsonii	78.8422	56.8311	1.67801	0	0
+Carex_capillaris	69.6342	64.6068	1.70693	0	0
+Carex_baccans	77.1793	58.1638	1.67893	0	0
+Carex_granularis	75.9291	58.922	1.67769	0	0
+Carex_pseudocyperus	83.0618	54.0627	1.67766	0	0
+Carex_oligosperma	86.34	52.341	1.67766	0	0
+Carex_pallescens	82.3092	54.3	1.67792	0	0
+Carex_albursina	76.51	58.5007	1.67795	0	0
+Carex_pendula	80.5178	55.5085	1.67868	0	0
+Carex_hostiana	79.9306	55.921	1.67865	0	0
+Carex_echinochloe	75.9153	58.9057	1.67874	0	0
+Carex_dissitiflora	74.7119	59.7026	2.15801	0	0
+Uncinia_uncinata	90.2212	50.3133	0.990742	0	0
+Uncinia_phleoides	92.8815	48.974	0.990742	0	0
+Carex_pauciflora	75.4898	60.4737	0.99223	0	0
+Carex_leptalea_subsp_leptalea	79.2495	57.2334	0.991082	0	0
+Carex_capitata	78.6803	57.6665	0.991171	0	0
+Kobresia_myosuroides	80.9945	55.9858	0.997618	0	0
+Kobresia_simpliciuscula	84.5012	53.4925	0.997441	0	0
+Carex_gibba	74.2335	61.2244	1.39688	0	0
+Carex_radiata	80.8385	55.8307	1.27144	0	0
+Carex_macrocephala	85.6445	52.6376	1.27144	0	0
+Carex_satsumensis	75.3924	60.384	1.27145	0	0
+Carex_diandra	81.6611	55.6526	1.27142	0	0
+Carex_foenea	88.8843	51.9081	1.27142	0	0
+Carex_conferta	79.4685	57.46	1.27142	0	0
+Carex_arcta	79.9252	56.9167	1.27142	0	0
+Carex_disticha	82.1779	55.17	1.27142	0	0
+Carex_chordorrhiza	82.1779	55.17	1.27142	0	0
+Carex_deweyana_var_deweyana	79.8638	56.8558	1.27142	0	0

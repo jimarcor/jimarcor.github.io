@@ -1,0 +1,210 @@
+chromEvol Version: 2.0. Last updated December 2013
+
+Error reading fasta file, error finding sequence name starting with >
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/escarolo/job_scripts/6945: línea 7: 22982 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_BASE_NUM_DUPL
+chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013
+
+
+Error reading fasta file, error finding sequence name starting with >
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+
+Error reading fasta file, error finding sequence name starting with >
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/nova13/job_scripts/6946: línea 7: 31278 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_BASE_NUM
+/opt/sge/default/spool/nova13/job_scripts/6947: línea 7: 31279 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE_DEMI_EST
+chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013
+
+
+
+Error reading fasta file, error finding sequence name starting with >
+
+Error reading fasta file, error finding sequence name starting with >chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+
+Error reading fasta file, error finding sequence name starting with >
+chromEvol: errorMsg.cpp:41: static void errorMsg::reportError(const std::string&, int): Assertion `0' failed.
+/opt/sge/default/spool/chuck1/job_scripts/6948: línea 7: 23850 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE_DEMI
+/opt/sge/default/spool/chuck1/job_scripts/6950: línea 7: 23851 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE_NO_DUPL
+/opt/sge/default/spool/chuck1/job_scripts/6949: línea 7: 23852 Abortado                (`core' generado) /home/aescudero/PIP/chromEvol param_CONST_RATE
+chromEvol Version: 2.0. Last updated December 2013
+chromEvol Version: 2.0. Last updated December 2013
+chromEvol Version: 2.0. Last updated December 2013
+Optimizing parameters
+Optimizing parameters
+Optimizing parameters
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++
+chromEvol Version: 2.0. Last updated December 2013
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
+chromEvol Version: 2.0. Last updated December 2013chromEvol Version: 2.0. Last updated December 2013
+
+Optimizing parameters
+Optimizing parameters
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+Inferring ancestral states
+
+running 10000 simulations
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+finished simulations
+
+total expectations
+dupl=42.0671
+gain=3166.39
+loss=3112.8
+halFDupl=0
+baseNumber=0
+toMaxChr=3.06261e-05
+
+TOTAL RUNNING TIME = 6472
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
+Inferring ancestral states
+
+running 10000 simulations
+Inferring ancestral states
+
+running 10000 simulations
+finished simulations
+finished simulations
+
+total expectations
+dupl=0.25875
+gain=0
+loss=1212.97
+halFDupl=0.501839
+baseNumber=13.5682
+toMaxChr=1.9975
+
+TOTAL RUNNING TIME = 10027
++++++++++++++++++++++++++++++++++++++++++
+
+total expectations
+dupl=38.9579
+gain=741.44
+loss=619.742
+halFDupl=17.5774
+baseNumber=0
+toMaxChr=0.00122014
+
+TOTAL RUNNING TIME = 10218
++++++++++++++++++++++++++++++++++++++++++
+Inferring ancestral states
+
+running 10000 simulations
+finished simulations
+
+total expectations
+dupl=64.6916
+gain=1523.64
+loss=1363.79
+halFDupl=0
+baseNumber=0
+toMaxChr=0.04873
+
+TOTAL RUNNING TIME = 13918
+Inferring ancestral states
+
+running 10000 simulations
+finished simulations
+
+total expectations
+dupl=56.0053
+gain=1310.72
+loss=1162.42
+halFDupl=7.3168
+baseNumber=0
+toMaxChr=0.0351553
+
+TOTAL RUNNING TIME = 17338
+Inferring ancestral states
+
+running 10000 simulations
+finished simulations
+
+total expectations
+dupl=46.6876
+gain=1182.49
+loss=1046.05
+halFDupl=0.00623471
+baseNumber=4.47944
+toMaxChr=0.0178309
+
+TOTAL RUNNING TIME = 21490

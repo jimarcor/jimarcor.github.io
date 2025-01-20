@@ -1,0 +1,64 @@
+#Nodes with GAIN events with expectation above 0.5
+Total number of gain events: 0
+#+++++++++++++++++++++++++++++
+
+#Nodes with LOSS events with expectation above 0.5
+N2: 7.87263
+Kyllinga_bulbosa: 27.1177
+Kyllinga_brevifolia: 25.127
+N3: 1.99632
+Cyperus_capitatus: 28.6545
+N4: 4.11269
+Cyperus_esculentus: 26.4619
+N5: 2.35052
+Cyperus_longus: 22.1322
+N6: 15.6336
+Cyperus_iria: 9.5727
+Pycreus_flavescens: 7.45094
+Total number of loss events: 178.483
+#+++++++++++++++++++++++++++++
+
+#Nodes with duplication events with expectation above 0.5
+Total number of duplication events: 0.0970498
+#+++++++++++++++++++++++++++++
+
+#Nodes with demi-duplication events with expectation above 0.5
+Total number of demi-dulications events: 0.111063
+#+++++++++++++++++++++++++++++
+
+#+++++++++++++++++++++++++++++
+
+#Nodes with transitions in base number with expectation above 0.5
+Cyperus_iria: 0.9812
+Total number of transitions in base number: 3.21882
+#+++++++++++++++++++++++++++++
+
+#EVENTS NOT ACCOUNTED FOR IN THE SIMULATIONS: 
+NONE
+#+++++++++++++++++++++++++++++
+
+#ALL EVENTS EXPECTATIONS PER NODE
+NODE	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION	BASE-NUMBER
+N2	0	7.87263	6.58553e-005	9.57965e-011	0.00661192
+Kyllinga_bulbosa	0	27.1177	2.32186e-006	0	0.0035746
+Kyllinga_brevifolia	0	25.127	0	0	0.00398128
+N3	0	1.99632	0.00452927	0.0107915	0.119566
+Cyperus_capitatus	0	28.6545	0.0442278	0.00278746	0.440398
+N4	0	4.11269	0.00202408	0.00147001	0.121618
+Cyperus_esculentus	0	26.4619	0.013362	0.0261366	0.485211
+N5	0	2.35052	0.000478816	3.12819e-005	0.066155
+Cyperus_longus	0	22.1322	0.0117778	0.0560099	0.494368
+N6	0	15.6336	0.0201378	7.73485e-006	0.336005
+Cyperus_iria	0	9.5727	1.18818e-006	0.013828	0.9812
+Pycreus_flavescens	0	7.45094	0.000442853	0	0.160134
+#+++++++++++++++++++++++++++++
+
+#Expected number of events from root to leaf
+LEAF	GAIN	LOSS	DUPLICATION	DEMI-DUPLICATION	BASE-NUMBER
+Kyllinga_bulbosa	0	34.9903	6.81772e-005	9.57965e-011	0.0101865
+Kyllinga_brevifolia	0	32.9997	6.58553e-005	9.57965e-011	0.0105932
+Cyperus_capitatus	0	30.6508	0.0487571	0.013579	0.559964
+Cyperus_esculentus	0	32.5709	0.0199154	0.0383981	0.726394
+Cyperus_longus	0	30.5918	0.01881	0.0683027	0.801707
+Cyperus_iria	0	33.6659	0.0271712	0.0261285	1.62454
+Pycreus_flavescens	0	31.5441	0.0276128	0.0123005	0.803478
