@@ -37,3 +37,5 @@ td, th {
 |                       | Biorremediación y restauración (203030)                                                               | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 0.9      |
 |                       | Flora y Vegetación (203011)                                                                           | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 3.2      |
 |                       | Especies y Formaciones Vegetales Amenazadas en la Península Ibérica (203039)                          | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 1        |
+
+Total ECTS: 28.39
