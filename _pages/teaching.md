@@ -12,13 +12,9 @@ td, th {
 |:---------------------:|:-----------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------:|:------------------------------------------------------------:|:--------:|
 | **Academic year**     | **Subject**                                                                                           | **Academic degree**                                                   | **University**                                               | **ECTS** |
 |:---------------------:|:------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|:-------------------------------------------------------------|:--------:|
-| **2025/2026**         | Recursos animales y vegetales en Biotecnología (202051)                                               | Grado en Biotecnología                                                | Universidad Pablo de Olavide                                 | 0.60     |
-|                       | Biología (203007)                                                                                     | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 1.70     |
-|                       | Biorremediación y Restauración (203030)                                                               | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 2.00     |
-|                       | Prácticas de Empresa (203035)                                                                         | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 2.40     |
-|                       | Trabajo Fin de Grado (203034)                                                                         | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 0.70     |
-|                       | Alimentos ecológicos (201043)                                                                         | Grado en Nutrición Humana y Dietética                                 | Universidad Pablo de Olavide                                 | 1.80     |
-|                       | Delimitación taxonómica y conservación (2103515)                                                      | Máster en Biodiversidad y Biología de la Conservación                 | Universidad Pablo de Olavide                                 | 0.75     |
+| **2025/2026**         | Inferencias Filogenéticas y Sistemática Molecular (2103521)                                           | Máster en Biodiversidad y Biología de la Conservación                 | Universidad Pablo de Olavide                                 | 0.70     |
+|                       | Trabajo Fin de Grado (203034)                                                                         | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 0.50     |
+|                       | Bases Genéticas de la Conservación (203038)                                                           | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 0.40     |
 |:---------------------:|:------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|:-------------------------------------------------------------|:--------:|
 | **2024/2025**         | Trabajo Fin de Máster (2103533) <br> Ángel Begines <br> Co-supervisor: P. Jiménez Mejías              | Máster en Biodiversidad y Biología de la Conservación                 | Universidad Pablo de Olavide                                 | 0.74     |
 |:---------------------:|:------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|:-------------------------------------------------------------|:--------:|
@@ -38,4 +34,14 @@ td, th {
 |                       | Flora y Vegetación (203011)                                                                           | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 3.20     |
 |                       | Especies y Formaciones Vegetales Amenazadas en la Península Ibérica (203039)                          | Grado en Ciencias Ambientales                                         | Universidad Pablo de Olavide                                 | 1.00     |
 
-Total ECTS: 28.39
+Total ECTS: <span id="ects-sum"></span>
+
+<script>
+  const cells = Array.from(document.querySelectorAll("table td:last-child"));
+  let total = 0;
+  cells.forEach(c => {
+    let val = parseFloat(c.innerText);
+    if (!isNaN(val)) total += val;
+  });
+  document.getElementById("ects-sum").innerText = total.toFixed(2);
+</script>
