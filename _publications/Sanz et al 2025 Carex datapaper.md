@@ -1,10 +1,10 @@
 ---
 title: "A comprehensive database of expert-curated occurrences for the genus <i>Carex</i> L. (Cyperaceae)"
 collection: publications
-permalink: /publication/Sanz et al 2025 Carex datapaper
+permalink: /publication/Sanz-Arnal et al 2025 Carex datapaper
 date: 2025-09-07
 venue: 'Global Ecology and Biogeography'
-paperurl: '/files/pdf/research/Sanz et al 2025 Carex datapaper.pdf'
+paperurl: '/files/pdf/research/Sanz-Arnal et al 2025 Carex datapaper.pdf'
 link: 'https://doi.org/10.1111/geb.70123'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'
