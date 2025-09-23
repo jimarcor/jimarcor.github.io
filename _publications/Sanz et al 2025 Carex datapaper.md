@@ -9,5 +9,5 @@ link: 'https://doi.org/10.1111/geb.70123'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
-citation: 'Sanz-Arnal M, et al. 2025. &quot;A comprehensive database of expert-curated occurrences for the genus <i>Carex</i> L. (Cyperaceae)&quot; <i>Global Ecology and Biogeography</i> 34: e70123. doi:10.1111/geb.70123'
+citation: 'Sanz-Arnal M, et al. 2025. &quot;A comprehensive database of expert-curated occurrences for the genus <i>Carex</i> L. (Cyperaceae)&quot; <i>Global Ecology and Biogeography</i> 34(9): e70123. doi:10.1111/geb.70123'
 ---
