@@ -9,5 +9,5 @@ link: 'https://doi.org/10.1002/tax.xxxxxxxxx'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
-citation: 'García-Moro, P*, Jung S-E, Ford K, Jin X-F, Lu Y-F, Benítez-Benítez C, Kim S, Luceño M, Míguez M, Morales-Alonso A, Muñoz-Schüler P, Oleas NH, Penneckamp DN, Reznicek AA, Sánchez-Villegas R, Sanz-Arnal M, Martín-Bravo S, Leitch IJ, Jiménez-Mejías P, <B>Márquez-Corro JI</B>*. 2025. &quot;IAPT chromosome data 46/1&quot; in Marhold K & Kucera J (eds.), <i>IAPT chromosome data 46. Taxon</i> 00(0): 0000-0000.'
+citation: 'García-Moro, P*, Jung S-E, Ford K, Jin X-F, Lu Y-F, Benítez-Benítez C, Kim S, Luceño M, Míguez M, Morales-Alonso A, Muñoz-Schüler P, Oleas NH, Penneckamp DN, Reznicek AA, Sánchez-Villegas R, Sanz-Arnal M, Martín-Bravo S, Leitch IJ, Jiménez-Mejías P, <B>Márquez-Corro JI</B>*. 2025. &quot;IAPT chromosome data 46/1&quot; in Marhold K & Kučera J (eds.), <i>IAPT chromosome data 46. Taxon</i> 00(0): 0000-0000.'
 ---
