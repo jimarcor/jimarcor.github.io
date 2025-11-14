@@ -1,5 +1,5 @@
 ---
-title: "Karyotype evolution in holocentric organisms <sup>[Review]</sup>"
+title: "Karyotype evolution in holocentric organisms <sup>[Book chapter]</sup>"
 collection: publications
 permalink: /publication/Márquez-Corro et al 2019 eLS
 date: 2019-10-15
