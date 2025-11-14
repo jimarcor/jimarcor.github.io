@@ -1,13 +1,13 @@
 ---
-title: "Genome size of Chilean plants in IAPT/IOPB chromosome data 40."
+title: "IAPT chromosome data 46/1."
 collection: publications
-permalink: /publication/Márquez-Corro et al 2023 IOPB
-date: 2023-12-28
+permalink: /publication/García-Moro et al 2025 IOPB
+date: 2025-12-28
 venue: 'Taxon'
-paperurl: '/files/pdf/research/Márquez-Corro et al 2023 IOPB.pdf'
-link: 'https://doi.org/10.1002/tax.13102'
+paperurl: '/files/pdf/research/García-Moro et al 2025 IOPB.pdf'
+link: 'https://doi.org/10.1002/tax.xxxxxxxxx'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
-citation: '<B>Márquez-Corro JI</B>, Muñoz-Schüler P, Penneckamp DN, García-Moro P, Sanz-Arnal M, Martín-Bravo S, Alarcón D, Mian S, Leitch IJ, Jiménez-Mejías P, Pellicer J. 2023. &quot;IAPT chromosome data 40/7&quot; in Marhold K & Kucera J (eds.), <i>IAPT/IOPB chromosome data 40. Taxon</i> 72(6): 1388-1389.'
+citation: 'García-Moro, P*, Jung S-E, Ford K, Jin X-F, Lu Y-F, Benítez-Benítez C, Kim S, Luceño M, Míguez M, Morales-Alonso A, Muñoz-Schüler P, Oleas NH, Penneckamp DN, Reznicek AA, Sánchez-Villegas R, Sanz-Arnal M, Martín-Bravo S, Leitch IJ, Jiménez-Mejías P, <B>Márquez-Corro JI</B>*. 2025. &quot;IAPT chromosome data 46/1&quot; in Marhold K & Kucera J (eds.), <i>IAPT chromosome data 46. Taxon</i> 00(0): 0000-0000.'
 ---
