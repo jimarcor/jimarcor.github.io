@@ -42,6 +42,7 @@
       <span class="badge NI">NI</span>
     {% else %}
     <span class="badge {{ post.quartile | downcase }}">{{ post.quartile }}</span>
+    {% endif %}
   {% endif %}
   {% if post.open_access %}
     <span class="badge oa">OA</span>
