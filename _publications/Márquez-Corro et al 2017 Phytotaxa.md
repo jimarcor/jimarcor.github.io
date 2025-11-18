@@ -5,6 +5,9 @@ permalink: /publication/Márquez-Corro et al 2017 Phytotaxa
 date: 2017-04-07
 venue: 'Phytotaxa'
 paperurl: '/files/pdf/research/Márquez-Corro et al 2017 Phytotaxa.pdf'
+quartile: Q2
+open_access: false
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.11646/phytotaxa.303.1.2'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

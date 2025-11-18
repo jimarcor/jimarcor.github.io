@@ -5,6 +5,9 @@ permalink: /publication/Muñoz-Schüler et al 2024 Phytokeys
 date: 2024-06-19
 venue: 'PhytoKeys'
 paperurl: '/files/pdf/research/Muñoz-Schüler et al 2024 Phytokeys.pdf'
+quartile: Q2
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.3897/phytokeys.243.115991'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'

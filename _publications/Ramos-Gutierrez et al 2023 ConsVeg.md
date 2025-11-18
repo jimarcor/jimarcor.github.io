@@ -5,6 +5,9 @@ permalink: /publication/Ramos-Gutierrez et al 2023 ConsVeg
 date: 2023-12-13
 venue: 'Conservación Vegetal'
 paperurl: '/files/pdf/research/Ramos-Gutierrez et al 2023 ConsVeg.pdf'
+quartile: Not_indexed
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.15366/cv2023.27'
 #code: 'http://doi.org/'
 #github: 'https://github.com/jimarcor/...'

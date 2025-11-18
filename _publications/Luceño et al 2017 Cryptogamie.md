@@ -5,6 +5,9 @@ permalink: /publication/Luceño et al 2017 Cryptogamie
 date: 2017-07-01
 venue: 'Cryptogamie, Bryologie'
 paperurl: '/files/pdf/research/Luceño et al 2017 Cryptogamie.pdf'
+quartile: Q2
+open_access: false
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.7872/cryb/v38.iss3.2017.281'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

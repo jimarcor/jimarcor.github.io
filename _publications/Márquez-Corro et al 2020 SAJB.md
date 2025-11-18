@@ -5,6 +5,9 @@ permalink: /publication/Márquez-Corro et al 2020 SAJB
 date: 2020-07-01
 venue: 'South African Journal of Botany'
 paperurl: '/files/pdf/research/Márquez-Corro et al 2020 SAJB.pdf'
+quartile: Q2
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1016/j.sajb.2020.03.027'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

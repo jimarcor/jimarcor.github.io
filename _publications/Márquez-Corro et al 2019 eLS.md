@@ -5,6 +5,9 @@ permalink: /publication/Márquez-Corro et al 2019 eLS
 date: 2019-10-15
 venue: 'Encyclopedia of Life Sciences'
 paperurl: '/files/pdf/research/Márquez-Corro et al 2019 eLS.pdf'
+quartile: 
+open_access: true
+type: book_chapter       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1002/9780470015902.a0028758'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

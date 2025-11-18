@@ -5,6 +5,9 @@ permalink: /publication/Sanz-Arnal et al 2025 Carex datapaper
 date: 2025-09-23
 venue: 'Global Ecology and Biogeography'
 paperurl: '/files/pdf/research/Sanz-Arnal et al 2025 Carex datapaper.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1111/geb.70123'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'

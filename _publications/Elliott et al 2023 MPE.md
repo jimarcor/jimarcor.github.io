@@ -3,8 +3,11 @@ title: "Addressing inconsistencies in Cyperaceae and Juncaceae taxonomy: Comment
 collection: publications
 permalink: /publication/Elliott et al 2023 MPE
 date: 2023-02-07
-venue: 'Annals of Botany'
+venue: 'Molecular Phylogenetics and Evolution'
 paperurl: '/files/pdf/research/Elliott et al 2023 MPE.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1016/j.ympev.2022.107665'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'

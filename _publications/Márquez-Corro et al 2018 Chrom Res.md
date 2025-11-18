@@ -5,6 +5,9 @@ permalink: /publication/Márquez-Corro et al 2018 Chrom Res
 date: 2018-09-17
 venue: 'Chromosome Research'
 paperurl: '/files/pdf/research/Márquez-Corro et al 2018 Chrom Res.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1007/s10577-017-9566-8'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

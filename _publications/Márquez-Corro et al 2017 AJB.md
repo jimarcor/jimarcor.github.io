@@ -5,6 +5,9 @@ permalink: /publication/Márquez-Corro et al 2017 AJB
 date: 2017-04-29
 venue: 'American Journal of Botany'
 paperurl: '/files/pdf/research/Márquez-Corro et al 2017 AJB.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.3732/ajb.1700012'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

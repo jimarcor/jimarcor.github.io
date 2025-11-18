@@ -5,6 +5,9 @@ permalink: /publication/Luceño et al 2016 Bol Soc Esp Briol
 date: 2016-10-01
 venue: 'Boletín de la Sociedad Española de Briología'
 paperurl: '/files/pdf/research/Luceño et al 2016 Bol Soc Esp Briol.pdf'
+quartile: Not_indexed
+open_access: false
+type: article       # options: article, book, book_chapter, etc.
 #link: 'https://doi.org/...'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

@@ -5,6 +5,9 @@ permalink: /publication/Cuerdo et al 2025 Flora
 date: 2025-05-01
 venue: 'Flora'
 paperurl: '/files/pdf/research/Cuerdo et al 2025 Flora.pdf'
+quartile: Q2
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1016/j.flora.2025.152723'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

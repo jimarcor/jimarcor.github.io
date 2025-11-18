@@ -4,6 +4,9 @@ collection: publications
 permalink: /publication/Luceño et al 2019 Plantas UPO
 date: 2019-01-17
 #paperurl: '/files/pdf/research/Luceño et al 2019 Plantas UPO.pdf'
+quartile: 
+open_access: 
+type: book       # options: article, book, book_chapter, etc.
 #link: 'https://doi.org/...'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

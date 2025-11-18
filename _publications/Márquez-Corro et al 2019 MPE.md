@@ -5,6 +5,9 @@ permalink: /publication/Márquez-Corro et al 2019 MPE
 date: 2019-03-01
 venue: 'Molecular Phylogenetics and Evolution'
 paperurl: '/files/pdf/research/Márquez-Corro et al 2019 MPE.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1016/j.ympev.2019.03.006'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

@@ -1,0 +1,74 @@
+{% assign pubs = site.publications %}
+
+{% assign n_articles = pubs | where: "type", "article" | size %}
+{% assign n_books = pubs | where: "type", "book" | size %}
+{% assign n_bookchapters = pubs | where: "type", "book_chapter" | size %}
+{% assign n_IUCNreports = pubs | where: "type", "IUCN_report" | size %}
+
+{% assign q1 = pubs | where: "quartile", "Q1" | size %}
+{% assign q2 = pubs | where: "quartile", "Q2" | size %}
+{% assign q3 = pubs | where: "quartile", "Q3" | size %}
+{% assign q4 = pubs | where: "quartile", "Q4" | size %}
+{% assign Not_indexed = pubs | where: "quartile", "Not_indexed" | size %}
+
+{% assign oa = pubs | where: "open_access", true | size %}
+
+<div class="pub-summary-box">
+  <h3>Publication Summary</h3>
+  <ul>
+    <li><strong>Articles:</strong> {{ n_articles }}</li>
+    <li><strong>Books:</strong> {{ n_books }}</li>
+    <li><strong>Book Chapters:</strong> {{ n_bookchapters }}</li>
+    <li><strong>IUCN reports:</strong> {{ n_IUCNreports }}</li>
+    <li><strong>Total:</strong> {{ pubs.size }}</li>
+  </ul>
+
+  <h4>Journal Quality (Quartiles)</h4>
+  <ul>
+    <li><strong>Q1:</strong> {{ q1 }}</li>
+    <li><strong>Q2:</strong> {{ q2 }}</li>
+    <li><strong>Q3:</strong> {{ q3 }}</li>
+    <li><strong>Q4:</strong> {{ q4 }}</li>
+    <li><strong>Not indexed:</strong> {{ Not_indexed }}</li>
+  </ul>
+
+  <h4>Open Access</h4>
+  <ul>
+    <li><strong>Open-access publications:</strong> {{ oa }}</li>
+  </ul>
+  
+  <h4>Legend (per publication)</h4>
+  <p>
+    <span class="badge">Q1</span> = SCImago/SJR quartile<br>
+    <span class="badge oa">OA</span> = Open-access
+  </p>
+</div>
+
+<style>
+.pub-summary-box {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+  margin: 20px 0;
+  font-size: 0.95rem;
+}
+
+.pub-summary-box h3 {
+  margin-top: 0;
+}
+
+/* badges should match those displayed next to each publication */
+.badge {
+  background: #ddd;
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+.badge.oa {
+  background: #4CAF50;
+  color: white;
+}
+</style>

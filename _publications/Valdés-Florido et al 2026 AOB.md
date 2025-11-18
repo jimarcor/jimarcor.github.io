@@ -4,6 +4,9 @@ collection: publications
 permalink: /publication/Valdés-Florido et al 2026 AOB
 date: 2026-01-01
 venue: 'Annals of Botany'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 paperurl: '/files/pdf/research/Valdés-Florido et al 2026 AOB.pdf'
 link: 'https://doi.org/10.1093/aob/xxxxxxxx'
 #code: 'http://doi.org/'

@@ -4,6 +4,9 @@ collection: publications
 permalink: /publication/Antonelli et al 2024 The 2030 Declaration
 date: 2024-09-30
 venue: 'Plants, People, Planet'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter
 paperurl: '/files/pdf/research/Antonelli et al 2024 The 2030 Declaration.pdf'
 link: 'https://doi.org/10.1002/ppp3.10569'
 #code: 'https://'

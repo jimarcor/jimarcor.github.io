@@ -5,6 +5,9 @@ permalink: /publication/Larridon et al 2022 NewNHMadagascar
 date: 2022-11-25
 venue: 'The New Natural History of Madagascar'
 paperurl: '/files/pdf/research/Larridon et al 2022 NewNHMadagascar.pdf'
+quartile: 
+open_access: false
+type: book_chapter       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.2307/j.ctv2ks6tbb.70'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

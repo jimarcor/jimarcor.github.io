@@ -5,6 +5,9 @@ permalink: /publication/Jiménez-Mejías et al 2021 BJLS Androgynous SA
 date: 2021-03-26
 venue: 'Botanical Journal of the Linnean Society'
 paperurl: '/files/pdf/research/Jiménez-Mejías et al 2021 BJLS Androgynous SA.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1093/botlinnean/boaa100'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

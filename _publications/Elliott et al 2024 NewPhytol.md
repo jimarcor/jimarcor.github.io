@@ -5,6 +5,9 @@ permalink: /publication/Elliott et al 2024 NewPhytol
 date: 2024-03-21
 venue: 'New Phytologist'
 paperurl: '/files/pdf/research/Elliott et al 2024 NewPhytol.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1111/nph.19421'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'

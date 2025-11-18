@@ -5,6 +5,9 @@ permalink: /publication/Luceño et al 2017 Acta Bot Malacitana
 date: 2017-12-01
 venue: 'Acta Botanica Malacitana'
 paperurl: '/files/pdf/research/Luceño et al 2017 Acta Bot Malacitana.pdf'
+quartile: Q4
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.24310/abm.v42i2.3366'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

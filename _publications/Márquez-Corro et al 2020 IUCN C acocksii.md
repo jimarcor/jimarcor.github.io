@@ -5,6 +5,9 @@ permalink: /publication/Márquez-Corro & Martín-Bravo 2020 IUCN acocksii
 date: 2020-04-13
 venue: 'IUCN Red List of Threatened Species'
 paperurl: '/files/pdf/research/Márquez-Corro & Martín-Bravo 2020 IUCN acocksii.pdf'
+quartile: 
+open_access: true
+type: IUCN report       # options: article, book, book_chapter, etc.
 link: 'https://dx.doi.org/10.2305/IUCN.UK.2020-2.RLTS.T163344043A167071571.en'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

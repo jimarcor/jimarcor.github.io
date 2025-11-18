@@ -5,6 +5,9 @@ permalink: /publication/Luceño et al 2021 PeerJ Schoenoxiphium
 date: 2021-05-17
 venue: 'PeerJ'
 paperurl: '/files/pdf/research/Luceño et al 2021 PeerJ Schoenoxiphium.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.7717/peerj.11336'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

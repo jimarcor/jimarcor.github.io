@@ -5,6 +5,9 @@ permalink: /publication/Escudero et al 2023 Plant Cytogenetics and Cytogenomics
 date: 2023-06-20
 venue: 'Plant Cytogenetics and Cytogenomics'
 paperurl: '/files/pdf/research/Escudero et al 2023 Plant Cytogenetics and Cytogenomics.pdf'
+quartile: 
+open_access: true
+type: book_chapter       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1007/978-1-0716-3226-0_32'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

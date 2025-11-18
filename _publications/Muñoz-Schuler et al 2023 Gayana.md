@@ -5,6 +5,9 @@ permalink: /publication/Muñoz-Schuler et al 2023 Gayana
 date: 2023-12-31
 venue: 'Gayana Botanica'
 paperurl: '/files/pdf/research/Muñoz-Schuler et al 2023 Gayana.pdf'
+quartile: Q4
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'http://dx.doi.org/10.4067/S0717-66432023000200103'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'

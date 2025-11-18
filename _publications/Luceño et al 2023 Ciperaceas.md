@@ -4,6 +4,9 @@ collection: publications
 permalink: /publication/Luceño et al 2023 Ciperaceas
 date: 2023-05-01
 #paperurl: '/files/pdf/research/Luceño et al 2023 Ciperaceas.pdf'
+quartile: 
+open_access: 
+type: book       # options: article, book, book_chapter, etc.
 link: 'https://www.jolube.net/shop/claves-de-determinacion/field-guide-of-spanish-and-portuguese-sedges-cyperaceae/'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

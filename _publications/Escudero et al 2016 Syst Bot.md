@@ -5,6 +5,9 @@ permalink: /publication/Escudero et al 2016 Syst Bot
 date: 2016-08-26
 venue: 'Systematic Botany'
 paperurl: '/files/pdf/research/Escudero et al 2016 Syst Bot.pdf'
+quartile: Q1
+open_access: false
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1600/036364416X692442'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

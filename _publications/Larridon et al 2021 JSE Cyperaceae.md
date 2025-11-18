@@ -5,6 +5,9 @@ permalink: /publication/Larridon et al 2021 JSE Cyperaceae
 date: 2021-01-31
 venue: 'Journal of Systematic and Evolution'
 paperurl: '/files/pdf/research/Larridon et al 2021 JSE Cyperaceae.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1111/jse.12757'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

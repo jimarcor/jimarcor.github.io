@@ -5,6 +5,9 @@ permalink: /publication/MEDECOS & AEET 2017 AJB
 date: 2017-12-01
 venue: 'American Journal of Botany'
 paperurl: '/files/pdf/research/MEDECOS & AEET 2017 AJB.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.3732/ajb.1700367'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

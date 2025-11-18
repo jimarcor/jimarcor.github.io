@@ -5,6 +5,9 @@ permalink: /publication/Márquez-Corro et al 2018 IOPB
 date: 2018-12-01
 venue: 'Taxon'
 paperurl: '/files/pdf/research/Márquez-Corro et al 2018 IOPB.pdf'
+quartile: Q1
+open_access: true
+type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.12705/676.39'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'
