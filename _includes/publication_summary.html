@@ -39,7 +39,7 @@
       <span><strong>{{ pubs.size }}</strong></span>
     </div>
   </div>
- </div>
+
 
   <!-- Right Column: Quartiles & Open Access -->
   <div class="quartile-stats-column">
@@ -68,28 +68,29 @@
 </div>
 
 <style>
-.narrow-container {
-  max-width: 600px; /* Adjust this value */
+.narrow-stats-container {
+  max-width: 500px;
   margin-right: auto;
+  margin-bottom: 30px;
 }
 
 .publication-stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5px;
-}
-
-.stats-column h4 {
-  margin-bottom: 15px;
-  color: #333;
+  gap: 20px; /* Reduced gap */
 }
 
 .stats-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 0;
-  font-size: 0.85rem;
+  padding: 4px 0; /* Reduced padding */
+  font-size: 0.85rem; /* Slightly smaller font */
+}
+
+.stats-column h4 {
+  margin-bottom: 10px; /* Reduced margin */
+  font-size: 0.95rem;
 }
 
 
