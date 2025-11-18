@@ -38,6 +38,9 @@
 
 <div class="pub-badges">
   {% if post.quartile %}
+      {% if post.quartile == "NI" or post.quartile == "Not Indexed" %}
+      <span class="badge NI">NI</span>
+    {% else %}
     <span class="badge {{ post.quartile | downcase }}">{{ post.quartile }}</span>
   {% endif %}
   {% if post.open_access %}
