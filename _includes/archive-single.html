@@ -38,7 +38,7 @@
 
 <div class="pub-badges">
   {% if post.quartile %}
-    <span class="badge">{{ post.quartile }}</span>
+    <span class="badge {{ post.quartile | downcase }}">{{ post.quartile }}</span>
   {% endif %}
   {% if post.open_access %}
     <span class="badge oa">OA</span>
