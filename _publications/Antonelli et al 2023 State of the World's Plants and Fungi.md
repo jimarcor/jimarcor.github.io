@@ -4,6 +4,9 @@ collection: publications
 permalink: /publication/Antonelli et al 2023 State of the World's Plants and Fungi
 date: 2024-09-30
 paperurl: "/files/pdf/research/Antonelli et al 2023 State of the World's Plants and Fungi.pdf"
+quartile: 
+open_access: true
+type: book       # options: article, book, book_chapter
 link: 'https://doi.org/10.34885/WNWN-6S63'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'
