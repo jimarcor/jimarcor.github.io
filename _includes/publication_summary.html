@@ -9,7 +9,7 @@
 {% assign q2 = pubs | where: "quartile", "Q2" | size %}
 {% assign q3 = pubs | where: "quartile", "Q3" | size %}
 {% assign q4 = pubs | where: "quartile", "Q4" | size %}
-{% assign Not_indexed = pubs | where: "quartile", "Not_indexed" | size %}
+{% assign NI = pubs | where: "quartile", "Not_indexed" | size %}
 
 {% assign oa = pubs | where: "open_access", true | size %}
 
@@ -29,7 +29,7 @@
     <li><strong>Q2:</strong> {{ q2 }}</li>
     <li><strong>Q3:</strong> {{ q3 }}</li>
     <li><strong>Q4:</strong> {{ q4 }}</li>
-    <li><strong>Not indexed:</strong> {{ Not_indexed }}</li>
+    <li><strong>Not indexed:</strong> {{ NI }}</li>
   </ul>
 
   <h4>Open Access</h4>
