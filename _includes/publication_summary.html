@@ -13,45 +13,87 @@
 
 {% assign oa = pubs | where: "open_access", true | size %}
 
-<div class="pub-summary-box">
-  <h4>Publication Summary</h3>
-  <ul>
-    <li><strong>Articles:</strong> {{ n_articles }}</li>
-    <li><strong>Books:</strong> {{ n_books }}</li>
-    <li><strong>Book Chapters:</strong> {{ n_bookchapters }}</li>
-    <li><strong>IUCN reports:</strong> {{ n_IUCNreports }}</li>
-    <li><strong>Total:</strong> {{ pubs.size }}</li>
-  </ul>
+<div class="publication-stats-grid">
+  <!-- Left Column: Publication Types -->
+  <div class="publication-types-column">
+    <h4>Publication Types</h4>
+    <div class="stats-item">
+      <strong>Articles:</strong>
+      <span>{{ n_articles }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>Books:</strong>
+      <span>{{ n_books }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>Book Chapters:</strong>
+      <span>{{ n_bookchapters }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>IUCN Reports:</strong>
+      <span>{{ n_IUCNreports }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>Total:</strong>
+      <span>{{ pubs.size }}</span>
+    </div>
+  </div>
 
-  <h4>Quartiles</h4>
-  <ul>
-    <li><strong>Q1:</strong> {{ q1 }}</li>
-    <li><strong>Q2:</strong> {{ q2 }}</li>
-    <li><strong>Q3:</strong> {{ q3 }}</li>
-    <li><strong>Q4:</strong> {{ q4 }}</li>
-    <li><strong>Not indexed:</strong> {{ NI }}</li>
-  </ul>
-
-  <h4>Open Access</h4>
-  <ul>
-    <li><strong>Open-access publications:</strong> {{ oa }}</li>
-  </ul>
-  
-
+  <!-- Right Column: Quartiles & Open Access -->
+  <div class="quartile-stats-column">
+    <h4>Journal Metrics</h4>
+    <div class="stats-item">
+      <strong>Q1:</strong>
+      <span class="badge q1">{{ q1 }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>Q2:</strong>
+      <span class="badge q2">{{ q2 }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>Q3:</strong>
+      <span class="badge q3">{{ q3 }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>Q4:</strong>
+      <span class="badge q4">{{ q4 }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>Not Indexed:</strong>
+      <span class="badge NI">{{ Not_indexed }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>Open Access:</strong>
+      <span class="badge oa">{{ oa }}</span>
+    </div>
+  </div>
 </div>
 
 <style>
-.pub-summary-box {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fafafa;
-  margin: 5px 0;
-  font-size: 0.5rem;
+.publication-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+  padding: 0;
 }
 
-.pub-summary-box h3 {
-  margin-top: 0;
+.stats-column h4 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.stats-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 0.9rem;
+}
+
+.stats-item strong {
+  font-weight: 600;
+  color: #333;
 }
 
 
