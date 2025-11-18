@@ -38,7 +38,7 @@
 
 <div class="pub-badges">
   {% if post.quartile %}
-      {% if post.quartile == "NI" or post.quartile == "Not Indexed" %}
+      {% if post.quartile == "Not_Indexed" %}
       <span class="badge NI">NI</span>
     {% else %}
     <span class="badge {{ post.quartile | downcase }}">{{ post.quartile }}</span>
