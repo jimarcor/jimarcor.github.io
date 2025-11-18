@@ -2,8 +2,9 @@
   margin-bottom: 6px;
 }
 
-.badge {
-  background: #ddd;
+.badge.q1 {
+  background: #a4cf63;
+  color: ;
   padding: 2px 6px;
   border-radius: 4px;
   margin-right: 6px;
@@ -11,7 +12,22 @@
   display: inline-block;
 }
 
+.badge.q2 {
+  background: #e8d559;
+  color: white;
+}
+
+.badge.q1 {
+  background: #fba353;
+  color: white;
+}
+
+.badge.q1 {
+  background: #dd5a4e;
+  color: white;
+}
+
 .badge.oa {
-  background: #4CAF50;
+  background: #9fc3e6;
   color: white;
 }
