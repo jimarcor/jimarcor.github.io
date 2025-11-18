@@ -13,7 +13,8 @@
 
 {% assign oa = pubs | where: "open_access", true | size %}
 
-<div class="publication-stats-grid">
+<div class="narrow-container">
+ <div class="publication-stats-grid">
   <!-- Left Column: Publication Types -->
   <div class="publication-types-column">
     <h4>Publication Types</h4>
@@ -38,6 +39,7 @@
       <span><strong>{{ pubs.size }}</strong></span>
     </div>
   </div>
+ </div>
 
   <!-- Right Column: Quartiles & Open Access -->
   <div class="quartile-stats-column">
@@ -66,10 +68,9 @@
 </div>
 
 <style>
-.stats-container {
-  max-width: 100px; /* Adjust this value as needed */
-  width: 10%; 
-  margin-right: auto; /* This pushes it to the left */
+.narrow-container {
+  max-width: 100px; /* Adjust this value */
+  margin-right: auto;
 }
 
 .publication-stats-grid {
