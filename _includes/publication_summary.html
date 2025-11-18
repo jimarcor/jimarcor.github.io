@@ -14,7 +14,7 @@
 {% assign oa = pubs | where: "open_access", true | size %}
 
 <div class="pub-summary-box">
-  <h3>Publication Summary</h3>
+  <h4>Publication Summary</h3>
   <ul>
     <li><strong>Articles:</strong> {{ n_articles }}</li>
     <li><strong>Books:</strong> {{ n_books }}</li>
@@ -36,12 +36,6 @@
   <ul>
     <li><strong>Open-access publications:</strong> {{ oa }}</li>
   </ul>
-  
-  <h4>Legend (per publication)</h4>
-  <p>
-    <span class="badge">Q1</span> = SCImago/SJR quartile<br>
-    <span class="badge oa">OA</span> = Open-access
-  </p>
 </div>
 
 <style>
