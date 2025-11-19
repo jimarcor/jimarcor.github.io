@@ -68,9 +68,10 @@
  </div>
 </div>
 
+
 <style>
-.narrow-stats-container {
-  max-width: 400px;
+.narrow-container {
+  max-width: 500px;
   margin-right: auto;
   margin-bottom: 30px;
 }
@@ -78,19 +79,25 @@
 .publication-stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px; /* Reduced gap */
+  gap: 20px;
+}
+
+.publication-types-column,
+.quartile-stats-column {
+  /* Styles for both columns */
 }
 
 .stats-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 0; /* Reduced padding */
-  font-size: 0.85rem; /* Slightly smaller font */
+  padding: 4px 0;
+  font-size: 0.85rem;
 }
 
-.stats-column h4 {
-  margin-bottom: 10px; /* Reduced margin */
+.publication-types-column h4,
+.quartile-stats-column h4 {
+  margin-bottom: 10px;
   font-size: 0.95rem;
 }
 
