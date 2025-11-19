@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/García-Moro et al 2025 IOPB.pdf'
 quartile: Q1
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+last_author: true
+corresponding_author: true
 link: 'https://doi.org/10.1002/tax.xxxxxxxxx'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

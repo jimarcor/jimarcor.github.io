@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Roalson et al 2021 JSE Classification Carex.pdf'
 quartile: Q1
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 link: 'https://doi.org/10.1111/jse.12722'
 code: 'https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fjse.12722&file=jse12722-sup-0001-Roalsonetal_appendix_20920.pdf'
 #github: 'https://github.com/jimarcor/...'

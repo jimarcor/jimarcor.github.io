@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Martín-Bravo et al 2019 JSE.pdf'
 quartile: Q1
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 link: 'https://doi.org/10.1111/jse.12549'
 code: 'https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fjse.12549&file=jse12549-sup-0005-datas5.pdf'
 #github: 'https://github.com/jimarcor/...'

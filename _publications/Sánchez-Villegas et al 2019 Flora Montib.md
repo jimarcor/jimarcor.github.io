@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Sánchez-Villegas et al 2019 Flora Montib.pdf'
 quartile: Q3
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 link: 'https://doi.org/10.13140/RG.2.2.10971.92962'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

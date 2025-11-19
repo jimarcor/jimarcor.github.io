@@ -7,6 +7,9 @@ venue: 'Botanical Journal of the Linnean Society'
 paperurl: '/files/pdf/research/Shabdin et al 2025 BJLS Mapania.pdf'
 quartile: Q1
 open_access: false
+#first_author: true
+#last_author: true
+corresponding_author: true
 type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1093/botlinnean/boaf001'
 #code: 'https://doi.org/...'

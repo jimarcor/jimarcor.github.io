@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Luceño et al 2016 Bol Soc Esp Briol.pdf'
 quartile: Not_indexed
 open_access: false
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 #link: 'https://doi.org/...'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Luceño et al 2017 Acta Bot Malacitana.pdf'
 quartile: Q4
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 link: 'https://doi.org/10.24310/abm.v42i2.3366'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

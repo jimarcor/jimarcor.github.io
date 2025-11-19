@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Larridon et al. 2021 JBiogeogr.pdf'
 quartile: Q1
 open_access: false
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 link: 'https://doi.org/10.1111/jbi.14048'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

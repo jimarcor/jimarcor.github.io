@@ -7,6 +7,9 @@ venue: 'New Phytologist'
 paperurl: '/files/pdf/research/Tribble & Márquez-Corro et al 2025 NewPhytol.pdf'
 quartile: Q1
 open_access: false
+first_author: true
+#last_author: true
+#corresponding_author: true
 type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1111/nph.20353'
 #code: 'http://doi.org/...'

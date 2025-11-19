@@ -7,6 +7,9 @@ date: 2023-05-01
 quartile: 
 open_access: 
 type: book       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 link: 'https://www.jolube.net/shop/claves-de-determinacion/field-guide-of-spanish-and-portuguese-sedges-cyperaceae/'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

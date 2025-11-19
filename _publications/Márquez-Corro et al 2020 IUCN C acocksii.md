@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Márquez-Corro & Martín-Bravo 2020 IUCN acocksii
 quartile: 
 open_access: true
 type: IUCN_report       # options: article, book, book_chapter, etc.
+first_author: true
+#last_author: true
+corresponding_author: true
 link: 'https://dx.doi.org/10.2305/IUCN.UK.2020-2.RLTS.T163344043A167071571.en'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

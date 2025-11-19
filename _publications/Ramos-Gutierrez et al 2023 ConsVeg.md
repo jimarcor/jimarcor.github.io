@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Ramos-Gutierrez et al 2023 ConsVeg.pdf'
 quartile: Not_indexed
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 link: 'https://doi.org/10.15366/cv2023.27'
 #code: 'http://doi.org/'
 #github: 'https://github.com/jimarcor/...'

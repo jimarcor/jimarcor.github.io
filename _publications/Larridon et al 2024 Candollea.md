@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Larridon et al 2024 Candollea.pdf'
 quartile: Q3
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 link: 'https://doi.org/10.15553/c2024v791a6'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'

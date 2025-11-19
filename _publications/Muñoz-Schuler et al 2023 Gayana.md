@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Muñoz-Schuler et al 2023 Gayana.pdf'
 quartile: Q4
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 link: 'http://dx.doi.org/10.4067/S0717-66432023000200103'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'

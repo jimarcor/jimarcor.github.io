@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Márquez-Corro et al 2018 IOPB.pdf'
 quartile: Q1
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
+first_author: true
+#last_author: true
+corresponding_author: true
 link: 'https://doi.org/10.12705/676.39'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

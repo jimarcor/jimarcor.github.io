@@ -5,7 +5,10 @@ permalink: /publication/Villaverde et al 2017 Int J Plant Sci
 date: 2017-05-01
 venue: 'International Journal of Plant Sciences'
 quartile: Q1
-open_access: flase
+open_access: false
+#first_author: true
+#last_author: true
+#corresponding_author: true
 type: article       # options: article, book, book_chapter
 paperurl: '/files/pdf/research/Villaverde et al 2017 Int J Plant Sci.pdf'
 link: 'https://doi.org/10.1086/691144'

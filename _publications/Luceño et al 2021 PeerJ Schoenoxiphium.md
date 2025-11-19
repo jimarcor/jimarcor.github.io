@@ -8,6 +8,9 @@ paperurl: '/files/pdf/research/Luceño et al 2021 PeerJ Schoenoxiphium.pdf'
 quartile: Q1
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 link: 'https://doi.org/10.7717/peerj.11336'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'

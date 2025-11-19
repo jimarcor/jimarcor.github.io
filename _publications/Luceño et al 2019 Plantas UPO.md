@@ -7,6 +7,9 @@ date: 2019-01-17
 quartile: 
 open_access: 
 type: book       # options: article, book, book_chapter, etc.
+#first_author: true
+#last_author: true
+#corresponding_author: true
 #link: 'https://doi.org/...'
 #code: 'https://doi.org/...'
 #github: 'https://github.com/jimarcor/...'
