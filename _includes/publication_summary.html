@@ -19,77 +19,75 @@
 
 
 <div class="narrow-container">
- <div class="publication-stats-grid">
-  <!-- Left Column: Publication Types -->
-  <div class="publication-types-column">
-    <h4>Publication Types</h4>
-    <div class="stats-item">
-      <strong>Articles</strong>
-      <span>{{ n_articles }}</span>
+  <div class="publication-stats-grid">
+    <!-- Left Column: Publication Types -->
+    <div class="publication-types-column">
+      <h4>Publication Types</h4>
+      <div class="stats-item">
+        <strong>Articles</strong>
+        <span>{{ n_articles }}</span>
+      </div>
+      <div class="stats-item">
+        <strong>Books</strong>
+        <span>{{ n_books }}</span>
+      </div>
+      <div class="stats-item">
+        <strong>Book Chapters</strong>
+        <span>{{ n_bookchapters }}</span>
+      </div>
+      <div class="stats-item">
+        <strong>IUCN Reports</strong>
+        <span>{{ n_IUCNreports }}</span>
+      </div>
+      <div class="stats-item">
+        <strong>Total</strong>
+        <span><strong>{{ pubs.size }}</strong></span>
+      </div>
     </div>
-    <div class="stats-item">
-      <strong>Books</strong>
-      <span>{{ n_books }}</span>
-    </div>
-    <div class="stats-item">
-      <strong>Book Chapters</strong>
-      <span>{{ n_bookchapters }}</span>
-    </div>
-    <div class="stats-item">
-      <strong>IUCN Reports</strong>
-      <span>{{ n_IUCNreports }}</span>
-    </div>
-    <div class="stats-item">
-      <strong>Total</strong>
-      <span><strong>{{ pubs.size }}</strong></span>
-    </div>
-  </div>
 
+    <!-- Center Column: Quartiles & Open Access -->
+    <div class="quartile-stats-column">
+      <h4>Journal Metrics</h4>
+      <div class="stats-item">
+        <span class="badge q1">Q1</span>
+        <span>{{ q1 }}</span>
+      </div>
+      <div class="stats-item">
+        <span class="badge q2">Q2</span>
+        <span>{{ q2 }}</span>
+      </div>
+      <div class="stats-item">
+        <span class="badge q3">Q3</span>
+        <span>{{ q3 }}</span>
+      </div>
+      <div class="stats-item">
+        <span class="badge q4">Q4</span>
+        <span>{{ q4 }}</span>
+      </div>
+      <div class="stats-item">
+        <span class="badge oa">OA</span> <!-- Changed from "Open Access" to "OA" -->
+        <span>{{ oa }}</span>
+      </div>
+    </div>
 
-  <!-- Center Column: Quartiles & Open Access -->
-  <div class="quartile-stats-column">
-    <h4>Journal Metrics</h4>
-    <div class="stats-item">
-      <span class="badge q1">Q1</span>
-      <span>{{ q1 }}</span>
-    </div>
-    <div class="stats-item">
-      <span class="badge q2">Q2</span>
-      <span>{{ q2 }}</span>
-    </div>
-    <div class="stats-item">
-      <span class="badge q3">Q3</span>
-      <span>{{ q3 }}</span>
-    </div>
-    <div class="stats-item">
-      <span class="badge q4">Q4</span>
-      <span>{{ q4 }}</span>
-    </div>
-    <div class="stats-item">
-      <span class="badge oa">Open Access</span>
-      <span>{{ oa }}</span>
-    </div>
-  </div>
-
-
-  <!-- Right Column: Corresponding and position -->
-  <div class="quartile-stats-column">
-    <h4>Authorship statistics</h4>
-    <div class="stats-item">
-      <strong>Corresponding author</strong>
-      <span>{{ corr_auth }}</span>
-    </div>
-    <div class="stats-item">
-      <strong>First author</strong>
-      <span>{{ first_auth }}</span>
-    </div>
-    <div class="stats-item">
-      <strong>Last author</strong>
-      <span>{{ last_auth }}</span>
-    </div>
-    </div>
-  </div>
- </div>
+    <!-- Right Column: Corresponding and position -->
+    <div class="quartile-stats-column">
+      <h4>Authorship statistics</h4>
+      <div class="stats-item">
+        <strong>Corresponding author</strong>
+        <span>{{ corr_auth }}</span>
+      </div>
+      <div class="stats-item">
+        <strong>First author</strong>
+        <span>{{ first_auth }}</span>
+      </div>
+      <div class="stats-item">
+        <strong>Last author</strong>
+        <span>{{ last_auth }}</span>
+      </div>
+    </div> <!-- This closes the right column -->
+  </div> <!-- This closes publication-stats-grid -->
+</div> <!-- This closes narrow-container -->
 
 
 <style>
