@@ -13,6 +13,11 @@
 
 {% assign oa = pubs | where: "open_access", true | size %}
 
+{% assign first_auth = site.publications | where: "first_author", true | size %}
+{% assign last_auth = site.publications | where: "last_author", true | size %}
+{% assign corr_auth = site.publications | where: "corresponding_author", true | size %}
+
+
 <div class="narrow-container">
  <div class="publication-stats-grid">
   <!-- Left Column: Publication Types -->
@@ -41,7 +46,7 @@
   </div>
 
 
-  <!-- Right Column: Quartiles & Open Access -->
+  <!-- Center Column: Quartiles & Open Access -->
   <div class="quartile-stats-column">
     <h4>Journal Metrics</h4>
     <div class="stats-item">
@@ -63,6 +68,25 @@
     <div class="stats-item">
       <span class="badge oa">Open Access</span>
       <span>{{ oa }}</span>
+    </div>
+  </div>
+
+
+  <!-- Right Column: Corresponding and position -->
+  <div class="quartile-stats-column">
+    <h4>Authorship statistics</h4>
+    <div class="stats-item">
+      <strong>Corresponding author</strong>
+      <span>{{ corr_auth }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>First author</strong>
+      <span>{{ first_auth }}</span>
+    </div>
+    <div class="stats-item">
+      <strong>Last author</strong>
+      <span>{{ last_auth }}</span>
+    </div>
     </div>
   </div>
  </div>
