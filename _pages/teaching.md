@@ -3,6 +3,8 @@ title: "Teaching experience"
 permalink: /teaching/
 ---
 
+Total ECTS: <span id="ects-sum"></span>
+
 <style>
 td, th {
    border: none!important;
@@ -39,7 +41,6 @@ td, th {
 
 \*Course coordinator
 
-Total ECTS: <span id="ects-sum"></span>
 
 <script>
   const cells = Array.from(document.querySelectorAll("table td:last-child"));
