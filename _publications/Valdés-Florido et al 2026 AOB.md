@@ -2,7 +2,7 @@
 title: "The complex interplay between chromosome, climatic niche and morphological traits shapes the diversification of <i>Carex</i> (Cyperaceae)"
 collection: publications
 permalink: /publication/Valdés-Florido et al 2025 AOB
-date: 2025-11-23
+date: 2025-11-20
 venue: 'Annals of Botany'
 quartile: Q1
 open_access: true
