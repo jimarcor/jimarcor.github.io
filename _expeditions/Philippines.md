@@ -46,7 +46,7 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
 
 **Day 14 (May 22<sup>nd</sup>, 2024):** I traveled from Los Baños to Manila.
 
-**Day 15 (May 23<sub>rd</sub>, 2024):** I went again to the **PNH**.
+**Day 15 (May 23<sup>rd</sup>, 2024):** I went again to the **PNH**.
 
 **Day 16 (May 24<sup>th</sup>, 2024):** Spent the day working from home (as PNH was closed).
 
@@ -68,7 +68,7 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
 
 **Day 25 ([June 2<sup>nd</sup>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/2)):** The day was spent buying more supplies for the field and finishing the plans.
 
-**Day 26 ([June 3<sub>rd</sub>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/3)):** We traveled to the northern area of Mt. Kitanglad, around the Dahilayan IP Eco Park & Resort.
+**Day 26 ([June 3<sup>rd</sup>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/3)):** We traveled to the northern area of Mt. Kitanglad, around the Dahilayan IP Eco Park & Resort.
 
 **Day 27 ([June 4<sup>th</sup>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/4)):** Spent the day sampling.
 
@@ -108,7 +108,7 @@ In this trip I aimed to visit some of the main herbaria in the Philippines (PNH,
 
 **Day 45 ([June 22<sup>nd</sup>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/22)):** First full day of collecting in Mt. Redondo, we went to a site north of the camp.
 
-**Day 46 ([June 23<sub>rd</sub>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/23)):** We went again to the same place as the previous day, continuing further.
+**Day 46 ([June 23<sup>rd</sup>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/23)):** We went again to the same place as the previous day, continuing further.
 
 **Day 47 ([June 24<sup>th</sup>, 2024](https://www.inaturalist.org/calendar/jimarcor/2024/6/24)):** Last day of collecting, we did an even further journey to collect at top site of the highest peaks. Covered by leaches and with a terrible weather, we made it back safely.
 
