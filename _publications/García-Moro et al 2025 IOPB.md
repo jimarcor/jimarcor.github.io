@@ -11,7 +11,7 @@ type: article       # options: article, book, book_chapter, etc.
 #first_author: true
 last_author: true
 corresponding_author: true
-link: 'https://doi.org/10.1002/tax.xxxxxxxxx'
+link: 'https://doi.org/10.1002/tax.70086'
 #code: 'http://doi.org/...'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
