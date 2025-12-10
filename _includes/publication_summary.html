@@ -94,27 +94,14 @@
       <h4>Authorship statistics</h4>
       <div class="stats-item">
         <strong>Corresponding author</strong>
-        <span>{{ corr_auth }}
-        {% if n_articles > 0 %}
-        ({{ corr_auth | times: 100.0 | divided_by: n_articles | round: 0 }}%)
-      {% endif %}
-	  </span>
+        <span>{{ corr_auth }}</span>
       </div>
       <div class="stats-item">
         <strong>First author</strong>
-        <span>{{ first_auth }}
-        {% if n_articles > 0 %}
-        ({{ first_auth | times: 100.0 | divided_by: n_articles | round: 0 }}%)
-      {% endif %}
-	  </span>
-      </div>
+        <span>{{ first_auth }}</span>
       <div class="stats-item">
         <strong>Last author</strong>
-        <span>{{ last_auth }}
-        {% if n_articles > 0 %}
-        ({{ last_auth | times: 100.0 | divided_by: n_articles | round: 0 }}%)
-      {% endif %}
-	  </span>
+        <span>{{ last_auth }}</span>
       </div>
     </div> <!-- This closes the right column -->
   </div> <!-- This closes publication-stats-grid -->
