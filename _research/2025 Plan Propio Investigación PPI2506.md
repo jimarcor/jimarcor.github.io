@@ -1,5 +1,5 @@
 ---
-title: "Ayuda B3 - PPI2506"
+title: "Ayuda B3 - PPI2506 <br>"
 layout: single-portfolio
 excerpt: "<img src='/images/research/PPI2506.png' style='height: 200px; width: 100%; object-fit: cover;'>"
 collection: research
