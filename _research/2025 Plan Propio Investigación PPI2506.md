@@ -1,7 +1,7 @@
 ---
 title: "Ayuda B3 - PPI2506"
 layout: single-portfolio
-excerpt: "<img src='/images/research/PPI2506.png' style='height: 200px ; width: 100%; object-fit: contain;'>"
+excerpt: "<img src='/images/research/PPI2506.png' style='height: 200px; width: 100%; object-fit: cover;'>"
 collection: research
 date: 2025-12-10
 header: 
