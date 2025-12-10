@@ -58,19 +58,34 @@
   </div>
       <div class="stats-item">
         <span class="badge q2">Q2</span>
-        <span>{{ q2 }}</span>
+        <span>{{ q2 }}
+        {% if n_articles > 0 %}
+        ({{ q2 | times: 100.0 | divided_by: n_articles | round: 1 }}%)
+      {% endif %}
+	  </span>
       </div>
       <div class="stats-item">
         <span class="badge q3">Q3</span>
-        <span>{{ q3 }}</span>
+        <span>{{ q3 }}
+		
+        {% if n_articles > 0 %}
+        ({{ q3 | times: 100.0 | divided_by: n_articles | round: 1 }}%)
+      {% endif %}</span>
       </div>
       <div class="stats-item">
         <span class="badge q4">Q4</span>
-        <span>{{ q4 }}</span>
+        <span>{{ q4 }}
+        {% if n_articles > 0 %}
+        ({{ q4 | times: 100.0 | divided_by: n_articles | round: 1 }}%)
+      {% endif %}</span>
       </div>
       <div class="stats-item">
         <span class="badge oa">OA</span> <!-- Changed from "Open Access" to "OA" -->
-        <span>{{ oa }}</span>
+        <span>{{ oa }}
+        {% if n_articles > 0 %}
+        ({{ oa | times: 100.0 | divided_by: n_articles | round: 1 }}%)
+      {% endif %}
+	  </span>
       </div>
     </div>
 
