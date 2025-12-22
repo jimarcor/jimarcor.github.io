@@ -15,5 +15,5 @@ link: 'https://doi.org/10.1002/tax.70086'
 code: 'https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Ftax.70086&file=tax70086-sup-0001-FigureS1-S4.pdf'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
-citation: 'García-Moro, P*, Jung S-E, Ford K, Jin X-F, Lu Y-F, Benítez-Benítez C, Kim S, Luceño M, Míguez M, Morales-Alonso A, Muñoz-Schüler P, Oleas NH, Penneckamp DN, Reznicek AA, Sánchez-Villegas R, Sanz-Arnal M, Martín-Bravo S, Leitch IJ, Jiménez-Mejías P, <B>Márquez-Corro JI</B>*. 2025. &quot;IAPT chromosome data 46/1&quot; in Marhold K & Kučera J (eds.), <i>IAPT chromosome data 46. Taxon</i> 74(6): 1594-1621.'
+citation: 'García-Moro P*, Jung S-E, Ford K, Jin X-F, Lu Y-F, Benítez-Benítez C, Kim S, Luceño M, Míguez M, Morales-Alonso A, Muñoz-Schüler P, Oleas NH, Penneckamp DN, Reznicek AA, Sánchez-Villegas R, Sanz-Arnal M, Martín-Bravo S, Leitch IJ, Jiménez-Mejías P, <B>Márquez-Corro JI</B>*. 2025. &quot;IAPT chromosome data 46/1&quot; in Marhold K & Kučera J (eds.), <i>IAPT chromosome data 46. Taxon</i> 74(6): 1594-1621.'
 ---
