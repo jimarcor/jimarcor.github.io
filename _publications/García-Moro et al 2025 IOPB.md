@@ -2,7 +2,7 @@
 title: "IAPT chromosome data 46/1"
 collection: publications
 permalink: /publication/García-Moro et al 2025 IOPB
-date: 2025-12-28
+date: 2025-12-14
 venue: 'Taxon'
 paperurl: '/files/pdf/research/García-Moro et al 2025 IOPB.pdf'
 quartile: Q1
