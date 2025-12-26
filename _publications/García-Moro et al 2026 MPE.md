@@ -10,10 +10,10 @@ open_access: true
 type: article       # options: article, book, book_chapter, etc.
 #first_author: true
 last_author: true
-corresponding_author: true
+corresponding_author: false
 link: 'https://doi.org/'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
-citation: 'García-Moro P*, Jung S-E, Valdés-Florido A, Morel J, Sanz-Arnal M, Villaverde T, Naczi RFC, Ford K, Kim S, Martín-Bravo S, Jiménez-Mejías P, Viruel J, <B>Márquez-Corro JI</B>*. 2025. &quot;Uncovering ancient allopolyploidy through genomic evidence: a case study in <i>Carex</i> subgenus <i>Uncinia</i>&quot; <i> Molecular Phylogenetics and Evolution</i> 00(0): 000-000. doi:'
+citation: 'García-Moro P, Jung S-E, Valdés-Florido A, Morel J, Sanz-Arnal M, Villaverde T, Naczi RFC, Ford K, Kim S, Martín-Bravo S, Jiménez-Mejías P, Viruel J, <B>Márquez-Corro JI</B>. 2025. &quot;Uncovering ancient allopolyploidy through genomic evidence: a case study in <i>Carex</i> subgenus <i>Uncinia</i>&quot; <i> Molecular Phylogenetics and Evolution</i> 00(0): 000-000. doi:'
 ---
