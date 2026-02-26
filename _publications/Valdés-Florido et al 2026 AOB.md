@@ -15,5 +15,5 @@ link: 'https://doi.org/10.1093/aob/mcaf290'
 #code: 'http://doi.org/'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
-citation: "Valdés-Florido A, Cuscó-Borràs J, Martín-Bravo S, Benítez-Benítez C, <B>Márquez-Corro JI</B>, Luceño M, Hipp AL, Escudero M. 2025. &quot;The complex interplay between chromosome, climatic niche and morphological traits shapes the diversification of <i>Carex</i> (Cyperaceae)&quot; <i>Annals of Botany</i> 00: 000. doi:10.1093/aob/mcaf290"
+citation: "Valdés-Florido A, Cuscó-Borràs J, Martín-Bravo S, Benítez-Benítez C, <B>Márquez-Corro JI</B>, Luceño M, Hipp AL, Escudero M. 2025. &quot;The complex interplay between chromosome, climatic niche and morphological traits shapes the diversification of <i>Carex</i> (Cyperaceae)&quot; <i>Annals of Botany</i> 137(3): 777-788. doi:10.1093/aob/mcaf290"
 ---
