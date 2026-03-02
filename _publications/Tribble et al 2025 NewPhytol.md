@@ -6,7 +6,7 @@ date: 2025-02-06
 venue: 'New Phytologist'
 paperurl: '/files/pdf/research/Tribble & Márquez-Corro et al 2025 NewPhytol.pdf'
 quartile: Q1
-open_access: false
+open_access: true
 first_author: true
 #last_author: true
 #corresponding_author: true
