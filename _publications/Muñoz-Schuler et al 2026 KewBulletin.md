@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/Muñoz-Schuler et al 2026 KewBulletin
 date: 2026-03-02
 venue: 'Kew Bulletin'
-quartile: Q1
+quartile: Q2
 open_access: true
 #first_author: true
 #last_author: true
