@@ -6,7 +6,7 @@ date: 2025-01-30
 venue: 'Botanical Journal of the Linnean Society'
 paperurl: '/files/pdf/research/Shabdin et al 2025 BJLS Mapania.pdf'
 quartile: Q1
-open_access: false
+open_access: true
 #first_author: true
 #last_author: true
 corresponding_author: true
