@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : jimarcorr
+  username               : 
 facebook:
   username               :
   app_id                 :
@@ -87,7 +87,7 @@ analytics:
 author:
   name             : "José Ignacio Márquez-Corro"
   avatar           : "profile.png"
-  bio              : "Postdoctoral Research Fellow"
+  bio              : "Postdoctoral Researcher"
   employer         : "Univ. Pablo de Olavide"
   location         : "Seville (Spain)"
   pubmed           : "https://www.ncbi.nlm.nih.gov/search/all/?term=Márquez-Corro"
@@ -119,12 +119,13 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "jimarcorr"
+  twitter          :
   vine             :
   weibo            :
   xing             :
   youtube          :
   wikidata        : Q36594590
+  bluesky          : "https://bsky.app/profile/jimarcor.bsky.social"
 
 
 # Reading Files
