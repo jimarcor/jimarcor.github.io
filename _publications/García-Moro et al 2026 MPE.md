@@ -15,5 +15,5 @@ link: 'https://doi.org/10.1016/j.ympev.2026.108603'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
-citation: 'García-Moro P, Jung S-E, Valdés-Florido A, Morel J, Sanz-Arnal M, Villaverde T, Naczi RFC, Ford K, Kim S, Martín-Bravo S, Jiménez-Mejías P, Viruel J, <B>Márquez-Corro JI</B>. 2025. &quot;Uncovering ancient allopolyploidy through genomic evidence: a case study in <i>Carex</i> subgenus <i>Uncinia</i>&quot; <i> Molecular Phylogenetics and Evolution</i> 00(0): 000-000. doi:10.1016/j.ympev.2026.108603'
+citation: 'García-Moro P, Jung S-E, Valdés-Florido A, Morel J, Sanz-Arnal M, Villaverde T, Naczi RFC, Ford K, Kim S, Martín-Bravo S, Jiménez-Mejías P, Viruel J, <B>Márquez-Corro JI</B>. 2025. &quot;Uncovering ancient allopolyploidy through genomic evidence: a case study in <i>Carex</i> subgenus <i>Uncinia</i>&quot; <i> Molecular Phylogenetics and Evolution</i> 220(0): 000-000. doi:10.1016/j.ympev.2026.108603'
 ---
