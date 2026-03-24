@@ -40,7 +40,6 @@ I visited some herbaria in Taipei (TAIF) and South Korea (KNA), and collected se
 	  <li data-target="#myCarousel" data-slide-to="3"></li>
 	  <li data-target="#myCarousel" data-slide-to="4"></li>
 	  <li data-target="#myCarousel" data-slide-to="5"></li>
-      <li data-target="#myCarousel" data-slide-to="6"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -59,13 +58,6 @@ I visited some herbaria in Taipei (TAIF) and South Korea (KNA), and collected se
       </div>
       </div>
 		
-		 <div class="item">
-        <a href="https://www.inaturalist.org/observations/225273528" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/399382757/original.jpeg' alt="Machaerina disticha"/></a>
-		  <div class="carousel-caption">
-        <p>Machaerina disticha</p>
-      </div>
-      </div>
-
       <div class="item">
         <a href="https://www.inaturalist.org/observations/322047864" target="_blank"><img  class= "img-responsive center-block" src='https://inaturalist-open-data.s3.amazonaws.com/photos/582519672/original.jpg' alt="Carex brunnea"/></a>
 		  <div class="carousel-caption">
