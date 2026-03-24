@@ -1,5 +1,5 @@
 ---
-title: "Taiwan and South Korea 2025"
+title: "Taiwan and Korea 2025"
 layout: single-portfolio
 excerpt: "<img src='/images/expeditions/Taiwan.jpg' style='height: 200px; width: 100%; object-fit: cover;'>"
 collection: expeditions
