@@ -1,7 +1,7 @@
 ---
 title: "Taiwan and South Korea 2025"
 layout: single-portfolio
-excerpt: "<img src='/images/expeditions/Taiwan.jpeg' style='height: 200px; width: 100%; object-fit: cover;'>"
+excerpt: "<img src='/images/expeditions/Taiwan.jpg' style='height: 200px; width: 100%; object-fit: cover;'>"
 collection: expeditions
 date: 2025-11-01
 header: 
