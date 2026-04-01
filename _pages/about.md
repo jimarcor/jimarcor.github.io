@@ -12,39 +12,51 @@ I specialize in character evolution and the systematics of the family Cyperaceae
 During my PhD, I recognized a significant knowledge gap in tropical sedge research. This began with a striking lack of karyological data, poorly documented species descriptions, and historically sparse collections. I became aware of how incomplete and biased the understanding of sedges truly is, prompting me to focus on generating morphological, molecular, and taxonomic data. To address this, I am now focusing on Southeast Asia —the least studied region for sedges— starting with *Carex* and expanding efforts until the taxonomic knowledge of over 600 species in this biodiverse region is comprehensive.
 
 <!-- MAPA DE INATURALIST -->
-<!-- 1. Estilos y Librería (Cargar Leaflet) -->
-<link rel="stylesheet" href="https://unpkg.com" />
-<script src="https://unpkg.com"></script>
+<!-- 1. Leaflet y Plugin de Clics (UTFGrid) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Plugin alojado en GitHub para evitar bloqueos de CDNs comunes -->
+<script src="https://github.io"></script>
 
 <div align="center">
   <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
   <br/>
-  <h3> My observations</h3>
+  <h3> My observations (click a point to view on iNaturalist)</h3>
   
-  <!-- 2. Contenedor del mapa -->
-  <div id="map" style="width: 100%; height: 600px; background: #000; border: 1px solid #333; border-radius: 8px;"></div>
+  <div id="map" style="width: 100%; height: 600px; background: #222; border: 1px solid #333; border-radius: 8px; cursor: crosshair;"></div>
   
   <br/>
   <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
 </div>
 
 <script>
-  setTimeout(function() {
-    // Inicializar mapa (Centrado en el mundo)
-    var map = L.map('map').setView([15, 0], 2);
+  function initMap() {
+    // CENTRO GLOBAL: Lat 20, Lon 0, Zoom 2 (Muestra todo el mundo)
+    var map = L.map('map').setView([20, 0], 2);
 
-    // 3. CAPA SATÉLITE (Esri)
+    // CAPA SATÉLITE (Esri)
     L.tileLayer('https://arcgisonline.com{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EBP, and the GIS User Community'
+      attribution: 'Tiles &copy; Esri &mdash; iNaturalist'
     }).addTo(map);
 
-    // 4. CAPA DE PUNTOS iNaturalist (Usuario: jimarcor)
-    // He cambiado el color a 'yellow' para que resalte mejor sobre el satélite oscuro
-    L.tileLayer('https://inaturalist.org{z}/{x}/{y}.png?user_id=jimarcor&color=yellow', {
-      attribution: '&copy; iNaturalist'
-    }).addTo(map);
+    // CAPA VISUAL DE PUNTOS (iNaturalist)
+    L.tileLayer('https://inaturalist.org{z}/{x}/{y}.png?user_id=jimarcor&color=yellow').addTo(map);
 
-    // Refrescar tamaño para evitar fallos de carga
-    map.invalidateSize();
-  }, 600); 
+    // CAPA INTERACTIVA (Permite hacer clic)
+    var utfGrid = new L.UtfGrid('https://inaturalist.org{z}/{x}/{y}.grid.json?user_id=jimarcor');
+    map.addLayer(utfGrid);
+
+    // AL HACER CLIC: Redirigir a iNaturalist
+    utfGrid.on('click', function (e) {
+      if (e.data && e.data.id) {
+        window.open('https://inaturalist.org' + e.data.id, '_blank');
+      }
+    });
+
+    // Forzar renderizado para evitar el "box negro"
+    setTimeout(function(){ map.invalidateSize(); }, 400);
+  }
+
+  // Ejecutar cuando la página esté lista
+  window.onload = initMap;
 </script>
