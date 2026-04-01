@@ -13,38 +13,38 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
 
 <!-- MAPA DE INATURALIST -->
 <!-- 1. Estilos y Librería (Cargar Leaflet) -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com" />
+<script src="https://unpkg.com"></script>
 
 <div align="center">
   <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
   <br/>
   <h3> My observations</h3>
   
-  <!-- 2. Contenedor con altura fija obligatoria -->
-  <div id="map" style="width: 100%; height: 600px; background: #f0f0f0; border: 1px solid #ccc; border-radius: 8px;"></div>
+  <!-- 2. Contenedor del mapa -->
+  <div id="map" style="width: 100%; height: 600px; background: #000; border: 1px solid #333; border-radius: 8px;"></div>
   
   <br/>
   <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
 </div>
 
 <script>
-  // Usamos un pequeño retraso para asegurar que el DOM esté listo
   setTimeout(function() {
-    // Inicializar mapa
-    var map = L.map('map').setView([20, 0], 2);
+    // Inicializar mapa (Centrado en el mundo)
+    var map = L.map('map').setView([15, 0], 2);
 
-    // Capa base de OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap'
+    // 3. CAPA SATÉLITE (Esri)
+    L.tileLayer('https://arcgisonline.com{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EBP, and the GIS User Community'
     }).addTo(map);
 
-    // Capa de puntos de iNaturalist (Tus observaciones)
-    L.tileLayer('https://api.inaturalist.org/v1/points/{z}/{x}/{y}.png?user_id=jimarcor&color=green', {
+    // 4. CAPA DE PUNTOS iNaturalist (Usuario: jimarcor)
+    // He cambiado el color a 'yellow' para que resalte mejor sobre el satélite oscuro
+    L.tileLayer('https://inaturalist.org{z}/{x}/{y}.png?user_id=jimarcor&color=yellow', {
       attribution: '&copy; iNaturalist'
     }).addTo(map);
 
-    // Corregir errores de renderizado inicial (cuadro blanco/gris)
+    // Refrescar tamaño para evitar fallos de carga
     map.invalidateSize();
-  }, 500); 
+  }, 600); 
 </script>
