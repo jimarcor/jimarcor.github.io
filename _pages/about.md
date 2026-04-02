@@ -13,50 +13,59 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
 
 <!-- MAPA DE INATURALIST -->
 <!-- 1. Librerías Leaflet -->
-<link rel="stylesheet" href="https://unpkg.com" />
-<script src="https://unpkg.com"></script>
+<link rel="stylesheet" href="https://bundle.run" />
+<script src="https://bundle.run"></script>
 
 <div align="center">
   <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
   <br/>
-  <h3> My observations (Click to view on iNaturalist)</h3>
+  <h3> My observations</h3>
   
-  <div id="map-final" style="width: 100%; height: 600px; background: #f0f0f0; border: 1px solid #ccc; border-radius: 8px;"></div>
+  <!-- Contenedor con ID único y altura forzada -->
+  <div id="inat-map-container" style="width: 100%; height: 600px; min-height: 600px; background: #e0e0e0; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; position: relative; overflow: hidden;"></div>
   
   <br/>
   <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
 </div>
 
 <script>
-  // Creamos el mapa globalmente
-  var map;
+  (function() {
+    var mapInstance;
+    var container = document.getElementById('inat-map-container');
 
-  function initMap() {
-    if (map) return; // Evitar duplicados
+    function initInat() {
+      if (mapInstance || !container) return;
 
-    map = L.map('map-final').setView([20, 0], 2);
+      // Inicializar mapa
+      mapInstance = L.map('inat-map-container').setView([20, 0], 2);
 
-    // Capa Terreno
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap'
-    }).addTo(map);
+      // CAPA TERRENO (OpenStreetMap)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+      }).addTo(mapInstance);
 
-    // Capa Puntos iNaturalist
-    L.tileLayer('https://inaturalist.org{z}/{x}/{y}.png?user_id=jimarcor&color=green').addTo(map);
+      // CAPA PUNTOS (jimarcor)
+      L.tileLayer('https://inaturalist.org{z}/{x}/{y}.png?user_id=jimarcor&color=green').addTo(mapInstance);
 
-    // Clic para redirigir
-    map.on('click', function() {
-      window.open('https://inaturalist.org', '_blank');
-    });
+      // CLIC REDIRECCIÓN
+      mapInstance.on('mousedown', function() {
+        window.open('https://inaturalist.org', '_blank');
+      });
 
-    // PARCHE: Forzar el dibujado cada vez que el usuario mueve el ratón o hace scroll
-    // Esto "despierta" al mapa si se quedó en gris
-    setTimeout(function() { map.invalidateSize(); }, 500);
-    window.addEventListener('scroll', function() { map.invalidateSize(); }, {passive: true});
-  }
+      // FORZAR RENDERIZADO CUANDO EL DIV CAMBIE (Solución definitiva al cuadro negro)
+      var resizer = new ResizeObserver(function() {
+        mapInstance.invalidateSize();
+      });
+      resizer.observe(container);
+      
+      // Refresco de seguridad tras 1 segundo
+      setTimeout(function() { mapInstance.invalidateSize(); }, 1000);
+    }
 
-  // Ejecutar al cargar
-  window.addEventListener('load', initMap);
-  // Por si acaso el tema de Jekyll carga lento:
-  setTimeout(initMap, 1500);
+    // Intentar cargar en múltiples eventos para asegurar éxito en GitHub
+    window.addEventListener('load', initInat);
+    document.addEventListener('DOMContentLoaded', initInat);
+    // Ejecución inmediata por si ya cargó
+    if (document.readyState === 'complete') initInat();
+  })();
 </script>
