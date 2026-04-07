@@ -2,7 +2,7 @@
 title: "Miscellaneous chorological, nomenclatural and taxonomic notes on <i>Carex</i> (Cyperaceae) from South America, including the description of three new species"
 collection: publications
 permalink: /publication/Muñoz-Schuler et al 2026 KewBulletin
-date: 2026-03-02
+date: 2026-04-07
 venue: 'Kew Bulletin'
 quartile: Q2
 open_access: true
