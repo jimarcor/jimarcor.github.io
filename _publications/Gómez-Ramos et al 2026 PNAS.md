@@ -11,7 +11,7 @@ type: article       # options: article, book, book_chapter, etc.
 #first_author: true
 #last_author: true
 #corresponding_author: true
-link: 'https://doi.org/10.1007/s12225-025-10332-6'
+link: 'https://doi.org/10.1073/pnas.2604805123'
 #code: 'http://doi.org/'
 #github: 'https://github.com/jimarcor/...'
 #figshare: 'https://figshare.com/...'
