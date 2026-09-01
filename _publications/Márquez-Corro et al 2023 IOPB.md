@@ -5,7 +5,7 @@ permalink: /publication/Márquez-Corro et al 2023 IOPB
 date: 2023-12-28
 venue: 'Taxon'
 paperurl: '/files/pdf/research/Márquez-Corro et al 2023 IOPB.pdf'
-quartile: Q1
+quartile: Q2
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
 first_author: true
