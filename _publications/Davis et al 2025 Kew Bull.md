@@ -5,7 +5,7 @@ permalink: /publication/Davis et al 2025 Kew Bull
 date: 2025-02-25
 venue: 'Kew Bulletin'
 paperurl: '/files/pdf/research/Davis et al 2025 Kew Bull.pdf'
-quartile: Q2
+quartile: Q4
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
 link: 'https://doi.org/10.1007/s12225-024-10239-8'
