@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/Christenhusz et al 2026 Carex depauperata genome
 date: 2026-03-18
 venue: 'Wellcome Open Research'
-quartile: Q2
+quartile: Q3
 open_access: true
 type: article       # options: article, book, book_chapter
 paperurl: '/files/pdf/research/Christenhusz et al 2026 Carex depauperata genome.pdf'
