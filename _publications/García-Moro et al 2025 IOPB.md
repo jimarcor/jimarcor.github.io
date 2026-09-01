@@ -5,7 +5,7 @@ permalink: /publication/García-Moro et al 2025 IOPB
 date: 2025-12-14
 venue: 'Taxon'
 paperurl: '/files/pdf/research/García-Moro et al 2025 IOPB.pdf'
-quartile: Q1
+quartile: Q3
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
 #first_author: true
