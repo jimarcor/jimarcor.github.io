@@ -2,7 +2,7 @@
 title: "Uncovering ancient allopolyploidy through genomic evidence: a case study in <i>Carex</i> subgenus <i>Uncinia</i>"
 collection: publications
 permalink: /publication/García-Moro et al 2026 MPE
-date: 2026-03-07
+date: 2026-07-01
 venue: 'Molecular Phylogenetics and Evolution'
 paperurl: '/files/pdf/research/García-Moro et al 2026 MPE.pdf'
 quartile: Q1
