@@ -5,7 +5,7 @@ permalink: /publication/Larridon et al 2024 Candollea
 date: 2024-06-28
 venue: 'Candollea'
 paperurl: '/files/pdf/research/Larridon et al 2024 Candollea.pdf'
-quartile: Q3
+quartile: Q4
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
 #first_author: true
