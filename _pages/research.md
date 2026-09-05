@@ -22,6 +22,8 @@ If you are interested in donating to support sedge research in priority areas fo
   {% include archive-single.html type="grid" %}
 {% endfor %}
 
+</nbsp>
+
 
 <div class="section">
 <center>
