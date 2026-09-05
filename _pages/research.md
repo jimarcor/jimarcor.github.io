@@ -23,7 +23,7 @@ If you are interested in donating to support sedge research in priority areas fo
 {% endfor %}
 
 </nbsp>
-
+  <br/>
 <div align="center">
   <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
 </div>
