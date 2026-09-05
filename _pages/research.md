@@ -21,9 +21,7 @@ If you are interested in donating to support sedge research in priority areas fo
 {% for post in ordered_pages %}
   {% include archive-single.html type="grid" %}
 {% endfor %}
-
 </nbsp>
-
 
 <div style="clear: both; text-align: center; padding: 20px 0;">
   <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
