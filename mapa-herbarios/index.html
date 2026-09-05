@@ -50,33 +50,183 @@
         }).addTo(map);
 
         // 3. DEFINIR LOS HERBARIOS (TUS DATOS)
-        var herbaria = [
-            {
-                name: "Herbario UPO",
-                acronym: "UPOS",
-                irn = ""
-                lat: 37.358,
-                lng: -5.935,
-                year: "2014-2016"
-            },
-            {
-                name: "Herbario UPO",
-                acronym: "UPOS",
-                irn = ""
-                lat: 37.358,
-                lng: -5.935,
-                year: "2014-2016"
-            },
-            {
-                name: "Herbario UPO",
-                acronym: "UPOS",
-                irn = ""
-                lat: 37.358,
-                lng: -5.935,
-                year: "2014-2016"
-            }
-            // AÑADE AQUÍ EL RESTO DE HERBARIOS QUE VISITASTE
-        ];
+        var herbarios = [
+    {
+        name: "Royal Botanic Gardens, Kew",
+        acronym: "K",
+        irn: "",
+        lat: 51.480,
+        lng: -0.295,
+        year: "varias visitas"
+    },
+    {
+        name: "Universidad de Concepción",
+        acronym: "CONC",
+        irn: "",
+        lat: -36.830,
+        lng: -73.050,
+        year: "varias visitas"
+    },
+    {
+        name: "Parc Botanique et Zoologique de Tsimbazaza",
+        acronym: "TAN",
+        irn: "",
+        lat: -18.880,
+        lng: 47.510,
+        year: "varias visitas"
+    },
+    {
+        name: "Universidade Federal de Pernambuco",
+        acronym: "UFP",
+        irn: "",
+        lat: -8.050,
+        lng: -34.880,
+        year: "varias visitas"
+    },
+    {
+        name: "University of Cape Town",
+        acronym: "BOL",
+        irn: "",
+        lat: -33.920,
+        lng: 18.420,
+        year: "varias visitas"
+    },
+    {
+        name: "Universidad Pablo de Olavide",
+        acronym: "UPOS",
+        irn: "",
+        lat: 37.358,
+        lng: -5.935,
+        year: "varias visitas"
+    },
+    {
+        name: "Universidad de Sevilla",
+        acronym: "SEV",
+        irn: "",
+        lat: 37.380,
+        lng: -5.990,
+        year: "varias visitas"
+    },
+    {
+        name: "Real Jardín Botánico de Madrid",
+        acronym: "MA",
+        irn: "",
+        lat: 40.410,
+        lng: -3.690,
+        year: "varias visitas"
+    },
+    {
+        name: "Universidad Autónoma de Madrid",
+        acronym: "MAUAM",
+        irn: "",
+        lat: 40.540,
+        lng: -3.690,
+        year: "varias visitas"
+    },
+    {
+        name: "Universidad de La Serena",
+        acronym: "ULS",
+        irn: "",
+        lat: -29.900,
+        lng: -71.250,
+        year: "varias visitas"
+    },
+    {
+        name: "Universidad de León",
+        acronym: "LEB",
+        irn: "",
+        lat: 42.600,
+        lng: -5.570,
+        year: "varias visitas"
+    },
+    {
+        name: "Diego N. Penneckamp's herbarium",
+        acronym: "—",  // sin acrónimo oficial
+        lat: -40.320,
+        lng: -72.480,
+        year: "varias visitas"
+    },
+    {
+        name: "University of Santo Tomas",
+        acronym: "USTH",
+        irn: "",
+        lat: 14.600,
+        lng: 121.000,
+        year: "varias visitas"
+    },
+    {
+        name: "National Museum of the Philippines",
+        acronym: "PNH",
+        irn: "",
+        lat: 14.580,
+        lng: 121.000,
+        year: "varias visitas"
+    },
+    {
+        name: "University of the Philippines Los Baños",
+        acronym: "CAHUP",
+        irn: "",
+        lat: 14.170,
+        lng: 121.240,
+        year: "varias visitas"
+    },
+    {
+        name: "Central Mindanao University",
+        acronym: "CMUH",
+        irn: "",
+        lat: 7.980,
+        lng: 125.000,
+        year: "varias visitas"
+    },
+    {
+        name: "Ghent University",
+        acronym: "GENT",
+        irn: "",
+        lat: 51.050,
+        lng: 3.730,
+        year: "varias visitas"
+    },
+    {
+        name: "Meise Botanic Garden",
+        acronym: "BR",
+        irn: "",
+        lat: 50.930,
+        lng: 4.330,
+        year: "varias visitas"
+    },
+    {
+        name: "Naturalis Biodiversity Center",
+        acronym: "L",
+        irn: "",
+        lat: 52.160,
+        lng: 4.490,
+        year: "varias visitas"
+    },
+    {
+        name: "Taiwan Forestry Research Institute",
+        acronym: "TAIF",
+        irn: "",
+        lat: 25.030,
+        lng: 121.510,
+        year: "varias visitas"
+    },
+    {
+        name: "Sungshin Women's University",
+        acronym: "SWU",
+        irn: "",
+        lat: 37.570,
+        lng: 126.980,
+        year: "varias visitas"
+    },
+    {
+        name: "Korea National Arboretum",
+        acronym: "KH",
+        irn: "",
+        lat: 37.750,
+        lng: 127.100,
+        year: "varias visitas"
+    }
+];
 
         // 4. CREAR MARCADORES EN EL MAPA
         herbaria.forEach(function(herbaria) {
@@ -84,7 +234,7 @@
             var popupContent = `
                 <strong>
             <a href="https://sweetgum.nybg.org/science/ih/herbarium-details/?irn=${herbaria.irn}" target="_blank">
-                ${herbario.nombre}
+                ${herbario.name}
             </a>
         </strong><br>
                 <b>Acronym:</b> ${herbaria.acronym}<br>
