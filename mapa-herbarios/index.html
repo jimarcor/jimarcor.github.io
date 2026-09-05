@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbaria map</title>
+
+    <!-- Estilos de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px; /* Alto del mapa */
+            width: 100%;
+            border-radius: 8px;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .info-pie {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🗺️ Map of the visited herbaria</h1>
+    <div id="map"></div>
+    <p class="info-pie">Click on each marker to see more information.</p>
+
+    <!-- Librería JavaScript de Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        // 1. INICIALIZAR EL MAPA
+        // Centrado en España (puedes cambiarlo)
+        var map = L.map('map').setView([40.0, -3.0], 5);
+
+        // 2. AÑADIR CAPA DE MOSAICOS (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // 3. DEFINIR LOS HERBARIOS (TUS DATOS)
+        var herbaria = [
+            {
+                name: "Herbario UPO",
+                acronym: "UPOS",
+                irn = ,
+                lat: 37.358,
+                lng: -5.935,
+                year: "2014-2016"
+            },
+            {
+                name: "Herbario UPO",
+                acronym: "UPOS",
+                irn = ,
+                lat: 37.358,
+                lng: -5.935,
+                year: "2014-2016"
+            },
+            {
+                name: "Herbario UPO",
+                acronym: "UPOS",
+                irn = ,
+                lat: 37.358,
+                lng: -5.935,
+                year: "2014-2016"
+            }
+            // AÑADE AQUÍ EL RESTO DE HERBARIOS QUE VISITASTE
+        ];
+
+        // 4. CREAR MARCADORES EN EL MAPA
+        herbaria.forEach(function(herbaria) {
+            // Crear el contenido del popup con la información
+            var popupContent = `
+                <strong>
+            <a href="https://sweetgum.nybg.org/science/ih/herbarium-details/?irn=${herbaria.irn}" target="_blank">
+                ${herbario.nombre}
+            </a>
+        </strong><br>
+                <b>Acronym:</b> ${herbaria.acronym}<br>
+                <b>Visited on:</b> ${herbaria.year}
+            `;
+
+            // Añadir el marcador al mapa
+            L.marker([herbaria.lat, herbaria.lng])
+                .addTo(map)
+                .bindPopup(popupContent);
+        });
+
+        // (Opcional) Ajustar el zoom para que se vean todos los marcadores
+        // Si tienes muchos puntos por todo el mundo, puedes descomentar esto:
+        *
+        var group = L.featureGroup(
+            herbaria.map(h => L.marker([h.lat, h.lng]))
+        );
+        map.fitBounds(group.getBounds());
+        */
+    </script>
+</body>
+</html>
