@@ -28,6 +28,6 @@ If you are interested in donating to support sedge research in priority areas fo
   <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
 </div>
 
-<div src="https://jimarcor.github.io/mapa-herbarios/" style="width: 100%; height: 600px; background: #f0f0f0; border: 1px solid #ccc; border-radius: 8px;">
-
+<div style="width: 100%; height: 600px; background: #f0f0f0; border: 0px; border-radius: 0px;">
+<iframe src="https://jimarcor.github.io/mapa-herbarios/" width="100%" height="100%" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
 </div>
