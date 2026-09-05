@@ -24,9 +24,8 @@ If you are interested in donating to support sedge research in priority areas fo
 
 </nbsp>
 
-<div style="clear:both; margin-top: 50px;">
+
 <center>
 <iframe src="https://jimarcor.github.io/mapa-herbarios/"></iframe>
 
 </center>
-</div>
