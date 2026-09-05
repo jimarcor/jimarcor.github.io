@@ -263,6 +263,14 @@
         );
         map.fitBounds(group.getBounds());
         
+// Mostrar el número total de herbarios en la página
+var total = herbarios.length;
+
+// Actualizar el texto del párrafo informativo que ya tienes (info-pie)
+var infoPie = document.querySelector('.info-pie');
+if (infoPie) {
+    infoPie.textContent = `Visited collections where the specimens were deposited. Total: ${total} herbaria.`;
+}
     </script>
 </body>
 </html>
