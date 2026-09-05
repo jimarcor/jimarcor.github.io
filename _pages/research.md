@@ -21,3 +21,9 @@ If you are interested in donating to support sedge research in priority areas fo
 {% for post in ordered_pages %}
   {% include archive-single.html type="grid" %}
 {% endfor %}
+
+<center>
+<h3> Herbaria visited</h3>
+Visited collections where the specimens were deposited.
+<iframe src="href="/mapa-herbarios/" width="100%" height="600" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe
+</center>
