@@ -16,7 +16,7 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             max-width: 900px;
-            margin: 20px auto;
+            margin: 10px auto;
             padding: 0 20px;
         }
         h1 {
@@ -31,7 +31,7 @@
 </head>
 <body>
 
-    <h1>Map of visited herbaria</h1>
+    <h2>Map of visited herbaria</h2>
     <div id="map"></div>
     <p class="info-pie">Click on each marker to see more information.</p>
 
@@ -269,7 +269,7 @@ var total = herbaria.length;
 // Actualizar el texto del párrafo informativo que ya tienes (info-pie)
 var infoPie = document.querySelector('.info-pie');
 if (infoPie) {
-    infoPie.textContent = `Visited collections where the specimens were deposited. Total: ${total} herbaria.`;
+    infoPie.textContent = `${total} visited herbaria to study their sedge collection.`;
 }
     </script>
 </body>
