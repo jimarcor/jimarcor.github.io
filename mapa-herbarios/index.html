@@ -141,10 +141,10 @@
     },
     {
         name: "Diego N. Penneckamp's herbarium",
-        acronym: "—",  // sin acrónimo oficial
+        acronym: "—",
         lat: -40.320,
         lng: -72.480,
-        year: "varias visitas"
+        year: "2023"
     },
     {
         name: "University of Santo Tomas",
@@ -203,6 +203,14 @@
         year: "varias visitas"
     },
     {
+        name: "",
+        acronym: "U",
+        irn: "",
+        lat: 52.161,
+        lng: 4.491,
+        year: "varias visitas"
+    },
+    {
         name: "Taiwan Forestry Research Institute",
         acronym: "TAIF",
         irn: "",
@@ -249,12 +257,12 @@
 
         // (Opcional) Ajustar el zoom para que se vean todos los marcadores
         // Si tienes muchos puntos por todo el mundo, puedes descomentar esto:
-        *
+        
         var group = L.featureGroup(
             herbaria.map(h => L.marker([h.lat, h.lng]))
         );
         map.fitBounds(group.getBounds());
-        */
+        /
     </script>
 </body>
 </html>
