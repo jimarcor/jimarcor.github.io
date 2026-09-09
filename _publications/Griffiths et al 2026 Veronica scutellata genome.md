@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/Griffiths et al 2026 Veronica scutellata genome
 date: 2026-08-19
 venue: 'Wellcome Open Research'
-quartile: Q2
+quartile: Q3
 open_access: true
 type: article       # options: article, book, book_chapter
 paperurl: '/files/pdf/research/Griffiths et al 2026 Veronica scutellata genome.pdf'

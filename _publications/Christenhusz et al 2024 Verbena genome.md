@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/Christenhusz et al 2024 Verbena genome
 date: 2024-10-18
 venue: 'Wellcome Open Research'
-quartile: Q2
+quartile: Q3
 open_access: true
 type: article       # options: article, book, book_chapter
 paperurl: '/files/pdf/research/Christenhusz et al 2024 Verbena genome.pdf'

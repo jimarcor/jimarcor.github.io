@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/Griffiths et al 2026 Omalotheca supina genome
 date: 2026-07-15
 venue: 'Wellcome Open Research'
-quartile: Q2
+quartile: Q3
 open_access: true
 type: article       # options: article, book, book_chapter
 paperurl: '/files/pdf/research/Griffiths et al 2026 Omalotheca supina genome.pdf'
