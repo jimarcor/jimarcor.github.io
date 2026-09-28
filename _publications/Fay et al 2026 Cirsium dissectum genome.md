@@ -1,13 +1,13 @@
 ---
 title: "The genome sequence of meadow thistle, <i>Cirsium dissectum</i> (L.) Hill (Asterales: Asteraceae)"
 collection: publications
-permalink: /publication/Fay et al 2026 Rubus caesius genome
+permalink: /publication/Fay et al 2026 Cirsium dissectum genome
 date: 2026-09-28
 venue: 'Wellcome Open Research'
 quartile: Q3
 open_access: true
 type: article       # options: article, book, book_chapter
-paperurl: '/files/pdf/research/Fay et al 2026 Rubus caesius genome.pdf'
+paperurl: '/files/pdf/research/Fay et al 2026 Cirsium dissectum genome.pdf'
 link: 'https://doi.org/10.12688/wellcomeopenres.27952.1'
 #code: 'https://'
 #github: 'https://github.com/jimarcor/...'
