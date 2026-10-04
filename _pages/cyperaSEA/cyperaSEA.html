@@ -363,6 +363,52 @@ const specimens = specimensRaw.map(row => {
   .filter(s => s.catalogue && s.catalogue !== "")
   .filter(s => !hasMediaData || s.hasFoto || s.hasSeq);
   
+  // Presencias normalizadas: ScientificName ↔ geounit
+const distributionRecords = distributionsRaw.map(r => ({
+  ScientificName: normSci(r.ScientificName),
+  geounit:        normGU(r.geounit),
+})).filter(r => r.ScientificName && r.geounit);
+
+// Índice auxiliar: ScientificName → taxón
+const taxonBySci = new Map(taxonomy.map(t => [t.ScientificName, t]));
+
+// Calcula riqueza y endemicidad a partir de distributions
+function computeSpeciesMetrics() {
+  // Distribuciones filtradas por los filtros de taxonomía (genus, rank, section, species)
+  const allowedSci = new Set(filteredTaxa().map(t => t.ScientificName));
+  const fd = distributionRecords.filter(d => allowedSci.has(d.ScientificName));
+
+  // Riqueza por geounit
+  const richByGU = d3.rollup(
+    fd,
+    v => new Set(v.map(d => d.ScientificName)).size,
+    d => d.geounit
+  );
+
+  // Endemicidad: especies que aparecen en un único geounit (dentro del género actual)
+  const genusSubset = state.genus
+    ? distributionRecords.filter(d => taxonBySci.get(d.ScientificName)?.Genus === state.genus)
+    : distributionRecords;
+
+  const speciesRange = d3.rollup(
+    genusSubset,
+    v => new Set(v.map(d => d.geounit)).size,
+    d => d.ScientificName
+  );
+  const endemicSet = new Set(
+    [...speciesRange].filter(([_, n]) => n === 1).map(([sci]) => sci)
+  );
+
+  // Nº de especies endémicas por geounit
+  const endemicByGU = d3.rollup(
+    fd.filter(d => endemicSet.has(d.ScientificName)),
+    v => new Set(v.map(d => d.ScientificName)).size,
+    d => d.geounit
+  );
+
+  return { richByGU, endemicByGU, endemicSet };
+}
+
 const expectedDistribution = {};
 for (const row of distributionsRaw) {
   const name = normSci(row.ScientificName);
@@ -384,22 +430,6 @@ const rangeBySpecies = d3.rollup(
   v => new Set(v.map(s => s.geounit).filter(Boolean)).size,
   s => s.ScientificName
 );
-
-// Cuántos geounits distintos ocupan cada ScientificName, restringido a la
-// selección global de género (así endemicidad es coherente con el filtro superior)
-function computeEndemicSet(genusFilter) {
-  const subset = genusFilter
-    ? specimens.filter(s => s.Genus === genusFilter)
-    : specimens;
-  const range = d3.rollup(
-    subset,
-    v => new Set(v.map(s => s.geounit).filter(Boolean)).size,
-    s => s.ScientificName
-  );
-  return new Set(
-    [...range].filter(([_, n]) => n === 1).map(([sci]) => sci)
-  );
-}
 
 
 
@@ -593,7 +623,7 @@ d3.json("https://raw.githubusercontent.com/tdwg/wgsrpd/master/geojson/level3.geo
   })
   .catch(err => console.error("Error TDWG:", err));
 
-function metricValue(o, ctx = {}) {
+function metricValue(o) {
   if (!o) return 0;
   if (state.metric === "specimens")    return o.total;
   if (state.metric === "photos")       return o.foto;
@@ -601,6 +631,8 @@ function metricValue(o, ctx = {}) {
   if (state.metric === "completeness") {
     return (o.total > 0 ? 1 : 0) + (o.foto > 0 ? 1 : 0) + (o.seq > 0 ? 1 : 0);
   }
+  return 0;
+}
   if (state.metric === "richness") {
     return ctx.speciesByGU?.get(ctx.gu)?.size ?? 0;
   }
@@ -627,17 +659,23 @@ function updateMap() {
     species: new Set(v.map(s => s.ScientificName).filter(Boolean)),
   }), d => d.geounit);
 
-  // Endemicidad según el filtro de género actual
-  const endemicSet = computeEndemicSet(state.genus);
 
   // Valor por geounit
+  const { richByGU, endemicByGU } = computeSpeciesMetrics();
+
   const guValue = new Map();
   for (const [gu, o] of byGU) {
-    guValue.set(gu, metricValue(o, {
-      gu,
-      speciesByGU: byGU,
-      endemicSet,
-    }));
+    let v;
+    if (state.metric === "richness")        v = richByGU.get(gu) || 0;
+    else if (state.metric === "endemicity") v = endemicByGU.get(gu) || 0;
+    else                                    v = metricValue(o);
+    guValue.set(gu, v);
+  }
+
+  // Si no hay specimens pero sí distribuciones, pinta igualmente
+  if (state.metric === "richness" || state.metric === "endemicity") {
+    const src = state.metric === "richness" ? richByGU : endemicByGU;
+    for (const [gu, v] of src) guValue.set(gu, v);
   }
 
   let maxVal;
@@ -715,31 +753,28 @@ mapSvg.on("mousemove", (event) => {
   }
   const guName = t.__data__.properties.LEVEL3_NAM;
 
+  const { richByGU, endemicByGU, endemicSet } = computeSpeciesMetrics();
   const rows = filtered().filter(d => d.geounit === guName);
   const total = rows.length;
   const foto  = rows.filter(d => d.hasFoto).length;
   const seq   = rows.filter(d => d.hasSeq).length;
-  const species = new Set(rows.map(s => s.ScientificName).filter(Boolean));
-
-  const endemicSet = computeEndemicSet(state.genus);
-  const endemicHere = [...species].filter(sci => endemicSet.has(sci));
 
   let html = `<b>${guName}</b><br>`;
-  if (state.species) html += `<i>${state.species}</i><br>`;
 
   if (state.metric === "richness") {
-    html += `Species: <b>${species.size}</b><br>`;
-    html += `Specimens: <b>${total}</b><br>`;
+    html += `Species: <b>${richByGU.get(guName) || 0}</b>`;
   } else if (state.metric === "endemicity") {
-    html += `Endemic species: <b>${endemicHere.length}</b><br>`;
-    html += `Total species: <b>${species.size}</b><br>`;
-    if (endemicHere.length) {
-      html += `<span style="color:#2f7d5c;">${endemicHere.slice(0, 5).join(", ")}</span>`;
-      if (endemicHere.length > 5) html += ` <i>+${endemicHere.length - 5}</i>`;
+    const endemics = distributionRecords
+      .filter(d => d.geounit === guName && endemicSet.has(d.ScientificName))
+      .map(d => d.ScientificName);
+    html += `Endemic species: <b>${endemicByGU.get(guName) || 0}</b><br>`;
+    if (endemics.length) {
+      html += `<span style="color:#2f7d5c;">${endemics.slice(0, 5).join(", ")}</span>`;
+      if (endemics.length > 5) html += ` <i>+${endemics.length - 5}</i>`;
     }
   } else {
     html += `Total: <b>${total}</b> specimens · <b>${foto}</b> photos · <b>${seq}</b> seq<br>`;
-    html += `Species: <b>${species.size}</b>`;
+    html += `Species: <b>${richByGU.get(guName) || 0}</b>`;
   }
 
   tooltip
