@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Cyperaceae Dashboard"
+title: 
 permalink: /cyperaSEA/
 author_profile: true
 ---
