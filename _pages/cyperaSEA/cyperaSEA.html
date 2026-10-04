@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cyperaceae SEA · Dashboard</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<style>
+  :root {
+    --bg: #f6f8f7; --card: #ffffff; --text: #1f2d2a; --muted: #6b7c78;
+    --accent: #2f7d5c; --border: #e3e9e6; --link: #1f6feb;
+    --expected: #e67e22;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: var(--bg); color: var(--text);
+  }
+  header { padding: 24px 32px 8px; }
+  header h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+  .wrap { padding: 16px 32px 40px; display: grid; gap: 20px; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .kpi {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px 18px;
+  }
+  .kpi .label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .kpi .value { font-size: 26px; font-weight: 600; margin-top: 6px; }
+  .kpi .sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .filters {
+    display: flex; gap: 12px; align-items: center;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 16px; flex-wrap: wrap;
+  }
+  .filters label { font-size: 13px; color: var(--muted); margin-right: 6px; }
+  .filters select {
+    padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border);
+    background: white; font-size: 13px; color: var(--text); cursor: pointer;
+    max-width: 260px;
+  }
+  .grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px 18px;
+  }
+  .card h2 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
+  .card .hint { font-size: 12px; color: var(--muted); margin: 0 0 12px; }
+  #map svg { width: 100%; height: auto; display: block; }
+  .legend {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--muted); margin-top: 8px; flex-wrap: wrap;
+  }
+  .legend .swatches { display: flex; }
+  .legend .swatch { width: 20px; height: 12px; }
+  .legend .expected-key {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-left: 12px; padding-left: 12px; border-left: 1px solid var(--border);
+  }
+  .legend .expected-box {
+    width: 14px; height: 14px; border: 2px dashed var(--expected);
+    border-radius: 3px; background: transparent;
+  }
+  .bar-value { font-size: 11px; fill: var(--text); font-weight: 600; }
+  .axis text { font-size: 11px; fill: var(--muted); }
+  .axis line, .axis path { stroke: var(--border); }
+  .tooltip {
+    position: fixed; background: rgba(31,45,42,0.94); color: white;
+    padding: 8px 10px; border-radius: 6px; font-size: 12px;
+    pointer-events: none; opacity: 0; transition: opacity 0.12s;
+    z-index: 100; line-height: 1.5; max-width: 280px;
+  }
+  .country { stroke: #ffffff; stroke-width: 0.5; cursor: pointer; }
+  .country:hover { stroke: var(--accent); stroke-width: 1.2; }
+  .country.expected { stroke: var(--expected); stroke-width: 1.6; stroke-dasharray: 4 3; }
+  .table-card { display: flex; flex-direction: column; }
+  .table-controls {
+    display: flex; gap: 12px; align-items: center;
+    margin-bottom: 12px; flex-wrap: wrap;
+  }
+  .table-controls input[type="text"] {
+    flex: 1 1 260px; padding: 8px 12px;
+    border: 1px solid var(--border); border-radius: 8px;
+    font-size: 13px; color: var(--text); background: white; outline: none;
+    transition: border-color 0.15s;
+  }
+  .table-controls input[type="text"]:focus { border-color: var(--accent); }
+  .table-controls select {
+    padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+    background: white; font-size: 13px; color: var(--text); cursor: pointer;
+  }
+  .table-wrap {
+    max-height: 500px; overflow: auto;
+    border: 1px solid var(--border); border-radius: 8px;
+  }
+  table#search-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table#search-table thead { position: sticky; top: 0; background: #f1f5f3; z-index: 2; }
+  table#search-table th {
+    text-align: left; padding: 10px 12px; font-weight: 600; color: var(--text);
+    border-bottom: 1px solid var(--border); font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap;
+  }
+  table#search-table td {
+    padding: 8px 12px; border-bottom: 1px solid var(--border);
+    color: var(--text); vertical-align: top;
+  }
+  table#search-table tbody tr:nth-child(even) { background: #fafcfb; }
+  table#search-table tbody tr:hover { background: #eef6f1; }
+  table#search-table td.empty {
+    text-align: center; color: var(--muted);
+    padding: 32px 12px; font-style: italic;
+  }
+  table#search-table a {
+    color: var(--link); text-decoration: none;
+    border-bottom: 1px dotted var(--link);
+  }
+  table#search-table a:hover { background: #eaf2ff; }
+  .table-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 10px; font-size: 12px; color: var(--muted);
+  }
+  .pagination { display: flex; align-items: center; gap: 8px; }
+  .pagination button {
+    background: white; border: 1px solid var(--border);
+    border-radius: 6px; padding: 4px 10px; font-size: 13px;
+    color: var(--text); cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .pagination button:hover:not(:disabled) {
+    background: var(--accent); color: white; border-color: var(--accent);
+  }
+  .pagination button:disabled { opacity: 0.35; cursor: not-allowed; }
+  #page-num { font-variant-numeric: tabular-nums; min-width: 60px; text-align: center; }
+  footer {
+    padding: 0 32px 40px; font-size: 12px;
+    color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Cyperaceae of Southeast Asia</h1>
+  <p>Dashboard · demo data · TDWG level 3</p>
+</header>
+
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi" id="kpi-taxa">
+      <div class="label">Taxa</div>
+      <div class="value">–</div>
+      <div class="sub">in current filter</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Specimens</div>
+      <div class="value" id="kpi-specimens">–</div>
+      <div class="sub">records with Catalogue number</div>
+    </div>
+    <div class="kpi">
+      <div class="label">With sequence</div>
+      <div class="value" id="kpi-seq">–</div>
+      <div class="sub">% of specimens</div>
+    </div>
+    <div class="kpi">
+      <div class="label">With photo</div>
+      <div class="value" id="kpi-foto">–</div>
+      <div class="sub">% of specimens</div>
+    </div>
+  </div>
+
+  <!-- Row 1: taxonomic filters -->
+  <div class="filters">
+    <label>Genus</label>
+    <select id="f-genus"></select>
+    <label>Rank</label>
+    <select id="f-rank">
+      <option value="">All</option>
+      <option>Genus</option>
+      <option>Species</option>
+      <option>Subspecies</option>
+      <option>Variety</option>
+      <option>Forma</option>
+      <option>Section</option>
+    </select>
+    <label>Geounit</label>
+    <select id="f-geounit"><option value="">All</option></select>
+  </div>
+
+  <!-- Row 2: species + metric -->
+  <div class="filters">
+    <label>Species</label>
+    <select id="f-species">
+      <option value="">All</option>
+    </select>
+    <label>Map metric</label>
+    <select id="f-metric">
+      <option value="specimens">Specimens</option>
+      <option value="photos">With photo</option>
+      <option value="sequences">With sequence</option>
+      <option value="completeness">Completeness score (0–3)</option>
+    </select>
+  </div>
+
+  <div class="grid-2">
+
+    <div class="card">
+      <h2 id="map-title">Specimens per geounit</h2>
+      <p class="hint" id="map-hint">Color = number of specimens. Hover for breakdown. Dashed orange = expected but not yet sampled.</p>
+      <div id="map"></div>
+      <div class="legend">
+        <span>0</span>
+        <div class="swatches" id="legend-swatches"></div>
+        <span id="legend-max">–</span>
+        <span class="expected-key" id="expected-key" style="display:none;">
+          <span class="expected-box"></span>
+          <span>expected, no data</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Specimens per genus</h2>
+      <p class="hint">Top 8 genera in the current filter.</p>
+      <svg id="chart-genus"></svg>
+    </div>
+
+    <div class="card">
+      <h2>Data completeness per geounit</h2>
+      <p class="hint">Grey = specimen only · Blue = with photo · Green = with sequence. Hover for values.</p>
+      <svg id="chart-completeness"></svg>
+    </div>
+
+    <div class="card">
+      <h2>Taxonomic ranks</h2>
+      <p class="hint">Full rank composition of the selected genus.</p>
+      <svg id="chart-ranks"></svg>
+    </div>
+
+  </div>
+
+  <div class="card table-card">
+    <h2>Search</h2>
+    <p class="hint">Filter and search the records that match the filters above.</p>
+
+    <div class="table-controls">
+      <input type="text" id="table-search" placeholder="Search by name, catalogue number, geounit, genus…">
+      <select id="table-view">
+        <option value="specimens">Specimens</option>
+        <option value="taxa">Taxa</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table id="search-table">
+        <thead id="search-thead"></thead>
+        <tbody id="search-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="table-footer">
+      <span id="table-info">–</span>
+      <div class="pagination">
+        <button id="prev-page">←</button>
+        <span id="page-num">–</span>
+        <button id="next-page">→</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>Static demo · In production: data read from GitHub raw + Quarto/OJS</footer>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// =====================================================================
+// 1) SAMPLE DATA — replace with CSV loads from GitHub raw in production
+// =====================================================================
+
+const APHIA_URL = "https://cyperaceae.org/aphia.php?p=taxdetails&id=";
+
+const taxonomy = [
+  { AphiaID: 425750, ScientificName: "Carex",           Authority: "L.",            Status: "accepted", Rank: "Genus",      Subfamily: "Cyperoideae", Tribe: "Cariceae", Subtribe: null, Genus: "Carex", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 382472, ScientificName: "Cyperus",         Authority: "L.",            Status: "accepted", Rank: "Genus",      Subfamily: "Cyperoideae", Tribe: "Cypereae", Subtribe: null, Genus: "Cyperus", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 415392, ScientificName: "Fimbristylis",    Authority: "Vahl",          Status: "accepted", Rank: "Genus",      Subfamily: "Cyperoideae", Tribe: "Abildgaardieae", Subtribe: null, Genus: "Fimbristylis", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 577516, ScientificName: "Eleocharis",      Authority: "R.Br.",         Status: "accepted", Rank: "Genus",      Subfamily: "Cyperoideae", Tribe: "Eleocharideae", Subtribe: null, Genus: "Eleocharis", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1675326, ScientificName: "Scleria",        Authority: "P.J.Bergius",   Status: "accepted", Rank: "Genus",      Subfamily: "Cyperoideae", Tribe: "Sclerieae", Subtribe: null, Genus: "Scleria", Subgenus: null, Section: null, Subsection: null },
+
+  { AphiaID: 1677140, ScientificName: "Carex adrienii",        Authority: "E.G.Camus",  Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cariceae", Subtribe: null, Genus: "Carex", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1678099, ScientificName: "Carex baccans",         Authority: "Nees",       Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cariceae", Subtribe: null, Genus: "Carex", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1678188, ScientificName: "Carex breviculmis",     Authority: "R.Br.",      Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cariceae", Subtribe: null, Genus: "Carex", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1678234, ScientificName: "Carex capillacea",      Authority: "Boott",      Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cariceae", Subtribe: null, Genus: "Carex", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1676043, ScientificName: "Carex speciosa",        Authority: "Kunth",      Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cariceae", Subtribe: null, Genus: "Carex", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1676479, ScientificName: "Carex indica",          Authority: "L.",         Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cariceae", Subtribe: null, Genus: "Carex", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1677710, ScientificName: "Carex filicina",        Authority: "Nees",       Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cariceae", Subtribe: null, Genus: "Carex", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1676925, ScientificName: "Carex rafflesiana",     Authority: "Boott",      Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cariceae", Subtribe: null, Genus: "Carex", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1677497, ScientificName: "Carex lenta",           Authority: "D.Don",      Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cariceae", Subtribe: null, Genus: "Carex", Subgenus: null, Section: null, Subsection: null },
+
+  { AphiaID: 1680890, ScientificName: "Cyperus iria",          Authority: "L.",         Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cypereae", Subtribe: null, Genus: "Cyperus", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1680847, ScientificName: "Cyperus haspan",        Authority: "L.",         Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cypereae", Subtribe: null, Genus: "Cyperus", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1680733, ScientificName: "Cyperus diffusus",      Authority: "Vahl",       Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cypereae", Subtribe: null, Genus: "Cyperus", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1491857, ScientificName: "Cyperus rotundus",      Authority: "L.",         Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cypereae", Subtribe: null, Genus: "Cyperus", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1680708, ScientificName: "Cyperus cyperoides",    Authority: "(L.) Kuntze",Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Cypereae", Subtribe: null, Genus: "Cyperus", Subgenus: null, Section: null, Subsection: null },
+
+  { AphiaID: 1680010, ScientificName: "Fimbristylis dichotoma",     Authority: "(L.) Vahl",    Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Abildgaardieae", Subtribe: null, Genus: "Fimbristylis", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 418803, ScientificName: "Fimbristylis cymosa",         Authority: "R.Br.",        Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Abildgaardieae", Subtribe: null, Genus: "Fimbristylis", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1679725, ScientificName: "Fimbristylis schoenoides",   Authority: "(Retz.) Vahl", Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Abildgaardieae", Subtribe: null, Genus: "Fimbristylis", Subgenus: null, Section: null, Subsection: null },
+
+  { AphiaID: 1491861, ScientificName: "Eleocharis geniculata",     Authority: "(L.) Roem. & Schult.", Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Eleocharideae", Subtribe: null, Genus: "Eleocharis", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1681073, ScientificName: "Eleocharis dulcis",         Authority: "(Burm.f.) Trin. ex Hensch.", Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Eleocharideae", Subtribe: null, Genus: "Eleocharis", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1680519, ScientificName: "Eleocharis ochrostachys",   Authority: "Steud.",       Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Eleocharideae", Subtribe: null, Genus: "Eleocharis", Subgenus: null, Section: null, Subsection: null },
+
+  { AphiaID: 1681840, ScientificName: "Scleria terrestris",        Authority: "(L.) Fassett", Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Sclerieae", Subtribe: null, Genus: "Scleria", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1681644, ScientificName: "Scleria biflora",           Authority: "Roxb.",        Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Sclerieae", Subtribe: null, Genus: "Scleria", Subgenus: null, Section: null, Subsection: null },
+  { AphiaID: 1681666, ScientificName: "Scleria ciliaris",          Authority: "Nees",         Status: "accepted", Rank: "Species", Subfamily: "Cyperoideae", Tribe: "Sclerieae", Subtribe: null, Genus: "Scleria", Subgenus: null, Section: null, Subsection: null },
+];
+
+const geounits = [
+  "Andaman Is.", "Bismarck Archipelago", "Borneo", "Cambodia",
+  "Jawa", "Laos", "Lesser Sunda Is.", "Malaya", "Maluku",
+  "Myanmar", "New Guinea", "Nicobar Is.", "Philippines",
+  "Solomon Is.", "Sumatra", "Thailand", "Vietnam"
+];
+
+const tdwgToISO = {
+  "Thailand": 764, "Vietnam": 704, "Laos": 418, "Cambodia": 116,
+  "Myanmar": 104, "Malaya": 458, "Borneo": 458, "Sumatra": 360,
+  "Jawa": 360, "Sulawesi": 360, "Maluku": 360, "Lesser Sunda Is.": 360,
+  "Philippines": 608, "New Guinea": 598, "Bismarck Archipelago": 598,
+  "Solomon Is.": 90, "Andaman Is.": 356, "Nicobar Is.": 356
+};
+
+// Expected distribution per species (from your `distributions` sheet)
+// In production, this comes from the distributions.csv grouped by AphiaID.
+const expectedDistribution = {
+  "Carex adrienii": ["Laos", "Vietnam", "Thailand", "Myanmar", "Cambodia"],
+  "Carex baccans": ["Jawa", "Laos", "Lesser Sunda Is.", "Malaya", "Sumatra",
+                    "Cambodia", "Myanmar", "New Guinea", "Philippines",
+                    "Sulawesi", "Thailand", "Vietnam"],
+  "Carex indica": ["Andaman Is.", "Jawa", "Laos", "Malaya", "Borneo",
+                   "Cambodia", "Myanmar", "New Guinea", "Philippines",
+                   "Sulawesi", "Thailand", "Vietnam"],
+  "Carex breviculmis": ["Jawa", "Borneo", "Myanmar", "New Guinea", "Philippines",
+                        "Sulawesi", "Vietnam"],
+  "Carex speciosa": ["Andaman Is.", "Jawa", "Laos", "Malaya", "Sumatra",
+                     "Borneo", "Cambodia", "Thailand", "Vietnam"],
+  "Carex filicina": ["Laos", "Jawa", "Lesser Sunda Is.", "Malaya", "Maluku",
+                     "Sumatra", "Borneo", "Myanmar", "Philippines",
+                     "Sulawesi", "Thailand", "Vietnam", "Christmas I.",
+                     "Cocos (Keeling) I."],
+  "Carex rafflesiana": ["Jawa", "Lesser Sunda Is.", "Malaya", "Maluku",
+                        "Nicobar Is.", "Sumatra", "Bismarck Archipelago",
+                        "Borneo", "New Guinea", "Philippines", "Sulawesi",
+                        "Thailand"],
+  "Cyperus iria": ["Andaman Is.", "Jawa", "Laos", "Lesser Sunda Is.", "Malaya",
+                   "Maluku", "Nicobar Is.", "Sumatra", "Borneo", "Cambodia",
+                   "Myanmar", "New Guinea", "Philippines", "Sulawesi",
+                   "Thailand", "Vietnam"],
+  "Cyperus rotundus": ["Andaman Is.", "Christmas I.", "Jawa", "Lesser Sunda Is.",
+                       "Malaya", "Maluku", "Nicobar Is.", "Sumatra", "Borneo",
+                       "Cambodia", "Myanmar", "Philippines", "Sulawesi",
+                       "Thailand", "Vietnam", "South China Sea"],
+  "Fimbristylis dichotoma": ["Andaman Is.", "Jawa", "Lesser Sunda Is.", "Malaya",
+                             "Maluku", "Nicobar Is.", "Sumatra", "Bismarck Archipelago",
+                             "Cambodia", "New Guinea", "Philippines", "Sulawesi",
+                             "South China Sea", "Thailand", "Vietnam"],
+  // Add more entries as you fill out the distributions sheet
+};
+
+function mulberry32(a) {
+  return function() {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+const rng = mulberry32(42);
+
+const speciesList = taxonomy.filter(t => t.Rank !== "Genus" && t.Rank !== "Section");
+const specimens = [];
+let catNum = 1;
+speciesList.forEach(sp => {
+  const n = 1 + Math.floor(rng() * 8);
+  for (let i = 0; i < n; i++) {
+    const gu = geounits[Math.floor(rng() * geounits.length)];
+    const hasSeq  = rng() < 0.35;
+    const hasFoto = rng() < 0.55;
+    specimens.push({
+      catalogue: `CYP-${String(catNum++).padStart(4, "0")}`,
+      AphiaID: sp.AphiaID,
+      ScientificName: sp.ScientificName,
+      Genus: sp.Genus,
+      Rank: sp.Rank,
+      geounit: gu,
+      hasSeq, hasFoto
+    });
+  }
+});
+
+// =====================================================================
+// 2) STATE + FILTERS
+// =====================================================================
+
+const state = {
+  genus: "Carex",
+  rank: "",
+  geounit: "",
+  species: "",
+  metric: "specimens"
+};
+
+const genusSel   = d3.select("#f-genus");
+const rankSel    = d3.select("#f-rank");
+const geoSel     = d3.select("#f-geounit");
+const speciesSel = d3.select("#f-species");
+const metricSel  = d3.select("#f-metric");
+
+const allGenera = [...new Set(taxonomy.map(t => t.Genus))].sort();
+genusSel.selectAll("option").data(["", ...allGenera]).join("option")
+  .attr("value", d => d).text(d => d === "" ? "All" : d);
+genusSel.property("value", "Carex");
+
+geoSel.selectAll("option").data(["", ...geounits.slice().sort()]).join("option")
+  .attr("value", d => d).text(d => d === "" ? "All" : d);
+
+// Rebuild species selector whenever genus changes
+function rebuildSpeciesSelector() {
+  const candidates = taxonomy
+    .filter(t => t.Rank !== "Genus" && t.Rank !== "Section")
+    .filter(t => !state.genus || t.Genus === state.genus)
+    .map(t => t.ScientificName)
+    .sort();
+
+  speciesSel.selectAll("option").remove();
+  speciesSel.append("option").attr("value", "").text("All");
+  speciesSel.selectAll("option.species")
+    .data(candidates)
+    .join("option")
+      .attr("class", "species")
+      .attr("value", d => d)
+      .text(d => d);
+
+  // Reset species if it's no longer in the list
+  if (state.species && !candidates.includes(state.species)) {
+    state.species = "";
+  }
+  speciesSel.property("value", state.species);
+}
+rebuildSpeciesSelector();
+
+function filteredTaxa() {
+  return taxonomy.filter(t => {
+    if (state.genus && t.Genus !== state.genus) return false;
+    if (state.rank && t.Rank !== state.rank) return false;
+    if (state.species && t.ScientificName !== state.species) return false;
+    return true;
+  });
+}
+
+function taxaForGenus() {
+  return taxonomy.filter(t => {
+    if (state.genus && t.Genus !== state.genus) return false;
+    return true;
+  });
+}
+
+function filtered() {
+  const allowedIDs = new Set(filteredTaxa().map(t => t.AphiaID));
+  const allowedGenera = new Set(
+    filteredTaxa().filter(t => t.Rank === "Genus").map(t => t.ScientificName)
+  );
+  const allowedSections = new Set(
+    filteredTaxa().filter(t => t.Rank === "Section").map(t => t.Section)
+  );
+
+  return specimens.filter(sp => {
+    if (state.genus && sp.Genus !== state.genus) return false;
+    if (state.geounit && sp.geounit !== state.geounit) return false;
+    if (state.species && sp.ScientificName !== state.species) return false;
+    if (!state.rank) return true;
+    if (state.rank === "Genus")   return allowedGenera.has(sp.Genus);
+    if (state.rank === "Section") return allowedSections.has(sp.Section);
+    return allowedIDs.has(sp.AphiaID);
+  });
+}
+
+// =====================================================================
+// 3) KPIs
+// =====================================================================
+
+function updateKPIs() {
+  const f = filtered();
+  const nTaxa = filteredTaxa().length;
+  const nSeq  = f.filter(d => d.hasSeq).length;
+  const nFoto = f.filter(d => d.hasFoto).length;
+  const pct = (n, t) => t === 0 ? "0%" : Math.round((n / t) * 100) + "%";
+
+  const labelMap = {
+    "Genus": "Genera", "Species": "Species",
+    "Subspecies": "Subspecies", "Variety": "Varieties",
+    "Forma": "Formae", "Section": "Sections"
+  };
+  let label = labelMap[state.rank] || "Taxa";
+  if (state.species) label = "Species selected";
+
+  d3.select("#kpi-taxa").select(".label").text(label);
+  d3.select("#kpi-taxa").select(".value").text(state.species ? 1 : nTaxa);
+  d3.select("#kpi-specimens").text(f.length);
+  d3.select("#kpi-seq").text(pct(nSeq, f.length));
+  d3.select("#kpi-foto").text(pct(nFoto, f.length));
+}
+
+// =====================================================================
+// 4) MAP
+// =====================================================================
+
+const mapW = 640, mapH = 380;
+const mapSvg = d3.select("#map").append("svg")
+  .attr("viewBox", `0 0 ${mapW} ${mapH}`);
+
+const projection = d3.geoMercator()
+  .center([115, 5])
+  .scale(560)
+  .translate([mapW / 2, mapH / 2 + 40]);
+
+const path = d3.geoPath().projection(projection);
+
+const colorScale = d3.scaleSequential()
+  .interpolator(d3.interpolateGreens)
+  .domain([0, 50]);
+
+let geojson;
+
+d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
+  .then(world => {
+    geojson = topojson.feature(world, world.objects.countries);
+    const g = mapSvg.append("g");
+    g.selectAll("path")
+      .data(geojson.features)
+      .join("path")
+        .attr("class", "country")
+        .attr("d", path)
+        .attr("fill", "#eef2f0");
+    updateMap();
+  });
+
+// Compute value for a geounit given the current metric
+function metricValue(o) {
+  if (!o) return 0;
+  if (state.metric === "specimens")    return o.total;
+  if (state.metric === "photos")       return o.foto;
+  if (state.metric === "sequences")    return o.seq;
+  if (state.metric === "completeness") {
+    return (o.total > 0 ? 1 : 0) + (o.foto > 0 ? 1 : 0) + (o.seq > 0 ? 1 : 0);
+  }
+  return 0;
+}
+
+function updateMap() {
+  if (!geojson) return;
+
+  const f = filtered();
+
+  // Per geounit data (all metrics at once)
+  const byGU = d3.rollup(f, v => ({
+    total: v.length,
+    foto:  v.filter(d => d.hasFoto).length,
+    seq:   v.filter(d => d.hasSeq).length,
+  }), d => d.geounit);
+
+  // Aggregate per ISO (a single ISO can contain several TDWG geounits)
+  const isoData = new Map();
+  for (const [gu, o] of byGU) {
+    const iso = tdwgToISO[gu];
+    if (!iso) continue;
+    const acc = isoData.get(iso) || { total: 0, foto: 0, seq: 0 };
+    acc.total += o.total;
+    acc.foto  += o.foto;
+    acc.seq   += o.seq;
+    isoData.set(iso, acc);
+  }
+
+  // Value per ISO according to selected metric
+  const isoValue = new Map();
+  for (const [iso, o] of isoData) {
+    isoValue.set(iso, metricValue(o));
+  }
+
+  // Max for color scale
+  let maxVal;
+  if (state.metric === "completeness") maxVal = 3;
+  else maxVal = Math.max(1, d3.max([...isoValue.values()], d => d) || 1);
+  colorScale.domain([0, maxVal]);
+
+  // Expected ISOs (for dashed overlay)
+  const expectedGUs = state.species ? (expectedDistribution[state.species] || []) : [];
+  const expectedISOs = new Set(expectedGUs.map(gu => tdwgToISO[gu]).filter(Boolean));
+
+  // Paint countries
+  mapSvg.selectAll("path.country")
+    .transition().duration(300)
+    .attr("fill", d => {
+      const iso = +d.id;
+      const v = isoValue.get(iso) || 0;
+      if (v === 0) {
+        // If expected but empty, light orange hint
+        return expectedISOs.has(iso) ? "#fff3e0" : "#eef2f0";
+      }
+      return colorScale(v);
+    })
+    .attr("class", d => {
+      const iso = +d.id;
+      const isExpected = expectedISOs.has(iso);
+      const hasData = (isoValue.get(iso) || 0) > 0;
+      return isExpected && !hasData ? "country expected" : "country";
+    });
+
+  // Legend swatches
+  const swatches = d3.select("#legend-swatches");
+  swatches.selectAll("div").remove();
+  const steps = 6;
+  for (let i = 0; i < steps; i++) {
+    swatches.append("div")
+      .attr("class", "swatch")
+      .style("background", colorScale((i / (steps - 1)) * maxVal));
+  }
+  d3.select("#legend-max").text(maxVal);
+
+  // Show expected key only when a species with known distribution is selected
+  d3.select("#expected-key").style("display",
+    state.species && expectedGUs.length > 0 ? "inline-flex" : "none");
+
+  // Update map title and hint
+  const metricLabel = {
+    specimens: "Specimens",
+    photos: "Specimens with photo",
+    sequences: "Specimens with sequence",
+    completeness: "Completeness score (0–3)"
+  }[state.metric];
+
+  const titleEl = d3.select("#map-title");
+  const hintEl  = d3.select("#map-hint");
+  if (state.species) {
+    titleEl.text(`${metricLabel} · ${state.species}`);
+    hintEl.text(expectedGUs.length > 0
+      ? `Dashed orange = expected in the distribution sheet but not yet sampled.`
+      : `No expected distribution loaded for this species yet.`);
+  } else {
+    titleEl.text(`${metricLabel} per geounit`);
+    hintEl.text(`Hover for breakdown.`);
+  }
+}
+
+// Tooltip
+const tooltip = d3.select("#tooltip");
+
+mapSvg.on("mousemove", (event) => {
+  const t = event.target;
+  if (t.tagName !== "path" || !t.classList.contains("country")) {
+    tooltip.style("opacity", 0);
+    return;
+  }
+  const iso = +t.id;
+  const f = filtered();
+  const byGU = d3.rollup(f, v => ({
+    total: v.length,
+    foto: v.filter(d => d.hasFoto).length,
+    seq:  v.filter(d => d.hasSeq).length,
+  }), d => d.geounit);
+
+  let total = 0, foto = 0, seq = 0;
+  const lines = [];
+  for (const [gu, o] of byGU) {
+    if (tdwgToISO[gu] === iso) {
+      total += o.total;
+      foto  += o.foto;
+      seq   += o.seq;
+      lines.push(`<b>${gu}</b>: ${o.total} specimens · ${o.foto} photos · ${o.seq} seq`);
+    }
+  }
+
+  const countryName = geojson.features.find(x => +x.id === iso)?.properties.name || "Country";
+  const expectedGUs = state.species ? (expectedDistribution[state.species] || []) : [];
+  const expectedHere = expectedGUs.filter(gu => tdwgToISO[gu] === iso);
+
+  let html = `<b>${countryName}</b><br>`;
+  if (state.species) html += `<i>${state.species}</i><br>`;
+  html += `Total: <b>${total}</b> specimens · <b>${foto}</b> photos · <b>${seq}</b> seq<br>`;
+  if (lines.length) html += lines.join("<br>");
+  if (expectedHere.length) {
+    html += `<br><span style="color:#ffb74d;">Expected in: ${expectedHere.join(", ")}</span>`;
+    if (total === 0) html += `<br><span style="color:#ffb74d;">⚠ Not yet sampled</span>`;
+  }
+
+  tooltip
+    .style("opacity", 1)
+    .style("left", (event.clientX + 12) + "px")
+    .style("top",  (event.clientY + 12) + "px")
+    .html(html);
+}).on("mouseleave", () => tooltip.style("opacity", 0));
+
+// =====================================================================
+// 5) CHARTS
+// =====================================================================
+
+function drawBarChart(selector, data, opts = {}) {
+  const svg = d3.select(selector);
+  svg.selectAll("*").remove();
+
+  const W = svg.node().clientWidth || 400;
+  const H = opts.height || 220;
+  svg.attr("viewBox", `0 0 ${W} ${H}`);
+
+  const margin = { top: 10, right: 20, bottom: 70, left: 40 };
+  const iw = W - margin.left - margin.right;
+  const ih = H - margin.top - margin.bottom;
+
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  if (!data.length) {
+    g.append("text").attr("x", iw/2).attr("y", ih/2)
+      .attr("text-anchor", "middle").attr("fill", "#999")
+      .text("No data for this filter");
+    return;
+  }
+
+  const x = d3.scaleBand().domain(data.map(d => d.key)).range([0, iw]).padding(0.25);
+  const y = d3.scaleLinear().domain([0, d3.max(data, d => d.value)]).nice().range([ih, 0]);
+
+  g.append("g").attr("class", "axis")
+    .attr("transform", `translate(0,${ih})`)
+    .call(d3.axisBottom(x))
+    .selectAll("text")
+      .attr("transform", "rotate(-35)")
+      .style("text-anchor", "end");
+
+  g.append("g").attr("class", "axis")
+    .call(d3.axisLeft(y).ticks(5));
+
+  g.selectAll("rect")
+    .data(data).join("rect")
+      .attr("x", d => x(d.key))
+      .attr("y", d => y(d.value))
+      .attr("width", x.bandwidth())
+      .attr("height", d => ih - y(d.value))
+      .attr("rx", 4)
+      .attr("fill", opts.color || "#2f7d5c");
+
+  g.selectAll(".bar-value")
+    .data(data).join("text")
+      .attr("class", "bar-value")
+      .attr("x", d => x(d.key) + x.bandwidth() / 2)
+      .attr("y", d => y(d.value) - 4)
+      .attr("text-anchor", "middle")
+      .text(d => d.value);
+}
+
+function drawCompleteness() {
+  const svg = d3.select("#chart-completeness");
+  svg.selectAll("*").remove();
+
+  const W = svg.node().clientWidth || 400;
+  const H = 240;
+  svg.attr("viewBox", `0 0 ${W} ${H}`);
+  const margin = { top: 10, right: 20, bottom: 80, left: 40 };
+  const iw = W - margin.left - margin.right;
+  const ih = H - margin.top - margin.bottom;
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  const f = filtered();
+  const byGU = d3.rollup(f, v => ({
+    total: v.length,
+    seq: v.filter(d => d.hasSeq).length,
+    foto: v.filter(d => d.hasFoto).length,
+  }), d => d.geounit);
+
+  const rows = [...byGU]
+    .map(([gu, o]) => ({ key: gu, ...o }))
+    .sort((a, b) => b.total - a.total)
+    .slice(0, 8);
+
+  if (!rows.length) {
+    g.append("text").attr("x", iw/2).attr("y", ih/2)
+      .attr("text-anchor","middle").attr("fill","#999")
+      .text("No data for this filter");
+    return;
+  }
+
+  const x = d3.scaleBand().domain(rows.map(d => d.key)).range([0, iw]).padding(0.3);
+  const y = d3.scaleLinear().domain([0, d3.max(rows, d => d.total)]).nice().range([ih, 0]);
+
+  g.append("g").attr("class","axis").attr("transform",`translate(0,${ih})`)
+    .call(d3.axisBottom(x))
+    .selectAll("text")
+      .attr("transform","rotate(-35)").style("text-anchor","end");
+
+  g.append("g").attr("class","axis").call(d3.axisLeft(y).ticks(5));
+
+  g.selectAll("rect.base").data(rows).join("rect")
+    .attr("x", d => x(d.key)).attr("y", d => y(d.total))
+    .attr("width", x.bandwidth()).attr("height", d => ih - y(d.total))
+    .attr("rx", 4).attr("fill", "#cfd8d4");
+
+  g.selectAll("rect.foto").data(rows).join("rect")
+    .attr("x", d => x(d.key)).attr("y", d => y(d.foto))
+    .attr("width", x.bandwidth()).attr("height", d => ih - y(d.foto))
+    .attr("rx", 4).attr("fill", "#4a7ba7").attr("opacity", 0.85);
+
+  g.selectAll("rect.seq").data(rows).join("rect")
+    .attr("x", d => x(d.key)).attr("y", d => y(d.seq))
+    .attr("width", x.bandwidth()).attr("height", d => ih - y(d.seq))
+    .attr("rx", 4).attr("fill", "#2f7d5c").attr("opacity", 0.9);
+
+  g.selectAll("rect.overlay").data(rows).join("rect")
+    .attr("x", d => x(d.key)).attr("y", d => y(d.total))
+    .attr("width", x.bandwidth()).attr("height", d => ih - y(d.total))
+    .attr("fill", "transparent").style("cursor", "pointer")
+    .on("mousemove", (event, d) => {
+      const specimenOnly = d.total - Math.max(d.foto, d.seq);
+      tooltip
+        .style("opacity", 1)
+        .style("left", (event.clientX + 12) + "px")
+        .style("top",  (event.clientY + 12) + "px")
+        .html(
+          `<b>${d.key}</b><br>` +
+          `Total: <b>${d.total}</b><br>` +
+          `With photo: <b>${d.foto}</b> (${Math.round(d.foto / d.total * 100)}%)<br>` +
+          `With sequence: <b>${d.seq}</b> (${Math.round(d.seq / d.total * 100)}%)<br>` +
+          `Specimen only: <b>${specimenOnly}</b>`
+        );
+    })
+    .on("mouseleave", () => tooltip.style("opacity", 0));
+}
+
+function updateCharts() {
+  const f = filtered();
+
+  const byGenus = [...d3.rollup(f, v => v.length, d => d.Genus)]
+    .map(([key, value]) => ({ key, value }))
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 8);
+  drawBarChart("#chart-genus", byGenus, { color: "#2f7d5c" });
+
+  const byRank = [...d3.rollup(taxaForGenus(), v => v.length, d => d.Rank)]
+    .map(([key, value]) => ({ key, value }))
+    .sort((a, b) => b.value - a.value);
+  drawBarChart("#chart-ranks", byRank, { color: "#4a7ba7" });
+
+  drawCompleteness();
+}
+
+// =====================================================================
+// 6) SEARCH TABLE
+// =====================================================================
+
+const tableState = { view: "specimens", search: "", page: 1, perPage: 25 };
+
+const specimensColumns = [
+  { key: "catalogue",      label: "Catalogue" },
+  { key: "ScientificName", label: "Scientific name",
+    render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${row.ScientificName}</a>` },
+  { key: "Genus",          label: "Genus" },
+  { key: "Rank",           label: "Rank" },
+  { key: "geounit",        label: "Geounit" },
+  { key: "hasFoto",        label: "Photo",    render: row => row.hasFoto ? "✓" : "—" },
+  { key: "hasSeq",         label: "Sequence", render: row => row.hasSeq ? "✓" : "—" },
+];
+
+const taxaColumns = [
+  { key: "AphiaID",        label: "AphiaID" },
+  { key: "ScientificName", label: "Scientific name",
+    render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${row.ScientificName}</a>` },
+  { key: "Authority",      label: "Authority" },
+  { key: "Rank",           label: "Rank" },
+  { key: "Status",         label: "Status" },
+  { key: "Subfamily",      label: "Subfamily",  render: row => row.Subfamily ?? "—" },
+  { key: "Tribe",          label: "Tribe",      render: row => row.Tribe ?? "—" },
+  { key: "Genus",          label: "Genus",      render: row => row.Genus ?? "—" },
+  { key: "Section",        label: "Section",    render: row => row.Section ?? "—" },
+];
+
+function tableData() {
+  const q = tableState.search.trim().toLowerCase();
+  let rows;
+
+  if (tableState.view === "specimens") {
+    rows = filtered().map(d => ({
+      catalogue: d.catalogue, AphiaID: d.AphiaID,
+      ScientificName: d.ScientificName, Genus: d.Genus,
+      Rank: d.Rank, geounit: d.geounit,
+      hasFoto: d.hasFoto, hasSeq: d.hasSeq,
+    }));
+  } else {
+    rows = filteredTaxa().map(t => ({
+      AphiaID: t.AphiaID, ScientificName: t.ScientificName,
+      Authority: t.Authority, Rank: t.Rank, Status: t.Status,
+      Subfamily: t.Subfamily, Tribe: t.Tribe,
+      Genus: t.Genus, Section: t.Section,
+    }));
+  }
+
+  if (q) {
+    rows = rows.filter(r =>
+      Object.values(r).some(v =>
+        v != null && String(v).toLowerCase().includes(q)
+      )
+    );
+  }
+  return rows;
+}
+
+function renderTable() {
+  const cols = tableState.view === "specimens" ? specimensColumns : taxaColumns;
+  const data = tableData();
+
+  const maxPage = Math.max(1, Math.ceil(data.length / tableState.perPage));
+  if (tableState.page > maxPage) tableState.page = maxPage;
+  if (tableState.page < 1) tableState.page = 1;
+
+  const start = (tableState.page - 1) * tableState.perPage;
+  const slice = data.slice(start, start + tableState.perPage);
+
+  const thead = d3.select("#search-thead");
+  thead.selectAll("*").remove();
+  thead.append("tr")
+    .selectAll("th").data(cols).join("th").text(d => d.label);
+
+  const tbody = d3.select("#search-tbody");
+  tbody.selectAll("*").remove();
+
+  if (!slice.length) {
+    tbody.append("tr").append("td")
+      .attr("colspan", cols.length).attr("class", "empty")
+      .text("No results for the current search and filters");
+  } else {
+    tbody.selectAll("tr").data(slice).join("tr").each(function(row) {
+      d3.select(this).selectAll("td").data(cols).join("td")
+        .html(c => {
+          if (c.render) return c.render(row);
+          const v = row[c.key];
+          return v == null || v === "" ? "—" : String(v);
+        });
+    });
+  }
+
+  d3.select("#table-info").text(
+    data.length === 0 ? "0 records"
+    : `${start + 1}–${Math.min(start + tableState.perPage, data.length)} of ${data.length}`
+  );
+  d3.select("#page-num").text(`${tableState.page} / ${maxPage}`);
+  d3.select("#prev-page").property("disabled", tableState.page <= 1);
+  d3.select("#next-page").property("disabled", tableState.page >= maxPage);
+}
+
+d3.select("#table-search").on("input", e => {
+  tableState.search = e.target.value; tableState.page = 1; renderTable();
+});
+d3.select("#table-view").on("change", e => {
+  tableState.view = e.target.value; tableState.page = 1; renderTable();
+});
+d3.select("#prev-page").on("click", () => {
+  if (tableState.page > 1) { tableState.page--; renderTable(); }
+});
+d3.select("#next-page").on("click", () => {
+  const maxPage = Math.max(1, Math.ceil(tableData().length / tableState.perPage));
+  if (tableState.page < maxPage) { tableState.page++; renderTable(); }
+});
+
+// =====================================================================
+// 7) GLOBAL EVENTS
+// =====================================================================
+
+genusSel.on("change", e => {
+  state.genus = e.target.value;
+  rebuildSpeciesSelector();
+  redraw();
+});
+rankSel.on("change",  e => { state.rank    = e.target.value; redraw(); });
+geoSel.on("change",   e => { state.geounit = e.target.value; redraw(); });
+speciesSel.on("change", e => { state.species = e.target.value; redraw(); });
+metricSel.on("change",  e => { state.metric  = e.target.value; redraw(); });
+
+function redraw() {
+  updateKPIs();
+  updateMap();
+  updateCharts();
+  renderTable();
+}
+
+window.addEventListener("resize", () => updateCharts());
+
+redraw();
+</script>
+</body>
+</html>
