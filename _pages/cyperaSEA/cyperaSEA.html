@@ -286,7 +286,6 @@ const APHIA_URL = "https://cyperaceae.org/aphia.php?p=taxdetails&id=";
 const XLSX_URL = "https://jimarcor.github.io/files/cyperaSEA/" +
   encodeURIComponent("CyperaSEA permanent regional dataset.xlsx");
 
-// ---- Carga del workbook ------------------------------------------------
 async function loadWorkbook(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status} al pedir el xlsx`);
@@ -305,78 +304,83 @@ function sheet(wb, name) {
 
 const wb = await loadWorkbook(XLSX_URL);
 
-const taxonomy      = sheet(wb, "taxonomy");
-const distributions = sheet(wb, "distributions");
-const specimensRaw  = sheet(wb, "specimens");
-const pictures      = sheet(wb, "pictures");
-const sequences     = sheet(wb, "sequences");
+const taxonomyRaw      = sheet(wb, "taxonomy");
+const distributionsRaw = sheet(wb, "distributions");
+const specimensRaw     = sheet(wb, "specimens");
+const pictures         = sheet(wb, "pictures");
+const sequences        = sheet(wb, "sequences");
 
-// ---- DEBUG: mira los nombres REALES de las columnas --------------------
-console.log("SheetNames:",      wb.SheetNames);
-console.log("taxonomy[0]:",      taxonomy[0]);
-console.log("distributions[0]:", distributions[0]);
-console.log("specimens[0]:",     specimensRaw[0]);
-console.log("pictures[0]:",      pictures[0]);
-console.log("sequences[0]:",     sequences[0]);
+console.log("SheetNames:", wb.SheetNames);
+console.log("specimens[0]:", specimensRaw[0]);
+console.log("distributions[0]:", distributionsRaw[0]);
+console.log("pictures[0]:", pictures[0]);
+console.log("sequences[0]:", sequences[0]);
 
-// ---- Helper tolerante a variaciones de nombre de columna ---------------
-function pick(row, ...keys) {
-  if (!row) return null;
-  for (const k of keys) {
-    if (row[k] != null && row[k] !== "") return row[k];
-  }
-  const lower = Object.keys(row);
-  for (const k of keys) {
-    const f = lower.find(x => x.toLowerCase() === k.toLowerCase());
-    if (f && row[f] != null && row[f] !== "") return row[f];
-  }
-  return null;
-}
+// ---- Normalizadores de clave ------------------------------------------
+const normCat = v => v == null ? null : String(v).trim();
+const normSci = v => v == null ? null : String(v).trim();
+const normGU  = v => v == null ? null : String(v).trim();
 
-// ---- Clave que enlaza specimens ↔ pictures/sequences -------------------
-// Ajusta esta lista si tu xlsx usa otro nombre (p.ej. "CatalogueNumber").
-const SP_ID_KEYS = [
-  "catalogue", "Catalogue", "Catalog", "catalog",
-  "specimen", "Specimen", "specimen_id", "SpecimenID",
-  "specimenCode", "SampleID", "sample", "id", "ID"
-];
-const spId = row => pick(row, ...SP_ID_KEYS);
+// ---- Taxonomy ----------------------------------------------------------
+const taxonomy = taxonomyRaw.map(t => ({
+  AphiaID:        t.AphiaID,
+  ScientificName: normSci(t.ScientificName),
+  Authority:      t.Authority  ?? null,
+  Status:         t.Status     ?? null,
+  Rank:           t.Rank       ?? null,
+  Subfamily:      t.Subfamily  ?? null,
+  Tribe:          t.Tribe      ?? null,
+  Genus:          t.Genus      ?? null,
+  Subgenus:       t.Subgenus   ?? null,
+  Section:        t.Section    ?? null,
+  Subsection:     t.Subsection ?? null,
+}));
 
-// ---- Índices de fotos/secuencias por espécimen -------------------------
-const fotoBySp = d3.group(pictures,  spId);
-const seqBySp  = d3.group(sequences, spId);
+// ---- Índices foto/secuencia por CatalogueNumber -----------------------
+const fotoByCat = d3.group(pictures,  p => normCat(p.CatalogueNumber));
+const seqByCat  = d3.group(sequences, s => normCat(s.CatalogueNumber));
 
 // ---- Specimens enriquecidos -------------------------------------------
 const specimens = specimensRaw.map(row => {
-  const id = spId(row);
+  const cat = normCat(row.CatalogueNumber);
+  const sci = normSci(row.ScientificName);
+  const taxon = taxonomy.find(t => t.ScientificName === sci);
+
   return {
-    catalogue:      id,
-    AphiaID:        pick(row, "AphiaID", "aphiaid", "aphia_id"),
-    ScientificName: pick(row, "ScientificName", "scientificname", "scientific_name", "species"),
-    Genus:          pick(row, "Genus", "genus"),
-    Rank:           pick(row, "Rank", "rank") ?? "Species",
-    geounit:        pick(row, "geounit", "Geounit", "geo_unit", "country", "locality", "region"),
-    Section:        pick(row, "Section", "section"),
-    hasFoto: (fotoBySp.get(id)?.length ?? 0) > 0,
-    hasSeq:  (seqBySp.get(id)?.length ?? 0) > 0,
+    catalogue:      cat,
+    AphiaID:        row.AphiaID ?? taxon?.AphiaID ?? null,
+    ScientificName: sci,
+    Genus:          row.Genus    ?? taxon?.Genus    ?? null,
+    Rank:           row.Rank     ?? taxon?.Rank     ?? "Species",
+    Section:        row.Section  ?? taxon?.Section  ?? null,
+    geounit:        normGU(row.geounit),
+    hasFoto: (fotoByCat.get(cat)?.length ?? 0) > 0,
+    hasSeq:  (seqByCat.get(cat)?.length  ?? 0) > 0,
   };
 });
 
 // ---- Distribución esperada: ScientificName → [geounit, ...] -----------
-// Si tu hoja `distributions` tiene columnas distintas, ajusta aquí.
 const expectedDistribution = {};
-for (const row of distributions) {
-  const name = pick(row, "ScientificName", "scientificname", "scientific_name", "species", "taxon", "Taxon");
-  const gu   = pick(row, "geounit", "Geounit", "geo_unit", "distribution", "Distribution",
-                    "country", "Country", "region", "Region", "TDWG", "tdwg");
+for (const row of distributionsRaw) {
+  const name = normSci(row.ScientificName);
+  const gu   = normGU(row.geounit);
   if (!name || !gu) continue;
   (expectedDistribution[name] ||= []).push(gu);
 }
+
+// Deduplicar por si hay filas repetidas
+for (const k in expectedDistribution) {
+  expectedDistribution[k] = [...new Set(expectedDistribution[k])];
+}
+
 console.log("expectedDistribution:", expectedDistribution);
 
 // ---- Geounits derivados de los datos reales ---------------------------
-// (opcional: sustituye el array hardcodeado de geounits)
-const geounits = [...new Set(specimens.map(s => s.geounit).filter(Boolean))].sort();
+const geounits = [...new Set(
+  specimens.map(s => s.geounit).filter(Boolean)
+)].sort();
+
+console.log("geounits:", geounits);
 </script>
 </body>
 </html>
