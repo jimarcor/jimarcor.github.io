@@ -314,12 +314,6 @@ const specimensRaw     = sheet(wb, "specimens");
 const pictures         = sheet(wb, "pictures");
 const sequences        = sheet(wb, "sequences");
 
-console.log("SheetNames:",       wb.SheetNames);
-console.log("specimens[0]:",     specimensRaw[0]);
-console.log("distributions[0]:", distributionsRaw[0]);
-console.log("pictures[0]:",      pictures[0]);
-console.log("sequences[0]:",     sequences[0]);
-
 const normCat = v => v == null ? null : String(v).trim();
 const normSci = v => v == null ? null : String(v).trim();
 const normGU  = v => v == null ? null : String(v).trim();
@@ -423,33 +417,6 @@ for (const k in expectedDistribution) {
 const geounits = [...new Set(
   specimens.map(s => s.geounit).filter(Boolean)
 )].sort();
-
-// Cuántos geounits distintos ocupa cada ScientificName (global, sin filtrar)
-const rangeBySpecies = d3.rollup(
-  specimens,
-  v => new Set(v.map(s => s.geounit).filter(Boolean)).size,
-  s => s.ScientificName
-);
-
-
-
-//borrar
-
-// ===== DIAGNÓSTICO TEMPORAL GEONUIT =====
-console.log("=== DIAGNÓSTICO GEOUNIT ===");
-console.log("specimensRaw.length:", specimensRaw.length);
-console.log("specimens.length:", specimens.length);
-console.log("specimensRaw[0]:", specimensRaw[0]);
-console.log("columnas de specimens:", Object.keys(specimensRaw[0] || {}));
-console.log("geounits únicos en specimens:",
-  [...new Set(specimens.map(s => s.geounit).filter(Boolean))]);
-console.log("geounits únicos en specimensRaw:",
-  [...new Set(specimensRaw.map(r => r.geounit).filter(Boolean))].slice(0, 20));
-console.log("=== FIN DIAGNÓSTICO ===");
-
-//borrar
-
-
 
 
 // =====================================================================
@@ -630,18 +597,6 @@ function metricValue(o) {
   if (state.metric === "sequences")    return o.seq;
   if (state.metric === "completeness") {
     return (o.total > 0 ? 1 : 0) + (o.foto > 0 ? 1 : 0) + (o.seq > 0 ? 1 : 0);
-  }
-  return 0;
-}
-  if (state.metric === "richness") {
-    return ctx.speciesByGU?.get(ctx.gu)?.size ?? 0;
-  }
-  if (state.metric === "endemicity") {
-    const set = ctx.speciesByGU?.get(ctx.gu);
-    if (!set) return 0;
-    let n = 0;
-    for (const sci of set) if (ctx.endemicSet.has(sci)) n++;
-    return n;
   }
   return 0;
 }
