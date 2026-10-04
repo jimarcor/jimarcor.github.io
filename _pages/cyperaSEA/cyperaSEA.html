@@ -204,10 +204,10 @@
 <select id="f-metric">
   <option value="richness" selected>Species richness</option>
   <option value="endemicity">Regional species endemicity</option>
-  <option value="specimens">Specimens sampled</option>
-  <option value="photos">Specimens with photo</option>
-  <option value="sequences">Specimens with sequence</option>
-  <option value="completeness">Completeness (0–3)</option>
+  <option value="specimens">Species with specimens</option>
+  <option value="photos">Species with photo</option>
+  <option value="sequences">Species with sequence</option>
+  <option value="completeness">Species completeness (0–3)</option>
 </select>
   </div>
 
@@ -742,12 +742,12 @@ if (state.metric === "richness" || state.metric === "endemicity") {
 
   // Título y hint
   const metricLabel = {
-    specimens:    "Specimens",
-    photos:       "Specimens with photo",
-    sequences:    "Specimens with sequence",
-    completeness: "Completeness score (0–3)",
-    richness:     "Species richness",
-    endemicity:   "Species regional endemicity",
+  specimens:    "Species with specimens",
+  photos:       "Species with photo",
+  sequences:    "Species with sequence",
+  completeness: "Species completeness (0–3)",
+  richness:     "Species richness",
+  endemicity:   "Species regional endemicity",
   }[state.metric];
 
   const titleEl = d3.select("#map-title");
