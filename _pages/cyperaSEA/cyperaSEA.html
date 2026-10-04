@@ -195,7 +195,7 @@
     </select>
     <label>Map metric</label>
 <select id="f-metric">
-  <option value="richness">Species richness</option>
+  <option value="richness" selected>Species richness</option>
   <option value="endemicity">Species endemicity</option>
   <option value="specimens">Specimens sampled</option>
   <option value="photos">Specimens with photo</option>
@@ -388,11 +388,11 @@ const geounits = [...new Set(
 // =====================================================================
 
 const state = {
-  genus: "Carex",
+  genus: "",
   rank: "",
   geounit: "",
   species: "",
-  metric: "specimens"
+  metric: "richness"
 };
 
 const genusSel   = d3.select("#f-genus");
@@ -404,7 +404,7 @@ const metricSel  = d3.select("#f-metric");
 const allGenera = [...new Set(taxonomy.map(t => t.Genus).filter(Boolean))].sort();
 genusSel.selectAll("option").data(["", ...allGenera]).join("option")
   .attr("value", d => d).text(d => d === "" ? "All" : d);
-genusSel.property("value", "Carex");
+genusSel.property("value", "");
 
 geoSel.selectAll("option").data(["", ...geounits]).join("option")
   .attr("value", d => d).text(d => d === "" ? "All" : d);
