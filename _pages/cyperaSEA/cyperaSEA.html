@@ -503,19 +503,44 @@ const colorScale = d3.scaleSequential()
 
 let geojson;
 
+const TDWG_REGIONS = new Set([
+  "Thailand", "Vietnam", "Laos", "Cambodia", "Myanmar", "Malaya",
+  "Borneo", "Sumatra", "Jawa", "Sulawesi", "Maluku", "Lesser Sunda Is.",
+  "Philippines", "New Guinea", "Bismarck Archipelago", "Solomon Is.",
+  "Andaman Is.", "Nicobar Is."
+]);
+
 d3.json("https://raw.githubusercontent.com/tdwg/wgsrpd/master/geojson/level3.geojson")
   .then(tdwg => {
-    geojson = tdwg;
+    // 1) Comprueba que todos los nombres coinciden con el archivo
+    const allNames = tdwg.features.map(f => f.properties.LEVEL3_NAM);
+    const missing = [...TDWG_REGIONS].filter(n => !allNames.includes(n));
+    if (missing.length) console.warn("Nombres NO encontrados en el GeoJSON:", missing);
+
+    // 2) Filtra a solo tus regiones
+    const features = tdwg.features.filter(f =>
+      TDWG_REGIONS.has(f.properties.LEVEL3_NAM)
+    );
+    console.log("TDWG features filtrados:", features.length,
+                features.map(f => f.properties.LEVEL3_NAM));
+
+    geojson = { type: "FeatureCollection", features };
+
+    // 3) Ajusta la proyección al bounding box de esas features
+    projection.fitExtent([[20, 20], [mapW - 20, mapH - 20]], geojson);
+
+    // 4) Dibuja
     const g = mapSvg.append("g");
     g.selectAll("path")
-      .data(geojson.features)
+      .data(features)
       .join("path")
         .attr("class", "country")
         .attr("d", path)
         .attr("fill", "#eef2f0");
+
     updateMap();
   })
-  .catch(err => console.error("Error cargando TDWG Level 3:", err));
+  .catch(err => console.error("Error TDWG:", err));
 
 function metricValue(o) {
   if (!o) return 0;
