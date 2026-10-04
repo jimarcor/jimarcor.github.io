@@ -729,11 +729,11 @@ mapSvg.on("mousemove", (event) => {
   }
   const guName = t.__data__.properties.LEVEL3_NAM;
 
-  const { richByGU, endemicByGU, endemicSet } = computeSpeciesMetrics();
-  const rows = filtered().filter(d => d.geounit === guName);
-  const total = rows.length;
-  const foto  = rows.filter(d => d.hasFoto).length;
-  const seq   = rows.filter(d => d.hasSeq).length;
+const { richByGU, endemicByGU, endemicSet } = computeSpeciesMetrics();
+const real  = filtered().filter(d => d.geounit === guName && d.hasCatalogue);
+const total = real.length;
+const foto  = real.filter(d => d.hasFoto).length;
+const seq   = real.filter(d => d.hasSeq).length;
 
   let html = `<b>${guName}</b><br>`;
 
@@ -829,8 +829,8 @@ function drawCompleteness() {
   const ih = H - margin.top - margin.bottom;
   const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
-  const f = filtered();
-  const byGU = d3.rollup(f, v => ({
+const f = filtered().filter(d => d.hasCatalogue);
+const byGU = d3.rollup(f, v => ({
     total: v.length,
     seq: v.filter(d => d.hasSeq).length,
     foto: v.filter(d => d.hasFoto).length,
@@ -979,8 +979,8 @@ function tableData() {
   const q = tableState.search.trim().toLowerCase();
   let rows;
 
-  if (tableState.view === "specimens") {
-    rows = filtered().map(d => {
+if (tableState.view === "specimens") {
+  rows = filtered().filter(d => d.hasCatalogue).map(d => {
       const photoCats = (fotoByCat.get(d.catalogue) || []).map(p =>
         String(p.CatalogueNumber ?? p.catalogue ?? p.Catalogue ?? p.id ?? "").trim()
       ).filter(Boolean);
@@ -1000,8 +1000,8 @@ function tableData() {
       };
     });
   } else {
-    const f = filtered();
-    const specsBySci = d3.group(f, s => s.ScientificName);
+const f = filtered().filter(d => d.hasCatalogue);
+const specsBySci = d3.group(f, s => s.ScientificName);
 
     rows = filteredTaxa().map(t => {
       const specs = specsBySci.get(t.ScientificName) || [];
