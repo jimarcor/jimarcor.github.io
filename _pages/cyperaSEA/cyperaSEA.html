@@ -500,7 +500,7 @@ const projection = d3.geoMercator()
 const path = d3.geoPath().projection(projection);
 
 const colorScale = d3.scaleSequential()
-  .interpolator(d3.interpolateGreens)
+  .interpolator(t => d3.interpolateGreens(0.35 + t * 0.65))
   .domain([0, 50]);
 
 let geojson;
