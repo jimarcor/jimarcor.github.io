@@ -525,14 +525,28 @@ function filtered() {
 // =====================================================================
 
 function updateKPIs() {
-  const f = filtered();
+  const f        = filtered();
   const nTaxa    = filteredTaxa().length;
   const nSpecies = filteredTaxa().filter(t => t.Rank === "Species").length;
 
-  // Solo cuentan como especímenes los que tienen CatalogueNumber
+  // Especímenes reales (con CatalogueNumber)
   const real = f.filter(d => d.hasCatalogue);
-  const nSeq  = real.filter(d => d.hasSeq).length;
-  const nFoto = real.filter(d => d.hasFoto).length;
+
+  // Especies distintas en el filtro (solo Rank === "Species")
+  const speciesSet = new Set(
+    f.filter(d => d.Rank === "Species" && d.ScientificName)
+     .map(d => d.ScientificName)
+  );
+  const nSpeciesInFilter = speciesSet.size;
+
+  // Especies distintas que tienen al menos una foto/secuencia
+  const speciesWithSeq = new Set(
+    real.filter(d => d.hasSeq).map(d => d.ScientificName)
+  );
+  const speciesWithFoto = new Set(
+    real.filter(d => d.hasFoto).map(d => d.ScientificName)
+  );
+
   const pct = (n, t) => t === 0 ? "0%" : Math.round((n / t) * 100) + "%";
 
   const labelMap = {
@@ -545,10 +559,14 @@ function updateKPIs() {
 
   d3.select("#kpi-taxa").select(".label").text(label);
   d3.select("#kpi-taxa").select(".value").text(state.species ? 1 : nTaxa);
+
   d3.select("#kpi-species").select(".value").text(nSpecies);
+
   d3.select("#kpi-specimens").text(real.length);
-  d3.select("#kpi-seq").text(pct(nSeq, real.length));
-  d3.select("#kpi-foto").text(pct(nFoto, real.length));
+
+  // % de especies (del filtro) que tienen al menos una secuencia/foto
+  d3.select("#kpi-seq").text(pct(speciesWithSeq.size, nSpeciesInFilter));
+  d3.select("#kpi-foto").text(pct(speciesWithFoto.size, nSpeciesInFilter));
 }
 
 // =====================================================================
