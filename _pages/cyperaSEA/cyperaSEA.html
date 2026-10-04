@@ -685,7 +685,7 @@ function updateMap() {
       const v = guValue.get(name) || 0;
 
       if (!state.species) {
-        return v === 0 ? "#dfe6e3" : colorScale(v);
+        return v === 0 ? "#f4f7f5" : colorScale(v);
       }
       if (expectedSet.has(name)) {
         return v === 0 ? colorScale(0) : colorScale(v);
