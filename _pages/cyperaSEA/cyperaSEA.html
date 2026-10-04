@@ -659,34 +659,52 @@ function metricValue(o) {
 function updateMap() {
   if (!geojson) return;
 
-  const f = filtered();
+  const f     = filtered();
+const fReal = f.filter(d => d.hasCatalogue);
 
-  // Agregados por geounit
-  const byGU = d3.rollup(f, v => ({
-    total: v.length,
-    foto:  v.filter(d => d.hasFoto).length,
-    seq:   v.filter(d => d.hasSeq).length,
-    species: new Set(v.map(s => s.ScientificName).filter(Boolean)),
-  }), d => d.geounit);
-
-
-  // Valor por geounit
-  const { richByGU, endemicByGU } = computeSpeciesMetrics();
-
-  const guValue = new Map();
-  for (const [gu, o] of byGU) {
-    let v;
-    if (state.metric === "richness")        v = richByGU.get(gu) || 0;
-    else if (state.metric === "endemicity") v = endemicByGU.get(gu) || 0;
-    else                                    v = metricValue(o);
-    guValue.set(gu, v);
+// --- Por geounit, contando a nivel de especie ---
+const byGU = new Map();
+for (const d of fReal) {
+  const gu = d.geounit;
+  if (!gu) continue;
+  if (!byGU.has(gu)) {
+    byGU.set(gu, { species: new Set(), specWithFoto: new Set(), specWithSeq: new Set() });
   }
-
-  // Si no hay specimens pero sí distribuciones, pinta igualmente
-  if (state.metric === "richness" || state.metric === "endemicity") {
-    const src = state.metric === "richness" ? richByGU : endemicByGU;
-    for (const [gu, v] of src) guValue.set(gu, v);
+  const o = byGU.get(gu);
+  if (d.ScientificName) {
+    o.species.add(d.ScientificName);
+    if (d.hasFoto) o.specWithFoto.add(d.ScientificName);
+    if (d.hasSeq)  o.specWithSeq.add(d.ScientificName);
   }
+}
+
+// Convierte a { total, foto, seq } en clave de especies
+const byGUCounts = new Map();
+for (const [gu, o] of byGU) {
+  byGUCounts.set(gu, {
+    total: o.species.size,       // nº de especies con al menos 1 espécimen
+    foto:  o.specWithFoto.size,  // nº de especies con al menos 1 foto
+    seq:   o.specWithSeq.size,   // nº de especies con al menos 1 secuencia
+  });
+}
+
+// Valor por geounit
+const { richByGU, endemicByGU } = computeSpeciesMetrics();
+
+const guValue = new Map();
+for (const [gu, o] of byGUCounts) {
+  let v;
+  if (state.metric === "richness")        v = richByGU.get(gu) || 0;
+  else if (state.metric === "endemicity") v = endemicByGU.get(gu) || 0;
+  else                                    v = metricValue(o);
+  guValue.set(gu, v);
+}
+
+// Si no hay specimens pero sí distribuciones, pinta igualmente
+if (state.metric === "richness" || state.metric === "endemicity") {
+  const src = state.metric === "richness" ? richByGU : endemicByGU;
+  for (const [gu, v] of src) guValue.set(gu, v);
+}
 
   let maxVal;
   if (state.metric === "completeness") maxVal = 3;
