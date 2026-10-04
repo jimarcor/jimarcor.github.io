@@ -817,9 +817,16 @@ function updateCharts() {
 // 6) SEARCH TABLE
 // =====================================================================
 
-const tableState = { view: "specimens", search: "", page: 1, perPage: 25 };
 
-// ---- helper para listas compactas de CatalogueNumbers ----
+const tableState = {
+  view: "specimens",
+  search: "",
+  rank: "",
+  page: 1,
+  perPage: 25
+};
+
+// ---- Helper: lista compacta de CatalogueNumbers ------------------------
 function catList(cats) {
   if (!cats || !cats.length) return "—";
   const sorted = cats.slice().sort();
@@ -830,22 +837,25 @@ function catList(cats) {
        + (extra > 0 ? ` <span class="cat-more">+${extra}</span>` : "");
 }
 
-// ---- columnas vista Specimens (una fila por espécimen) ----
+// ---- Columnas vista Specimens -----------------------------------------
 const specimensColumns = [
   { key: "catalogue",      label: "Catalogue",
     render: row => row.catalogue ? `<code>${row.catalogue}</code>` : "—" },
   { key: "ScientificName", label: "Scientific name",
     render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${row.ScientificName}</a>` },
-  { key: "Genus",          label: "Genus" },
-  { key: "Rank",           label: "Rank" },
-  { key: "geounit",        label: "Geounit" },
+  { key: "Genus",          label: "Genus",
+    render: row => row.Genus ?? "—" },
+  { key: "Rank",           label: "Rank",
+    render: row => row.Rank ?? "—" },
+  { key: "geounit",        label: "Geounit",
+    render: row => row.geounit ?? "—" },
   { key: "photoCats",      label: "Photos",
     render: row => catList(row.photoCats) },
   { key: "seqCats",        label: "Sequences",
     render: row => catList(row.seqCats) },
 ];
 
-// ---- columnas vista Taxa (una fila por ScientificName) ----
+// ---- Columnas vista Taxa ----------------------------------------------
 const taxaColumns = [
   { key: "ScientificName", label: "Scientific name",
     render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${row.ScientificName}</a>` },
@@ -865,23 +875,32 @@ const taxaColumns = [
     render: row => catList(row.seqCats) },
 ];
 
+// ---- Construcción de filas según vista --------------------------------
 function tableData() {
   const q = tableState.search.trim().toLowerCase();
   let rows;
 
   if (tableState.view === "specimens") {
-    rows = filtered().map(d => ({
-      catalogue:      d.catalogue,
-      AphiaID:        d.AphiaID,
-      ScientificName: d.ScientificName,
-      Genus:          d.Genus,
-      Rank:           d.Rank,
-      geounit:        d.geounit,
-      hasFoto:        d.hasFoto,
-      hasSeq:         d.hasSeq,
-    }));
+    rows = filtered().map(d => {
+      const photoCats = (fotoByCat.get(d.catalogue) || []).map(p =>
+        String(p.CatalogueNumber ?? p.catalogue ?? p.Catalogue ?? p.id ?? "").trim()
+      ).filter(Boolean);
+      const seqCats = (seqByCat.get(d.catalogue) || []).map(sq =>
+        String(sq.CatalogueNumber ?? sq.catalogue ?? sq.Catalogue ?? sq.id ?? "").trim()
+      ).filter(Boolean);
+
+      return {
+        catalogue:      d.catalogue,
+        AphiaID:        d.AphiaID,
+        ScientificName: d.ScientificName,
+        Genus:          d.Genus,
+        Rank:           d.Rank,
+        geounit:        d.geounit,
+        photoCats,
+        seqCats,
+      };
+    });
   } else {
-    // Vista por taxón: agrupa los especímenes ACTUALMENTE filtrados
     const f = filtered();
     const specsBySci = d3.group(f, s => s.ScientificName);
 
@@ -915,6 +934,12 @@ function tableData() {
     });
   }
 
+  // Filtro por Rank (Species, Subspecies, Section...)
+  if (tableState.rank) {
+    rows = rows.filter(r => r.Rank === tableState.rank);
+  }
+
+  // Búsqueda libre
   if (q) {
     rows = rows.filter(r =>
       Object.values(r).some(v => {
@@ -924,9 +949,11 @@ function tableData() {
       })
     );
   }
+
   return rows;
 }
 
+// ---- Render de la tabla -----------------------------------------------
 function renderTable() {
   const cols = tableState.view === "specimens" ? specimensColumns : taxaColumns;
   const data = tableData();
@@ -970,15 +997,37 @@ function renderTable() {
   d3.select("#next-page").property("disabled", tableState.page >= maxPage);
 }
 
+// ---- Poblar el selector de Rank ---------------------------------------
+const tableRankSel = d3.select("#table-rank");
+const allRanks = [...new Set(taxonomy.map(t => t.Rank).filter(Boolean))].sort();
+tableRankSel.selectAll("option.rank")
+  .data(allRanks).join("option")
+    .attr("class", "rank")
+    .attr("value", d => d).text(d => d);
+
+// ---- Eventos de la tabla ----------------------------------------------
 d3.select("#table-search").on("input", e => {
-  tableState.search = e.target.value; tableState.page = 1; renderTable();
+  tableState.search = e.target.value;
+  tableState.page = 1;
+  renderTable();
 });
+
 d3.select("#table-view").on("change", e => {
-  tableState.view = e.target.value; tableState.page = 1; renderTable();
+  tableState.view = e.target.value;
+  tableState.page = 1;
+  renderTable();
 });
+
+tableRankSel.on("change", e => {
+  tableState.rank = e.target.value;
+  tableState.page = 1;
+  renderTable();
+});
+
 d3.select("#prev-page").on("click", () => {
   if (tableState.page > 1) { tableState.page--; renderTable(); }
 });
+
 d3.select("#next-page").on("click", () => {
   const maxPage = Math.max(1, Math.ceil(tableData().length / tableState.perPage));
   if (tableState.page < maxPage) { tableState.page++; renderTable(); }
