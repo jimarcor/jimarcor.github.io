@@ -370,13 +370,6 @@ const geounits = [...new Set(
   specimens.map(s => s.geounit).filter(Boolean)
 )].sort();
 
-const tdwgToISO = {
-  "Thailand": 764, "Vietnam": 704, "Laos": 418, "Cambodia": 116,
-  "Myanmar": 104, "Malaya": 458, "Borneo": 458, "Sumatra": 360,
-  "Jawa": 360, "Sulawesi": 360, "Maluku": 360, "Lesser Sunda Is.": 360,
-  "Philippines": 608, "New Guinea": 598, "Bismarck Archipelago": 598,
-  "Solomon Is.": 90, "Andaman Is.": 356, "Nicobar Is.": 356
-};
 
 // =====================================================================
 // 2) STATE + FILTERS
@@ -540,52 +533,45 @@ function updateMap() {
 
   const f = filtered();
 
+  // Datos por geounit (ya no hace falta agregar por ISO)
   const byGU = d3.rollup(f, v => ({
     total: v.length,
     foto:  v.filter(d => d.hasFoto).length,
     seq:   v.filter(d => d.hasSeq).length,
   }), d => d.geounit);
 
-  const isoData = new Map();
+  // Valor por nombre TDWG (que coincide con el geounit)
+  const guValue = new Map();
   for (const [gu, o] of byGU) {
-    const iso = tdwgToISO[gu];
-    if (!iso) continue;
-    const acc = isoData.get(iso) || { total: 0, foto: 0, seq: 0 };
-    acc.total += o.total;
-    acc.foto  += o.foto;
-    acc.seq   += o.seq;
-    isoData.set(iso, acc);
-  }
-
-  const isoValue = new Map();
-  for (const [iso, o] of isoData) {
-    isoValue.set(iso, metricValue(o));
+    guValue.set(gu, metricValue(o));
   }
 
   let maxVal;
   if (state.metric === "completeness") maxVal = 3;
-  else maxVal = Math.max(1, d3.max([...isoValue.values()], d => d) || 1);
+  else maxVal = Math.max(1, d3.max([...guValue.values()], d => d) || 1);
   colorScale.domain([0, maxVal]);
 
   const expectedGUs = state.species ? (expectedDistribution[state.species] || []) : [];
-  const expectedISOs = new Set(expectedGUs.map(gu => tdwgToISO[gu]).filter(Boolean));
+  const expectedSet = new Set(expectedGUs);
 
+  // Pintar cada feature TDWG según su nombre
   mapSvg.selectAll("path.country")
     .transition().duration(300)
     .attr("fill", d => {
-      const iso = +d.id;
-      const v = isoValue.get(iso) || 0;
+      const name = d.properties.LEVEL3_NAM;
+      const v = guValue.get(name) || 0;
       if (v === 0) {
-        return expectedISOs.has(iso) ? "#fff3e0" : "#eef2f0";
+        return expectedSet.has(name) ? "#fff3e0" : "#eef2f0";
       }
       return colorScale(v);
     })
     .attr("class", d => {
-      const iso = +d.id;
-      const isExpected = expectedISOs.has(iso);
-      const hasData = (isoValue.get(iso) || 0) > 0;
+      const name = d.properties.LEVEL3_NAM;
+      const isExpected = expectedSet.has(name);
+      const hasData = (guValue.get(name) || 0) > 0;
       return isExpected && !hasData ? "country expected" : "country";
     });
+
 
   const swatches = d3.select("#legend-swatches");
   swatches.selectAll("div").remove();
