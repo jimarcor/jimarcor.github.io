@@ -609,7 +609,6 @@ d3.json("https://raw.githubusercontent.com/tdwg/wgsrpd/master/geojson/level3.geo
       .data(bgFeatures)
       .join("path")
         .attr("d", path)
-        .attr("fill", "#e9ece9")
         .attr("stroke", "#ffffff")
         .attr("stroke-width", 0.3)
         .style("pointer-events", "none");
@@ -622,8 +621,7 @@ d3.json("https://raw.githubusercontent.com/tdwg/wgsrpd/master/geojson/level3.geo
       .data(fgFeatures)
       .join("path")
         .attr("class", "country")
-        .attr("d", path)
-        .attr("fill", "#dfe6e3");
+        .attr("d", path);
 
     updateMap();
   })
