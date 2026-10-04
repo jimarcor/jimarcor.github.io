@@ -21,7 +21,7 @@
   header h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
   header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
   .wrap { padding: 16px 32px 40px; display: grid; gap: 20px; }
-  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
   .kpi {
     background: var(--card); border: 1px solid var(--border);
     border-radius: 12px; padding: 16px 18px;
@@ -523,6 +523,7 @@ function filtered() {
 function updateKPIs() {
   const f = filtered();
   const nTaxa = filteredTaxa().length;
+  const nSpecies = filteredTaxa().filter(t => t.Rank === "Species").length;
   const nSeq  = f.filter(d => d.hasSeq).length;
   const nFoto = f.filter(d => d.hasFoto).length;
   const pct = (n, t) => t === 0 ? "0%" : Math.round((n / t) * 100) + "%";
@@ -537,6 +538,7 @@ function updateKPIs() {
 
   d3.select("#kpi-taxa").select(".label").text(label);
   d3.select("#kpi-taxa").select(".value").text(state.species ? 1 : nTaxa);
+  d3.select("#kpi-species").select(".value").text(nSpecies);
   d3.select("#kpi-specimens").text(f.length);
   d3.select("#kpi-seq").text(pct(nSeq, f.length));
   d3.select("#kpi-foto").text(pct(nFoto, f.length));
