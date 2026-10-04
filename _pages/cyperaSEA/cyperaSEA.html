@@ -818,28 +818,50 @@ function updateCharts() {
 
 const tableState = { view: "specimens", search: "", page: 1, perPage: 25 };
 
+// ---- helper para listas compactas de CatalogueNumbers ----
+function catList(cats) {
+  if (!cats || !cats.length) return "—";
+  const sorted = cats.slice().sort();
+  const shown  = sorted.slice(0, 5);
+  const extra  = sorted.length - shown.length;
+  return `<span class="cat-count">${sorted.length}</span> `
+       + shown.map(c => `<code>${c}</code>`).join(", ")
+       + (extra > 0 ? ` <span class="cat-more">+${extra}</span>` : "");
+}
+
+// ---- columnas vista Specimens (una fila por espécimen) ----
 const specimensColumns = [
-  { key: "catalogue",      label: "Catalogue" },
+  { key: "catalogue",      label: "Catalogue",
+    render: row => row.catalogue ? `<code>${row.catalogue}</code>` : "—" },
   { key: "ScientificName", label: "Scientific name",
     render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${row.ScientificName}</a>` },
   { key: "Genus",          label: "Genus" },
   { key: "Rank",           label: "Rank" },
   { key: "geounit",        label: "Geounit" },
-  { key: "hasFoto",        label: "Photo",    render: row => row.hasFoto ? "✓" : "—" },
-  { key: "hasSeq",         label: "Sequence", render: row => row.hasSeq ? "✓" : "—" },
+  { key: "photoCats",      label: "Photos",
+    render: row => catList(row.photoCats) },
+  { key: "seqCats",        label: "Sequences",
+    render: row => catList(row.seqCats) },
 ];
 
+// ---- columnas vista Taxa (una fila por ScientificName) ----
 const taxaColumns = [
-  { key: "AphiaID",        label: "AphiaID" },
   { key: "ScientificName", label: "Scientific name",
     render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${row.ScientificName}</a>` },
-  { key: "Authority",      label: "Authority" },
-  { key: "Rank",           label: "Rank" },
-  { key: "Status",         label: "Status" },
-  { key: "Subfamily",      label: "Subfamily",  render: row => row.Subfamily ?? "—" },
-  { key: "Tribe",          label: "Tribe",      render: row => row.Tribe ?? "—" },
-  { key: "Genus",          label: "Genus",      render: row => row.Genus ?? "—" },
-  { key: "Section",        label: "Section",    render: row => row.Section ?? "—" },
+  { key: "Authority",      label: "Authority",
+    render: row => row.Authority ?? "—" },
+  { key: "Rank",           label: "Rank",
+    render: row => row.Rank ?? "—" },
+  { key: "Genus",          label: "Genus",
+    render: row => row.Genus ?? "—" },
+  { key: "Section",        label: "Section",
+    render: row => row.Section ?? "—" },
+  { key: "specimenCats",   label: "Specimens",
+    render: row => catList(row.specimenCats) },
+  { key: "photoCats",      label: "Photos",
+    render: row => catList(row.photoCats) },
+  { key: "seqCats",        label: "Sequences",
+    render: row => catList(row.seqCats) },
 ];
 
 function tableData() {
@@ -848,25 +870,57 @@ function tableData() {
 
   if (tableState.view === "specimens") {
     rows = filtered().map(d => ({
-      catalogue: d.catalogue, AphiaID: d.AphiaID,
-      ScientificName: d.ScientificName, Genus: d.Genus,
-      Rank: d.Rank, geounit: d.geounit,
-      hasFoto: d.hasFoto, hasSeq: d.hasSeq,
+      catalogue:      d.catalogue,
+      AphiaID:        d.AphiaID,
+      ScientificName: d.ScientificName,
+      Genus:          d.Genus,
+      Rank:           d.Rank,
+      geounit:        d.geounit,
+      hasFoto:        d.hasFoto,
+      hasSeq:         d.hasSeq,
     }));
   } else {
-    rows = filteredTaxa().map(t => ({
-      AphiaID: t.AphiaID, ScientificName: t.ScientificName,
-      Authority: t.Authority, Rank: t.Rank, Status: t.Status,
-      Subfamily: t.Subfamily, Tribe: t.Tribe,
-      Genus: t.Genus, Section: t.Section,
-    }));
+    // Vista por taxón: agrupa los especímenes ACTUALMENTE filtrados
+    const f = filtered();
+    const specsBySci = d3.group(f, s => s.ScientificName);
+
+    rows = filteredTaxa().map(t => {
+      const specs = specsBySci.get(t.ScientificName) || [];
+
+      const photoCats = new Set();
+      const seqCats   = new Set();
+      for (const s of specs) {
+        (fotoByCat.get(s.catalogue) || []).forEach(p => {
+          const id = p.CatalogueNumber ?? p.catalogue ?? p.Catalogue ?? p.id;
+          if (id != null && String(id).trim() !== "") photoCats.add(String(id).trim());
+        });
+        (seqByCat.get(s.catalogue) || []).forEach(sq => {
+          const id = sq.CatalogueNumber ?? sq.catalogue ?? sq.Catalogue ?? sq.id;
+          if (id != null && String(id).trim() !== "") seqCats.add(String(id).trim());
+        });
+      }
+
+      return {
+        AphiaID:        t.AphiaID,
+        ScientificName: t.ScientificName,
+        Authority:      t.Authority,
+        Rank:           t.Rank,
+        Genus:          t.Genus,
+        Section:        t.Section,
+        specimenCats:   specs.map(s => s.catalogue).filter(Boolean),
+        photoCats:      [...photoCats],
+        seqCats:        [...seqCats],
+      };
+    });
   }
 
   if (q) {
     rows = rows.filter(r =>
-      Object.values(r).some(v =>
-        v != null && String(v).toLowerCase().includes(q)
-      )
+      Object.values(r).some(v => {
+        if (v == null) return false;
+        if (Array.isArray(v)) return v.some(x => String(x).toLowerCase().includes(q));
+        return String(v).toLowerCase().includes(q);
+      })
     );
   }
   return rows;
