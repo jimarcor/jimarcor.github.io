@@ -359,7 +359,8 @@ const specimens = specimensRaw.map(row => {
      hasSeq:  (seqByCat.get(cat)?.length  ?? 0) > 0,
    };
  })
-  .filter(s => s.catalogue && s.catalogue !== "")
+  // Conserva especímenes con catalogue O con geounit (para que aparezcan en el filtro)
+  .filter(s => (s.catalogue && s.catalogue !== "") || s.geounit)
   .filter(s => !hasMediaData || s.hasFoto || s.hasSeq);
   
   // Presencias normalizadas: ScientificName ↔ geounit
@@ -383,9 +384,11 @@ for (const k in expectedDistribution) {
   expectedDistribution[k] = [...new Set(expectedDistribution[k])];
 }
 
-const geounits = [...new Set(
-  specimens.map(s => s.geounit).filter(Boolean)
-)].sort();
+const geounits = [...new Set([
+  ...specimens.map(s => s.geounit),
+  ...distributionRecords.map(d => d.geounit),
+].filter(Boolean))].sort();
+console.log("geounits:", geounits.length, geounits);
 
 
 // =====================================================================
