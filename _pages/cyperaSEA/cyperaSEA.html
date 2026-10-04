@@ -239,34 +239,37 @@
 
   </div>
 
-  <div class="card table-card">
-    <h2>Search</h2>
-    <p class="hint">Filter and search the records that match the filters above.</p>
+ <div class="card table-card">
+  <h2>Search</h2>
+  <p class="hint">Filter and search the records that match the filters above.</p>
 
-    <div class="table-controls">
-      <input type="text" id="table-search" placeholder="Search by name, catalogue number, geounit, genus…">
-      <select id="table-view">
-        <option value="specimens">Specimens</option>
-        <option value="taxa">Taxa</option>
-      </select>
-    </div>
+  <div class="table-controls">
+    <input type="text" id="table-search" placeholder="Search by name, catalogue number, geounit, genus…">
+    <select id="table-view">
+      <option value="specimens">Specimens</option>
+      <option value="taxa">Taxa</option>
+    </select>
+    <select id="table-rank">
+      <option value="">All ranks</option>
+    </select>
+  </div>
 
-    <div class="table-wrap">
-      <table id="search-table">
-        <thead id="search-thead"></thead>
-        <tbody id="search-tbody"></tbody>
-      </table>
-    </div>
+  <div class="table-wrap">
+    <table id="search-table">
+      <thead id="search-thead"></thead>
+      <tbody id="search-tbody"></tbody>
+    </table>
+  </div>
 
-    <div class="table-footer">
-      <span id="table-info">–</span>
-      <div class="pagination">
-        <button id="prev-page">←</button>
-        <span id="page-num">–</span>
-        <button id="next-page">→</button>
-      </div>
+  <div class="table-footer">
+    <span id="table-info">–</span>
+    <div class="pagination">
+      <button id="prev-page">←</button>
+      <span id="page-num">–</span>
+      <button id="next-page">→</button>
     </div>
   </div>
+</div>
 
 </div>
 
