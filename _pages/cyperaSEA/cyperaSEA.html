@@ -341,18 +341,20 @@ const specimens = specimensRaw.map(row => {
   const sci = normSci(row.ScientificName);
   const taxon = taxonomy.find(t => t.ScientificName === sci);
 
-  return {
-    catalogue:      cat,
-    AphiaID:        row.AphiaID ?? taxon?.AphiaID ?? null,
-    ScientificName: sci,
-    Genus:          row.Genus    ?? taxon?.Genus    ?? null,
-    Rank:           row.Rank     ?? taxon?.Rank     ?? "Species",
-    Section:        row.Section  ?? taxon?.Section  ?? null,
-    geounit:        normGU(row.geounit),
-    hasFoto: (fotoByCat.get(cat)?.length ?? 0) > 0,
-    hasSeq:  (seqByCat.get(cat)?.length  ?? 0) > 0,
-  };
-});
+   return {
+     catalogue: cat,
+     AphiaID: row.AphiaID ?? taxon?.AphiaID ?? null,
+     ScientificName: sci,
+     Genus: row.Genus ?? taxon?.Genus ?? firstWord(sci),
+     Rank: row.Rank ?? taxon?.Rank ?? "Species",
+     Section: row.Section ?? taxon?.Section ?? null,
+     geounit: normGU(row.geounit),
+     hasFoto: (fotoByCat.get(cat)?.length ?? 0) > 0,
+     hasSeq:  (seqByCat.get(cat)?.length  ?? 0) > 0,
+   };
+ })
+ .filter(s => s.catalogue && s.catalogue !== "")
+ .filter(s => s.hasFoto || s.hasSeq);
 
 const expectedDistribution = {};
 for (const row of distributionsRaw) {
