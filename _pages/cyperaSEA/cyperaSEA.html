@@ -366,42 +366,6 @@ const distributionRecords = distributionsRaw.map(r => ({
 // Índice auxiliar: ScientificName → taxón
 const taxonBySci = new Map(taxonomy.map(t => [t.ScientificName, t]));
 
-// Calcula riqueza y endemicidad a partir de distributions
-function computeSpeciesMetrics() {
-  // Distribuciones filtradas por los filtros de taxonomía (genus, rank, section, species)
-  const allowedSci = new Set(filteredTaxa().map(t => t.ScientificName));
-  const fd = distributionRecords.filter(d => allowedSci.has(d.ScientificName));
-
-  // Riqueza por geounit
-  const richByGU = d3.rollup(
-    fd,
-    v => new Set(v.map(d => d.ScientificName)).size,
-    d => d.geounit
-  );
-
-  // Endemicidad: especies que aparecen en un único geounit (dentro del género actual)
-  const genusSubset = state.genus
-    ? distributionRecords.filter(d => taxonBySci.get(d.ScientificName)?.Genus === state.genus)
-    : distributionRecords;
-
-  const speciesRange = d3.rollup(
-    genusSubset,
-    v => new Set(v.map(d => d.geounit)).size,
-    d => d.ScientificName
-  );
-  const endemicSet = new Set(
-    [...speciesRange].filter(([_, n]) => n === 1).map(([sci]) => sci)
-  );
-
-  // Nº de especies endémicas por geounit
-  const endemicByGU = d3.rollup(
-    fd.filter(d => endemicSet.has(d.ScientificName)),
-    v => new Set(v.map(d => d.ScientificName)).size,
-    d => d.geounit
-  );
-
-  return { richByGU, endemicByGU, endemicSet };
-}
 
 const expectedDistribution = {};
 for (const row of distributionsRaw) {
@@ -475,6 +439,42 @@ function filteredTaxa() {
     if (state.species && t.ScientificName !== state.species) return false;
     return true;
   });
+}
+// Calcula riqueza y endemicidad a partir de distributions
+function computeSpeciesMetrics() {
+  // Distribuciones filtradas por los filtros de taxonomía (genus, rank, section, species)
+  const allowedSci = new Set(filteredTaxa().map(t => t.ScientificName));
+  const fd = distributionRecords.filter(d => allowedSci.has(d.ScientificName));
+
+  // Riqueza por geounit
+  const richByGU = d3.rollup(
+    fd,
+    v => new Set(v.map(d => d.ScientificName)).size,
+    d => d.geounit
+  );
+
+  // Endemicidad: especies que aparecen en un único geounit (dentro del género actual)
+  const genusSubset = state.genus
+    ? distributionRecords.filter(d => taxonBySci.get(d.ScientificName)?.Genus === state.genus)
+    : distributionRecords;
+
+  const speciesRange = d3.rollup(
+    genusSubset,
+    v => new Set(v.map(d => d.geounit)).size,
+    d => d.ScientificName
+  );
+  const endemicSet = new Set(
+    [...speciesRange].filter(([_, n]) => n === 1).map(([sci]) => sci)
+  );
+
+  // Nº de especies endémicas por geounit
+  const endemicByGU = d3.rollup(
+    fd.filter(d => endemicSet.has(d.ScientificName)),
+    v => new Set(v.map(d => d.ScientificName)).size,
+    d => d.geounit
+  );
+
+  return { richByGU, endemicByGU, endemicSet };
 }
 
 function taxaForGenus() {
