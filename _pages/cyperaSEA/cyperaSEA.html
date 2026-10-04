@@ -341,6 +341,7 @@ const taxonomy = taxonomyRaw.map(t => ({
 
 const fotoByCat = d3.group(pictures,  p => normCat(p.CatalogueNumber));
 const seqByCat  = d3.group(sequences, s => normCat(s.CatalogueNumber));
+const hasMediaData = pictures.length > 0 || sequences.length > 0;
 
 const specimens = specimensRaw.map(row => {
   const cat = normCat(row.CatalogueNumber);
@@ -359,9 +360,9 @@ const specimens = specimensRaw.map(row => {
      hasSeq:  (seqByCat.get(cat)?.length  ?? 0) > 0,
    };
  })
- .filter(s => s.catalogue && s.catalogue !== "")
- .filter(s => s.hasFoto || s.hasSeq);
-
+  .filter(s => s.catalogue && s.catalogue !== "")
+  .filter(s => !hasMediaData || s.hasFoto || s.hasSeq);
+  
 const expectedDistribution = {};
 for (const row of distributionsRaw) {
   const name = normSci(row.ScientificName);
@@ -680,7 +681,7 @@ function updateMap() {
     sequences:    "Specimens with sequence",
     completeness: "Completeness score (0–3)",
     richness:     "Species richness",
-    endemicity:   "Species endemicity",
+    endemicity:   "Species regional endemicity",
   }[state.metric];
 
   const titleEl = d3.select("#map-title");
