@@ -492,7 +492,7 @@ const mapSvg = d3.select("#map").append("svg")
 
 const projection = d3.geoMercator()
   .center([115, 5])
-  .scale(560)
+  .scale(550)
   .translate([mapW / 2, mapH / 2 + 40]);
 
 const path = d3.geoPath().projection(projection);
@@ -614,35 +614,22 @@ mapSvg.on("mousemove", (event) => {
     tooltip.style("opacity", 0);
     return;
   }
-  const iso = +t.id;
+  const guName = t.__data__.properties.LEVEL3_NAM;
+
   const f = filtered();
-  const byGU = d3.rollup(f, v => ({
-    total: v.length,
-    foto: v.filter(d => d.hasFoto).length,
-    seq:  v.filter(d => d.hasSeq).length,
-  }), d => d.geounit);
+  const rows = f.filter(d => d.geounit === guName);
+  const total = rows.length;
+  const foto = rows.filter(d => d.hasFoto).length;
+  const seq  = rows.filter(d => d.hasSeq).length;
 
-  let total = 0, foto = 0, seq = 0;
-  const lines = [];
-  for (const [gu, o] of byGU) {
-    if (tdwgToISO[gu] === iso) {
-      total += o.total;
-      foto  += o.foto;
-      seq   += o.seq;
-      lines.push(`<b>${gu}</b>: ${o.total} specimens · ${o.foto} photos · ${o.seq} seq`);
-    }
-  }
-
-  const countryName = geojson.features.find(x => +x.id === iso)?.properties.name || "Country";
   const expectedGUs = state.species ? (expectedDistribution[state.species] || []) : [];
-  const expectedHere = expectedGUs.filter(gu => tdwgToISO[gu] === iso);
+  const expectedHere = expectedGUs.filter(gu => gu === guName);
 
-  let html = `<b>${countryName}</b><br>`;
+  let html = `<b>${guName}</b><br>`;
   if (state.species) html += `<i>${state.species}</i><br>`;
   html += `Total: <b>${total}</b> specimens · <b>${foto}</b> photos · <b>${seq}</b> seq<br>`;
-  if (lines.length) html += lines.join("<br>");
   if (expectedHere.length) {
-    html += `<br><span style="color:#ffb74d;">Expected in: ${expectedHere.join(", ")}</span>`;
+    html += `<span style="color:#ffb74d;">Expected in distribution sheet</span>`;
     if (total === 0) html += `<br><span style="color:#ffb74d;">⚠ Not yet sampled</span>`;
   }
 
@@ -652,6 +639,7 @@ mapSvg.on("mousemove", (event) => {
     .style("top",  (event.clientY + 12) + "px")
     .html(html);
 }).on("mouseleave", () => tooltip.style("opacity", 0));
+
 
 // =====================================================================
 // 5) CHARTS
