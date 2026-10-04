@@ -318,6 +318,7 @@ console.log("sequences[0]:",     sequences[0]);
 const normCat = v => v == null ? null : String(v).trim();
 const normSci = v => v == null ? null : String(v).trim();
 const normGU  = v => v == null ? null : String(v).trim();
+const firstWord = s => s == null ? null : String(s).trim().split(/\s+/)[0];
 
 const taxonomy = taxonomyRaw.map(t => ({
   AphiaID:        t.AphiaID,
