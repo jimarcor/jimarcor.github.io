@@ -581,31 +581,47 @@ const TDWG_REGIONS = new Set([
 
 d3.json("https://raw.githubusercontent.com/tdwg/wgsrpd/master/geojson/level3.geojson")
   .then(tdwg => {
-    // 1) Comprueba que todos los nombres coinciden con el archivo
+    // Comprueba que los nombres coinciden
     const allNames = tdwg.features.map(f => f.properties.LEVEL3_NAM);
-    const missing = [...TDWG_REGIONS].filter(n => !allNames.includes(n));
-    if (missing.length) console.warn("Nombres NO encontrados en el GeoJSON:", missing);
+    const missing  = [...TDWG_REGIONS].filter(n => !allNames.includes(n));
+    if (missing.length) console.warn("Nombres NO encontrados:", missing);
 
-    // 2) Filtra a solo tus regiones
-    const features = tdwg.features.filter(f =>
+    // Divide: fondo (resto del mundo) y frente (tus 18 regiones)
+    const bgFeatures = tdwg.features.filter(f =>
+      !TDWG_REGIONS.has(f.properties.LEVEL3_NAM)
+    );
+    const fgFeatures = tdwg.features.filter(f =>
       TDWG_REGIONS.has(f.properties.LEVEL3_NAM)
     );
-    console.log("TDWG features filtrados:", features.length,
-                features.map(f => f.properties.LEVEL3_NAM));
 
-    geojson = { type: "FeatureCollection", features };
+    console.log("TDWG fondo:", bgFeatures.length, "· frente:", fgFeatures.length);
 
-    // 3) Ajusta la proyección al bounding box de esas features
-    projection.fitExtent([[20, 20], [mapW - 20, mapH - 20]], geojson);
+    // Ajusta proyección al bounding box del FRENTE (para que no se vaya el zoom)
+    const fgCollection = { type: "FeatureCollection", features: fgFeatures };
+    projection.fitExtent([[20, 20], [mapW - 20, mapH - 20]], fgCollection);
 
-    // 4) Dibuja
-    const g = mapSvg.append("g");
-    g.selectAll("path")
-      .data(features)
+    // 1) Fondo: gris, sin pointer events
+    mapSvg.append("g")
+      .attr("class", "bg-layer")
+      .selectAll("path")
+      .data(bgFeatures)
+      .join("path")
+        .attr("d", path)
+        .attr("fill", "#e9ece9")
+        .attr("stroke", "#ffffff")
+        .attr("stroke-width", 0.3)
+        .style("pointer-events", "none");
+
+    // 2) Frente: las 18 regiones, interactivas
+    geojson = fgCollection;
+    mapSvg.append("g")
+      .attr("class", "fg-layer")
+      .selectAll("path")
+      .data(fgFeatures)
       .join("path")
         .attr("class", "country")
         .attr("d", path)
-        .attr("fill", "#eef2f0");
+        .attr("fill", "#dfe6e3");
 
     updateMap();
   })
