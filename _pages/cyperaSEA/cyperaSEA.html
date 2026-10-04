@@ -73,7 +73,6 @@
   }
   .country { stroke: #ffffff; stroke-width: 0.5; cursor: pointer; }
   .country:hover { stroke: var(--accent); stroke-width: 1.2; }
-  .country.expected { stroke: var(--expected); stroke-width: 1.6; stroke-dasharray: 4 3; }
   .table-card { display: flex; flex-direction: column; }
   .table-controls {
     display: flex; gap: 12px; align-items: center;
@@ -557,47 +556,47 @@ function updateMap() {
   if (!geojson) return;
 
   const f = filtered();
-
-  // Datos por geounit (ya no hace falta agregar por ISO)
   const byGU = d3.rollup(f, v => ({
     total: v.length,
     foto:  v.filter(d => d.hasFoto).length,
     seq:   v.filter(d => d.hasSeq).length,
   }), d => d.geounit);
 
-  // Valor por nombre TDWG (que coincide con el geounit)
   const guValue = new Map();
   for (const [gu, o] of byGU) {
     guValue.set(gu, metricValue(o));
   }
 
-  let maxVal;
-  if (state.metric === "completeness") maxVal = 3;
-  else maxVal = Math.max(1, d3.max([...guValue.values()], d => d) || 1);
+  let maxVal = state.metric === "completeness"
+    ? 3
+    : Math.max(1, d3.max([...guValue.values()], d => d) || 1);
   colorScale.domain([0, maxVal]);
 
   const expectedGUs = state.species ? (expectedDistribution[state.species] || []) : [];
   const expectedSet = new Set(expectedGUs);
 
-  // Pintar cada feature TDWG según su nombre
   mapSvg.selectAll("path.country")
     .transition().duration(300)
     .attr("fill", d => {
       const name = d.properties.LEVEL3_NAM;
       const v = guValue.get(name) || 0;
-      if (v === 0) {
-        return expectedSet.has(name) ? "#fff3e0" : "#eef2f0";
+
+      // Sin especie seleccionada: gris si no hay datos, verde si los hay
+      if (!state.species) {
+        return v === 0 ? "#eef2f0" : colorScale(v);
       }
-      return colorScale(v);
-    })
-    .attr("class", d => {
-      const name = d.properties.LEVEL3_NAM;
-      const isExpected = expectedSet.has(name);
-      const hasData = (guValue.get(name) || 0) > 0;
-      return isExpected && !hasData ? "country expected" : "country";
+
+      // Con especie seleccionada:
+      // - Distribuida y con datos → verde según el valor
+      // - Distribuida pero sin datos → verde más claro (colorScale(0))
+      // - No distribuida → gris
+      if (expectedSet.has(name)) {
+        return v === 0 ? colorScale(0) : colorScale(v);
+      }
+      return v === 0 ? "#eef2f0" : colorScale(v);
     });
 
-
+  // Leyenda
   const swatches = d3.select("#legend-swatches");
   swatches.selectAll("div").remove();
   const steps = 6;
@@ -608,9 +607,7 @@ function updateMap() {
   }
   d3.select("#legend-max").text(maxVal);
 
-  d3.select("#expected-key").style("display",
-    state.species && expectedGUs.length > 0 ? "inline-flex" : "none");
-
+  // Título y hint (sin mención al overlay)
   const metricLabel = {
     specimens: "Specimens",
     photos: "Specimens with photo",
@@ -622,12 +619,10 @@ function updateMap() {
   const hintEl  = d3.select("#map-hint");
   if (state.species) {
     titleEl.text(`${metricLabel} · ${state.species}`);
-    hintEl.text(expectedGUs.length > 0
-      ? `Dashed orange = expected in the distribution sheet but not yet sampled.`
-      : `No expected distribution loaded for this species yet.`);
+    hintEl.text("Lightest green = expected but not yet sampled.");
   } else {
     titleEl.text(`${metricLabel} per geounit`);
-    hintEl.text(`Hover for breakdown.`);
+    hintEl.text("Hover for breakdown.");
   }
 }
 
@@ -653,10 +648,9 @@ mapSvg.on("mousemove", (event) => {
   let html = `<b>${guName}</b><br>`;
   if (state.species) html += `<i>${state.species}</i><br>`;
   html += `Total: <b>${total}</b> specimens · <b>${foto}</b> photos · <b>${seq}</b> seq<br>`;
-  if (expectedHere.length) {
-    html += `<span style="color:#ffb74d;">Expected in distribution sheet</span>`;
-    if (total === 0) html += `<br><span style="color:#ffb74d;">⚠ Not yet sampled</span>`;
-  }
+  if (expectedHere) {
+  html += `<br><span style="color:#888;">Expected in distribution sheet</span>`;
+}
 
   tooltip
     .style("opacity", 1)
