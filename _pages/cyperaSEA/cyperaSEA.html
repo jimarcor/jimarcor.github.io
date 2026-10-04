@@ -194,12 +194,14 @@
       <option value="">All</option>
     </select>
     <label>Map metric</label>
-    <select id="f-metric">
-      <option value="specimens">Specimens</option>
-      <option value="photos">With photo</option>
-      <option value="sequences">With sequence</option>
-      <option value="completeness">Completeness score (0–3)</option>
-    </select>
+<select id="f-metric">
+  <option value="richness">Species richness</option>
+  <option value="endemicity">Species endemicity</option>
+  <option value="specimens">Specimens sampled</option>
+  <option value="photos">Specimens with photo</option>
+  <option value="sequences">Specimens with sequence</option>
+  <option value="completeness">Completeness (0–3)</option>
+</select>
   </div>
 
   <div class="grid-2">
@@ -375,6 +377,29 @@ const geounits = [...new Set(
   specimens.map(s => s.geounit).filter(Boolean)
 )].sort();
 
+// Cuántos geounits distintos ocupa cada ScientificName (global, sin filtrar)
+const rangeBySpecies = d3.rollup(
+  specimens,
+  v => new Set(v.map(s => s.geounit).filter(Boolean)).size,
+  s => s.ScientificName
+);
+
+// Cuántos geounits distintos ocupan cada ScientificName, restringido a la
+// selección global de género (así endemicidad es coherente con el filtro superior)
+function computeEndemicSet(genusFilter) {
+  const subset = genusFilter
+    ? specimens.filter(s => s.Genus === genusFilter)
+    : specimens;
+  const range = d3.rollup(
+    subset,
+    v => new Set(v.map(s => s.geounit).filter(Boolean)).size,
+    s => s.ScientificName
+  );
+  return new Set(
+    [...range].filter(([_, n]) => n === 1).map(([sci]) => sci)
+  );
+}
+
 
 // =====================================================================
 // 2) STATE + FILTERS
@@ -547,13 +572,23 @@ d3.json("https://raw.githubusercontent.com/tdwg/wgsrpd/master/geojson/level3.geo
   })
   .catch(err => console.error("Error TDWG:", err));
 
-function metricValue(o) {
+function metricValue(o, ctx = {}) {
   if (!o) return 0;
   if (state.metric === "specimens")    return o.total;
   if (state.metric === "photos")       return o.foto;
   if (state.metric === "sequences")    return o.seq;
   if (state.metric === "completeness") {
     return (o.total > 0 ? 1 : 0) + (o.foto > 0 ? 1 : 0) + (o.seq > 0 ? 1 : 0);
+  }
+  if (state.metric === "richness") {
+    return ctx.speciesByGU?.get(ctx.gu)?.size ?? 0;
+  }
+  if (state.metric === "endemicity") {
+    const set = ctx.speciesByGU?.get(ctx.gu);
+    if (!set) return 0;
+    let n = 0;
+    for (const sci of set) if (ctx.endemicSet.has(sci)) n++;
+    return n;
   }
   return 0;
 }
@@ -562,20 +597,31 @@ function updateMap() {
   if (!geojson) return;
 
   const f = filtered();
+
+  // Agregados por geounit
   const byGU = d3.rollup(f, v => ({
     total: v.length,
     foto:  v.filter(d => d.hasFoto).length,
     seq:   v.filter(d => d.hasSeq).length,
+    species: new Set(v.map(s => s.ScientificName).filter(Boolean)),
   }), d => d.geounit);
 
+  // Endemicidad según el filtro de género actual
+  const endemicSet = computeEndemicSet(state.genus);
+
+  // Valor por geounit
   const guValue = new Map();
   for (const [gu, o] of byGU) {
-    guValue.set(gu, metricValue(o));
+    guValue.set(gu, metricValue(o, {
+      gu,
+      speciesByGU: byGU,
+      endemicSet,
+    }));
   }
 
-  let maxVal = state.metric === "completeness"
-    ? 3
-    : Math.max(1, d3.max([...guValue.values()], d => d) || 1);
+  let maxVal;
+  if (state.metric === "completeness") maxVal = 3;
+  else maxVal = Math.max(1, d3.max([...guValue.values()], d => d) || 1);
   colorScale.domain([0, maxVal]);
 
   const expectedGUs = state.species ? (expectedDistribution[state.species] || []) : [];
@@ -587,19 +633,13 @@ function updateMap() {
       const name = d.properties.LEVEL3_NAM;
       const v = guValue.get(name) || 0;
 
-      // Sin especie seleccionada: gris si no hay datos, verde si los hay
       if (!state.species) {
-        return v === 0 ? "#eef2f0" : colorScale(v);
+        return v === 0 ? "#dfe6e3" : colorScale(v);
       }
-
-      // Con especie seleccionada:
-      // - Distribuida y con datos → verde según el valor
-      // - Distribuida pero sin datos → verde más claro (colorScale(0))
-      // - No distribuida → gris
       if (expectedSet.has(name)) {
         return v === 0 ? colorScale(0) : colorScale(v);
       }
-      return v === 0 ? "#eef2f0" : colorScale(v);
+      return v === 0 ? "#dfe6e3" : colorScale(v);
     });
 
   // Leyenda
@@ -613,19 +653,31 @@ function updateMap() {
   }
   d3.select("#legend-max").text(maxVal);
 
-  // Título y hint (sin mención al overlay)
+  // Título y hint
   const metricLabel = {
-    specimens: "Specimens",
-    photos: "Specimens with photo",
-    sequences: "Specimens with sequence",
-    completeness: "Completeness score (0–3)"
+    specimens:    "Specimens",
+    photos:       "Specimens with photo",
+    sequences:    "Specimens with sequence",
+    completeness: "Completeness score (0–3)",
+    richness:     "Species richness",
+    endemicity:   "Species endemicity",
   }[state.metric];
 
   const titleEl = d3.select("#map-title");
   const hintEl  = d3.select("#map-hint");
+
   if (state.species) {
     titleEl.text(`${metricLabel} · ${state.species}`);
     hintEl.text("Lightest green = expected but not yet sampled.");
+  } else if (state.metric === "endemicity") {
+    titleEl.text(`${metricLabel} per geounit`);
+    hintEl.text(
+      `Endemic species = present in a single geounit across the whole dataset` +
+      (state.genus ? ` · genus ${state.genus}` : "")
+    );
+  } else if (state.metric === "richness") {
+    titleEl.text(`${metricLabel} per geounit`);
+    hintEl.text(`Number of distinct species present in each botanical country.`);
   } else {
     titleEl.text(`${metricLabel} per geounit`);
     hintEl.text("Hover for breakdown.");
@@ -642,21 +694,32 @@ mapSvg.on("mousemove", (event) => {
   }
   const guName = t.__data__.properties.LEVEL3_NAM;
 
-  const f = filtered();
-  const rows = f.filter(d => d.geounit === guName);
+  const rows = filtered().filter(d => d.geounit === guName);
   const total = rows.length;
-  const foto = rows.filter(d => d.hasFoto).length;
-  const seq  = rows.filter(d => d.hasSeq).length;
+  const foto  = rows.filter(d => d.hasFoto).length;
+  const seq   = rows.filter(d => d.hasSeq).length;
+  const species = new Set(rows.map(s => s.ScientificName).filter(Boolean));
 
-  const expectedGUs = state.species ? (expectedDistribution[state.species] || []) : [];
-  const expectedHere = expectedGUs.filter(gu => gu === guName);
+  const endemicSet = computeEndemicSet(state.genus);
+  const endemicHere = [...species].filter(sci => endemicSet.has(sci));
 
   let html = `<b>${guName}</b><br>`;
   if (state.species) html += `<i>${state.species}</i><br>`;
-  html += `Total: <b>${total}</b> specimens · <b>${foto}</b> photos · <b>${seq}</b> seq<br>`;
-  if (expectedHere) {
-  html += `<br><span style="color:#888;">Expected in distribution sheet</span>`;
-}
+
+  if (state.metric === "richness") {
+    html += `Species: <b>${species.size}</b><br>`;
+    html += `Specimens: <b>${total}</b><br>`;
+  } else if (state.metric === "endemicity") {
+    html += `Endemic species: <b>${endemicHere.length}</b><br>`;
+    html += `Total species: <b>${species.size}</b><br>`;
+    if (endemicHere.length) {
+      html += `<span style="color:#2f7d5c;">${endemicHere.slice(0, 5).join(", ")}</span>`;
+      if (endemicHere.length > 5) html += ` <i>+${endemicHere.length - 5}</i>`;
+    }
+  } else {
+    html += `Total: <b>${total}</b> specimens · <b>${foto}</b> photos · <b>${seq}</b> seq<br>`;
+    html += `Species: <b>${species.size}</b>`;
+  }
 
   tooltip
     .style("opacity", 1)
