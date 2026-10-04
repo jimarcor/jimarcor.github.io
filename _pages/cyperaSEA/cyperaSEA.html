@@ -48,7 +48,11 @@
   .card h2 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
   .card .hint { font-size: 12px; color: var(--muted); margin: 0 0 12px; }
 #map svg { width: 100%; height: auto; display: block; }
-.bg-layer path { fill: #ff0000; }
+.bg-layer path {
+  fill: #e8ecea;          /* gris muy claro */
+  stroke: #ffffff;        /* borde blanco para separar países */
+  stroke-width: 0.6;
+}
 }
   .legend {
     display: flex; align-items: center; gap: 8px;
@@ -607,9 +611,15 @@ d3.json("https://raw.githubusercontent.com/tdwg/wgsrpd/master/geojson/level3.geo
     if (missing.length) console.warn("Nombres NO encontrados:", missing);
 
     // Divide: fondo (resto del mundo) y frente (tus 18 regiones)
-    const bgFeatures = tdwg.features.filter(f =>
-      !TDWG_REGIONS.has(f.properties.LEVEL3_NAM)
-    );
+const NEIGHBORS = new Set([
+  "India", "Assam", "East Himalaya", "Nepal", "Bangladesh", "Sri Lanka",
+  "China South-Central", "China Southeast", "Hainan", "Taiwan",
+  "Queensland", "Northern Territory", "Western Australia", "New South Wales"
+]);
+
+const bgFeatures = tdwg.features.filter(f =>
+  NEIGHBORS.has(f.properties.LEVEL3_NAM)
+);
     const fgFeatures = tdwg.features.filter(f =>
       TDWG_REGIONS.has(f.properties.LEVEL3_NAM)
     );
