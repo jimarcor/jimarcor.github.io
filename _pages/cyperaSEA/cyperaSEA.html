@@ -510,9 +510,9 @@ const colorScale = d3.scaleSequential()
 
 let geojson;
 
-d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
-  .then(world => {
-    geojson = topojson.feature(world, world.objects.countries);
+d3.json("https://raw.githubusercontent.com/tdwg/wgsrpd/master/geojson/level3.geojson")
+  .then(tdwg => {
+    geojson = tdwg;
     const g = mapSvg.append("g");
     g.selectAll("path")
       .data(geojson.features)
@@ -521,7 +521,8 @@ d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
         .attr("d", path)
         .attr("fill", "#eef2f0");
     updateMap();
-  });
+  })
+  .catch(err => console.error("Error cargando TDWG Level 3:", err));
 
 function metricValue(o) {
   if (!o) return 0;
