@@ -47,7 +47,15 @@
   }
   .card h2 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
   .card .hint { font-size: 12px; color: var(--muted); margin: 0 0 12px; }
-  #map svg { width: 100%; height: auto; display: block; }
+#map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #eaf1f5;      /* océano: azul muy claro */
+}
+.bg-layer path {
+  fill: #d0d6d2;            /* vecinos: gris medio */
+}
   .legend {
     display: flex; align-items: center; gap: 8px;
     font-size: 12px; color: var(--muted); margin-top: 8px; flex-wrap: wrap;
@@ -706,7 +714,7 @@ function updateMap() {
       if (expectedSet.has(name)) {
         return v === 0 ? colorScale(0) : colorScale(v);
       }
-      return v === 0 ? "#dfe6e3" : colorScale(v);
+      return v === 0 ? "#f4f7f5" : colorScale(v);
     });
 
   // Leyenda
