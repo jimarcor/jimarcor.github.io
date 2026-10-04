@@ -401,6 +401,26 @@ function computeEndemicSet(genusFilter) {
 }
 
 
+
+//borrar
+
+// ===== DIAGNÓSTICO TEMPORAL GEONUIT =====
+console.log("=== DIAGNÓSTICO GEOUNIT ===");
+console.log("specimensRaw.length:", specimensRaw.length);
+console.log("specimens.length:", specimens.length);
+console.log("specimensRaw[0]:", specimensRaw[0]);
+console.log("columnas de specimens:", Object.keys(specimensRaw[0] || {}));
+console.log("geounits únicos en specimens:",
+  [...new Set(specimens.map(s => s.geounit).filter(Boolean))]);
+console.log("geounits únicos en specimensRaw:",
+  [...new Set(specimensRaw.map(r => r.geounit).filter(Boolean))].slice(0, 20));
+console.log("=== FIN DIAGNÓSTICO ===");
+
+//borrar
+
+
+
+
 // =====================================================================
 // 2) STATE + FILTERS
 // =====================================================================
