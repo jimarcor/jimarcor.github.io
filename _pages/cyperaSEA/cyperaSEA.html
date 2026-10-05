@@ -526,14 +526,33 @@ function filtered() {
   });
 }
 
+// ScientificNames presentes en un geounit (o null si no hay filtro de geounit)
+function sciInGeounit(gu) {
+  if (!gu) return null;
+  const set = new Set();
+  for (const d of distributionRecords) {
+    if (d.geounit === gu) set.add(d.ScientificName);
+  }
+  for (const s of specimens) {
+    if (s.geounit === gu && s.ScientificName) set.add(s.ScientificName);
+  }
+  return set;
+}
+
 // =====================================================================
 // 3) KPIs
 // =====================================================================
 
 function updateKPIs() {
-  const f        = filtered();
-  const nTaxa    = filteredTaxa().length;
-  const nSpecies = filteredTaxa().filter(t => t.Rank === "Species").length;
+  const f = filtered();
+
+  // Taxones filtrados por geounit (si hay uno seleccionado)
+  const guSci   = sciInGeounit(state.geounit);
+  const taxaAll = filteredTaxa();
+  const taxaIn  = guSci ? taxaAll.filter(t => guSci.has(t.ScientificName)) : taxaAll;
+
+  const nTaxa    = taxaIn.length;
+  const nSpecies = taxaIn.filter(t => t.Rank === "Species").length;
 
   // Especímenes reales (con CatalogueNumber)
   const real = f.filter(d => d.hasCatalogue);
@@ -546,12 +565,8 @@ function updateKPIs() {
   const nSpeciesInFilter = speciesSet.size;
 
   // Especies distintas que tienen al menos una foto/secuencia
-  const speciesWithSeq = new Set(
-    real.filter(d => d.hasSeq).map(d => d.ScientificName)
-  );
-  const speciesWithFoto = new Set(
-    real.filter(d => d.hasFoto).map(d => d.ScientificName)
-  );
+  const speciesWithSeq  = new Set(real.filter(d => d.hasSeq).map(d => d.ScientificName));
+  const speciesWithFoto = new Set(real.filter(d => d.hasFoto).map(d => d.ScientificName));
 
   const pct = (n, t) => t === 0 ? "0%" : Math.round((n / t) * 100) + "%";
 
@@ -570,7 +585,6 @@ function updateKPIs() {
 
   d3.select("#kpi-specimens").text(real.length);
 
-  // % de especies (del filtro) que tienen al menos una secuencia/foto
   d3.select("#kpi-seq").text(pct(speciesWithSeq.size, nSpeciesInFilter));
   d3.select("#kpi-foto").text(pct(speciesWithFoto.size, nSpeciesInFilter));
 }
@@ -976,7 +990,12 @@ const byGenus = [...d3.rollup(
   .slice(0, 8);
 drawBarChart("#chart-genus", byGenus, { color: "#2f7d5c" });
 
-  const byRank = [...d3.rollup(taxaForGenus(), v => v.length, d => d.Rank)]
+  const guSci = sciInGeounit(state.geounit);
+  const taxaForRanks = guSci
+    ? taxaForGenus().filter(t => guSci.has(t.ScientificName))
+    : taxaForGenus();
+
+  const byRank = [...d3.rollup(taxaForRanks, v => v.length, d => d.Rank)]
     .map(([key, value]) => ({ key, value }))
     .sort((a, b) => b.value - a.value);
   drawBarChart("#chart-ranks", byRank, { color: "#4a7ba7" });
@@ -1068,10 +1087,15 @@ if (tableState.view === "specimens") {
       };
     });
   } else {
-const f = filtered().filter(d => d.hasCatalogue);
-const specsBySci = d3.group(f, s => s.ScientificName);
+    const f = filtered().filter(d => d.hasCatalogue);
+    const specsBySci = d3.group(f, s => s.ScientificName);
 
-    rows = filteredTaxa().map(t => {
+    const guSci = sciInGeounit(state.geounit);
+    const taxaRows = guSci
+      ? filteredTaxa().filter(t => guSci.has(t.ScientificName))
+      : filteredTaxa();
+
+    rows = taxaRows.map(t => {
       const specs = specsBySci.get(t.ScientificName) || [];
 
       const photoCats = new Set();
