@@ -457,52 +457,58 @@ function filteredTaxa() {
 }
 // Calcula riqueza y endemicidad a partir de distributions
 function computeSpeciesMetrics() {
-  // ¿Qué rank contamos en el mapa?
-  // - Si el filtro de rank es Species/Subspecies/Variety/Forma → ese rank
-  // - Si es Genus, Section o vacío → Species (por defecto)
-  const COUNT_RANKS = new Set(["Species", "Subspecies", "Variety", "Forma"]);
-  const countRank = COUNT_RANKS.has(state.rank) ? state.rank : "Species";
+  const countableRanks = new Set([
+    "Species", "Subspecies", "Variety", "Forma", "Genus", "Section"
+  ]);
+  const countRank = countableRanks.has(state.rank) ? state.rank : "Species";
 
-  const allowedSci = new Set(
-    filteredTaxa()
-      .filter(t => t.Rank === countRank)
-      .map(t => t.ScientificName)
-  );
-  const fd = distributionRecords.filter(d => allowedSci.has(d.ScientificName));
+  // Definir la "unidad" que se cuenta por cada ScientificName según el rank
+  let unitOf;
+  if (countRank === "Genus") {
+    unitOf = sci => taxonBySci.get(sci)?.Genus ?? null;
+  } else if (countRank === "Section") {
+    unitOf = sci => taxonBySci.get(sci)?.Section ?? null;
+  } else {
+    const allowedSci = new Set(
+      filteredTaxa().filter(t => t.Rank === countRank).map(t => t.ScientificName)
+    );
+    unitOf = sci => allowedSci.has(sci) ? sci : null;
+  }
 
-  // Riqueza por geounit
+  // Distribuciones con la unidad anotada
+  const fd = distributionRecords
+    .map(d => ({ geounit: d.geounit, sci: d.ScientificName, unit: unitOf(d.ScientificName) }))
+    .filter(d => d.unit != null);
+
+  // Riqueza por geounit = nº de unidades distintas
   const richByGU = d3.rollup(
     fd,
-    v => new Set(v.map(d => d.ScientificName)).size,
+    v => new Set(v.map(d => d.unit)).size,
     d => d.geounit
   );
 
-  // Endemicidad: taxones del rank elegido presentes en un único geounit
+  // Endemicidad: unidades que aparecen en un único geounit (restringido al género actual)
   const genusSubset = state.genus
-    ? distributionRecords.filter(d => {
-        const t = taxonBySci.get(d.ScientificName);
-        return t && t.Genus === state.genus && t.Rank === countRank;
-      })
-    : distributionRecords.filter(
-        d => taxonBySci.get(d.ScientificName)?.Rank === countRank
-      );
+    ? fd.filter(d => taxonBySci.get(d.sci)?.Genus === state.genus)
+    : fd;
 
-  const speciesRange = d3.rollup(
+  const unitRange = d3.rollup(
     genusSubset,
     v => new Set(v.map(d => d.geounit)).size,
-    d => d.ScientificName
+    d => d.unit
   );
   const endemicSet = new Set(
-    [...speciesRange].filter(([_, n]) => n === 1).map(([sci]) => sci)
+    [...unitRange].filter(([_, n]) => n === 1).map(([u]) => u)
   );
 
+  // Nº de unidades endémicas por geounit
   const endemicByGU = d3.rollup(
-    fd.filter(d => endemicSet.has(d.ScientificName)),
-    v => new Set(v.map(d => d.ScientificName)).size,
+    fd.filter(d => endemicSet.has(d.unit)),
+    v => new Set(v.map(d => d.unit)).size,
     d => d.geounit
   );
 
-  return { richByGU, endemicByGU, endemicSet };
+  return { richByGU, endemicByGU, endemicSet, countRank, unitOf };
 }
 
 function taxaForGenus() {
@@ -777,10 +783,18 @@ if (state.metric === "richness" || state.metric === "endemicity") {
   d3.select("#legend-max").text(maxVal);
 
   // Título y hint
-  const countRank = ["Species", "Subspecies", "Variety", "Forma"].includes(state.rank)
-    ? state.rank
-    : "Species";
-  const rankLabel = countRank + (countRank === "Species" ? "" : "s");
+const countableRanks = ["Species", "Subspecies", "Variety", "Forma", "Genus", "Section"];
+const countRank = countableRanks.includes(state.rank) ? state.rank : "Species";
+
+const pluralMap = {
+  Species: "Species",
+  Subspecies: "Subspecies",
+  Variety: "Varieties",
+  Forma: "Formae",
+  Genus: "Genera",
+  Section: "Sections"
+};
+const rankLabel = pluralMap[countRank] || "Species";
 
   const metricLabel = {
     specimens:    `${rankLabel} with specimens`,
@@ -822,7 +836,7 @@ mapSvg.on("mousemove", (event) => {
   }
   const guName = t.__data__.properties.LEVEL3_NAM;
 
-const { richByGU, endemicByGU, endemicSet } = computeSpeciesMetrics();
+const { richByGU, endemicByGU, endemicSet, unitOf } = computeSpeciesMetrics();
 const real  = filtered().filter(d => d.geounit === guName && d.hasCatalogue);
 const total = real.length;
 const foto  = real.filter(d => d.hasFoto).length;
@@ -834,8 +848,8 @@ const seq   = real.filter(d => d.hasSeq).length;
     html += `Species: <b>${richByGU.get(guName) || 0}</b>`;
   } else if (state.metric === "endemicity") {
     const endemics = distributionRecords
-      .filter(d => d.geounit === guName && endemicSet.has(d.ScientificName))
-      .map(d => d.ScientificName);
+  .filter(d => d.geounit === guName && endemicSet.has(unitOf(d.ScientificName)))
+  .map(d => d.ScientificName);
     html += `Endemic species: <b>${endemicByGU.get(guName) || 0}</b><br>`;
     if (endemics.length) {
       html += `<span style="color:#2f7d5c;">${endemics.slice(0, 5).join(", ")}</span>`;
