@@ -179,6 +179,18 @@
     </div>
   </div>
 
+<!-- Row 0: suprageneric filters -->
+<div class="filters">
+  <label>Subfamily</label>
+  <select id="f-subfamily"><option value="">All</option></select>
+
+  <label>Tribe</label>
+  <select id="f-tribe"><option value="">All</option></select>
+
+  <label>Subtribe</label>
+  <select id="f-subtribe"><option value="">All</option></select>
+</div>
+
   <!-- Row 1: taxonomic filters -->
   <div class="filters">
     <label>Genus</label>
@@ -406,25 +418,26 @@ console.log("geounits:", geounits.length, geounits);
 // =====================================================================
 
 const state = {
+  subfamily: "",
+  tribe: "",
+  subtribe: "",
   genus: "",
-  rank: "",
   section: "",
+  rank: "",
   geounit: "",
   species: "",
   metric: "richness"
 };
 
+const subfamilySel = d3.select("#f-subfamily");
+const tribeSel     = d3.select("#f-tribe");
+const subtribeSel  = d3.select("#f-subtribe");
 const genusSel   = d3.select("#f-genus");
 const rankSel    = d3.select("#f-rank");
 const geoSel     = d3.select("#f-geounit");
 const speciesSel = d3.select("#f-species");
 const metricSel  = d3.select("#f-metric");
 const sectionSel = d3.select("#f-section");
-
-const allGenera = [...new Set(taxonomy.map(t => t.Genus).filter(Boolean))].sort();
-genusSel.selectAll("option").data(["", ...allGenera]).join("option")
-  .attr("value", d => d).text(d => d === "" ? "All" : d);
-genusSel.property("value", "");
 
 geoSel.selectAll("option").data(["", ...geounits]).join("option")
   .attr("value", d => d).text(d => d === "" ? "All" : d);
@@ -473,14 +486,83 @@ function rebuildSectionSelector() {
   state.section = "";
   sectionSel.property("value", "");
 }
-rebuildSpeciesSelector();
-rebuildSectionSelector();
+// Reconstruye todos los selectores dependientes en cascada
+function rebuildAllSelectors() {
+  // 1) Subfamily (sin filtro arriba, todas las opciones)
+  const subfamilies = [...new Set(
+    taxonomy.map(t => t.Subfamily).filter(Boolean)
+  )].sort();
+
+  subfamilySel.selectAll("option").remove();
+  subfamilySel.append("option").attr("value", "").text("All");
+  subfamilySel.selectAll("option.sf")
+    .data(subfamilies).join("option")
+      .attr("class", "sf").attr("value", d => d).text(d => d);
+  if (state.subfamily && !subfamilies.includes(state.subfamily)) state.subfamily = "";
+  subfamilySel.property("value", state.subfamily);
+
+  // 2) Tribe (filtrada por Subfamily)
+  const tribes = [...new Set(
+    taxonomy
+      .filter(t => !state.subfamily || t.Subfamily === state.subfamily)
+      .map(t => t.Tribe).filter(Boolean)
+  )].sort();
+
+  tribeSel.selectAll("option").remove();
+  tribeSel.append("option").attr("value", "").text("All");
+  tribeSel.selectAll("option.tr")
+    .data(tribes).join("option")
+      .attr("class", "tr").attr("value", d => d).text(d => d);
+  if (state.tribe && !tribes.includes(state.tribe)) state.tribe = "";
+  tribeSel.property("value", state.tribe);
+
+  // 3) Subtribe (filtrada por Subfamily + Tribe)
+  const subtribes = [...new Set(
+    taxonomy
+      .filter(t => !state.subfamily || t.Subfamily === state.subfamily)
+      .filter(t => !state.tribe || t.Tribe === state.tribe)
+      .map(t => t.Subtribe).filter(Boolean)
+  )].sort();
+
+  subtribeSel.selectAll("option").remove();
+  subtribeSel.append("option").attr("value", "").text("All");
+  subtribeSel.selectAll("option.st")
+    .data(subtribes).join("option")
+      .attr("class", "st").attr("value", d => d).text(d => d);
+  if (state.subtribe && !subtribes.includes(state.subtribe)) state.subtribe = "";
+  subtribeSel.property("value", state.subtribe);
+
+  // 4) Genus (filtrado por los tres supragenericos)
+  const genera = [...new Set(
+    taxonomy
+      .filter(t => !state.subfamily || t.Subfamily === state.subfamily)
+      .filter(t => !state.tribe     || t.Tribe === state.tribe)
+      .filter(t => !state.subtribe  || t.Subtribe === state.subtribe)
+      .map(t => t.Genus).filter(Boolean)
+  )].sort();
+
+  genusSel.selectAll("option").remove();
+  genusSel.append("option").attr("value", "").text("All");
+  genusSel.selectAll("option.g")
+    .data(genera).join("option")
+      .attr("class", "g").attr("value", d => d).text(d => d);
+  if (state.genus && !genera.includes(state.genus)) state.genus = "";
+  genusSel.property("value", state.genus);
+
+  // 5) Species y Section (ya filtradas por genus dentro de sus funciones)
+  rebuildSpeciesSelector();
+  rebuildSectionSelector();
+}
+rebuildAllSelectors();
 
 function filteredTaxa() {
   return taxonomy.filter(t => {
-    if (state.genus && t.Genus !== state.genus) return false;
-    if (state.rank && t.Rank !== state.rank) return false;
-    if (state.species && t.ScientificName !== state.species) return false;
+    if (state.subfamily && t.Subfamily !== state.subfamily) return false;
+    if (state.tribe     && t.Tribe     !== state.tribe)     return false;
+    if (state.subtribe  && t.Subtribe  !== state.subtribe)  return false;
+    if (state.genus     && t.Genus     !== state.genus)     return false;
+    if (state.rank      && t.Rank      !== state.rank)      return false;
+    if (state.species   && t.ScientificName !== state.species) return false;
     if (state.section) {
       const [g, s] = state.section.split("|");
       if (t.Genus !== g || t.Section !== s) return false;
@@ -561,9 +643,13 @@ function filtered() {
   );
 
   return specimens.filter(sp => {
-    if (state.genus && sp.Genus !== state.genus) return false;
-    if (state.geounit && sp.geounit !== state.geounit) return false;
-    if (state.species && sp.ScientificName !== state.species) return false;
+    const taxon = taxonBySci.get(sp.ScientificName);
+    if (state.subfamily && taxon?.Subfamily !== state.subfamily) return false;
+    if (state.tribe     && taxon?.Tribe     !== state.tribe)     return false;
+    if (state.subtribe  && taxon?.Subtribe  !== state.subtribe)  return false;
+    if (state.genus     && sp.Genus !== state.genus) return false;
+    if (state.geounit   && sp.geounit !== state.geounit) return false;
+    if (state.species   && sp.ScientificName !== state.species) return false;
     if (state.section) {
       const [g, s] = state.section.split("|");
       if (sp.Genus !== g || sp.Section !== s) return false;
@@ -1290,12 +1376,37 @@ d3.select("#next-page").on("click", () => {
 // 7) GLOBAL EVENTS
 // =====================================================================
 
+subfamilySel.on("change", e => {
+  state.subfamily = e.target.value;
+  state.tribe = "";
+  state.subtribe = "";
+  state.genus = "";
+  rebuildAllSelectors();
+  redraw();
+});
+
+tribeSel.on("change", e => {
+  state.tribe = e.target.value;
+  state.subtribe = "";
+  state.genus = "";
+  rebuildAllSelectors();
+  redraw();
+});
+
+subtribeSel.on("change", e => {
+  state.subtribe = e.target.value;
+  state.genus = "";
+  rebuildAllSelectors();
+  redraw();
+});
+
 genusSel.on("change", e => {
   state.genus = e.target.value;
   rebuildSpeciesSelector();
   rebuildSectionSelector();
   redraw();
 });
+
 sectionSel.on("change", e => {
   state.section = e.target.value;
   redraw();
