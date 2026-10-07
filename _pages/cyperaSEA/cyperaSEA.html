@@ -179,7 +179,34 @@
     </div>
   </div>
 
-<!-- Row 0: suprageneric filters -->
+<!-- Row 1 -->
+<div class="filters">
+  <label>Map metric</label>
+  <select id="f-metric">
+    <option value="richness" selected>Species richness</option>
+    <option value="endemicity">Regional species endemicity</option>
+    <option value="specimens">Species with specimens</option>
+    <option value="photos">Species with photo</option>
+    <option value="sequences">Species with sequence</option>
+    <option value="completeness">Species completeness (0–3)</option>
+  </select>
+
+  <label>Rank</label>
+  <select id="f-rank">
+    <option value="">All</option>
+    <option>Genus</option>
+    <option>Section</option>
+    <option>Species</option>
+    <option>Subspecies</option>
+    <option>Variety</option>
+    <option>Forma</option>
+  </select>
+
+  <label>Geounit</label>
+  <select id="f-geounit"><option value="">All</option></select>
+</div>
+
+  <!-- Row 2: taxonomic filters -->
 <div class="filters">
   <label>Subfamily</label>
   <select id="f-subfamily"><option value="">All</option></select>
@@ -189,46 +216,16 @@
 
   <label>Subtribe</label>
   <select id="f-subtribe"><option value="">All</option></select>
+
+  <label>Genus</label>
+  <select id="f-genus"></select>
+
+  <label>Section</label>
+  <select id="f-section"><option value="">All</option></select>
+
+  <label>Species</label>
+  <select id="f-species"><option value="">All</option></select>
 </div>
-
-  <!-- Row 1: taxonomic filters -->
-  <div class="filters">
-    <label>Genus</label>
-    <select id="f-genus"></select>
-    <label>Section</label>
-    <select id="f-section">
-    <option value="">All</option>
-  </select>
-    <label>Rank</label>
-    <select id="f-rank">
-      <option value="">All</option>
-      <option>Genus</option>
-      <option>Section</option>
-      <option>Species</option>
-      <option>Subspecies</option>
-      <option>Variety</option>
-      <option>Forma</option>
-    </select>
-    <label>Geounit</label>
-    <select id="f-geounit"><option value="">All</option></select>
-  </div>
-
-  <!-- Row 2: species + metric -->
-  <div class="filters">
-    <label>Species</label>
-    <select id="f-species">
-      <option value="">All</option>
-    </select>
-    <label>Map metric</label>
-<select id="f-metric">
-  <option value="richness" selected>Species richness</option>
-  <option value="endemicity">Regional species endemicity</option>
-  <option value="specimens">Species with specimens</option>
-  <option value="photos">Species with photo</option>
-  <option value="sequences">Species with sequence</option>
-  <option value="completeness">Species completeness (0–3)</option>
-</select>
-  </div>
 
   <div class="grid-2">
 
