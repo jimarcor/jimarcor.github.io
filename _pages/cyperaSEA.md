@@ -2,7 +2,7 @@
 layout: single
 title: 
 permalink: /cyperaSEA/
-author_profile: true
+author_profile: false
 ---
 
 <iframe id="miFrame"
