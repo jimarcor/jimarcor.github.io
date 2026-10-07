@@ -184,6 +184,10 @@
   <div class="filters">
     <label>Genus</label>
     <select id="f-genus"></select>
+    <label>Section</label>
+    <select id="f-section">
+    <option value="">All</option>
+  </select>
     <label>Rank</label>
     <select id="f-rank">
       <option value="">All</option>
@@ -405,6 +409,7 @@ console.log("geounits:", geounits.length, geounits);
 const state = {
   genus: "",
   rank: "",
+  section: "",
   geounit: "",
   species: "",
   metric: "richness"
@@ -415,6 +420,7 @@ const rankSel    = d3.select("#f-rank");
 const geoSel     = d3.select("#f-geounit");
 const speciesSel = d3.select("#f-species");
 const metricSel  = d3.select("#f-metric");
+const sectionSel = d3.select("#f-section");
 
 const allGenera = [...new Set(taxonomy.map(t => t.Genus).filter(Boolean))].sort();
 genusSel.selectAll("option").data(["", ...allGenera]).join("option")
@@ -445,14 +451,40 @@ function rebuildSpeciesSelector() {
   }
   speciesSel.property("value", state.species);
 }
+
+function rebuildSectionSelector() {
+  const sections = [...new Set(
+    taxonomy
+      .filter(t => !state.genus || t.Genus === state.genus)
+      .map(t => t.Section)
+      .filter(Boolean)
+  )].sort();
+
+  sectionSel.selectAll("option").remove();
+  sectionSel.append("option").attr("value", "").text("All");
+  sectionSel.selectAll("option.s")
+    .data(sections).join("option")
+      .attr("class", "s")
+      .attr("value", d => d).text(d => d);
+
+  if (state.section && !sections.includes(state.section)) {
+    state.section = "";
+  }
+  sectionSel.property("value", state.section);
+}
 rebuildSpeciesSelector();
+rebuildSectionSelector();
 
 function filteredTaxa() {
-  return taxonomy.filter(t => {
-    if (state.genus && t.Genus !== state.genus) return false;
-    if (state.rank && t.Rank !== state.rank) return false;
-    if (state.species && t.ScientificName !== state.species) return false;
-    return true;
+  return specimens.filter(sp => {
+    if (state.genus && sp.Genus !== state.genus) return false;
+    if (state.geounit && sp.geounit !== state.geounit) return false;
+    if (state.species && sp.ScientificName !== state.species) return false;
+    if (state.section && sp.Section !== state.section) return false;
+    if (!state.rank) return true;
+    if (state.rank === "Genus")   return allowedGenera.has(sp.Genus);
+    if (state.rank === "Section") return allowedSections.has(sp.Section);
+    return allowedIDs.has(sp.AphiaID);
   });
 }
 // Calcula riqueza y endemicidad a partir de distributions
@@ -1256,6 +1288,11 @@ d3.select("#next-page").on("click", () => {
 genusSel.on("change", e => {
   state.genus = e.target.value;
   rebuildSpeciesSelector();
+  rebuildSectionSelector();
+  redraw();
+});
+sectionSel.on("change", e => {
+  state.section = e.target.value;
   redraw();
 });
 rankSel.on("change",  e => { state.rank    = e.target.value; redraw(); });
