@@ -5,6 +5,15 @@ permalink: /cyperaSEA/
 author_profile: false
 ---
 
+<style>
+  #main, .page, .page__inner-wrap, .page__content {
+    max-width: 1400px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+</style>
+
 <iframe id="miFrame"
         src="/_pages/cyperaSEA/cyperaSEA.html"
         style="width:100%; border:0; display:block; overflow:hidden;"
