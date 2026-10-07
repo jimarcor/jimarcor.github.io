@@ -53,7 +53,6 @@
   stroke: #ffffff;
   stroke-width: 0.6;
 }
-}
   .legend {
     display: flex; align-items: center; gap: 8px;
     font-size: 12px; color: var(--muted); margin-top: 8px; flex-wrap: wrap;
@@ -453,38 +452,40 @@ function rebuildSpeciesSelector() {
 }
 
 function rebuildSectionSelector() {
-  const sections = [...new Set(
+  const items = [...new Map(
     taxonomy
+      .filter(t => t.Section)
       .filter(t => !state.genus || t.Genus === state.genus)
-      .map(t => t.Section)
-      .filter(Boolean)
-  )].sort();
+      .map(t => {
+        const key = `${t.Genus}|${t.Section}`;
+        return [key, { value: key, label: `${t.Genus} sect. ${t.Section}` }];
+      })
+  ).values()].sort((a, b) => a.label.localeCompare(b.label));
 
   sectionSel.selectAll("option").remove();
   sectionSel.append("option").attr("value", "").text("All");
   sectionSel.selectAll("option.s")
-    .data(sections).join("option")
+    .data(items).join("option")
       .attr("class", "s")
-      .attr("value", d => d).text(d => d);
+      .attr("value", d => d.value)
+      .text(d => d.label);
 
-  if (state.section && !sections.includes(state.section)) {
-    state.section = "";
-  }
-  sectionSel.property("value", state.section);
+  state.section = "";
+  sectionSel.property("value", "");
 }
 rebuildSpeciesSelector();
 rebuildSectionSelector();
 
 function filteredTaxa() {
-  return specimens.filter(sp => {
-    if (state.genus && sp.Genus !== state.genus) return false;
-    if (state.geounit && sp.geounit !== state.geounit) return false;
-    if (state.species && sp.ScientificName !== state.species) return false;
-    if (state.section && sp.Section !== state.section) return false;
-    if (!state.rank) return true;
-    if (state.rank === "Genus")   return allowedGenera.has(sp.Genus);
-    if (state.rank === "Section") return allowedSections.has(sp.Section);
-    return allowedIDs.has(sp.AphiaID);
+  return taxonomy.filter(t => {
+    if (state.genus && t.Genus !== state.genus) return false;
+    if (state.rank && t.Rank !== state.rank) return false;
+    if (state.species && t.ScientificName !== state.species) return false;
+    if (state.section) {
+      const [g, s] = state.section.split("|");
+      if (t.Genus !== g || t.Section !== s) return false;
+    }
+    return true;
   });
 }
 // Calcula riqueza y endemicidad a partir de distributions
@@ -563,6 +564,10 @@ function filtered() {
     if (state.genus && sp.Genus !== state.genus) return false;
     if (state.geounit && sp.geounit !== state.geounit) return false;
     if (state.species && sp.ScientificName !== state.species) return false;
+    if (state.section) {
+      const [g, s] = state.section.split("|");
+      if (sp.Genus !== g || sp.Section !== s) return false;
+    }
     if (!state.rank) return true;
     if (state.rank === "Genus")   return allowedGenera.has(sp.Genus);
     if (state.rank === "Section") return allowedSections.has(sp.Section);
