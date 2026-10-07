@@ -457,10 +457,15 @@ function filteredTaxa() {
 }
 // Calcula riqueza y endemicidad a partir de distributions
 function computeSpeciesMetrics() {
-  // Solo contamos taxones con Rank === "Species"
+  // ¿Qué rank contamos en el mapa?
+  // - Si el filtro de rank es Species/Subspecies/Variety/Forma → ese rank
+  // - Si es Genus, Section o vacío → Species (por defecto)
+  const COUNT_RANKS = new Set(["Species", "Subspecies", "Variety", "Forma"]);
+  const countRank = COUNT_RANKS.has(state.rank) ? state.rank : "Species";
+
   const allowedSci = new Set(
     filteredTaxa()
-      .filter(t => t.Rank === "Species")
+      .filter(t => t.Rank === countRank)
       .map(t => t.ScientificName)
   );
   const fd = distributionRecords.filter(d => allowedSci.has(d.ScientificName));
@@ -472,13 +477,15 @@ function computeSpeciesMetrics() {
     d => d.geounit
   );
 
-  // Endemicidad: especies presentes en un único geounit (dentro del género actual)
+  // Endemicidad: taxones del rank elegido presentes en un único geounit
   const genusSubset = state.genus
     ? distributionRecords.filter(d => {
         const t = taxonBySci.get(d.ScientificName);
-        return t && t.Genus === state.genus && t.Rank === "Species";
+        return t && t.Genus === state.genus && t.Rank === countRank;
       })
-    : distributionRecords.filter(d => taxonBySci.get(d.ScientificName)?.Rank === "Species");
+    : distributionRecords.filter(
+        d => taxonBySci.get(d.ScientificName)?.Rank === countRank
+      );
 
   const speciesRange = d3.rollup(
     genusSubset,
@@ -489,7 +496,6 @@ function computeSpeciesMetrics() {
     [...speciesRange].filter(([_, n]) => n === 1).map(([sci]) => sci)
   );
 
-  // Especies endémicas por geounit
   const endemicByGU = d3.rollup(
     fd.filter(d => endemicSet.has(d.ScientificName)),
     v => new Set(v.map(d => d.ScientificName)).size,
@@ -771,13 +777,18 @@ if (state.metric === "richness" || state.metric === "endemicity") {
   d3.select("#legend-max").text(maxVal);
 
   // Título y hint
+  const countRank = ["Species", "Subspecies", "Variety", "Forma"].includes(state.rank)
+    ? state.rank
+    : "Species";
+  const rankLabel = countRank + (countRank === "Species" ? "" : "s");
+
   const metricLabel = {
-  specimens:    "Species with specimens",
-  photos:       "Species with photo",
-  sequences:    "Species with sequence",
-  completeness: "Species completeness (0–3)",
-  richness:     "Species richness",
-  endemicity:   "Species regional endemicity",
+    specimens:    `${rankLabel} with specimens`,
+    photos:       `${rankLabel} with photo`,
+    sequences:    `${rankLabel} with sequence`,
+    completeness: `${rankLabel} completeness (0–3)`,
+    richness:     `${rankLabel} richness`,
+    endemicity:   `${rankLabel} regional endemicity`,
   }[state.metric];
 
   const titleEl = d3.select("#map-title");
