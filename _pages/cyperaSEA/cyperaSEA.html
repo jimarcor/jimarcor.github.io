@@ -651,38 +651,6 @@ function taxaForGenus() {
   });
 }
 
-function filtered() {
-  const allowedIDs = new Set(filteredTaxa().map(t => t.AphiaID));
-  const allowedGenera = new Set(
-    filteredTaxa().filter(t => t.Rank === "Genus").map(t => t.ScientificName)
-  );
-  const allowedSections = new Set(
-    filteredTaxa().filter(t => t.Rank === "Section").map(t => t.Section)
-  );
-
-  return specimens.filter(sp => {
-    const taxon = taxonBySci.get(sp.ScientificName);
-
-    // Solo taxones aceptados
-    if (!taxon || taxon.Status !== "accepted") return false;
-
-    if (state.subfamily && taxon.Subfamily !== state.subfamily) return false;
-    if (state.tribe     && taxon.Tribe     !== state.tribe)     return false;
-    if (state.subtribe  && taxon.Subtribe  !== state.subtribe)  return false;
-    if (state.genus     && sp.Genus !== state.genus) return false;
-    if (state.geounit   && sp.geounit !== state.geounit) return false;
-    if (state.species   && sp.ScientificName !== state.species) return false;
-    if (state.section) {
-      const [g, s] = state.section.split("|");
-      if (sp.Genus !== g || sp.Section !== s) return false;
-    }
-    if (!state.rank) return true;
-    if (state.rank === "Genus")   return allowedGenera.has(sp.Genus);
-    if (state.rank === "Section") return allowedSections.has(sp.Section);
-    return allowedIDs.has(sp.AphiaID);
-  });
-}
-
 // ScientificNames presentes en un geounit (o null si no hay filtro de geounit)
 function sciInGeounit(gu) {
   if (!gu) return null;
