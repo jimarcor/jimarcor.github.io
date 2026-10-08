@@ -658,6 +658,21 @@ function computeSpeciesMetrics() {
     d => d.geounit
   );
 
+
+
+  console.log("=== computeSpeciesMetrics ===");
+  console.log("state.genus:", state.genus, "| state.rank:", state.rank);
+  console.log("countRank:", countRank);
+  console.log("acceptedSci.size:", acceptedSci.size);
+  console.log("distributionRecords.length:", distributionRecords.length);
+  console.log("fd.length:", fd.length);
+  console.log("richByGU.size:", richByGU.size);
+  console.log("richByGU primeros 5:", [...richByGU.entries()].slice(0, 5));
+  console.log("endemicByGU.size:", endemicByGU.size);
+  console.log("=============================");
+  
+  
+  
   return { richByGU, endemicByGU, endemicSet, countRank, unitOf };
 }
 
