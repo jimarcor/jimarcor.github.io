@@ -614,7 +614,12 @@ function computeSpeciesMetrics() {
     .filter(t => !state.tribe     || t.Tribe     === state.tribe)
     .filter(t => !state.subtribe  || t.Subtribe  === state.subtribe)
     .filter(t => !state.genus     || t.Genus     === state.genus)
-    .filter(t => !state.species   || t.ScientificName === state.species);
+    .filter(t => !state.species   || t.ScientificName === state.species)
+    .filter(t => {
+      if (!state.section) return true;
+      const [g, s] = state.section.split("|");
+      return t.Genus === g && t.Section === s;
+    });
 
   // Set de ScientificName para el rank que se está contando
   const acceptedSci = new Set(
@@ -660,7 +665,6 @@ function computeSpeciesMetrics() {
   );
 
   // Endemicidad: unidades presentes en un único geounit
-  // (ya no hace falta genusSubset porque fd ya respeta el filtro de género)
   const unitRange = d3.rollup(
     fd,
     v => new Set(v.map(d => d.geounit)).size,
@@ -675,6 +679,23 @@ function computeSpeciesMetrics() {
     v => new Set(v.map(d => d.unit)).size,
     d => d.geounit
   );
+
+  // ===== LOG TEMPORAL =====
+  console.log("=== computeSpeciesMetrics ===");
+  console.log("subfamily:", state.subfamily, "| tribe:", state.tribe,
+              "| subtribe:", state.subtribe, "| genus:", state.genus,
+              "| section:", state.section, "| rank:", state.rank);
+  console.log("acceptedTaxa.length:", acceptedTaxa.length);
+  console.log("acceptedSci.size:", acceptedSci.size);
+  console.log("fd.length:", fd.length);
+  console.log("richByGU.size:", richByGU.size, "| endemicByGU.size:", endemicByGU.size);
+  console.log("endemicSet.size:", endemicSet.size);
+  console.log("primera tribu en taxonomy:", taxonomy.find(t => t.Tribe)?.Tribe);
+  console.log("=============================");
+  // ===== FIN LOG =====
+
+  return { richByGU, endemicByGU, endemicSet, countRank, unitOf };
+}
 
   return { richByGU, endemicByGU, endemicSet, countRank, unitOf };
 }
