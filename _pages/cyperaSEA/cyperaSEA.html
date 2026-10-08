@@ -607,25 +607,47 @@ function computeSpeciesMetrics() {
   ]);
   const countRank = countableRanks.has(state.rank) ? state.rank : "Species";
 
-  // Solo taxones aceptados entran al cálculo
+  // Taxones aceptados que pasan TODOS los filtros taxonómicos
+  const acceptedTaxa = taxonomy
+    .filter(t => t.Status === "accepted")
+    .filter(t => !state.subfamily || t.Subfamily === state.subfamily)
+    .filter(t => !state.tribe     || t.Tribe     === state.tribe)
+    .filter(t => !state.subtribe  || t.Subtribe  === state.subtribe)
+    .filter(t => !state.genus     || t.Genus     === state.genus)
+    .filter(t => !state.species   || t.ScientificName === state.species);
+
+  // Set de ScientificName para el rank que se está contando
   const acceptedSci = new Set(
-    taxonomy
-      .filter(t => t.Status === "accepted")
+    acceptedTaxa
       .filter(t => t.Rank === countRank)
       .map(t => t.ScientificName)
   );
 
+  // unitOf decide qué "unidad" representa cada ScientificName en el mapa
   let unitOf;
   if (countRank === "Genus") {
-    unitOf = sci => taxonBySci.get(sci)?.Status === "accepted"
-      ? taxonBySci.get(sci)?.Genus : null;
+    unitOf = sci => {
+      const t = taxonBySci.get(sci);
+      if (!t || t.Status !== "accepted") return null;
+      if (state.subfamily && t.Subfamily !== state.subfamily) return null;
+      if (state.tribe     && t.Tribe     !== state.tribe)     return null;
+      if (state.subtribe  && t.Subtribe  !== state.subtribe)  return null;
+      return t.Genus;
+    };
   } else if (countRank === "Section") {
-    unitOf = sci => taxonBySci.get(sci)?.Status === "accepted"
-      ? taxonBySci.get(sci)?.Section : null;
+    unitOf = sci => {
+      const t = taxonBySci.get(sci);
+      if (!t || t.Status !== "accepted") return null;
+      if (state.subfamily && t.Subfamily !== state.subfamily) return null;
+      if (state.tribe     && t.Tribe     !== state.tribe)     return null;
+      if (state.subtribe  && t.Subtribe  !== state.subtribe)  return null;
+      return t.Section;
+    };
   } else {
     unitOf = sci => acceptedSci.has(sci) ? sci : null;
   }
 
+  // Distribuciones con la unidad anotada
   const fd = distributionRecords
     .map(d => ({ geounit: d.geounit, sci: d.ScientificName, unit: unitOf(d.ScientificName) }))
     .filter(d => d.unit != null);
@@ -637,13 +659,10 @@ function computeSpeciesMetrics() {
     d => d.geounit
   );
 
-  // Endemicidad: unidades que aparecen en un único geounit (restringido al género actual)
-  const genusSubset = state.genus
-    ? fd.filter(d => taxonBySci.get(d.sci)?.Genus === state.genus)
-    : fd;
-
+  // Endemicidad: unidades presentes en un único geounit
+  // (ya no hace falta genusSubset porque fd ya respeta el filtro de género)
   const unitRange = d3.rollup(
-    genusSubset,
+    fd,
     v => new Set(v.map(d => d.geounit)).size,
     d => d.unit
   );
@@ -651,28 +670,12 @@ function computeSpeciesMetrics() {
     [...unitRange].filter(([_, n]) => n === 1).map(([u]) => u)
   );
 
-  // Nº de unidades endémicas por geounit
   const endemicByGU = d3.rollup(
     fd.filter(d => endemicSet.has(d.unit)),
     v => new Set(v.map(d => d.unit)).size,
     d => d.geounit
   );
 
-
-
-  console.log("=== computeSpeciesMetrics ===");
-  console.log("state.genus:", state.genus, "| state.rank:", state.rank);
-  console.log("countRank:", countRank);
-  console.log("acceptedSci.size:", acceptedSci.size);
-  console.log("distributionRecords.length:", distributionRecords.length);
-  console.log("fd.length:", fd.length);
-  console.log("richByGU.size:", richByGU.size);
-  console.log("richByGU primeros 5:", [...richByGU.entries()].slice(0, 5));
-  console.log("endemicByGU.size:", endemicByGU.size);
-  console.log("=============================");
-  
-  
-  
   return { richByGU, endemicByGU, endemicSet, countRank, unitOf };
 }
 
