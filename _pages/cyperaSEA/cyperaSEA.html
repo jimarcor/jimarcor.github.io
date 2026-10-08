@@ -554,6 +554,7 @@ rebuildAllSelectors();
 
 function filteredTaxa() {
   return taxonomy.filter(t => {
+    if (t.Status !== "accepted") return false;          // ← NUEVO
     if (state.subfamily && t.Subfamily !== state.subfamily) return false;
     if (state.tribe     && t.Tribe     !== state.tribe)     return false;
     if (state.subtribe  && t.Subtribe  !== state.subtribe)  return false;
@@ -574,20 +575,25 @@ function computeSpeciesMetrics() {
   ]);
   const countRank = countableRanks.has(state.rank) ? state.rank : "Species";
 
-  // Definir la "unidad" que se cuenta por cada ScientificName según el rank
+  // Solo taxones aceptados entran al cálculo
+  const acceptedSci = new Set(
+    taxonomy
+      .filter(t => t.Status === "accepted")
+      .filter(t => t.Rank === countRank)
+      .map(t => t.ScientificName)
+  );
+
   let unitOf;
   if (countRank === "Genus") {
-    unitOf = sci => taxonBySci.get(sci)?.Genus ?? null;
+    unitOf = sci => taxonBySci.get(sci)?.Status === "accepted"
+      ? taxonBySci.get(sci)?.Genus : null;
   } else if (countRank === "Section") {
-    unitOf = sci => taxonBySci.get(sci)?.Section ?? null;
+    unitOf = sci => taxonBySci.get(sci)?.Status === "accepted"
+      ? taxonBySci.get(sci)?.Section : null;
   } else {
-    const allowedSci = new Set(
-      filteredTaxa().filter(t => t.Rank === countRank).map(t => t.ScientificName)
-    );
-    unitOf = sci => allowedSci.has(sci) ? sci : null;
+    unitOf = sci => acceptedSci.has(sci) ? sci : null;
   }
 
-  // Distribuciones con la unidad anotada
   const fd = distributionRecords
     .map(d => ({ geounit: d.geounit, sci: d.ScientificName, unit: unitOf(d.ScientificName) }))
     .filter(d => d.unit != null);
@@ -641,6 +647,10 @@ function filtered() {
 
   return specimens.filter(sp => {
     const taxon = taxonBySci.get(sp.ScientificName);
+
+    // Solo especímenes cuyo taxón sea "accepted"
+    if (!taxon || taxon.Status !== "accepted") return false;
+
     if (state.subfamily && taxon?.Subfamily !== state.subfamily) return false;
     if (state.tribe     && taxon?.Tribe     !== state.tribe)     return false;
     if (state.subtribe  && taxon?.Subtribe  !== state.subtribe)  return false;
@@ -662,11 +672,15 @@ function filtered() {
 function sciInGeounit(gu) {
   if (!gu) return null;
   const set = new Set();
+  const isAccepted = sci => taxonBySci.get(sci)?.Status === "accepted";
+
   for (const d of distributionRecords) {
-    if (d.geounit === gu) set.add(d.ScientificName);
+    if (d.geounit === gu && isAccepted(d.ScientificName)) set.add(d.ScientificName);
   }
   for (const s of specimens) {
-    if (s.geounit === gu && s.ScientificName) set.add(s.ScientificName);
+    if (s.geounit === gu && s.ScientificName && isAccepted(s.ScientificName)) {
+      set.add(s.ScientificName);
+    }
   }
   return set;
 }
