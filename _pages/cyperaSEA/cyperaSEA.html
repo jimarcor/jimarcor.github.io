@@ -552,6 +552,23 @@ function rebuildAllSelectors() {
 }
 rebuildAllSelectors();
 
+function filteredTaxa() {
+  return taxonomy.filter(t => {
+    if (t.Status !== "accepted") return false;
+    if (state.subfamily && t.Subfamily !== state.subfamily) return false;
+    if (state.tribe     && t.Tribe     !== state.tribe)     return false;
+    if (state.subtribe  && t.Subtribe  !== state.subtribe)  return false;
+    if (state.genus     && t.Genus     !== state.genus)     return false;
+    if (state.rank      && t.Rank      !== state.rank)      return false;
+    if (state.species   && t.ScientificName !== state.species) return false;
+    if (state.section) {
+      const [g, s] = state.section.split("|");
+      if (t.Genus !== g || t.Section !== s) return false;
+    }
+    return true;
+  });
+}
+
 function filtered() {
   const allowedIDs = new Set(filteredTaxa().map(t => t.AphiaID));
   const allowedGenera = new Set(
