@@ -697,9 +697,6 @@ function computeSpeciesMetrics() {
   return { richByGU, endemicByGU, endemicSet, countRank, unitOf };
 }
 
-  return { richByGU, endemicByGU, endemicSet, countRank, unitOf };
-}
-
 function taxaForGenus() {
   return taxonomy.filter(t => {
     if (state.genus && t.Genus !== state.genus) return false;
