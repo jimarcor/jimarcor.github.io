@@ -1625,7 +1625,7 @@ function drawHorizontalBarsNode(svgNode, data, opts = {}) {
     svg.append("text")
       .attr("x", W / 2).attr("y", 50)
       .attr("text-anchor", "middle")
-      .attr("fill", "#999").attr("font-size", 12)
+      .attr("fill", "#999").attr("font-size", 14)
       .text("No data for this filter");
     return;
   }
@@ -1652,7 +1652,7 @@ function drawHorizontalBarsNode(svgNode, data, opts = {}) {
   const g = svg.append("g").attr("transform", `translate(0,${topPad})`);
 
   // --- Gridlines verticales cada 10 unidades ---
-  const ticks = d3.range(0, axisMax + 1, 10);
+  const ticks = d3.range(0, axisMax + 1, 20);
   g.selectAll("line.grid")
     .data(ticks)
     .join("line")
@@ -1664,9 +1664,9 @@ function drawHorizontalBarsNode(svgNode, data, opts = {}) {
       .attr("stroke", "#e3e9e6")
       .attr("stroke-width", 1);
 
-  // Números del eje arriba (para saber qué marca cada línea)
+  // Números del eje arriba (sin el 0)
   g.selectAll("text.tick")
-    .data(ticks)
+    .data(ticks.filter(t => t !== 0))
     .join("text")
       .attr("class", "tick")
       .attr("x", d => leftPad + x(d))
@@ -1719,7 +1719,7 @@ function drawHorizontalBarsNode(svgNode, data, opts = {}) {
       .attr("class", "value")
       .attr("x", d => leftPad + x(d.value) + 6)
       .attr("y", (d, i) => i * (barH + gap) + barH / 2 + 4)
-      .attr("font-size", 11)
+      .attr("font-size", 13)
       .attr("font-weight", 600)
       .attr("fill", "#2f7d5c")
       .text(d => d.value);
