@@ -1529,8 +1529,12 @@ function renderBarChartInContainer(container, data) {
       .text("No data for this filter");
     return;
   }
-  const svg = container.append("svg").style("width", "100%");
-  drawPieChartNode(svg.node(), data);
+  // Scroll vertical si hay muchas filas
+  const wrap = container.append("div")
+    .style("max-height", "340px")
+    .style("overflow-y", "auto");
+  const svg = wrap.append("svg").style("width", "100%");
+  drawHorizontalBarsNode(svg.node(), data);
 }
 
 // Replica de drawBarChart pero trabajando sobre un nodo (en vez de selector)
@@ -1575,22 +1579,87 @@ function drawBarChartNode(svgNode, data, opts = {}) {
     .text(d => d.value);
 }
 
-function drawPieChartNode(svgNode, data, opts = {}) {
+function drawHorizontalBarsNode(svgNode, data, opts = {}) {
   const svg = d3.select(svgNode);
   svg.selectAll("*").remove();
 
-  const W = opts.width || 400;
-  const H = opts.height || 320;
-  svg.attr("viewBox", `0 0 ${W} ${H}`);
+  const barH   = opts.barH || 24;
+  const gap    = 4;
+  const leftPad  = 180;
+  const rightPad = 60;
+  const topPad   = 8;
+  const W = opts.width || 600;
 
   if (!data.length) {
+    svg.attr("viewBox", `0 0 ${W} 100`);
     svg.append("text")
-      .attr("x", W / 2).attr("y", H / 2)
+      .attr("x", W / 2).attr("y", 50)
       .attr("text-anchor", "middle")
       .attr("fill", "#999").attr("font-size", 12)
       .text("No data for this filter");
     return;
   }
+
+  const H = data.length * (barH + gap) + topPad + 8;
+  svg.attr("viewBox", `0 0 ${W} ${H}`);
+  svg.attr("height", H);
+
+  const maxVal = d3.max(data, d => d.value);
+  const iw = W - leftPad - rightPad;
+  const x = d3.scaleLinear().domain([0, maxVal]).range([0, iw]);
+  const color = d3.scaleSequential()
+    .domain([0, maxVal])
+    .interpolator(t => d3.interpolateGreens(0.35 + t * 0.65));
+
+  const g = svg.append("g").attr("transform", `translate(0,${topPad})`);
+
+  // Barras
+  g.selectAll("rect")
+    .data(data)
+    .join("rect")
+      .attr("x", leftPad)
+      .attr("y", (d, i) => i * (barH + gap))
+      .attr("width", d => x(d.value))
+      .attr("height", barH)
+      .attr("rx", 4)
+      .attr("fill", d => color(d.value))
+      .style("cursor", "pointer")
+      .on("mousemove", (event, d) => {
+        tooltip
+          .style("opacity", 1)
+          .style("left", (event.clientX + 12) + "px")
+          .style("top",  (event.clientY + 12) + "px")
+          .html(`<b>${d.key}</b><br>${d.value}`);
+      })
+      .on("mouseleave", () => tooltip.style("opacity", 0));
+
+  // Etiquetas izquierda (nombre)
+  g.selectAll("text.label")
+    .data(data)
+    .join("text")
+      .attr("class", "label")
+      .attr("x", leftPad - 8)
+      .attr("y", (d, i) => i * (barH + gap) + barH / 2 + 4)
+      .attr("text-anchor", "end")
+      .attr("font-size", 12)
+      .attr("fill", "#1f2d2a")
+      .text(d => {
+        const s = String(d.key);
+        return s.length > 26 ? s.slice(0, 25) + "…" : s;
+      });
+
+  // Valores a la derecha
+  g.selectAll("text.value")
+    .data(data)
+    .join("text")
+      .attr("class", "value")
+      .attr("x", d => leftPad + x(d.value) + 6)
+      .attr("y", (d, i) => i * (barH + gap) + barH / 2 + 4)
+      .attr("font-size", 11)
+      .attr("font-weight", 600)
+      .attr("fill", "#2f7d5c")
+      .text(d => d.value);
+}
 
   const radius = Math.min(W, H) / 2 - 30;
   const total  = d3.sum(data, d => d.value);
