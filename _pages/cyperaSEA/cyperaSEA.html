@@ -173,6 +173,29 @@
   font-style: italic;
 }
   
+  
+/* Card del drilldown: ocupa toda la altura de su fila en el grid */
+.drill-card {
+  display: flex;
+  flex-direction: column;
+}
+.drill-card #drill-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.drill-card .drill-scroll {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+.drill-card #drill-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 #map svg { width: 100%; height: auto; display: block; }
 .bg-layer path {
   fill: #d0d6d2;
@@ -383,6 +406,12 @@
     </div>
 
 <div class="card">
+  <h2 id="drill-title">Species per genus</h2>
+  <p class="hint" id="drill-hint">Top 8 genera in the current filter.</p>
+  <div id="drill-container"></div>
+</div>
+
+<div class="card drill-card">
   <h2 id="drill-title">Species per genus</h2>
   <p class="hint" id="drill-hint">Top 8 genera in the current filter.</p>
   <div id="drill-container"></div>
@@ -1529,12 +1558,13 @@ function renderBarChartInContainer(container, data) {
       .text("No data for this filter");
     return;
   }
-  // Scroll vertical si hay muchas filas
-  const wrap = container.append("div")
-    .style("max-height", "340px")
-    .style("overflow-y", "auto");
-  const svg = wrap.append("svg").style("width", "100%");
-  drawHorizontalBarsNode(svg.node(), data);
+
+  // Envoltorio que llena la altura del card (flex)
+  const wrap = container.append("div").attr("class", "drill-scroll");
+  const svg = wrap.append("svg");
+  const h = wrap.node().clientHeight || 400;
+
+  drawHorizontalBarsNode(svg.node(), data, { height: h });
 }
 
 // Replica de drawBarChart pero trabajando sobre un nodo (en vez de selector)
@@ -1583,11 +1613,11 @@ function drawHorizontalBarsNode(svgNode, data, opts = {}) {
   const svg = d3.select(svgNode);
   svg.selectAll("*").remove();
 
-  const barH   = opts.barH || 24;
-  const gap    = 4;
+  const gap      = 4;
   const leftPad  = 180;
   const rightPad = 60;
-  const topPad   = 8;
+  const topPad   = 16;
+  const bottomPad = 8;
   const W = opts.width || 600;
 
   if (!data.length) {
@@ -1600,20 +1630,53 @@ function drawHorizontalBarsNode(svgNode, data, opts = {}) {
     return;
   }
 
-  const H = data.length * (barH + gap) + topPad + 8;
+  // Altura disponible del contenedor → reparte las barras para llenarla
+  const requestedH = opts.height || 400;
+  const availH = requestedH - topPad - bottomPad;
+  const naturalBarH = (availH - data.length * gap) / data.length;
+  const barH = Math.max(16, Math.min(40, naturalBarH));
+  const H = data.length * (barH + gap) + topPad + bottomPad;
+
   svg.attr("viewBox", `0 0 ${W} ${H}`);
   svg.attr("height", H);
 
   const maxVal = d3.max(data, d => d.value);
+  const axisMax = Math.max(10, Math.ceil(maxVal / 10) * 10);
   const iw = W - leftPad - rightPad;
-  const x = d3.scaleLinear().domain([0, maxVal]).range([0, iw]);
+  const x = d3.scaleLinear().domain([0, axisMax]).range([0, iw]);
+
   const color = d3.scaleSequential()
     .domain([0, maxVal])
     .interpolator(t => d3.interpolateGreens(0.35 + t * 0.65));
 
   const g = svg.append("g").attr("transform", `translate(0,${topPad})`);
 
-  // Barras
+  // --- Gridlines verticales cada 10 unidades ---
+  const ticks = d3.range(0, axisMax + 1, 10);
+  g.selectAll("line.grid")
+    .data(ticks)
+    .join("line")
+      .attr("class", "grid")
+      .attr("x1", d => leftPad + x(d))
+      .attr("x2", d => leftPad + x(d))
+      .attr("y1", 0)
+      .attr("y2", data.length * (barH + gap))
+      .attr("stroke", "#e3e9e6")
+      .attr("stroke-width", 1);
+
+  // Números del eje arriba (para saber qué marca cada línea)
+  g.selectAll("text.tick")
+    .data(ticks)
+    .join("text")
+      .attr("class", "tick")
+      .attr("x", d => leftPad + x(d))
+      .attr("y", -4)
+      .attr("text-anchor", "middle")
+      .attr("font-size", 10)
+      .attr("fill", "#6b7c78")
+      .text(d => d);
+
+  // --- Barras ---
   g.selectAll("rect")
     .data(data)
     .join("rect")
@@ -1633,7 +1696,7 @@ function drawHorizontalBarsNode(svgNode, data, opts = {}) {
       })
       .on("mouseleave", () => tooltip.style("opacity", 0));
 
-  // Etiquetas izquierda (nombre)
+  // --- Etiquetas izquierda (cursiva) ---
   g.selectAll("text.label")
     .data(data)
     .join("text")
@@ -1642,13 +1705,14 @@ function drawHorizontalBarsNode(svgNode, data, opts = {}) {
       .attr("y", (d, i) => i * (barH + gap) + barH / 2 + 4)
       .attr("text-anchor", "end")
       .attr("font-size", 12)
+      .attr("font-style", "italic")
       .attr("fill", "#1f2d2a")
       .text(d => {
         const s = String(d.key);
         return s.length > 26 ? s.slice(0, 25) + "…" : s;
       });
 
-  // Valores a la derecha
+  // --- Valores a la derecha ---
   g.selectAll("text.value")
     .data(data)
     .join("text")
