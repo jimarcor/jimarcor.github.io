@@ -225,9 +225,9 @@
 
 <label>Species</label>
 <input type="text" id="f-species" list="species-list"
-       placeholder="All (type to search)"
-       autocomplete="off"
-       style="padding:6px 10px; border-radius:8px; border:1px solid var(--border); font-size:13px; min-width:220px;">
+       placeholder="Type to search"
+       autocomplete="on"
+       style="padding:6px 10px; border-radius:8px; border:1px solid var(--border); font-size:13px; min-width:220px; background:#ffffff; color:var(--text);">
 <datalist id="species-list"></datalist>
 </div>
 
@@ -444,12 +444,11 @@ geoSel.selectAll("option").data(["", ...geounits]).join("option")
 
 function rebuildSpeciesSelector() {
   const candidates = taxonomy
-    .filter(t => t.Rank !== "Genus" && t.Rank !== "Section")
+    .filter(t => ["Species", "Subspecies", "Variety", "Forma"].includes(t.Rank))
     .filter(t => !state.genus || t.Genus === state.genus)
     .map(t => t.ScientificName)
     .sort();
 
-  // Guarda la lista para validar después
   window.__speciesCandidates = new Set(candidates);
 
   const dl = d3.select("#species-list");
@@ -459,7 +458,6 @@ function rebuildSpeciesSelector() {
       .attr("class", "sp")
       .attr("value", d => d);
 
-  // Reset si el actual ya no está en la lista
   if (state.species && !candidates.includes(state.species)) {
     state.species = "";
   }
