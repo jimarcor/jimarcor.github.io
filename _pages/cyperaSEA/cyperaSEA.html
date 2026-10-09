@@ -223,8 +223,12 @@
   <label>Section</label>
   <select id="f-section"><option value="">All</option></select>
 
-  <label>Species</label>
-  <select id="f-species"><option value="">All</option></select>
+<label>Species</label>
+<input type="text" id="f-species" list="species-list"
+       placeholder="All (type to search)"
+       autocomplete="off"
+       style="padding:6px 10px; border-radius:8px; border:1px solid var(--border); font-size:13px; min-width:220px;">
+<datalist id="species-list"></datalist>
 </div>
 
   <div class="grid-2">
@@ -432,7 +436,6 @@ const subtribeSel  = d3.select("#f-subtribe");
 const genusSel   = d3.select("#f-genus");
 const rankSel    = d3.select("#f-rank");
 const geoSel     = d3.select("#f-geounit");
-const speciesSel = d3.select("#f-species");
 const metricSel  = d3.select("#f-metric");
 const sectionSel = d3.select("#f-section");
 
@@ -446,19 +449,21 @@ function rebuildSpeciesSelector() {
     .map(t => t.ScientificName)
     .sort();
 
-  speciesSel.selectAll("option").remove();
-  speciesSel.append("option").attr("value", "").text("All");
-  speciesSel.selectAll("option.species")
-    .data(candidates)
-    .join("option")
-      .attr("class", "species")
-      .attr("value", d => d)
-      .text(d => d);
+  // Guarda la lista para validar después
+  window.__speciesCandidates = new Set(candidates);
 
+  const dl = d3.select("#species-list");
+  dl.selectAll("option").remove();
+  dl.selectAll("option.sp")
+    .data(candidates).join("option")
+      .attr("class", "sp")
+      .attr("value", d => d);
+
+  // Reset si el actual ya no está en la lista
   if (state.species && !candidates.includes(state.species)) {
     state.species = "";
   }
-  speciesSel.property("value", state.species);
+  d3.select("#f-species").property("value", state.species);
 }
 
 function rebuildSectionSelector() {
@@ -1445,7 +1450,27 @@ sectionSel.on("change", e => {
 });
 rankSel.on("change",  e => { state.rank    = e.target.value; redraw(); });
 geoSel.on("change",   e => { state.geounit = e.target.value; redraw(); });
-speciesSel.on("change", e => { state.species = e.target.value; redraw(); });
+const speciesInput = d3.select("#f-species");
+
+speciesInput.on("input", e => {
+  const v = e.target.value.trim();
+  // Solo actualiza el filtro si el valor está vacío o coincide exactamente
+  // con una especie de la lista (evita filtros rotos con texto a medias)
+  if (v === "" || window.__speciesCandidates?.has(v)) {
+    state.species = v;
+    redraw();
+  }
+});
+
+speciesInput.on("blur", e => {
+  const v = e.target.value.trim();
+  if (v !== "" && !window.__speciesCandidates?.has(v)) {
+    // Si el usuario escribió algo que no es una especie válida, resetea
+    e.target.value = "";
+    state.species = "";
+    redraw();
+  }
+});
 metricSel.on("change",  e => { state.metric  = e.target.value; redraw(); });
 
 function redraw() {
