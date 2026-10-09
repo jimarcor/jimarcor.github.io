@@ -1252,6 +1252,16 @@ const rankLabel = pluralMap[countRank] || "Species";
     titleEl.text(`${metricLabel} per geounit`);
     hintEl.text("Hover for breakdown.");
   }
+    // Ajuste de hint según el filtro de Endemism activo
+  if (state.endemism === "single") {
+    hintEl.text(
+      "Single-country endemics: SEA endemic species restricted to a single geounit."
+    );
+  } else if (state.endemism === "regional") {
+    hintEl.text(
+      "Regional endemics: SEA endemic species occurring in more than one geounit."
+    );
+  }
 }
 
 const tooltip = d3.select("#tooltip");
