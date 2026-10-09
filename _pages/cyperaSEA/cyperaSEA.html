@@ -174,26 +174,28 @@
 }
   
   
-/* Card del drilldown: ocupa toda la altura de su fila en el grid */
+/* Card del drilldown: ocupa exactamente la altura del mapa y hace scroll */
 .drill-card {
   display: flex;
   flex-direction: column;
+  overflow: hidden;      /* clave: no deja que el contenido agrande la card */
 }
 .drill-card #drill-container {
   flex: 1;
+  min-height: 0;         /* imprescindible para que flex funcione con scroll */
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  overflow: hidden;
 }
 .drill-card .drill-scroll {
   flex: 1;
-  overflow-y: auto;
   min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-.drill-card #drill-container svg {
-  width: 100%;
-  height: auto;
+.drill-card svg {
   display: block;
+  width: 100%;
 }
 
 #map svg { width: 100%; height: auto; display: block; }
@@ -1114,7 +1116,7 @@ const bgFeatures = tdwg.features.filter(f =>
         .attr("d", path);
 
     updateMap();
-  })
+    syncDrillCardHeight();
   .catch(err => console.error("Error TDWG:", err));
 
 function metricValue(o) {
@@ -1255,11 +1257,11 @@ const rankLabel = pluralMap[countRank] || "Species";
     // Ajuste de hint según el filtro de Endemism activo
   if (state.endemism === "single") {
     hintEl.text(
-      "Single-country endemics: SEA endemic species restricted to a single geounit."
+      "SEA endemic species restricted to a single geounit."
     );
   } else if (state.endemism === "regional") {
     hintEl.text(
-      "Regional endemics: SEA endemic species occurring in more than one geounit."
+      "SEA endemic species occurring in more than one geounit."
     );
   }
 }
@@ -1561,6 +1563,21 @@ function renderBarChartInContainer(container, data) {
       .text("No data for this filter");
     return;
   }
+  const wrap = container.append("div").attr("class", "drill-scroll");
+  const svg  = wrap.append("svg");
+  drawHorizontalBarsNode(svg.node(), data);
+}
+
+function syncDrillCardHeight() {
+  const mapCard   = document.querySelector("#map").closest(".card");
+  const drillCard = document.querySelector(".drill-card");
+  if (!mapCard || !drillCard) return;
+
+  requestAnimationFrame(() => {
+    const h = mapCard.getBoundingClientRect().height;
+    if (h > 0) drillCard.style.height = h + "px";
+  });
+}
 
   // Envoltorio que llena la altura del card (flex)
   const wrap = container.append("div").attr("class", "drill-scroll");
@@ -1633,11 +1650,8 @@ function drawHorizontalBarsNode(svgNode, data, opts = {}) {
     return;
   }
 
-  // Altura disponible del contenedor → reparte las barras para llenarla
-  const requestedH = opts.height || 400;
-  const availH = requestedH - topPad - bottomPad;
-  const naturalBarH = (availH - data.length * gap) / data.length;
-  const barH = Math.max(16, Math.min(40, naturalBarH));
+  // Altura fija por barra; si hay muchas, aparece scroll en el wrapper
+  const barH = opts.barH || 26;
   const H = data.length * (barH + gap) + topPad + bottomPad;
 
   svg.attr("viewBox", `0 0 ${W} ${H}`);
@@ -2170,9 +2184,13 @@ function redraw() {
   updateMap();
   updateCharts();
   renderTable();
+  syncDrillCardHeight();
 }
 
-window.addEventListener("resize", () => updateCharts());
+window.addEventListener("resize", () => {
+  updateCharts();
+  syncDrillCardHeight();       // ← añadir
+});
 
 
 // DEBUG: pulsa window.__check() en consola para ver qué devuelve cada filtro
