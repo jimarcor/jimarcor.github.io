@@ -405,12 +405,6 @@
       </div>
     </div>
 
-<div class="card">
-  <h2 id="drill-title">Species per genus</h2>
-  <p class="hint" id="drill-hint">Top 8 genera in the current filter.</p>
-  <div id="drill-container"></div>
-</div>
-
 <div class="card drill-card">
   <h2 id="drill-title">Species per genus</h2>
   <p class="hint" id="drill-hint">Top 8 genera in the current filter.</p>
@@ -1397,7 +1391,7 @@ const byGU = d3.rollup(f, v => ({
   const rows = [...byGU]
     .map(([gu, o]) => ({ key: gu, ...o }))
     .sort((a, b) => b.total - a.total)
-    .slice(0, 8);
+    .slice(0, 10);
 
   if (!rows.length) {
     g.append("text").attr("x", iw/2).attr("y", ih/2)
@@ -1517,7 +1511,7 @@ function drawDrilldown() {
 
   // Caso 3: sin filtro de género → species per genus
   titleEl.text("Species per genus");
-  hintEl.text("Top 8 genera in the current filter.");
+  hintEl.text("All genera in the current filter.");
   renderBarChartInContainer(container, genusData(guSci));
 }
 
@@ -1532,7 +1526,6 @@ function genusData(guSci) {
   )]
     .map(([key, value]) => ({ key, value }))
     .sort((a, b) => b.value - a.value)
-    .slice(0, 8);
 }
 
 // Datos agregados por sección (especies)
