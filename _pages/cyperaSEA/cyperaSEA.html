@@ -329,11 +329,11 @@
   </select>
 
   <label>Endemism</label>
-  <select id="f-endemism">
-    <option value="">All</option>
-    <option value="regional">Regional species endemicity</option>
-    <option value="global">True species endemicity (global)</option>
-  </select>
+<select id="f-endemism">
+  <option value="">All</option>
+  <option value="regional">Regional / multi-country endemics</option>
+  <option value="single">Single-country endemics</option>
+</select>
   
   <label>Geounit</label>
   <select id="f-geounit"><option value="">All</option></select>
@@ -756,13 +756,16 @@ rebuildAllSelectors();
 function filteredTaxa() {
   return taxonomy.filter(t => {
     if (t.Status !== "accepted") return false;
-    if (state.endemism === "global"   && !t.GlobalEndemic) return false;
-    if (state.endemism === "regional") {
-      // "Regional" = endémica en el dataset pero NO global
-      const guCount = geounitCountBySci.get(t.ScientificName);
-      if (guCount !== 1) return false;              // no es endémica en el dataset
-      if (t.GlobalEndemic) return false;            // pero sí es global → la excluimos
-    }
+    if (state.endemism === "single") {
+  if (!t.GlobalEndemic) return false;
+  const guCount = geounitCountBySci.get(t.ScientificName) || 0;
+  if (guCount !== 1) return false;
+}
+if (state.endemism === "regional") {
+  if (!t.GlobalEndemic) return false;
+  const guCount = geounitCountBySci.get(t.ScientificName) || 0;
+  if (guCount <= 1) return false;
+}
     if (state.subfamily && t.Subfamily !== state.subfamily) return false;
     if (state.tribe     && t.Tribe     !== state.tribe)     return false;
     if (state.subtribe  && t.Subtribe  !== state.subtribe)  return false;
@@ -795,12 +798,16 @@ function filtered() {
 
   if (!taxon || taxon.Status !== "accepted") return false;
 
-  if (state.endemism === "global"   && !taxon.GlobalEndemic) return false;
-  if (state.endemism === "regional") {
-    const guCount = geounitCountBySci.get(sp.ScientificName);
-    if (guCount !== 1) return false;
-    if (taxon.GlobalEndemic) return false;
-  }
+  if (state.endemism === "single") {
+  if (!taxon.GlobalEndemic) return false;
+  const guCount = geounitCountBySci.get(sp.ScientificName) || 0;
+  if (guCount !== 1) return false;
+}
+if (state.endemism === "regional") {
+  if (!taxon.GlobalEndemic) return false;
+  const guCount = geounitCountBySci.get(sp.ScientificName) || 0;
+  if (guCount <= 1) return false;
+}
 
   if (state.subfamily && taxon.Subfamily !== state.subfamily) return false;
     if (state.tribe     && taxon.Tribe     !== state.tribe)     return false;
@@ -833,13 +840,18 @@ function computeSpeciesMetrics() {
 const acceptedTaxa = taxonomy
   .filter(t => t.Status === "accepted")
   .filter(t => {
-    if (state.endemism === "global")   return t.GlobalEndemic;
-    if (state.endemism === "regional") {
-      const guCount = geounitCountBySci.get(t.ScientificName);
-      return guCount === 1 && !t.GlobalEndemic;
-    }
-    return true;
-  })
+  if (state.endemism === "single") {
+    if (!t.GlobalEndemic) return false;
+    const guCount = geounitCountBySci.get(t.ScientificName) || 0;
+    return guCount === 1;
+  }
+  if (state.endemism === "regional") {
+    if (!t.GlobalEndemic) return false;
+    const guCount = geounitCountBySci.get(t.ScientificName) || 0;
+    return guCount > 1;
+  }
+  return true;
+})
     .filter(t => !state.subfamily || t.Subfamily === state.subfamily)
     .filter(t => !state.tribe     || t.Tribe     === state.tribe)
     .filter(t => !state.subtribe  || t.Subtribe  === state.subtribe)
@@ -1246,23 +1258,29 @@ const seq   = real.filter(d => d.hasSeq).length;
   }
 
   // Info adicional cuando hay filtro de Endemism activo
-  if (state.endemism === "regional" || state.endemism === "global") {
-    const listHere = [...new Set(
-      distributionRecords
-        .filter(d => d.geounit === guName)
-        .filter(d => unitOf(d.ScientificName) != null)          // pasa TODOS los filtros
-        .filter(d => state.endemism === "global"
-                    ? taxonBySci.get(d.ScientificName)?.GlobalEndemic === true
-                    : endemicSet.has(unitOf(d.ScientificName)))
-        .map(d => d.ScientificName)
-    )].sort();
+  if (state.endemism) {
+  const listHere = [...new Set(
+    distributionRecords
+      .filter(d => d.geounit === guName)
+      .filter(d => unitOf(d.ScientificName) != null)
+      .filter(d => {
+        const sci = d.ScientificName;
+        const tax = taxonBySci.get(sci);
+        if (!tax?.GlobalEndemic) return false;
+        const guCount = geounitCountBySci.get(sci) || 0;
+        if (state.endemism === "single")   return guCount === 1;
+        if (state.endemism === "regional") return guCount > 1;
+        return false;
+      })
+      .map(d => d.ScientificName)
+  )].sort();
 
-    const color = state.endemism === "regional" ? "#e67e22" : "#2f7d5c";
-    if (listHere.length) {
-      html += `<span style="color:${color};">${listHere.slice(0, 5).join(", ")}</span>`;
-      if (listHere.length > 5) html += ` <i>+${listHere.length - 5}</i>`;
-    }
+  const color = state.endemism === "single" ? "#2f7d5c" : "#e67e22";
+  if (listHere.length) {
+    html += `<br><span style="color:${color};">${listHere.slice(0, 5).join(", ")}</span>`;
+    if (listHere.length > 5) html += ` <i>+${listHere.length - 5}</i>`;
   }
+}
 
   tooltip
     .style("opacity", 1)
@@ -1802,8 +1820,8 @@ function matchesQuery(row, query) {
   const photoKw = /^(pictures?|photos?|fotos?|img|images?|pic?)$/i;
   const seqKw   = /^(sequences?|seqs?|genbank|dna|hybseq?)$/i;
   const specKw  = /^specimens?$/i;
-  const endemicKw = /^(endemics?|endémicas?|endemicas?|regional)$/i;
-  const globalEndemicKw = /^(global|trueendemic|true-endemic|globalendemic)$/i;
+  const singleKw   = /^(single|singlecountry|single-country)$/i;
+  const regionalKw = /^(regional|multicountry|multi-country)$/i;
 
   const terms = query.split(/\s+/).filter(Boolean);
 
@@ -1819,13 +1837,15 @@ function matchesQuery(row, query) {
     if (photoKw.test(t)) return !!row.hasFoto || (row.photoCats?.length > 0);
     if (seqKw.test(t))   return !!row.hasSeq  || (row.seqCats?.length > 0);
     if (specKw.test(t))  return (row.specimenCats?.length > 0) || !!row.catalogue;
-    if (endemicKw.test(t)) {
-  const unit = _lastUnitOf(row.ScientificName);
-  return _lastEndemicSet.has(unit);
+    if (singleKw.test(t)) {
+  const tax = taxonBySci.get(row.ScientificName);
+  if (!tax?.GlobalEndemic) return false;
+  return (geounitCountBySci.get(row.ScientificName) || 0) === 1;
 }
-    if (globalEndemicKw.test(t)) {
-  const taxon = taxonBySci.get(row.ScientificName);
-  return taxon?.GlobalEndemic === true;
+if (regionalKw.test(t)) {
+  const tax = taxonBySci.get(row.ScientificName);
+  if (!tax?.GlobalEndemic) return false;
+  return (geounitCountBySci.get(row.ScientificName) || 0) > 1;
 }
     // Coincidencia normal: substring en cualquier campo
     return values.some(v => v.includes(t));
