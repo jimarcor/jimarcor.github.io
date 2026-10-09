@@ -1529,10 +1529,8 @@ function renderBarChartInContainer(container, data) {
       .text("No data for this filter");
     return;
   }
-  const svg = container.append("svg")
-    .attr("viewBox", "0 0 400 220")
-    .style("width", "100%");
-  drawBarChartNode(svg.node(), data, { color: "#2f7d5c" });
+  const svg = container.append("svg").style("width", "100%");
+  drawPieChartNode(svg.node(), data);
 }
 
 // Replica de drawBarChart pero trabajando sobre un nodo (en vez de selector)
@@ -1576,6 +1574,75 @@ function drawBarChartNode(svgNode, data, opts = {}) {
     .attr("text-anchor", "middle")
     .text(d => d.value);
 }
+
+function drawPieChartNode(svgNode, data, opts = {}) {
+  const svg = d3.select(svgNode);
+  svg.selectAll("*").remove();
+
+  const W = opts.width || 400;
+  const H = opts.height || 320;
+  svg.attr("viewBox", `0 0 ${W} ${H}`);
+
+  if (!data.length) {
+    svg.append("text")
+      .attr("x", W / 2).attr("y", H / 2)
+      .attr("text-anchor", "middle")
+      .attr("fill", "#999").attr("font-size", 12)
+      .text("No data for this filter");
+    return;
+  }
+
+  const radius = Math.min(W, H) / 2 - 30;
+  const total  = d3.sum(data, d => d.value);
+
+  // Gradiente verde, mismo rango que el resto del dashboard
+  const colorRange = d3.quantize(
+    t => d3.interpolateGreens(0.35 + t * 0.65),
+    Math.max(data.length, 2)
+  );
+  const color = d3.scaleOrdinal()
+    .domain(data.map(d => d.key))
+    .range(colorRange);
+
+  const g = svg.append("g")
+    .attr("transform", `translate(${W / 2},${H / 2})`);
+
+  const pie      = d3.pie().value(d => d.value).sort(null);
+  const arc      = d3.arc().innerRadius(0).outerRadius(radius);
+  const arcHover = d3.arc().innerRadius(0).outerRadius(radius + 6);
+
+  g.selectAll("path.slice")
+    .data(pie(data))
+    .join("path")
+      .attr("class", "slice")
+      .attr("d", arc)
+      .attr("fill", d => color(d.data.key))
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 1)
+      .style("cursor", "pointer")
+      .on("mousemove", (event, d) => {
+        d3.select(event.currentTarget).attr("d", arcHover);
+        const pct = ((d.data.value / total) * 100).toFixed(1);
+        tooltip
+          .style("opacity", 1)
+          .style("left", (event.clientX + 12) + "px")
+          .style("top",  (event.clientY + 12) + "px")
+          .html(`<b>${d.data.key}</b><br>${d.data.value} · ${pct}%`);
+      })
+      .on("mouseleave", (event) => {
+        d3.select(event.currentTarget).attr("d", arc);
+        tooltip.style("opacity", 0);
+      });
+
+  g.append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em")
+    .attr("font-size", 18)
+    .attr("font-weight", 600)
+    .attr("fill", "#1f2d2a")
+    .text(total);
+}
+
 
 // Lista vertical de especies con metadatos (bonita)
 function renderSpeciesList(container, guSci, opts = {}) {
