@@ -310,7 +310,7 @@
   <label>Map metric</label>
   <select id="f-metric">
     <option value="richness" selected>Species richness</option>
-    <option value="endemicity">Regional species endemicity</option>
+<!--   <option value="endemicity">Regional species endemicity</option>  -->
     <option value="specimens">Species with specimens</option>
     <option value="photos">Species with photo</option>
     <option value="sequences">Species with sequence</option>
@@ -331,7 +331,7 @@
   <label>Endemism</label>
   <select id="f-endemism">
     <option value="">All</option>
-    <option value="regional">Regional endemic</option>
+    <option value="endemicity">Regional endemic</option>
     <option value="global">True endemic (global)</option>
   </select>
   
@@ -1239,20 +1239,44 @@ const seq   = real.filter(d => d.hasSeq).length;
 
   let html = `<b>${guName}</b><br>`;
 
+  // Info según la métrica del mapa
   if (state.metric === "richness") {
-    html += `Species: <b>${richByGU.get(guName) || 0}</b>`;
-  } else if (state.metric === "endemicity") {
-    const endemics = distributionRecords
-  .filter(d => d.geounit === guName && endemicSet.has(unitOf(d.ScientificName)))
-  .map(d => d.ScientificName);
-    html += `Endemic species: <b>${endemicByGU.get(guName) || 0}</b><br>`;
-    if (endemics.length) {
-      html += `<span style="color:#2f7d5c;">${endemics.slice(0, 5).join(", ")}</span>`;
-      if (endemics.length > 5) html += ` <i>+${endemics.length - 5}</i>`;
-    }
+    html += `Species: <b>${richByGU.get(guName) || 0}</b><br>`;
   } else {
     html += `Total: <b>${total}</b> specimens · <b>${foto}</b> photos · <b>${seq}</b> seq<br>`;
-    html += `Species: <b>${richByGU.get(guName) || 0}</b>`;
+    html += `Species: <b>${richByGU.get(guName) || 0}</b><br>`;
+  }
+
+  // Info adicional cuando hay filtro de Endemism activo
+  if (state.endemism === "regional") {
+    const regionalHere = [...new Set(
+      distributionRecords
+        .filter(d => d.geounit === guName)
+        .filter(d => geounitCountBySci.get(d.ScientificName) === 1)
+        .filter(d => !taxonBySci.get(d.ScientificName)?.GlobalEndemic)
+        .map(d => d.ScientificName)
+    )].sort();
+
+    html += `<span style="color:#e67e22;">Regional endemics: <b>${regionalHere.length}</b></span>`;
+    if (regionalHere.length) {
+      html += `<br><span style="color:#e67e22;">${regionalHere.slice(0, 5).join(", ")}</span>`;
+      if (regionalHere.length > 5) html += ` <i>+${regionalHere.length - 5}</i>`;
+    }
+  }
+
+  if (state.endemism === "global") {
+    const globalHere = [...new Set(
+      distributionRecords
+        .filter(d => d.geounit === guName)
+        .filter(d => taxonBySci.get(d.ScientificName)?.GlobalEndemic)
+        .map(d => d.ScientificName)
+    )].sort();
+
+    html += `<span style="color:#2f7d5c;">True endemics: <b>${globalHere.length}</b></span>`;
+    if (globalHere.length) {
+      html += `<br><span style="color:#2f7d5c;">${globalHere.slice(0, 5).join(", ")}</span>`;
+      if (globalHere.length > 5) html += ` <i>+${globalHere.length - 5}</i>`;
+    }
   }
 
   tooltip
