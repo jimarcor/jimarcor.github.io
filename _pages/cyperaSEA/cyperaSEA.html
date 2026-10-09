@@ -580,6 +580,9 @@ const state = {
   metric: "richness"
 };
 
+let _lastEndemicSet = new Set();
+let _lastUnitOf     = x => x;
+
 const subfamilySel = d3.select("#f-subfamily");
 const tribeSel     = d3.select("#f-tribe");
 const subtribeSel  = d3.select("#f-subtribe");
@@ -856,7 +859,7 @@ function computeSpeciesMetrics() {
     d => d.geounit
   );
 
-  // Endemicidad: unidades presentes en un único geounit
+  // Endemicidad regional: unidades presentes en un único geounit
   const unitRange = d3.rollup(
     fd,
     v => new Set(v.map(d => d.geounit)).size,
@@ -871,6 +874,10 @@ function computeSpeciesMetrics() {
     v => new Set(v.map(d => d.unit)).size,
     d => d.geounit
   );
+
+ // Cachea para que la búsqueda pueda consultarlos sin recalcular
+  _lastEndemicSet = endemicSet;
+  _lastUnitOf     = unitOf;
 
   return { richByGU, endemicByGU, endemicSet, countRank, unitOf };
 }
@@ -1743,9 +1750,10 @@ function tableData() {
 // Devuelve true si la fila cumple TODOS los términos de la query
 function matchesQuery(row, query) {
   // Palabras clave especiales
-  const photoKw = /^(pictures?|photos?|fotos?|img|images?)$/i;
-  const seqKw   = /^(sequences?|seqs?|genbank|dna)$/i;
+  const photoKw = /^(pictures?|photos?|fotos?|img|images?|pic?)$/i;
+  const seqKw   = /^(sequences?|seqs?|genbank|dna|hybseq?)$/i;
   const specKw  = /^specimens?$/i;
+  const endemicKw = /^(endemics?|endémicas?|endemicas?|endemic)$/i;
 
   const terms = query.split(/\s+/).filter(Boolean);
 
@@ -1761,6 +1769,10 @@ function matchesQuery(row, query) {
     if (photoKw.test(t)) return !!row.hasFoto || (row.photoCats?.length > 0);
     if (seqKw.test(t))   return !!row.hasSeq  || (row.seqCats?.length > 0);
     if (specKw.test(t))  return (row.specimenCats?.length > 0) || !!row.catalogue;
+    if (endemicKw.test(t)) {
+  const unit = _lastUnitOf(row.ScientificName);
+  return _lastEndemicSet.has(unit);
+}
     // Coincidencia normal: substring en cualquier campo
     return values.some(v => v.includes(t));
   });
