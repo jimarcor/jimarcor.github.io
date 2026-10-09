@@ -541,6 +541,27 @@ console.log("geounits:", geounits.length, geounits);
 // =====================================================================
 // 2) STATE + FILTERS
 // =====================================================================
+function formatSciName(name) {
+  if (!name) return "—";
+  const connectors = new Set([
+    "subsp.", "ssp.", "var.", "f.", "fo.", "subvar.", "cv.",
+    "nothosubsp.", "nothovar.", "subf."
+  ]);
+  const words = String(name).trim().split(/\s+/);
+  if (words.length === 0) return "—";
+  if (words.length === 1) return `<i>${words[0]}</i>`;
+
+  let html = `<i>${words[0]} ${words[1]}</i>`;
+  for (let i = 2; i < words.length; i++) {
+    const w = words[i];
+    if (connectors.has(w.toLowerCase())) {
+      html += ` ${w}`;
+    } else {
+      html += ` <i>${w}</i>`;
+    }
+  }
+  return html;
+}
 
 const state = {
   subfamily: "",
@@ -602,7 +623,7 @@ function renderSpeciesDropdown(candidates) {
   filtered.slice(0, 200).forEach(c => {
     const d = document.createElement("div");
     d.className = "opt";
-    d.textContent = c;
+    d.innerHTML = formatSciName(c);
     d.addEventListener("mousedown", ev => {
       ev.preventDefault();   // evita que el input pierda el foco
       document.getElementById("f-species").value = c;
@@ -1131,7 +1152,7 @@ const rankLabel = pluralMap[countRank] || "Species";
   const hintEl  = d3.select("#map-hint");
 
   if (state.species) {
-    titleEl.text(`${metricLabel} · ${state.species}`);
+    titleEl.html(`${metricLabel} · ${formatSciName(state.species)}`);
     hintEl.text("Lightest green = expected but not yet sampled.");
   } else if (state.metric === "endemicity") {
     titleEl.text(`${metricLabel} per geounit`);
@@ -1353,7 +1374,7 @@ function drawDrilldown() {
 
   // Caso 0: una especie está seleccionada → mostrar sus taxones inferiores
   if (state.species) {
-    titleEl.text(`Infraspecific taxa of ${state.species}`);
+    titleEl.html(`Infraspecific taxa of ${formatSciName(state.species)}`)
     hintEl.text("Subspecies, varieties and formae of the selected species.");
     renderSpeciesList(container, guSci, { infraOnly: true });
     return;
@@ -1362,7 +1383,7 @@ function drawDrilldown() {
   // Caso 1: Section filtrada → lista de especies
   if (state.section) {
     const [g, s] = state.section.split("|");
-    titleEl.text(`Species in ${g} sect. ${s}`);
+    titleEl.html(`Species in <i>${g}</i> sect. <i>${s}</i>`)
     hintEl.text("Species matching the current filters.");
     renderSpeciesList(container, guSci);
     return;
@@ -1375,11 +1396,11 @@ function drawDrilldown() {
       .length > 0;
 
     if (hasSections) {
-      titleEl.text(`Sections in ${state.genus}`);
+      titleEl.html(`Sections in <i>${state.genus}</i>`);
       hintEl.text("Number of species per section.");
       renderBarChartInContainer(container, sectionData(guSci));
     } else {
-      titleEl.text(`Species in ${state.genus}`);
+      titleEl.html(`Species in <i>${state.genus}</i>`)
       hintEl.text("Species matching the current filters.");
       renderSpeciesList(container, guSci);
     }
@@ -1549,7 +1570,7 @@ function renderSpeciesList(container, guSci, opts = {}) {
 
         return `
           <div class="name">
-            <a href="${APHIA_URL}${t.AphiaID}" target="_blank" rel="noopener">${sci}</a>${auth}
+            <a href="${APHIA_URL}${t.AphiaID}" target="_blank" rel="noopener">${formatSciName(sci)}</a>${auth}
           </div>
           <div class="meta">${badges.join("")}</div>
         `;
@@ -1585,7 +1606,7 @@ const specimensColumns = [
   { key: "catalogue",      label: "Catalogue",
     render: row => row.catalogue ? `<code>${row.catalogue}</code>` : "—" },
   { key: "ScientificName", label: "Scientific name",
-    render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${row.ScientificName}</a>` },
+    render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${formatSciName(row.ScientificName)}</a>` },
   { key: "Rank",           label: "Rank",
     render: row => row.Rank ?? "—" },
   { key: "geounit",        label: "Geounit",
@@ -1599,7 +1620,7 @@ const specimensColumns = [
 // ---- Columnas vista Taxa ----------------------------------------------
 const taxaColumns = [
   { key: "ScientificName", label: "Scientific name",
-    render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${row.ScientificName}</a>` },
+    render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${formatSciName(row.ScientificName)}</a>` },
   { key: "Authority",      label: "Authority",
     render: row => row.Authority ?? "—" },
   { key: "Rank",           label: "Rank",
