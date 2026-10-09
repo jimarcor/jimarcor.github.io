@@ -48,6 +48,73 @@
   .card h2 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
   .card .hint { font-size: 12px; color: var(--muted); margin: 0 0 12px; }
 
+#drill-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.species-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.species-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fafcfb;
+  border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+.species-item:hover {
+  background: #eef6f1;
+  border-color: var(--border);
+}
+.species-item .name {
+  font-size: 13px;
+  color: var(--text);
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.species-item .name a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+.species-item .name em {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 12px;
+  margin-left: 4px;
+}
+.species-item .meta {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.species-item .meta .badge {
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: #e8f0ec;
+  color: #2f7d5c;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.species-item .meta .badge.photo { background: #e6eef7; color: #4a7ba7; }
+.species-item .meta .badge.seq   { background: #dff0e6; color: #1f6a4a; }
+
 .autocomplete-wrap {
   position: relative;
   display: inline-block;
@@ -303,11 +370,11 @@
       </div>
     </div>
 
-    <div class="card">
-      <h2>Species per genus</h2>
-      <p class="hint">Top 8 genera in the current filter.</p>
-      <svg id="chart-genus"></svg>
-    </div>
+<div class="card">
+  <h2 id="drill-title">Species per genus</h2>
+  <p class="hint" id="drill-hint">Top 8 genera in the current filter.</p>
+  <div id="drill-container"></div>
+</div>
 
     <div class="card">
       <h2>Data completeness per geounit</h2>
@@ -1244,19 +1311,9 @@ const byGU = d3.rollup(f, v => ({
 }
 
 function updateCharts() {
-  const f = filtered();
+  drawDrilldown();
 
-// Especies únicas por género (solo Rank === "Species")
-const byGenus = [...d3.rollup(
-  f.filter(d => d.Rank === "Species" && d.ScientificName),
-  v => new Set(v.map(d => d.ScientificName)).size,
-  d => d.Genus
-)]
-  .map(([key, value]) => ({ key, value }))
-  .sort((a, b) => b.value - a.value)
-  .slice(0, 8);
-drawBarChart("#chart-genus", byGenus, { color: "#2f7d5c" });
-
+  // Este gráfico se queda igual
   const guSci = sciInGeounit(state.geounit);
   const taxaForRanks = guSci
     ? taxaForGenus().filter(t => guSci.has(t.ScientificName))
@@ -1268,6 +1325,203 @@ drawBarChart("#chart-genus", byGenus, { color: "#2f7d5c" });
   drawBarChart("#chart-ranks", byRank, { color: "#4a7ba7" });
 
   drawCompleteness();
+}
+
+// ===== DRILLDOWN =====
+
+// Decide qué mostrar en la card: bar chart o lista de especies
+function drawDrilldown() {
+  const titleEl   = d3.select("#drill-title");
+  const hintEl    = d3.select("#drill-hint");
+  const container = d3.select("#drill-container");
+  container.selectAll("*").remove();
+
+  const guSci = sciInGeounit(state.geounit);
+
+  // Caso 1: Section filtrada → lista de especies
+  if (state.section) {
+    const [g, s] = state.section.split("|");
+    titleEl.text(`Species in ${g} sect. ${s}`);
+    hintEl.text("Species matching the current filters.");
+    renderSpeciesList(container, guSci);
+    return;
+  }
+
+  // Caso 2: Genus filtrado
+  if (state.genus) {
+    const hasSections = filteredTaxa()
+      .filter(t => t.Section)
+      .length > 0;
+
+    if (hasSections) {
+      titleEl.text(`Sections in ${state.genus}`);
+      hintEl.text("Number of species per section.");
+      renderBarChartInContainer(container, sectionData(guSci));
+    } else {
+      titleEl.text(`Species in ${state.genus}`);
+      hintEl.text("Species matching the current filters.");
+      renderSpeciesList(container, guSci);
+    }
+    return;
+  }
+
+  // Caso 3: sin filtro de género → species per genus
+  titleEl.text("Species per genus");
+  hintEl.text("Top 8 genera in the current filter.");
+  renderBarChartInContainer(container, genusData(guSci));
+}
+
+// Datos agregados por género (especies)
+function genusData(guSci) {
+  const f = filtered();
+  return [...d3.rollup(
+    f.filter(d => d.Rank === "Species" && d.ScientificName)
+     .filter(d => !guSci || guSci.has(d.ScientificName)),
+    v => new Set(v.map(d => d.ScientificName)).size,
+    d => d.Genus
+  )]
+    .map(([key, value]) => ({ key, value }))
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 8);
+}
+
+// Datos agregados por sección (especies)
+function sectionData(guSci) {
+  const f = filtered();
+  return [...d3.rollup(
+    f.filter(d => d.Rank === "Species" && d.ScientificName && d.Section)
+     .filter(d => !guSci || guSci.has(d.ScientificName)),
+    v => new Set(v.map(d => d.ScientificName)).size,
+    d => d.Section
+  )]
+    .map(([key, value]) => ({ key, value }))
+    .sort((a, b) => b.value - a.value);
+}
+
+// Envuelve un SVG en el contenedor y dibuja un bar chart dentro
+function renderBarChartInContainer(container, data) {
+  if (!data.length) {
+    container.append("p")
+      .attr("class", "hint")
+      .style("text-align", "center")
+      .style("padding", "24px 0")
+      .text("No data for this filter");
+    return;
+  }
+  const svg = container.append("svg")
+    .attr("viewBox", "0 0 400 220")
+    .style("width", "100%");
+  drawBarChartNode(svg.node(), data, { color: "#2f7d5c" });
+}
+
+// Replica de drawBarChart pero trabajando sobre un nodo (en vez de selector)
+function drawBarChartNode(svgNode, data, opts = {}) {
+  const svg = d3.select(svgNode);
+  svg.selectAll("*").remove();
+
+  const W = svgNode.clientWidth || 400;
+  const H = opts.height || 220;
+  svg.attr("viewBox", `0 0 ${W} ${H}`);
+
+  const margin = { top: 10, right: 20, bottom: 70, left: 40 };
+  const iw = W - margin.left - margin.right;
+  const ih = H - margin.top - margin.bottom;
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  const x = d3.scaleBand().domain(data.map(d => d.key)).range([0, iw]).padding(0.25);
+  const y = d3.scaleLinear().domain([0, d3.max(data, d => d.value)]).nice().range([ih, 0]);
+
+  g.append("g").attr("class", "axis")
+    .attr("transform", `translate(0,${ih})`)
+    .call(d3.axisBottom(x))
+    .selectAll("text")
+      .attr("transform", "rotate(-35)")
+      .style("text-anchor", "end");
+
+  g.append("g").attr("class", "axis").call(d3.axisLeft(y).ticks(5));
+
+  g.selectAll("rect").data(data).join("rect")
+    .attr("x", d => x(d.key))
+    .attr("y", d => y(d.value))
+    .attr("width", x.bandwidth())
+    .attr("height", d => ih - y(d.value))
+    .attr("rx", 4)
+    .attr("fill", opts.color || "#2f7d5c");
+
+  g.selectAll(".bar-value").data(data).join("text")
+    .attr("class", "bar-value")
+    .attr("x", d => x(d.key) + x.bandwidth() / 2)
+    .attr("y", d => y(d.value) - 4)
+    .attr("text-anchor", "middle")
+    .text(d => d.value);
+}
+
+// Lista vertical de especies con metadatos (bonita)
+function renderSpeciesList(container, guSci) {
+  const f    = filtered();
+  const real = f.filter(d => d.hasCatalogue);
+
+  // Especies del filtro actual
+  const taxa = filteredTaxa()
+    .filter(t => ["Species", "Subspecies", "Variety", "Forma"].includes(t.Rank));
+  const list = (guSci ? taxa.filter(t => guSci.has(t.ScientificName)) : taxa)
+    .sort((a, b) => a.ScientificName.localeCompare(b.ScientificName));
+
+  if (!list.length) {
+    container.append("p")
+      .attr("class", "hint")
+      .style("text-align", "center")
+      .style("padding", "24px 0")
+      .text("No species for this filter");
+    return;
+  }
+
+  // Stats por especie (a partir de especímenes reales)
+  const statsBySci = new Map();
+  for (const d of real) {
+    if (!statsBySci.has(d.ScientificName)) {
+      statsBySci.set(d.ScientificName, { specimens: 0, fotos: 0, seqs: 0 });
+    }
+    const o = statsBySci.get(d.ScientificName);
+    o.specimens++;
+    if (d.hasFoto) o.fotos++;
+    if (d.hasSeq)  o.seqs++;
+  }
+
+  // Nº de geounits por especie (a partir de distributions)
+  const geounitsBySci = new Map();
+  for (const d of distributionRecords) {
+    if (!geounitsBySci.has(d.ScientificName)) {
+      geounitsBySci.set(d.ScientificName, new Set());
+    }
+    geounitsBySci.get(d.ScientificName).add(d.geounit);
+  }
+
+  const listEl = container.append("div").attr("class", "species-list");
+
+  listEl.selectAll("div.species-item")
+    .data(list)
+    .join("div")
+      .attr("class", "species-item")
+      .html(t => {
+        const sci = t.ScientificName;
+        const st  = statsBySci.get(sci) || { specimens: 0, fotos: 0, seqs: 0 };
+        const nGu = geounitsBySci.get(sci)?.size || 0;
+        const auth = t.Authority ? ` <em>${t.Authority}</em>` : "";
+
+        const badges = [];
+        if (nGu)               badges.push(`<span class="badge">${nGu} geounits</span>`);
+        if (st.specimens)      badges.push(`<span class="badge">${st.specimens} spec.</span>`);
+        if (st.fotos)          badges.push(`<span class="badge photo">📷 ${st.fotos}</span>`);
+        if (st.seqs)           badges.push(`<span class="badge seq">🧬 ${st.seqs}</span>`);
+
+        return `
+          <div class="name">
+            <a href="${APHIA_URL}${t.AphiaID}" target="_blank" rel="noopener">${sci}</a>${auth}
+          </div>
+          <div class="meta">${badges.join("")}</div>
+        `;
+      });
 }
 
 // =====================================================================
