@@ -1581,14 +1581,6 @@ function syncDrillCardHeight() {
   });
 }
 
-  // Envoltorio que llena la altura del card (flex)
-  const wrap = container.append("div").attr("class", "drill-scroll");
-  const svg = wrap.append("svg");
-  const h = wrap.node().clientHeight || 400;
-
-  drawHorizontalBarsNode(svg.node(), data, { height: h });
-}
-
 // Replica de drawBarChart pero trabajando sobre un nodo (en vez de selector)
 function drawBarChartNode(svgNode, data, opts = {}) {
   const svg = d3.select(svgNode);
