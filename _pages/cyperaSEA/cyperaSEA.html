@@ -1246,34 +1246,21 @@ const seq   = real.filter(d => d.hasSeq).length;
   }
 
   // Info adicional cuando hay filtro de Endemism activo
-  if (state.endemism === "regional") {
-    const regionalHere = [...new Set(
+  if (state.endemism === "regional" || state.endemism === "global") {
+    const listHere = [...new Set(
       distributionRecords
         .filter(d => d.geounit === guName)
-        .filter(d => geounitCountBySci.get(d.ScientificName) === 1)
-        .filter(d => !taxonBySci.get(d.ScientificName)?.GlobalEndemic)
+        .filter(d => unitOf(d.ScientificName) != null)          // pasa TODOS los filtros
+        .filter(d => state.endemism === "global"
+                    ? taxonBySci.get(d.ScientificName)?.GlobalEndemic === true
+                    : endemicSet.has(unitOf(d.ScientificName)))
         .map(d => d.ScientificName)
     )].sort();
 
-    html += `<span style="color:#e67e22;">Regional endemics: <b>${regionalHere.length}</b></span>`;
-    if (regionalHere.length) {
-      html += `<br><span style="color:#e67e22;">${regionalHere.slice(0, 5).join(", ")}</span>`;
-      if (regionalHere.length > 5) html += ` <i>+${regionalHere.length - 5}</i>`;
-    }
-  }
-
-  if (state.endemism === "global") {
-    const globalHere = [...new Set(
-      distributionRecords
-        .filter(d => d.geounit === guName)
-        .filter(d => taxonBySci.get(d.ScientificName)?.GlobalEndemic)
-        .map(d => d.ScientificName)
-    )].sort();
-
-    html += `<span style="color:#2f7d5c;">True endemics: <b>${globalHere.length}</b></span>`;
-    if (globalHere.length) {
-      html += `<br><span style="color:#2f7d5c;">${globalHere.slice(0, 5).join(", ")}</span>`;
-      if (globalHere.length > 5) html += ` <i>+${globalHere.length - 5}</i>`;
+    const color = state.endemism === "regional" ? "#e67e22" : "#2f7d5c";
+    if (listHere.length) {
+      html += `<span style="color:${color};">${listHere.slice(0, 5).join(", ")}</span>`;
+      if (listHere.length > 5) html += ` <i>+${listHere.length - 5}</i>`;
     }
   }
 
