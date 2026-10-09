@@ -48,11 +48,54 @@
   .card h2 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
   .card .hint { font-size: 12px; color: var(--muted); margin: 0 0 12px; }
 
-datalist option,
-datalist option:hover,
-#species-list option {
-  background: #ffffff !important;
-  color: #1f2d2a !important;
+.autocomplete-wrap {
+  position: relative;
+  display: inline-block;
+  min-width: 220px;
+}
+.autocomplete-wrap input {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+  background: #ffffff;
+  color: var(--text);
+  box-sizing: border-box;
+}
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 240px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  z-index: 1000;
+  display: none;
+}
+.autocomplete-list.open { display: block; }
+.autocomplete-list .opt {
+  padding: 6px 10px;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.autocomplete-list .opt:hover,
+.autocomplete-list .opt.highlighted {
+  background: #eef6f1;
+  color: var(--accent);
+}
+.autocomplete-list .empty {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
 }
   
 #map svg { width: 100%; height: auto; display: block; }
@@ -232,11 +275,12 @@ datalist option:hover,
   <select id="f-section"><option value="">All</option></select>
 
 <label>Species</label>
-<input type="text" id="f-species" list="species-list"
-       placeholder="Type to search"
-       autocomplete="on"
-       style="padding:6px 10px; border-radius:8px; border:1px solid var(--border); font-size:13px; min-width:220px; background:#ffffff; color:var(--text);">
-<datalist id="species-list"></datalist>
+<div class="autocomplete-wrap" id="species-wrap">
+  <input type="text" id="f-species"
+         placeholder="Type to search"
+         autocomplete="off">
+  <div class="autocomplete-list" id="species-list"></div>
+</div>
 </div>
 
   <div class="grid-2">
@@ -458,19 +502,46 @@ function rebuildSpeciesSelector() {
     .map(t => t.ScientificName)
     .sort();
 
-  window.__speciesCandidates = new Set(candidates);
-
-  const dl = d3.select("#species-list");
-  dl.selectAll("option").remove();
-  dl.selectAll("option.sp")
-    .data(candidates).join("option")
-      .attr("class", "sp")
-      .attr("value", d => d);
+  window.__speciesCandidates = candidates;
 
   if (state.species && !candidates.includes(state.species)) {
     state.species = "";
   }
   d3.select("#f-species").property("value", state.species);
+  renderSpeciesDropdown(candidates);
+}
+
+function renderSpeciesDropdown(candidates) {
+  const list = document.getElementById("species-list");
+  if (!list) return;
+  const q = (document.getElementById("f-species").value || "").toLowerCase();
+  const filtered = q
+    ? candidates.filter(c => c.toLowerCase().includes(q))
+    : candidates;
+
+  list.innerHTML = "";
+  if (!filtered.length) {
+    const d = document.createElement("div");
+    d.className = "empty";
+    d.textContent = "No matches";
+    list.appendChild(d);
+    return;
+  }
+  const frag = document.createDocumentFragment();
+  filtered.slice(0, 200).forEach(c => {
+    const d = document.createElement("div");
+    d.className = "opt";
+    d.textContent = c;
+    d.addEventListener("mousedown", ev => {
+      ev.preventDefault();   // evita que el input pierda el foco
+      document.getElementById("f-species").value = c;
+      state.species = c;
+      list.classList.remove("open");
+      redraw();
+    });
+    frag.appendChild(d);
+  });
+  list.appendChild(frag);
 }
 
 function rebuildSectionSelector() {
@@ -1457,27 +1528,41 @@ sectionSel.on("change", e => {
 });
 rankSel.on("change",  e => { state.rank    = e.target.value; redraw(); });
 geoSel.on("change",   e => { state.geounit = e.target.value; redraw(); });
-const speciesInput = d3.select("#f-species");
+const speciesInputEl = document.getElementById("f-species");
+const speciesListEl  = document.getElementById("species-list");
 
-speciesInput.on("input", e => {
-  const v = e.target.value.trim();
-  // Solo actualiza el filtro si el valor está vacío o coincide exactamente
-  // con una especie de la lista (evita filtros rotos con texto a medias)
-  if (v === "" || window.__speciesCandidates?.has(v)) {
-    state.species = v;
-    redraw();
-  }
+speciesInputEl.addEventListener("focus", () => {
+  renderSpeciesDropdown(window.__speciesCandidates || []);
+  speciesListEl.classList.add("open");
 });
 
-speciesInput.on("blur", e => {
-  const v = e.target.value.trim();
-  if (v !== "" && !window.__speciesCandidates?.has(v)) {
-    // Si el usuario escribió algo que no es una especie válida, resetea
-    e.target.value = "";
+speciesInputEl.addEventListener("input", () => {
+  renderSpeciesDropdown(window.__speciesCandidates || []);
+  speciesListEl.classList.add("open");
+  if (speciesInputEl.value.trim() === "") {
     state.species = "";
     redraw();
   }
 });
+
+speciesInputEl.addEventListener("blur", () => {
+  setTimeout(() => {
+    speciesListEl.classList.remove("open");
+    const v = speciesInputEl.value.trim();
+    if (v !== "" && !(window.__speciesCandidates || []).includes(v)) {
+      speciesInputEl.value = "";
+      state.species = "";
+      redraw();
+    }
+  }, 150);
+});
+
+document.addEventListener("click", e => {
+  if (!document.getElementById("species-wrap").contains(e.target)) {
+    speciesListEl.classList.remove("open");
+  }
+});
+
 metricSel.on("change",  e => { state.metric  = e.target.value; redraw(); });
 
 function redraw() {
