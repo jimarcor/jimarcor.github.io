@@ -395,7 +395,8 @@
   <p class="hint">Filter and search the records that match the filters above.</p>
 
   <div class="table-controls">
-    <input type="text" id="table-search" placeholder="Search by name, catalogue number, geounit, genus…">
+    <input type="text" id="table-search"
+       placeholder="e.g. Carex Borneo, Fimbristylis pictures, Schoenus sequences...">
     <select id="table-view">
       <option value="specimens">Specimens</option>
       <option value="taxa">Taxa</option>
@@ -1574,6 +1575,8 @@ const taxaColumns = [
     render: row => row.Rank ?? "—" },
   { key: "Section",        label: "Section",
     render: row => row.Section ?? "—" },
+  { key: "geounits",       label: "Geounits",
+    render: row => catList(row.geounits) },
   { key: "specimenCats",   label: "Specimens",
     render: row => catList(row.specimenCats) },
   { key: "photoCats",      label: "Photos",
@@ -1587,8 +1590,8 @@ function tableData() {
   const q = tableState.search.trim().toLowerCase();
   let rows;
 
-if (tableState.view === "specimens") {
-  rows = filtered().filter(d => d.hasCatalogue).map(d => {
+  if (tableState.view === "specimens") {
+    rows = filtered().filter(d => d.hasCatalogue).map(d => {
       const photoCats = (fotoByCat.get(d.catalogue) || []).map(p =>
         String(p.CatalogueNumber ?? p.catalogue ?? p.Catalogue ?? p.id ?? "").trim()
       ).filter(Boolean);
@@ -1603,6 +1606,9 @@ if (tableState.view === "specimens") {
         Genus:          d.Genus,
         Rank:           d.Rank,
         geounit:        d.geounit,
+        Section:        d.Section,
+        hasFoto:        d.hasFoto,
+        hasSeq:         d.hasSeq,
         photoCats,
         seqCats,
       };
@@ -1621,7 +1627,10 @@ if (tableState.view === "specimens") {
 
       const photoCats = new Set();
       const seqCats   = new Set();
+      let hasFoto = false, hasSeq = false;
       for (const s of specs) {
+        if (s.hasFoto) hasFoto = true;
+        if (s.hasSeq)  hasSeq  = true;
         (fotoByCat.get(s.catalogue) || []).forEach(p => {
           const id = p.CatalogueNumber ?? p.catalogue ?? p.Catalogue ?? p.id;
           if (id != null && String(id).trim() !== "") photoCats.add(String(id).trim());
@@ -1632,6 +1641,15 @@ if (tableState.view === "specimens") {
         });
       }
 
+      // Geounits donde aparece este taxón (desde distributions + specimens)
+      const geounits = new Set();
+      for (const d of distributionRecords) {
+        if (d.ScientificName === t.ScientificName) geounits.add(d.geounit);
+      }
+      for (const s of specs) {
+        if (s.geounit) geounits.add(s.geounit);
+      }
+
       return {
         AphiaID:        t.AphiaID,
         ScientificName: t.ScientificName,
@@ -1639,6 +1657,12 @@ if (tableState.view === "specimens") {
         Rank:           t.Rank,
         Genus:          t.Genus,
         Section:        t.Section,
+        Subfamily:      t.Subfamily,
+        Tribe:          t.Tribe,
+        Subtribe:       t.Subtribe,
+        geounits:       [...geounits],
+        hasFoto,
+        hasSeq,
         specimenCats:   specs.map(s => s.catalogue).filter(Boolean),
         photoCats:      [...photoCats],
         seqCats:        [...seqCats],
@@ -1646,23 +1670,43 @@ if (tableState.view === "specimens") {
     });
   }
 
-  // Filtro por Rank (Species, Subspecies, Section...)
+  // Filtro por Rank del desplegable de la tabla
   if (tableState.rank) {
     rows = rows.filter(r => r.Rank === tableState.rank);
   }
 
-  // Búsqueda libre
+  // Búsqueda avanzada por términos
   if (q) {
-    rows = rows.filter(r =>
-      Object.values(r).some(v => {
-        if (v == null) return false;
-        if (Array.isArray(v)) return v.some(x => String(x).toLowerCase().includes(q));
-        return String(v).toLowerCase().includes(q);
-      })
-    );
+    rows = rows.filter(r => matchesQuery(r, q));
   }
 
   return rows;
+}
+
+// Devuelve true si la fila cumple TODOS los términos de la query
+function matchesQuery(row, query) {
+  // Palabras clave especiales
+  const photoKw = /^(pictures?|photos?|fotos?|img|images?)$/i;
+  const seqKw   = /^(sequences?|seqs?|genbank|dna)$/i;
+  const specKw  = /^specimens?$/i;
+
+  const terms = query.split(/\s+/).filter(Boolean);
+
+  // Valores "buscables" de la fila (todos los campos de texto y arrays)
+  const values = [];
+  for (const [k, v] of Object.entries(row)) {
+    if (v == null) continue;
+    if (Array.isArray(v)) v.forEach(x => values.push(String(x).toLowerCase()));
+    else values.push(String(v).toLowerCase());
+  }
+
+  return terms.every(t => {
+    if (photoKw.test(t)) return !!row.hasFoto || (row.photoCats?.length > 0);
+    if (seqKw.test(t))   return !!row.hasSeq  || (row.seqCats?.length > 0);
+    if (specKw.test(t))  return (row.specimenCats?.length > 0) || !!row.catalogue;
+    // Coincidencia normal: substring en cualquier campo
+    return values.some(v => v.includes(t));
+  });
 }
 
 // ---- Render de la tabla -----------------------------------------------
