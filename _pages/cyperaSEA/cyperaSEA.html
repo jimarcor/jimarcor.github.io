@@ -328,6 +328,13 @@
     <option>Forma</option>
   </select>
 
+  <label>Endemism</label>
+  <select id="f-endemism">
+    <option value="">All</option>
+    <option value="regional">Regional endemic</option>
+    <option value="global">True endemic (global)</option>
+  </select>
+  
   <label>Geounit</label>
   <select id="f-geounit"><option value="">All</option></select>
 </div>
@@ -482,11 +489,14 @@ const taxonomy = taxonomyRaw.map(t => ({
   Rank:           t.Rank       ?? null,
   Subfamily:      t.Subfamily  ?? null,
   Tribe:          t.Tribe      ?? null,
-  Subtribe:        t.Subtribe   ?? null,
+  Subtribe:       t.Subtribe   ?? null,
   Genus:          t.Genus      ?? null,
   Subgenus:       t.Subgenus   ?? null,
   Section:        t.Section    ?? null,
   Subsection:     t.Subsection ?? null,
+  GlobalEndemic:  t.GlobalEndemic === true
+                  || String(t.GlobalEndemic).toLowerCase() === "true"
+                  || String(t.GlobalEndemic) === "1",
 }));
 
 const fotoByCat = d3.group(pictures,  p => normCat(p.CatalogueNumber));
@@ -575,6 +585,7 @@ const state = {
   genus: "",
   section: "",
   rank: "",
+  endemism: "",
   geounit: "",
   species: "",
   metric: "richness"
@@ -588,6 +599,7 @@ const tribeSel     = d3.select("#f-tribe");
 const subtribeSel  = d3.select("#f-subtribe");
 const genusSel   = d3.select("#f-genus");
 const rankSel    = d3.select("#f-rank");
+const endemismSel = d3.select("#f-endemism");
 const geoSel     = d3.select("#f-geounit");
 const metricSel  = d3.select("#f-metric");
 const sectionSel = d3.select("#f-section");
@@ -738,6 +750,13 @@ rebuildAllSelectors();
 function filteredTaxa() {
   return taxonomy.filter(t => {
     if (t.Status !== "accepted") return false;
+    if (state.endemism === "global"   && !t.GlobalEndemic) return false;
+    if (state.endemism === "regional") {
+      // "Regional" = endémica en el dataset pero NO global
+      const guCount = geounitCountBySci.get(t.ScientificName);
+      if (guCount !== 1) return false;              // no es endémica en el dataset
+      if (t.GlobalEndemic) return false;            // pero sí es global → la excluimos
+    }
     if (state.subfamily && t.Subfamily !== state.subfamily) return false;
     if (state.tribe     && t.Tribe     !== state.tribe)     return false;
     if (state.subtribe  && t.Subtribe  !== state.subtribe)  return false;
@@ -766,12 +785,18 @@ function filtered() {
   );
 
   return specimens.filter(sp => {
-    const taxon = taxonBySci.get(sp.ScientificName);
+  const taxon = taxonBySci.get(sp.ScientificName);
 
-    // Solo taxones aceptados
-    if (!taxon || taxon.Status !== "accepted") return false;
+  if (!taxon || taxon.Status !== "accepted") return false;
 
-    if (state.subfamily && taxon.Subfamily !== state.subfamily) return false;
+  if (state.endemism === "global"   && !taxon.GlobalEndemic) return false;
+  if (state.endemism === "regional") {
+    const guCount = geounitCountBySci.get(sp.ScientificName);
+    if (guCount !== 1) return false;
+    if (taxon.GlobalEndemic) return false;
+  }
+
+  if (state.subfamily && taxon.Subfamily !== state.subfamily) return false;
     if (state.tribe     && taxon.Tribe     !== state.tribe)     return false;
     if (state.subtribe  && taxon.Subtribe  !== state.subtribe)  return false;
     if (state.genus     && sp.Genus !== state.genus) return false;
@@ -799,8 +824,16 @@ function computeSpeciesMetrics() {
   const countRank = countableRanks.has(state.rank) ? state.rank : "Species";
 
   // Taxones aceptados que pasan TODOS los filtros taxonómicos
-  const acceptedTaxa = taxonomy
-    .filter(t => t.Status === "accepted")
+const acceptedTaxa = taxonomy
+  .filter(t => t.Status === "accepted")
+  .filter(t => {
+    if (state.endemism === "global")   return t.GlobalEndemic;
+    if (state.endemism === "regional") {
+      const guCount = geounitCountBySci.get(t.ScientificName);
+      return guCount === 1 && !t.GlobalEndemic;
+    }
+    return true;
+  })
     .filter(t => !state.subfamily || t.Subfamily === state.subfamily)
     .filter(t => !state.tribe     || t.Tribe     === state.tribe)
     .filter(t => !state.subtribe  || t.Subtribe  === state.subtribe)
@@ -858,6 +891,13 @@ function computeSpeciesMetrics() {
     v => new Set(v.map(d => d.unit)).size,
     d => d.geounit
   );
+  
+  // Endemicidad real
+const geounitCountBySci = d3.rollup(
+  distributionRecords,
+  v => new Set(v.map(d => d.geounit)).size,
+  d => d.ScientificName
+);
 
   // Endemicidad regional: unidades presentes en un único geounit
   const unitRange = d3.rollup(
@@ -1753,7 +1793,8 @@ function matchesQuery(row, query) {
   const photoKw = /^(pictures?|photos?|fotos?|img|images?|pic?)$/i;
   const seqKw   = /^(sequences?|seqs?|genbank|dna|hybseq?)$/i;
   const specKw  = /^specimens?$/i;
-  const endemicKw = /^(endemics?|endémicas?|endemicas?|endemic)$/i;
+  const endemicKw = /^(endemics?|endémicas?|endemicas?|regional)$/i;
+  const globalEndemicKw = /^(global|trueendemic|true-endemic|globalendemic)$/i;
 
   const terms = query.split(/\s+/).filter(Boolean);
 
@@ -1772,6 +1813,10 @@ function matchesQuery(row, query) {
     if (endemicKw.test(t)) {
   const unit = _lastUnitOf(row.ScientificName);
   return _lastEndemicSet.has(unit);
+}
+    if (globalEndemicKw.test(t)) {
+  const taxon = taxonBySci.get(row.ScientificName);
+  return taxon?.GlobalEndemic === true;
 }
     // Coincidencia normal: substring en cualquier campo
     return values.some(v => v.includes(t));
@@ -1861,6 +1906,11 @@ d3.select("#next-page").on("click", () => {
 // =====================================================================
 // 7) GLOBAL EVENTS
 // =====================================================================
+
+endemismSel.on("change", e => {
+  state.endemism = e.target.value;
+  redraw();
+});
 
 subfamilySel.on("change", e => {
   state.subfamily = e.target.value;
