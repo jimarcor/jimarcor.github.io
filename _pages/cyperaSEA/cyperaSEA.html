@@ -714,7 +714,11 @@ function filteredTaxa() {
     if (state.subtribe  && t.Subtribe  !== state.subtribe)  return false;
     if (state.genus     && t.Genus     !== state.genus)     return false;
     if (state.rank      && t.Rank      !== state.rank)      return false;
-    if (state.species   && t.ScientificName !== state.species) return false;
+    if (state.species) {
+  const isExact  = t.ScientificName === state.species;
+  const isInfra  = t.ScientificName.startsWith(state.species + " ");
+  if (!isExact && !isInfra) return false;
+}
     if (state.section) {
       const [g, s] = state.section.split("|");
       if (t.Genus !== g || t.Section !== s) return false;
@@ -743,7 +747,11 @@ function filtered() {
     if (state.subtribe  && taxon.Subtribe  !== state.subtribe)  return false;
     if (state.genus     && sp.Genus !== state.genus) return false;
     if (state.geounit   && sp.geounit !== state.geounit) return false;
-    if (state.species   && sp.ScientificName !== state.species) return false;
+    if (state.species) {
+  const isExact = sp.ScientificName === state.species;
+  const isInfra = sp.ScientificName.startsWith(state.species + " ");
+  if (!isExact && !isInfra) return false;
+}
     if (state.section) {
       const [g, s] = state.section.split("|");
       if (sp.Genus !== g || sp.Section !== s) return false;
@@ -768,7 +776,11 @@ function computeSpeciesMetrics() {
     .filter(t => !state.tribe     || t.Tribe     === state.tribe)
     .filter(t => !state.subtribe  || t.Subtribe  === state.subtribe)
     .filter(t => !state.genus     || t.Genus     === state.genus)
-    .filter(t => !state.species   || t.ScientificName === state.species)
+    .filter(t => {
+  if (!state.species) return true;
+  return t.ScientificName === state.species
+      || t.ScientificName.startsWith(state.species + " ");
+})
     .filter(t => {
       if (!state.section) return true;
       const [g, s] = state.section.split("|");
@@ -1339,6 +1351,14 @@ function drawDrilldown() {
 
   const guSci = sciInGeounit(state.geounit);
 
+  // Caso 0: una especie está seleccionada → mostrar sus taxones inferiores
+  if (state.species) {
+    titleEl.text(`Infraspecific taxa of ${state.species}`);
+    hintEl.text("Subspecies, varieties and formae of the selected species.");
+    renderSpeciesList(container, guSci, { infraOnly: true });
+    return;
+  }
+  
   // Caso 1: Section filtrada → lista de especies
   if (state.section) {
     const [g, s] = state.section.split("|");
@@ -1458,13 +1478,24 @@ function drawBarChartNode(svgNode, data, opts = {}) {
 }
 
 // Lista vertical de especies con metadatos (bonita)
-function renderSpeciesList(container, guSci) {
+function renderSpeciesList(container, guSci, opts = {}) {
+  const infraOnly = opts.infraOnly === true;
+
   const f    = filtered();
   const real = f.filter(d => d.hasCatalogue);
 
-  // Especies del filtro actual
-  const taxa = filteredTaxa()
-    .filter(t => ["Species", "Subspecies", "Variety", "Forma"].includes(t.Rank));
+  // Qué ranks entran en la lista
+  const ranks = infraOnly
+    ? ["Subspecies", "Variety", "Forma"]
+    : ["Species", "Subspecies", "Variety", "Forma"];
+
+  let taxa = filteredTaxa().filter(t => ranks.includes(t.Rank));
+
+  // Si estamos dentro de una especie, excluye la propia especie (ya está en el título)
+  if (infraOnly && state.species) {
+    taxa = taxa.filter(t => t.ScientificName !== state.species);
+  }
+
   const list = (guSci ? taxa.filter(t => guSci.has(t.ScientificName)) : taxa)
     .sort((a, b) => a.ScientificName.localeCompare(b.ScientificName));
 
@@ -1473,11 +1504,12 @@ function renderSpeciesList(container, guSci) {
       .attr("class", "hint")
       .style("text-align", "center")
       .style("padding", "24px 0")
-      .text("No species for this filter");
+      .text(infraOnly
+        ? "No infraspecific taxa registered — this species has no subspecies, varieties or formae."
+        : "No species for this filter");
     return;
   }
 
-  // Stats por especie (a partir de especímenes reales)
   const statsBySci = new Map();
   for (const d of real) {
     if (!statsBySci.has(d.ScientificName)) {
@@ -1489,7 +1521,6 @@ function renderSpeciesList(container, guSci) {
     if (d.hasSeq)  o.seqs++;
   }
 
-  // Nº de geounits por especie (a partir de distributions)
   const geounitsBySci = new Map();
   for (const d of distributionRecords) {
     if (!geounitsBySci.has(d.ScientificName)) {
@@ -1511,10 +1542,10 @@ function renderSpeciesList(container, guSci) {
         const auth = t.Authority ? ` <em>${t.Authority}</em>` : "";
 
         const badges = [];
-        if (nGu)               badges.push(`<span class="badge">${nGu} geounits</span>`);
-        if (st.specimens)      badges.push(`<span class="badge">${st.specimens} spec.</span>`);
-        if (st.fotos)          badges.push(`<span class="badge photo">📷 ${st.fotos}</span>`);
-        if (st.seqs)           badges.push(`<span class="badge seq">🧬 ${st.seqs}</span>`);
+        if (nGu)          badges.push(`<span class="badge">${nGu} geounits</span>`);
+        if (st.specimens) badges.push(`<span class="badge">${st.specimens} spec.</span>`);
+        if (st.fotos)     badges.push(`<span class="badge photo">📷 ${st.fotos}</span>`);
+        if (st.seqs)      badges.push(`<span class="badge seq">🧬 ${st.seqs}</span>`);
 
         return `
           <div class="name">
