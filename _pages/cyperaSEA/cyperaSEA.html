@@ -680,20 +680,6 @@ function computeSpeciesMetrics() {
     d => d.geounit
   );
 
-  // ===== LOG TEMPORAL =====
-  console.log("=== computeSpeciesMetrics ===");
-  console.log("subfamily:", state.subfamily, "| tribe:", state.tribe,
-              "| subtribe:", state.subtribe, "| genus:", state.genus,
-              "| section:", state.section, "| rank:", state.rank);
-  console.log("acceptedTaxa.length:", acceptedTaxa.length);
-  console.log("acceptedSci.size:", acceptedSci.size);
-  console.log("fd.length:", fd.length);
-  console.log("richByGU.size:", richByGU.size, "| endemicByGU.size:", endemicByGU.size);
-  console.log("endemicSet.size:", endemicSet.size);
-  console.log("primera tribu en taxonomy:", taxonomy.find(t => t.Tribe)?.Tribe);
-  console.log("=============================");
-  // ===== FIN LOG =====
-
   return { richByGU, endemicByGU, endemicSet, countRank, unitOf };
 }
 
@@ -1442,7 +1428,6 @@ tribeSel.on("change", e => {
 
 subtribeSel.on("change", e => {
   state.subtribe = e.target.value;
-  state.genus = "";
   rebuildAllSelectors();
   redraw();
 });
