@@ -509,7 +509,7 @@ const firstWord = s => s == null ? null : String(s).trim().split(/\s+/)[0];
 const taxonomy = taxonomyRaw.map(t => ({
   AphiaID:        t.AphiaID,
   ScientificName: normSci(t.ScientificName),
-  Authority:      t.Authority  ?? null,
+  Authority:      normSci(t.Authority),
   Status:         t.Status     ?? null,
   Rank:           t.Rank       ?? null,
   Subfamily:      t.Subfamily  ?? null,
