@@ -550,6 +550,7 @@ const specimens = specimensRaw.map(row => {
 return {
   catalogue:      cat,
   hasCatalogue:   !!(cat && cat !== ""),
+  SpecimenURL:    row.SpecimenURL ?? null,
   AphiaID:        row.AphiaID ?? taxon?.AphiaID ?? null,
   ScientificName: sci,
   Genus:          row.Genus ?? taxon?.Genus ?? firstWord(sci),
@@ -1860,7 +1861,13 @@ function catList(cats) {
 // ---- Columnas vista Specimens -----------------------------------------
 const specimensColumns = [
   { key: "catalogue",      label: "Catalogue",
-    render: row => row.catalogue ? `<code>${row.catalogue}</code>` : "—" },
+  render: row => {
+    if (!row.catalogue) return "—";
+    if (row.SpecimenURL) {
+      return `<a href="${row.SpecimenURL}" target="_blank" rel="noopener">${row.catalogue}</a>`;
+    }
+    return `<code>${row.catalogue}</code>`;
+  } },
   { key: "ScientificName", label: "Scientific name",
     render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${formatSciName(row.ScientificName)}</a>` },
   { key: "Rank",           label: "Rank",
@@ -1909,6 +1916,7 @@ function tableData() {
 
       return {
         catalogue:      d.catalogue,
+        SpecimenURL:    d.SpecimenURL,
         AphiaID:        d.AphiaID,
         ScientificName: d.ScientificName,
         Genus:          d.Genus,
