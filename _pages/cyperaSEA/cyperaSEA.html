@@ -1226,7 +1226,6 @@ colorScale.interpolator(
     : t => d3.interpolateGreens(0.35 + t * 0.65)    // verde en el resto
 );
 colorScale.domain([0, maxVal]);
-  colorScale.domain([0, maxVal]);
 
   const expectedGUs = state.species ? (expectedDistribution[state.species] || []) : [];
   const expectedSet = new Set(expectedGUs);
@@ -1870,16 +1869,18 @@ const interp = endemismInterp
       });
 
   // --- Valores a la derecha ---
-  g.selectAll("text.value")
-    .data(data)
-    .join("text")
-      .attr("class", "value")
-      .attr("x", d => leftPad + x(d.value) + 6)
-      .attr("y", (d, i) => i * (barH + gap) + barH / 2 + 4)
-      .attr("font-size", 13)
-      .attr("font-weight", 600)
-      .attr("fill", "#2f7d5c")
-      .text(d => d.value);
+g.selectAll("text.value")
+  .data(data)
+  .join("text")
+    .attr("class", "value")
+    .attr("x", d => leftPad + x(d.value) + 6)
+    .attr("y", (d, i) => i * (barH + gap) + barH / 2 + 4)
+    .attr("font-size", 13)
+    .attr("font-weight", 600)
+    .attr("fill", endemismInterp
+      ? (state.endemism === "single" ? "#7f2704" : "#662506")
+      : (opts.scheme === "blue" ? "#2171b5" : "#2f7d5c"))
+    .text(d => d.value);
 }
 
 // Lista vertical de especies con metadatos (bonita)
