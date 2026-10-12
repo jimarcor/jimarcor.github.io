@@ -40,7 +40,12 @@
     background: white; font-size: 13px; color: var(--text); cursor: pointer;
     max-width: 260px;
   }
-  .grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+  .grid-2 {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: start;   /* ← clave: las cards ya no se estiran entre sí */
+}
   .card {
     background: var(--card); border: 1px solid var(--border);
     border-radius: 12px; padding: 16px 18px;
@@ -178,11 +183,12 @@
 .drill-card {
   display: flex;
   flex-direction: column;
-  overflow: hidden;      /* clave: no deja que el contenido agrande la card */
+  overflow: hidden;
+  max-height: 70vh;
 }
 .drill-card #drill-container {
   flex: 1;
-  min-height: 0;         /* imprescindible para que flex funcione con scroll */
+  min-height: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -196,6 +202,7 @@
 .drill-card svg {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 #map svg { width: 100%; height: auto; display: block; }
@@ -1575,9 +1582,12 @@ function syncDrillCardHeight() {
   const drillCard = document.querySelector(".drill-card");
   if (!mapCard || !drillCard) return;
 
+  // Medimos después del layout (2 frames por si hay transiciones)
   requestAnimationFrame(() => {
-    const h = mapCard.getBoundingClientRect().height;
-    if (h > 0) drillCard.style.height = h + "px";
+    requestAnimationFrame(() => {
+      const h = mapCard.getBoundingClientRect().height;
+      if (h > 100) drillCard.style.maxHeight = h + "px";
+    });
   });
 }
 
