@@ -1940,13 +1940,14 @@ function tableData() {
         if (s.hasFoto) hasFoto = true;
         if (s.hasSeq)  hasSeq  = true;
         (fotoByCat.get(s.catalogue) || []).forEach(p => {
-          const id = catOf(p) ?? p.catalogue ?? p.Catalogue ?? p.id;
-          if (id != null && String(id).trim() !== "") photoCats.add(String(id).trim());
-        });
+  const id = catOf(p);
+  if (id) photoCats.add(id);
+});
         (seqByCat.get(s.catalogue) || []).forEach(sq => {
-          const id = catOf(sq) ?? sq.catalogue ?? sq.Catalogue ?? sq.id;
-          if (id != null && String(id).trim() !== "") seqCats.add(String(id).trim());
-        });
+          (fotoByCat.get(s.catalogue) || []).forEach(p => {
+  const id = catOf(sq);
+  if (id) photoCats.add(id);
+});
       }
 
       // Geounits donde aparece este taxón (desde distributions + specimens)
