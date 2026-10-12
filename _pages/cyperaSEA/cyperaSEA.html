@@ -46,6 +46,8 @@
   gap: 20px;
   align-items: start;   /* ← clave: las cards ya no se estiran entre sí */
 }
+.map-card  { min-width: 0; }
+.drill-card { min-width: 0; }
   .card {
     background: var(--card); border: 1px solid var(--border);
     border-radius: 12px; padding: 16px 18px;
@@ -200,6 +202,17 @@
   overflow-x: hidden;
 }
 .drill-card svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chart-scroll-wrap {
+  max-height: 340px;
+  overflow-y: auto;
+  width: 100%;
+}
+.chart-scroll-wrap svg {
   display: block;
   width: 100%;
   height: auto;
@@ -420,17 +433,21 @@
   <div id="drill-container"></div>
 </div>
 
-    <div class="card">
-      <h2>Data completeness per geounit</h2>
-      <p class="hint">Grey = specimen only · Blue = with photo · Green = with sequence. Hover for values.</p>
-      <svg id="chart-completeness"></svg>
-    </div>
+<div class="card">
+  <h2>Data completeness per geounit</h2>
+  <p class="hint">Grey = specimen only · Blue = with photo · Green = with sequence. Hover for values.</p>
+  <div class="chart-scroll-wrap">
+    <svg id="chart-completeness"></svg>
+  </div>
+</div>
 
-    <div class="card">
-      <h2>Taxonomic ranks</h2>
-      <p class="hint">Full rank composition of the selected genus.</p>
-      <svg id="chart-ranks"></svg>
-    </div>
+<div class="card">
+  <h2>Taxonomic ranks</h2>
+  <p class="hint">Full rank composition of the selected genus.</p>
+  <div class="chart-scroll-wrap">
+    <svg id="chart-ranks"></svg>
+  </div>
+</div>
 
   </div>
 
@@ -1202,6 +1219,13 @@ if (state.metric === "richness") {
   let maxVal;
   if (state.metric === "completeness") maxVal = 3;
   else maxVal = Math.max(1, d3.max([...guValue.values()], d => d) || 1);
+  const isEndemism = state.endemism === "single" || state.endemism === "regional";
+colorScale.interpolator(
+  isEndemism
+    ? t => d3.interpolateOranges(0.25 + t * 0.75)   // naranja si hay filtro de endemism
+    : t => d3.interpolateGreens(0.35 + t * 0.65)    // verde en el resto
+);
+colorScale.domain([0, maxVal]);
   colorScale.domain([0, maxVal]);
 
   const expectedGUs = state.species ? (expectedDistribution[state.species] || []) : [];
@@ -1407,20 +1431,9 @@ function drawCompleteness() {
   const svg = d3.select("#chart-completeness");
   svg.selectAll("*").remove();
 
-  const W = svg.node().clientWidth || 400;
-  const H = 240;
-  svg.attr("viewBox", `0 0 ${W} ${H}`);
-  const margin = { top: 10, right: 20, bottom: 80, left: 40 };
-  const iw = W - margin.left - margin.right;
-  const ih = H - margin.top - margin.bottom;
-  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-
   const f = filtered().filter(d => d.hasCatalogue);
   const byGU = d3.rollup(f, v => {
     const bySci = d3.group(v, d => d.ScientificName);
-
-    const totalSpecimens = v.length;
-    const speciesCount   = bySci.size;
 
     let specWithFoto = 0, specWithSeq = 0;
     for (const [, rows] of bySci) {
@@ -1429,77 +1442,139 @@ function drawCompleteness() {
     }
 
     return {
-      total: totalSpecimens,
-      foto:  v.filter(d => d.hasFoto).length,
-      seq:   v.filter(d => d.hasSeq).length,
-      species: speciesCount,
+      total:           v.length,
+      foto:            v.filter(d => d.hasFoto).length,
+      seq:             v.filter(d => d.hasSeq).length,
+      species:         bySci.size,
       speciesWithFoto: specWithFoto,
       speciesWithSeq:  specWithSeq,
     };
   }, d => d.geounit);
-  
-    // Riqueza total por geounit (para el % "especies con specimen / total")
-  const { richByGU } = computeSpeciesMetrics();
 
   const rows = [...byGU]
     .map(([gu, o]) => ({ key: gu, ...o }))
-    .sort((a, b) => b.total - a.total)
-    .slice(0, 10);
+    .sort((a, b) => b.total - a.total);
+
+  const { richByGU } = computeSpeciesMetrics();
 
   if (!rows.length) {
-    g.append("text").attr("x", iw/2).attr("y", ih/2)
-      .attr("text-anchor","middle").attr("fill","#999")
+    svg.append("text")
+      .attr("x", "50%").attr("y", "50%")
+      .attr("text-anchor", "middle")
+      .attr("fill", "#999").attr("font-size", 12)
       .text("No data for this filter");
     return;
   }
 
-  const x = d3.scaleBand().domain(rows.map(d => d.key)).range([0, iw]).padding(0.3);
-  const y = d3.scaleLinear().domain([0, d3.max(rows, d => d.total)]).nice().range([ih, 0]);
+  // Layout horizontal
+  const barH   = 22;
+  const gap    = 6;
+  const leftPad  = 160;
+  const rightPad = 60;
+  const topPad   = 8;
+  const W        = 600;
+  const H        = rows.length * (barH + gap) + topPad + 8;
 
-  g.append("g").attr("class","axis").attr("transform",`translate(0,${ih})`)
-    .call(d3.axisBottom(x))
-    .selectAll("text")
-      .attr("transform","rotate(-35)").style("text-anchor","end");
+  svg.attr("viewBox", `0 0 ${W} ${H}`);
+  svg.attr("height", H);
 
-  g.append("g").attr("class","axis").call(d3.axisLeft(y).ticks(5));
+  const maxTotal = d3.max(rows, d => d.total) || 1;
+  const x = d3.scaleLinear().domain([0, maxTotal]).range([0, W - leftPad - rightPad]);
 
-  g.selectAll("rect.base").data(rows).join("rect")
-    .attr("x", d => x(d.key)).attr("y", d => y(d.total))
-    .attr("width", x.bandwidth()).attr("height", d => ih - y(d.total))
-    .attr("rx", 4).attr("fill", "#cfd8d4");
+  const g = svg.append("g").attr("transform", `translate(0,${topPad})`);
 
-  g.selectAll("rect.foto").data(rows).join("rect")
-    .attr("x", d => x(d.key)).attr("y", d => y(d.foto))
-    .attr("width", x.bandwidth()).attr("height", d => ih - y(d.foto))
-    .attr("rx", 4).attr("fill", "#4a7ba7").attr("opacity", 0.85);
+  // Barras apiladas: base (gris) → foto (azul) → seq (verde) se dibujan superpuestas
+  // Base gris (todo el total)
+  g.selectAll("rect.base")
+    .data(rows)
+    .join("rect")
+      .attr("class", "base")
+      .attr("x", leftPad)
+      .attr("y", (d, i) => i * (barH + gap))
+      .attr("width", d => x(d.total))
+      .attr("height", barH)
+      .attr("rx", 4)
+      .attr("fill", "#cfd8d4");
 
-  g.selectAll("rect.seq").data(rows).join("rect")
-    .attr("x", d => x(d.key)).attr("y", d => y(d.seq))
-    .attr("width", x.bandwidth()).attr("height", d => ih - y(d.seq))
-    .attr("rx", 4).attr("fill", "#2f7d5c").attr("opacity", 0.9);
+  // Capa azul (foto)
+  g.selectAll("rect.foto")
+    .data(rows)
+    .join("rect")
+      .attr("class", "foto")
+      .attr("x", leftPad)
+      .attr("y", (d, i) => i * (barH + gap))
+      .attr("width", d => x(d.foto))
+      .attr("height", barH)
+      .attr("rx", 4)
+      .attr("fill", "#4a7ba7")
+      .attr("opacity", 0.85);
 
-  g.selectAll("rect.overlay").data(rows).join("rect")
-    .attr("x", d => x(d.key)).attr("y", d => y(d.total))
-    .attr("width", x.bandwidth()).attr("height", d => ih - y(d.total))
-    .attr("fill", "transparent").style("cursor", "pointer")
-    .on("mousemove", (event, d) => {
-      const richnessHere = richByGU.get(d.key) || 0;
-      const pct = (n, t) => t === 0 ? "0.0%" : (n / t * 100).toFixed(1) + "%";
-      const speciesOnly = d.species - d.speciesWithFoto - d.speciesWithSeq;
+  // Capa verde (seq)
+  g.selectAll("rect.seq")
+    .data(rows)
+    .join("rect")
+      .attr("class", "seq")
+      .attr("x", leftPad)
+      .attr("y", (d, i) => i * (barH + gap))
+      .attr("width", d => x(d.seq))
+      .attr("height", barH)
+      .attr("rx", 4)
+      .attr("fill", "#2f7d5c")
+      .attr("opacity", 0.9);
 
-      tooltip
-        .style("opacity", 1)
-        .style("left", (event.clientX + 12) + "px")
-        .style("top",  (event.clientY + 12) + "px")
-        .html(
-          `<b>${d.key}</b><br>` +
-          `Richness: <b>${richnessHere}</b> species<br>` +
-          `With photo: <b>${d.speciesWithFoto}</b> (${pct(d.speciesWithFoto, richnessHere)})<br>` +
-          `With sequence: <b>${d.speciesWithSeq}</b> (${pct(d.speciesWithSeq, richnessHere)})<br>` +
-          `Specimen only: <b>${speciesOnly}</b> (${pct(speciesOnly, richnessHere)})`
-        );
-    })
-    .on("mouseleave", () => tooltip.style("opacity", 0));
+  // Etiqueta izquierda (geounit)
+  g.selectAll("text.label")
+    .data(rows)
+    .join("text")
+      .attr("class", "label")
+      .attr("x", leftPad - 8)
+      .attr("y", (d, i) => i * (barH + gap) + barH / 2 + 4)
+      .attr("text-anchor", "end")
+      .attr("font-size", 12)
+      .attr("fill", "#1f2d2a")
+      .text(d => d.key);
+
+  // Valor a la derecha (total)
+  g.selectAll("text.value")
+    .data(rows)
+    .join("text")
+      .attr("class", "value")
+      .attr("x", d => leftPad + x(d.total) + 6)
+      .attr("y", (d, i) => i * (barH + gap) + barH / 2 + 4)
+      .attr("font-size", 11)
+      .attr("font-weight", 600)
+      .attr("fill", "#2f7d5c")
+      .text(d => d.total);
+
+  // Tooltip al pasar por encima
+  g.selectAll("rect.overlay")
+    .data(rows)
+    .join("rect")
+      .attr("class", "overlay")
+      .attr("x", leftPad)
+      .attr("y", (d, i) => i * (barH + gap))
+      .attr("width", d => x(d.total))
+      .attr("height", barH)
+      .attr("fill", "transparent")
+      .style("cursor", "pointer")
+      .on("mousemove", (event, d) => {
+        const richnessHere = richByGU.get(d.key) || 0;
+        const pct = (n, t) => t === 0 ? "0.0%" : (n / t * 100).toFixed(1) + "%";
+        const speciesOnly = d.species - d.speciesWithFoto - d.speciesWithSeq;
+
+        tooltip
+          .style("opacity", 1)
+          .style("left", (event.clientX + 12) + "px")
+          .style("top",  (event.clientY + 12) + "px")
+          .html(
+            `<b>${d.key}</b><br>` +
+            `Richness: <b>${richnessHere}</b> species<br>` +
+            `With photo: <b>${d.speciesWithFoto}</b> (${pct(d.speciesWithFoto, richnessHere)})<br>` +
+            `With sequence: <b>${d.speciesWithSeq}</b> (${pct(d.speciesWithSeq, richnessHere)})<br>` +
+            `Specimen only: <b>${speciesOnly}</b> (${pct(speciesOnly, richnessHere)})`
+          );
+      })
+      .on("mouseleave", () => tooltip.style("opacity", 0));
 }
 
 function updateCharts() {
@@ -1507,14 +1582,20 @@ function updateCharts() {
 
   // Este gráfico se queda igual
   const guSci = sciInGeounit(state.geounit);
+  const taxaAll = filteredTaxa();
   const taxaForRanks = guSci
-    ? taxaForGenus().filter(t => guSci.has(t.ScientificName))
-    : taxaForGenus();
+    ? taxaAll.filter(t => guSci.has(t.ScientificName))
+    : taxaAll;
 
   const byRank = [...d3.rollup(taxaForRanks, v => v.length, d => d.Rank)]
     .map(([key, value]) => ({ key, value }))
     .sort((a, b) => b.value - a.value);
-  drawBarChart("#chart-ranks", byRank, { color: "#4a7ba7" });
+
+  // Vista horizontal
+  drawHorizontalBarsNode(document.querySelector("#chart-ranks"), byRank, {
+    width: 600,
+    scheme: "blue",
+  });
 
   drawCompleteness();
 }
@@ -1609,7 +1690,7 @@ function renderBarChartInContainer(container, data) {
   }
   const wrap = container.append("div").attr("class", "drill-scroll");
   const svg  = wrap.append("svg");
-  drawHorizontalBarsNode(svg.node(), data);
+  drawHorizontalBarsNode(svg.node(), data, { followEndemism: true });
 }
 
 function syncDrillCardHeight() {
@@ -1668,6 +1749,13 @@ function drawBarChartNode(svgNode, data, opts = {}) {
     .text(d => d.value);
 }
 
+
+function activeEndemismInterp() {
+  if (state.endemism === "single")   return t => d3.interpolateOranges(0.25 + t * 0.75);
+  if (state.endemism === "regional") return t => d3.interpolateYlOrBr(0.25 + t * 0.75);
+  return null;
+}
+
 function drawHorizontalBarsNode(svgNode, data, opts = {}) {
   const svg = d3.select(svgNode);
   svg.selectAll("*").remove();
@@ -1701,14 +1789,27 @@ function drawHorizontalBarsNode(svgNode, data, opts = {}) {
   const iw = W - leftPad - rightPad;
   const x = d3.scaleLinear().domain([0, axisMax]).range([0, iw]);
 
+const endemismInterp = opts.followEndemism ? activeEndemismInterp() : null;
+
+const interp = endemismInterp
+  ? endemismInterp
+  : (opts.scheme === "blue"
+      ? t => d3.interpolateBlues(0.35 + t * 0.65)
+      : t => d3.interpolateGreens(0.35 + t * 0.65));
+
   const color = d3.scaleSequential()
     .domain([0, maxVal])
-    .interpolator(t => d3.interpolateGreens(0.35 + t * 0.65));
+    .interpolator(interp);
 
   const g = svg.append("g").attr("transform", `translate(0,${topPad})`);
 
   // --- Gridlines verticales cada 10 unidades ---
-  const ticks = d3.range(0, axisMax + 1, 20);
+  const interval = maxVal > 400 ? 100
+                 : maxVal > 200 ? 50
+                 : maxVal > 80  ? 20
+                 : maxVal > 30  ? 10
+                 : 5;
+  const ticks = d3.range(0, axisMax + 1, interval);
   g.selectAll("line.grid")
     .data(ticks)
     .join("line")
