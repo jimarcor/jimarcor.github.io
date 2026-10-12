@@ -435,7 +435,10 @@
   </div>
 
  <div class="card table-card">
-  <h2>Search</h2>
+  <h2 style="display: flex; justify-content: space-between; align-items: baseline;">
+    <span>Search</span>
+    <span id="table-counts" style="font-size: 12px; font-weight: 400; color: var(--muted);"></span>
+  </h2>
   <p class="hint">Filter and search the records that match the filters above.</p>
 
   <div class="table-controls">
@@ -2081,6 +2084,19 @@ function renderTable() {
     data.length === 0 ? "0 records"
     : `${start + 1}–${Math.min(start + tableState.perPage, data.length)} of ${data.length}`
   );
+    // Contador de taxa y specimens en la cabecera
+  const countsEl = d3.select("#table-counts");
+  if (tableState.view === "specimens") {
+    const uniqueSpecies = new Set(
+      data.map(r => r.ScientificName).filter(Boolean)
+    ).size;
+    countsEl.text(`${data.length} specimens · ${uniqueSpecies} species`);
+  } else {
+    const uniqueSpecies = new Set(
+      data.filter(r => r.Rank === "Species").map(r => r.ScientificName).filter(Boolean)
+    ).size;
+    countsEl.text(`${data.length} taxa · ${uniqueSpecies} species`);
+  }
   d3.select("#page-num").text(`${tableState.page} / ${maxPage}`);
   d3.select("#prev-page").property("disabled", tableState.page <= 1);
   d3.select("#next-page").property("disabled", tableState.page >= maxPage);
