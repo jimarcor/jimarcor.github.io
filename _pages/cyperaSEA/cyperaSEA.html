@@ -1936,18 +1936,19 @@ function tableData() {
       const photoCats = new Set();
       const seqCats   = new Set();
       let hasFoto = false, hasSeq = false;
-      for (const s of specs) {
+            for (const s of specs) {
         if (s.hasFoto) hasFoto = true;
         if (s.hasSeq)  hasSeq  = true;
+
         (fotoByCat.get(s.catalogue) || []).forEach(p => {
-  const id = catOf(p);
-  if (id) photoCats.add(id);
-});
+          const id = catOf(p);
+          if (id) photoCats.add(id);
+        });
+
         (seqByCat.get(s.catalogue) || []).forEach(sq => {
-          (fotoByCat.get(s.catalogue) || []).forEach(p => {
-  const id = catOf(sq);
-  if (id) photoCats.add(id);
-});
+          const id = catOf(sq);
+          if (id) seqCats.add(id);
+        });
       }
 
       // Geounits donde aparece este taxón (desde distributions + specimens)
