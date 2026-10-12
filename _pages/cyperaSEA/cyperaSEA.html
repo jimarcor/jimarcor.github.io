@@ -1299,6 +1299,7 @@ const real  = filtered().filter(d => d.geounit === guName && d.hasCatalogue);
 const total = real.length;
 const foto  = real.filter(d => d.hasFoto).length;
 const seq   = real.filter(d => d.hasSeq).length;
+const speciesHere = new Set(real.map(d => d.ScientificName).filter(Boolean)).size;
 
   let html = `<b>${guName}</b><br>`;
 
@@ -1306,9 +1307,9 @@ const seq   = real.filter(d => d.hasSeq).length;
   if (state.metric === "richness") {
     html += `Species: <b>${richByGU.get(guName) || 0}</b><br>`;
   } else {
-    html += `Total: <b>${total}</b> specimens · <b>${foto}</b> photos · <b>${seq}</b> seq<br>`;
-    html += `Species: <b>${richByGU.get(guName) || 0}</b><br>`;
-  }
+  html += `Species: <b>${speciesHere}</b><br>`;
+  html += `Total: <b>${total}</b> specimens · <b>${foto}</b> photos · <b>${seq}</b> seq`;
+}
 
   // Info adicional cuando hay filtro de Endemism activo
   if (state.endemism) {
@@ -1416,6 +1417,7 @@ const byGU = d3.rollup(f, v => ({
     total: v.length,
     seq: v.filter(d => d.hasSeq).length,
     foto: v.filter(d => d.hasFoto).length,
+    species: new Set(v.map(d => d.ScientificName).filter(Boolean)).size,
   }), d => d.geounit);
 
   const rows = [...byGU]
@@ -1466,12 +1468,13 @@ const byGU = d3.rollup(f, v => ({
         .style("left", (event.clientX + 12) + "px")
         .style("top",  (event.clientY + 12) + "px")
         .html(
-          `<b>${d.key}</b><br>` +
-          `Total: <b>${d.total}</b><br>` +
-          `With photo: <b>${d.foto}</b> (${Math.round(d.foto / d.total * 100)}%)<br>` +
-          `With sequence: <b>${d.seq}</b> (${Math.round(d.seq / d.total * 100)}%)<br>` +
-          `Specimen only: <b>${specimenOnly}</b>`
-        );
+  `<b>${d.key}</b><br>` +
+  `Species: <b>${d.species}</b><br>` +
+  `Total: <b>${d.total}</b> specimens<br>` +
+  `With photo: <b>${d.foto}</b> (${Math.round(d.foto / d.total * 100)}%)<br>` +
+  `With sequence: <b>${d.seq}</b> (${Math.round(d.seq / d.total * 100)}%)<br>` +
+  `Specimen only: <b>${specimenOnly}</b>`
+);
     })
     .on("mouseleave", () => tooltip.style("opacity", 0));
 }
