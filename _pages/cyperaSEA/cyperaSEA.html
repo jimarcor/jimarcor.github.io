@@ -509,6 +509,13 @@ const pictures         = sheet(wb, "pictures");
 const sequences        = sheet(wb, "sequences");
 
 const normCat = v => v == null ? null : String(v).trim();
+const catOf = row =>
+  normCat(
+    row?.["Catalogue number (Code/Type no.)"]
+    ?? row?.["Catalogue number"]
+    ?? row?.CatalogueNumber
+    ?? row?.catalogue
+  );
 const normSci = v => v == null ? null : String(v).trim();
 const normGU  = v => v == null ? null : String(v).trim();
 const firstWord = s => s == null ? null : String(s).trim().split(/\s+/)[0];
@@ -531,12 +538,12 @@ const taxonomy = taxonomyRaw.map(t => ({
                   || String(t.GlobalEndemic) === "1",
 }));
 
-const fotoByCat = d3.group(pictures,  p => normCat(p.CatalogueNumber));
-const seqByCat  = d3.group(sequences, s => normCat(s.CatalogueNumber));
+const fotoByCat = d3.group(pictures,  p => catOf(p));
+const seqByCat  = d3.group(sequences, s => catOf(s));
 const hasMediaData = pictures.length > 0 || sequences.length > 0;
 
 const specimens = specimensRaw.map(row => {
-  const cat = normCat(row.CatalogueNumber);
+  const cat = catOf(row);
   const sci = normSci(row.ScientificName);
   const taxon = taxonomy.find(t => t.ScientificName === sci);
 
@@ -1894,10 +1901,10 @@ function tableData() {
   if (tableState.view === "specimens") {
     rows = filtered().filter(d => d.hasCatalogue).map(d => {
       const photoCats = (fotoByCat.get(d.catalogue) || []).map(p =>
-        String(p.CatalogueNumber ?? p.catalogue ?? p.Catalogue ?? p.id ?? "").trim()
+        String(catOf(p) ?? p.catalogue ?? p.Catalogue ?? p.id ?? "").trim()
       ).filter(Boolean);
       const seqCats = (seqByCat.get(d.catalogue) || []).map(sq =>
-        String(sq.CatalogueNumber ?? sq.catalogue ?? sq.Catalogue ?? sq.id ?? "").trim()
+        String(catOf(sq) ?? sq.catalogue ?? sq.Catalogue ?? sq.id ?? "").trim()
       ).filter(Boolean);
 
       return {
@@ -1933,11 +1940,11 @@ function tableData() {
         if (s.hasFoto) hasFoto = true;
         if (s.hasSeq)  hasSeq  = true;
         (fotoByCat.get(s.catalogue) || []).forEach(p => {
-          const id = p.CatalogueNumber ?? p.catalogue ?? p.Catalogue ?? p.id;
+          const id = catOf(p) ?? p.catalogue ?? p.Catalogue ?? p.id;
           if (id != null && String(id).trim() !== "") photoCats.add(String(id).trim());
         });
         (seqByCat.get(s.catalogue) || []).forEach(sq => {
-          const id = sq.CatalogueNumber ?? sq.catalogue ?? sq.Catalogue ?? sq.id;
+          const id = catOf(sq) ?? sq.catalogue ?? sq.Catalogue ?? sq.id;
           if (id != null && String(id).trim() !== "") seqCats.add(String(id).trim());
         });
       }
