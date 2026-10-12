@@ -1415,13 +1415,31 @@ function drawCompleteness() {
   const ih = H - margin.top - margin.bottom;
   const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
-const f = filtered().filter(d => d.hasCatalogue);
-const byGU = d3.rollup(f, v => ({
-    total: v.length,
-    seq: v.filter(d => d.hasSeq).length,
-    foto: v.filter(d => d.hasFoto).length,
-    species: new Set(v.map(d => d.ScientificName).filter(Boolean)).size,
-  }), d => d.geounit);
+  const f = filtered().filter(d => d.hasCatalogue);
+  const byGU = d3.rollup(f, v => {
+    const bySci = d3.group(v, d => d.ScientificName);
+
+    const totalSpecimens = v.length;
+    const speciesCount   = bySci.size;
+
+    let specWithFoto = 0, specWithSeq = 0;
+    for (const [, rows] of bySci) {
+      if (rows.some(r => r.hasFoto)) specWithFoto++;
+      if (rows.some(r => r.hasSeq))  specWithSeq++;
+    }
+
+    return {
+      total: totalSpecimens,
+      foto:  v.filter(d => d.hasFoto).length,
+      seq:   v.filter(d => d.hasSeq).length,
+      species: speciesCount,
+      speciesWithFoto: specWithFoto,
+      speciesWithSeq:  specWithSeq,
+    };
+  }, d => d.geounit);
+  
+    // Riqueza total por geounit (para el % "especies con specimen / total")
+  const { richByGU } = computeSpeciesMetrics();
 
   const rows = [...byGU]
     .map(([gu, o]) => ({ key: gu, ...o }))
@@ -1465,19 +1483,21 @@ const byGU = d3.rollup(f, v => ({
     .attr("width", x.bandwidth()).attr("height", d => ih - y(d.total))
     .attr("fill", "transparent").style("cursor", "pointer")
     .on("mousemove", (event, d) => {
-      const specimenOnly = d.total - Math.max(d.foto, d.seq);
+      const richnessHere = richByGU.get(d.key) || 0;
+      const pct = (n, t) => t === 0 ? "0.0%" : (n / t * 100).toFixed(1) + "%";
+      const speciesOnly = d.species - d.speciesWithFoto - d.speciesWithSeq;
+
       tooltip
         .style("opacity", 1)
         .style("left", (event.clientX + 12) + "px")
         .style("top",  (event.clientY + 12) + "px")
         .html(
-  `<b>${d.key}</b><br>` +
-  `Species: <b>${d.species}</b><br>` +
-  `Total: <b>${d.total}</b> specimens<br>` +
-  `With photo: <b>${d.foto}</b> (${Math.round(d.foto / d.total * 100)}%)<br>` +
-  `With sequence: <b>${d.seq}</b> (${Math.round(d.seq / d.total * 100)}%)<br>` +
-  `Specimen only: <b>${specimenOnly}</b>`
-);
+          `<b>${d.key}</b><br>` +
+          `Richness: <b>${richnessHere}</b> species<br>` +
+          `With photo: <b>${d.speciesWithFoto}</b> (${pct(d.speciesWithFoto, richnessHere)})<br>` +
+          `With sequence: <b>${d.speciesWithSeq}</b> (${pct(d.speciesWithSeq, richnessHere)})<br>` +
+          `Specimen only: <b>${speciesOnly}</b> (${pct(speciesOnly, richnessHere)})`
+        );
     })
     .on("mouseleave", () => tooltip.style("opacity", 0));
 }
