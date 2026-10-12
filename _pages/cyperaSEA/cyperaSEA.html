@@ -589,6 +589,7 @@ const geounits = [...new Set([
   ...distributionRecords.map(d => d.geounit),
 ].filter(Boolean))].sort();
 console.log("geounits:", geounits.length, geounits);
+window.__dbg = { specimensRaw, specimens, taxonomy, distributionRecords, pictures, sequences, hasMediaData };
 
 
 // =====================================================================
