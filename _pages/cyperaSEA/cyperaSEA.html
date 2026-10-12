@@ -562,7 +562,7 @@ return {
  })
   // Conserva especímenes con catalogue O con geounit (para que aparezcan en el filtro)
   .filter(s => (s.catalogue && s.catalogue !== "") || s.geounit)
-  .filter(s => !hasMediaData || s.hasFoto || s.hasSeq);
+ // .filter(s => !hasMediaData || s.hasFoto || s.hasSeq);
   
   // Presencias normalizadas: ScientificName ↔ geounit
 const distributionRecords = distributionsRaw.map(r => ({
