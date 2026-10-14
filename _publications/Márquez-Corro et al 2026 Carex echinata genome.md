@@ -6,6 +6,7 @@ date: 2026-10-13
 venue: 'Wellcome Open Research'
 quartile: Q3
 open_access: true
+first_author: true
 type: article       # options: article, book, book_chapter
 paperurl: '/files/pdf/research/Márquez-Corro et al 2026 Carex echinata genome.pdf'
 link: 'https://doi.org/10.12688/wellcomeopenres.28117.1'
