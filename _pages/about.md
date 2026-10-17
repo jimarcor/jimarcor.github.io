@@ -40,10 +40,10 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
       attribution: '&copy; OpenStreetMap'
     }).addTo(map);
 
-    // Capa de puntos de iNaturalist (Tus observaciones)
-    L.tileLayer('https://api.inaturalist.org/v1/points/{z}/{x}/{y}.png?user_id=jimarcor&color=green', {
-      attribution: '&copy; iNaturalist'
-    }).addTo(map);
+// Capa de mapa de calor de iNaturalist (Tus observaciones)
+L.tileLayer('https://api.inaturalist.org/v1/colored_heatmap/{z}/{x}/{y}.png?user_id=jimarcor', {
+  attribution: '&copy; iNaturalist'
+}).addTo(map);
 
     // Corregir errores de renderizado inicial (cuadro blanco/gris)
     map.invalidateSize();
