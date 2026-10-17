@@ -10,8 +10,6 @@ Actinoscirpus;(Ohwi) R.W.Haines & Lye;accepted;1675211;Genus;FALSE;Cyperoideae;S
 Actinoscirpus grossus;(L.f.) Goetgh. & D.A.Simpson;accepted;1678618;Species;FALSE;Cyperoideae;Schoenoplectieae;;Actinoscirpus;;;;grossus;;;;
 Actinoscirpus grossus var. grossus;;accepted;1702529;Variety;FALSE;Cyperoideae;Schoenoplectieae;;Actinoscirpus;;;;grossus;;grossus;;
 Anthelepidinae;R.L.Barrett;accepted;1774101;Subtribe;FALSE;Cyperoideae;Schoeneae;Anthelepidinae;;;;;;;;;
-Anthelepis;R.L.Barrett, K.L.Wilson & J.J.Bruhl;accepted;1675220;Genus;FALSE;Cyperoideae;Schoeneae;Anthelepidinae;Anthelepis;;;;;;;;
-Anthelepis undulata;(Thwaites) R.L.Barrett, K.L.Wilson & J.J.Bruhl;accepted;1678602;Species;FALSE;Cyperoideae;Schoeneae;Anthelepidinae;Anthelepis;;;;undulata;;;;
 Bisboeckelereae;Pax;accepted;1774097;Tribe;FALSE;Cyperoideae;Bisboeckelereae;;;;;;;;;;
 Bolboschoeneae;(Tatanov) J.R.Starr;accepted;1774117;Tribe;FALSE;Cyperoideae;Bolboschoeneae;;;;;;;;;;
 Bolboschoenus;(Asch.) Palla;accepted;416202;Genus;FALSE;Cyperoideae;Bolboschoeneae;;Bolboschoenus;;;;;;;;
@@ -28,7 +26,6 @@ Bulbostylis densa subsp. densa;;accepted;1699519;Subspecies;FALSE;Cyperoideae;Ab
 Bulbostylis hispidula;(Vahl) R.W.Haines;accepted;1678734;Species;FALSE;Cyperoideae;Abildgaardieae;;Bulbostylis;;Longiciliatae;Hispidulae;hispidula;;;;
 Bulbostylis hispidula subsp. hispidula;;accepted;1699521;Subspecies;FALSE;Cyperoideae;Abildgaardieae;;Bulbostylis;;Longiciliatae;Hispidulae;hispidula;hispidula;;;
 Bulbostylis sect. Capitatoangulata;J.R.Morel;accepted;1907652;Section;FALSE;Cyperoideae;Abildgaardieae;;Bulbostylis;;Capitatoangulata;;;;;;
-Bulbostylis sect. Longiciliatae;J.R.Morel, F.Rasaminirina & J.Maciel-Silva;accepted;1907660;Section;FALSE;Cyperoideae;Abildgaardieae;;Bulbostylis;;Longiciliatae;;;;;;
 Bulbostylis sect. Rubrospiculosa;J.R.Morel;accepted;1907669;Section;FALSE;Cyperoideae;Abildgaardieae;;Bulbostylis;;Rubrospiculosa;;;;;;
 Bulbostylis subsect. Hispidulae;J.R.Morel;accepted;1907662;Subsection;FALSE;Cyperoideae;Abildgaardieae;;Bulbostylis;;Longiciliatae;Hispidulae;;;;;
 Bulbostylis subsphaerocephala;E.G.Camus;accepted;1680345;Species;TRUE;Cyperoideae;Abildgaardieae;;Bulbostylis;;;;subsphaerocephala;;;;
@@ -479,7 +476,6 @@ Eleocharis koyamae;Tremetsb. & D.A.Simpson;accepted;1681118;Species;TRUE;Cyperoi
 Eleocharis lankana;T.Koyama;accepted;1681124;Species;FALSE;Cyperoideae;Eleocharideae;;Eleocharis;;;;lankana;;;;
 Eleocharis lankana subsp. mohamadii;Wad.Khan;accepted;1699608;Subspecies;FALSE;Cyperoideae;Eleocharideae;;Eleocharis;;;;lankana;mohamadii;;;
 Eleocharis ochrostachys;Steud.;accepted;1680519;Species;FALSE;Cyperoideae;Eleocharideae;;Eleocharis;;;;ochrostachys;;;;
-Eleocharis parvula;(Roem. & Schult.) Link ex Bluff, Nees & Schauer;accepted;715995;Species;FALSE;Cyperoideae;Eleocharideae;;Eleocharis;;;;parvula;;;;
 Eleocharis pellucida;J.Presl & C.Presl;accepted;1680536;Species;FALSE;Cyperoideae;Eleocharideae;;Eleocharis;;;;pellucida;;;;
 Eleocharis pellucida var. pellucida;;accepted;1702670;Variety;FALSE;Cyperoideae;Eleocharideae;;Eleocharis;;;;pellucida;;pellucida;;
 Eleocharis philippinensis;Svenson;accepted;1680539;Species;FALSE;Cyperoideae;Eleocharideae;;Eleocharis;;;;philippinensis;;;;
@@ -664,8 +660,6 @@ Isolepis habra;(Edgar) Soják;accepted;1679374;Species;FALSE;Cyperoideae;Cyperea
 Isolepis inundata;R.Br.;accepted;1679378;Species;FALSE;Cyperoideae;Cypereae;Ficiniinae;Isolepis;;;;inundata;;;;
 Isolepis setacea;(L.) R.Br.;accepted;1679407;Species;FALSE;Cyperoideae;Cypereae;Ficiniinae;Isolepis;;;;setacea;;;;
 Isolepis subtilissima;Boeckeler;accepted;1679411;Species;FALSE;Cyperoideae;Cypereae;Ficiniinae;Isolepis;;;;subtilissima;;;;
-Khaosokia;D.A.Simpson, Chayam. & J.Parn.;accepted;1675277;Genus;FALSE;Cyperoideae;Khaosokieae;;Khaosokia;;;;;;;;
-Khaosokia caricoides;D.A.Simpson, Chayam. & J.Parn.;accepted;1679420;Species;TRUE;Cyperoideae;Khaosokieae;;Khaosokia;;;;caricoides;;;;
 Khaosokieae;Lév.-Bourret % J.R.Starr;accepted;1774111;Tribe;FALSE;Cyperoideae;Khaosokieae;;;;;;;;;;
 Lepidosperma;Labill.;accepted;1675281;Genus;FALSE;Cyperoideae;Schoeneae;Lepidospermatinae;Lepidosperma;;;;;;;;
 Lepidosperma chinense;Nees & Meyen ex Kunth;accepted;1678375;Species;FALSE;Cyperoideae;Schoeneae;Lepidospermatinae;Lepidosperma;;;;chinense;;;;
@@ -693,9 +687,7 @@ Mapania baccifera;C.B.Clarke;accepted;1678484;Species;TRUE;Mapanioideae;Hypolytr
 Mapania baccifera subsp. baccifera;;accepted;1699671;Subspecies;FALSE;Mapanioideae;Hypolytreae;;Mapania;;;;baccifera;baccifera;;;
 Mapania baccifera subsp. manusensis;D.A.Simpson;accepted;1699672;Subspecies;FALSE;Mapanioideae;Hypolytreae;;Mapania;;;;baccifera;manusensis;;;
 Mapania balansae;(E.G.Camus) T.Koyama;accepted;1678485;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;balansae;;;;
-Mapania ballehensis;Miraadila, Shabdin & Meekiong;accepted;1678487;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;ballehensis;;;;
 Mapania bancana;(Miq.) Ridl.;accepted;1678488;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;bancana;;;;
-Mapania bauensis;Miraadila, Shabdin & Meekiong;accepted;1678489;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;bauensis;;;;
 Mapania borneensis;Merr.;accepted;1678490;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;borneensis;;;;
 Mapania bougainvillensis;D.A.Simpson;accepted;1678491;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;bougainvillensis;;;;
 Mapania caudata;Kük.;accepted;1678492;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;caudata;;;;
@@ -703,19 +695,14 @@ Mapania coodei;D.A.Simpson;accepted;1678493;Species;TRUE;Mapanioideae;Hypolytrea
 Mapania cuspidata;(Miq.) Uittien;accepted;1678496;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;cuspidata;;;;
 Mapania cuspidata var. angustifolia;(Uittien) Uittien;accepted;1702739;Variety;FALSE;Mapanioideae;Hypolytreae;;Mapania;;;;cuspidata;;angustifolia;;
 Mapania cuspidata var. cuspidata;;accepted;1702740;Variety;FALSE;Mapanioideae;Hypolytreae;;Mapania;;;;cuspidata;;cuspidata;;
-Mapania cuspidata var. merayap;Miraadila, Shabdin & Meekiong;accepted;1702741;Variety;FALSE;Mapanioideae;Hypolytreae;;Mapania;;;;cuspidata;;merayap;;
 Mapania debilis;C.B.Clarke;accepted;1678497;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;debilis;;;;
 Mapania enodis;(Miq.) C.B.Clarke;accepted;1678499;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;enodis;;;;
 Mapania foxworthyi;Merr.;accepted;1678502;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;foxworthyi;;;;
 Mapania graminea;Uittien;accepted;1678503;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;graminea;;;;
-Mapania hidiriana;Miraadila, Shabdin & Meekiong;accepted;1678504;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;hidiriana;;;;
 Mapania hispida;D.A.Simpson;accepted;1678505;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;hispida;;;;
 Mapania holttumii;J.Kern;accepted;1678506;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;holttumii;;;;
-Mapania kadimiana;Shabdin, Meekiong & Miraadila;accepted;1678512;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;kadimiana;;;;
-Mapania kipas;Miraadila, Shabdin & Meekiong;accepted;1678513;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;kipas;;;;
 Mapania kurzii;C.B.Clarke;accepted;1678514;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;kurzii;;;;
 Mapania latifolia;Uittien;accepted;1678515;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;latifolia;;;;
-Mapania lentaliffii;Miraadila, Shabdin & Meekiong;accepted;1678516;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;lentaliffii;;;;
 Mapania longiflora;C.B.Clarke;accepted;1678519;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;longiflora;;;;
 Mapania lorea;Uittien;accepted;1678520;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;lorea;;;;
 Mapania macrocephala;(Gaudich.) K.Schum.;accepted;1678522;Species;FALSE;Mapanioideae;Hypolytreae;;Mapania;;;;macrocephala;;;;
@@ -737,7 +724,6 @@ Mapania palustris var. palustris;;accepted;1702743;Variety;FALSE;Mapanioideae;Hy
 Mapania richardsii;Uittien;accepted;1678551;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;richardsii;;;;
 Mapania rumputensis;Shabdin & Meekiong;accepted;1678553;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;rumputensis;;;;
 Mapania sapuaniana;Shabdin;accepted;1678554;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;sapuaniana;;;;
-Mapania sembilingensis;Miraadila, Shabdin & Meekiong;accepted;1678555;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;sembilingensis;;;;
 Mapania sessilis;Merr.;accepted;1678556;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;sessilis;;;;
 Mapania silhetensis;C.B.Clarke;accepted;1678558;Species;FALSE;Mapanioideae;Hypolytreae;;Mapania;;;;silhetensis;;;;
 Mapania spadicea;Uittien;accepted;1678560;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;spadicea;;;;
@@ -748,7 +734,6 @@ Mapania sumatrana subsp. sumatrana;;accepted;1699680;Subspecies;FALSE;Mapanioide
 Mapania tamdaoensis;N.K.Khoi;accepted;1678566;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;tamdaoensis;;;;
 Mapania tenuiscapa;C.B.Clarke;accepted;1678567;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;tenuiscapa;;;;
 Mapania tonkinensis;(E.G.Camus) T.Koyama;accepted;1678571;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;tonkinensis;;;;
-Mapania unimasiana;Shabdin, Meekiong & Miraadila;accepted;1678572;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;unimasiana;;;;
 Mapania vitiensis;(Uittien) T.Koyama;accepted;1678573;Species;FALSE;Mapanioideae;Hypolytreae;;Mapania;;;;vitiensis;;;;
 Mapania wallichii;C.B.Clarke;accepted;1678574;Species;FALSE;Mapanioideae;Hypolytreae;;Mapania;;;;wallichii;;;;
 Mapania zinnirahae;Miraadila & Meekiong;accepted;1678576;Species;TRUE;Mapanioideae;Hypolytreae;;Mapania;;;;zinnirahae;;;;
@@ -906,6 +891,5 @@ Thoracostachyum vietnamense;N.K.Khoi;unassessed;1682136;Species;;;;;Thoracostach
 Trichophoreae;Lév.-Bourret % J.R.Starr;accepted;1774114;Tribe;FALSE;Cyperoideae;Trichophoreae;;;;;;;;;;
 Trichophorum;Pers.;accepted;1675334;Genus;FALSE;Cyperoideae;Trichophoreae;;Trichophorum;;;;;;;;
 Trichophorum mattfeldianum;(Kük.) S.Yun Liang;accepted;1681943;Species;FALSE;Cyperoideae;Trichophoreae;;Trichophorum;;;;mattfeldianum;;;;
-Trichophorum scabriculme;(Beetle) J.R.Starr, Lév.-Bourret & B.A.Ford;accepted;1681947;Species;TRUE;Cyperoideae;Trichophoreae;;Trichophorum;;;;scabriculme;;;;
 Trichophorum subcapitatum;(Thwaites) D.A.Simpson;accepted;1681949;Species;FALSE;Cyperoideae;Trichophoreae;;Trichophorum;;;;subcapitatum;;;;
 Tricostulariinae;R.L.Barrett;accepted;1774108;Subtribe;FALSE;Cyperoideae;Schoeneae;Tricostulariinae;;;;;;;;;
