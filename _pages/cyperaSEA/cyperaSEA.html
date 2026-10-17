@@ -249,6 +249,7 @@
   }
   .country { stroke: #ffffff; stroke-width: 0.5; cursor: pointer; }
   .country:hover { stroke: var(--accent); stroke-width: 1.2; }
+  .map-endemism .country:hover { stroke: #e67e22; stroke-width: 1.2; }
   .table-card { display: flex; flex-direction: column; }
   .table-controls {
     display: flex; gap: 12px; align-items: center;
@@ -1227,6 +1228,8 @@ colorScale.interpolator(
 );
 colorScale.domain([0, maxVal]);
 
+mapSvg.classed("map-endemism", isEndemism);
+
   const expectedGUs = state.species ? (expectedDistribution[state.species] || []) : [];
   const expectedSet = new Set(expectedGUs);
 
@@ -1355,10 +1358,10 @@ const speciesHere = new Set(real.map(d => d.ScientificName).filter(Boolean)).siz
       .map(d => d.ScientificName)
   )].sort();
 
-  const color = state.endemism === "single" ? "#2f7d5c" : "#e67e22";
+  const color = "#e67e22";
   if (listHere.length) {
-    html += `<br><span style="color:${color};">${listHere.slice(0, 5).join(", ")}</span>`;
-    if (listHere.length > 5) html += ` <i>+${listHere.length - 5}</i>`;
+    html += `<span style="display:block; margin-top:2px; line-height:1.2; color:${color};">${listHere.slice(0, 6).join(", ")}</span>`;
+    if (listHere.length > 6) html += ` <i>+${listHere.length - 6}</i>`;
   }
 }
 
