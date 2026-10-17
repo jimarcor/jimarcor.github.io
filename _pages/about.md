@@ -216,8 +216,8 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
           ${medPhoto ? `<img src="${medPhoto}" alt="">` : ''}
           <h4>${common}</h4>
           <div class="sci">${sci}</div>
-          <div class="meta">${o.observed_on || 'Fecha desconocida'} · calidad: ${o.quality_grade || 'n/a'}</div>
-          <a href="https://www.inaturalist.org/observations/${o.id}" target="_blank" rel="noopener">Ver en iNaturalist</a>
+          <div class="meta">${o.observed_on || 'Fecha desconocida'} · Quality: ${o.quality_grade || 'n/a'}</div>
+          <a href="https://www.inaturalist.org/observations/${o.id}" target="_blank" rel="noopener">See on iNaturalist</a>
         </div>`;
 
       L.marker([lat, lng], { icon: createIcon(smallPhoto) })
