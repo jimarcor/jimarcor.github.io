@@ -109,7 +109,7 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
 <script>
   // --- CONFIGURACIÓN ---
   const USERNAME = 'jimarcor';
-  const MIN_ZOOM_FOR_MARKERS = 11;
+  const MIN_ZOOM_FOR_MARKERS = 17;
   const AREA_CACHE_TTL_MS    = 5 * 60 * 1000;
   const DEBOUNCE_MS          = 500;
 
