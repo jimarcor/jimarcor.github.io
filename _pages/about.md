@@ -222,7 +222,7 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
 
 
 
-
+<!-- Antiguo
 <center>
 
 <img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20"><img src='/images/android-chrome-192x192.png' width="20">
@@ -236,3 +236,4 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
 <br/>
 </center> 
 
+-->
