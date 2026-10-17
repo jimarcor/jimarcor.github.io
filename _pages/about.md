@@ -113,23 +113,23 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
   const AREA_CACHE_TTL_MS    = 5 * 60 * 1000;
   const DEBOUNCE_MS          = 500;
 
-  // 1. Mapa — maxZoom: 17 evita errores del heatmap a zoom extremo
+  // 1. Mapa — maxZoom: 19 (límite nativo real de Esri World Imagery)
   const map = L.map('map', {
     worldCopyJump: true,
     minZoom: 2,
-    maxZoom: 17
+    maxZoom: 19
   }).setView([20, 0], 2);
 
-  // 2. Satélite (Esri, gratis)
+  // 2. Satélite (Esri, gratis) — maxNativeZoom: 19 evita teselas "not available"
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    { attribution: '&copy; Esri', maxZoom: 18, maxNativeZoom: 19 }
+    { attribution: '&copy; Esri', maxZoom: 19, maxNativeZoom: 19 }
   ).addTo(map);
 
-  // 3. Heatmap (techo también a 17 para que nunca falle)
-  L.tileLayer(
+  // 3. Heatmap (se oculta automáticamente a zoom >= MIN_ZOOM_FOR_MARKERS)
+  const heatmapLayer = L.tileLayer(
     `https://api.inaturalist.org/v1/heatmap/{z}/{x}/{y}.png?user_id=${USERNAME}`,
-    { attribution: '&copy; iNaturalist', maxZoom: 18, maxNativeZoom: 18, opacity: 1 }
+    { attribution: '&copy; iNaturalist', maxZoom: 19, maxNativeZoom: 19, opacity: 1 }
   ).addTo(map);
 
   // 4. Cluster de marcadores
@@ -227,12 +227,23 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
     map.addLayer(markers);
   }
 
-  // 8. Carga según zoom (sin hint)
+  // 8. Carga según zoom + gestión del heatmap
   async function loadVisible() {
-    if (map.getZoom() < MIN_ZOOM_FOR_MARKERS) {
+    const aboveThreshold = map.getZoom() >= MIN_ZOOM_FOR_MARKERS;
+
+    // Heatmap visible solo con zoom bajo (antes de que aparezcan los marcadores)
+    if (aboveThreshold) {
+      if (map.hasLayer(heatmapLayer)) map.removeLayer(heatmapLayer);
+    } else {
+      if (!map.hasLayer(heatmapLayer)) heatmapLayer.addTo(map);
+    }
+
+    // Marcadores solo a partir del umbral
+    if (!aboveThreshold) {
       markers.clearLayers();
       return;
     }
+
     try {
       const obs = await fetchArea(map.getBounds());
       renderObs(obs);
