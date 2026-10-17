@@ -109,23 +109,27 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
 <script>
   // --- CONFIGURACIÓN ---
   const USERNAME = 'jimarcor';
-  const MIN_ZOOM_FOR_MARKERS = 11;   // 11 ≈ 385 km²/tile, 12 ≈ 96 km²/tile
-  const AREA_CACHE_TTL_MS    = 5 * 60 * 1000;   // 5 min por zona
+  const MIN_ZOOM_FOR_MARKERS = 11;
+  const AREA_CACHE_TTL_MS    = 5 * 60 * 1000;
   const DEBOUNCE_MS          = 500;
 
-  // 1. Mapa
-  const map = L.map('map', { worldCopyJump: true, minZoom: 2 }).setView([20, 0], 2);
+  // 1. Mapa — maxZoom: 17 evita errores del heatmap a zoom extremo
+  const map = L.map('map', {
+    worldCopyJump: true,
+    minZoom: 2,
+    maxZoom: 17
+  }).setView([20, 0], 2);
 
   // 2. Satélite (Esri, gratis)
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    { attribution: '&copy; Esri', maxZoom: 19 }
+    { attribution: '&copy; Esri', maxZoom: 17, maxNativeZoom: 17 }
   ).addTo(map);
 
-  // 3. Heatmap (siempre visible, teselas cacheadas por el navegador)
+  // 3. Heatmap (techo también a 17 para que nunca falle)
   L.tileLayer(
     `https://api.inaturalist.org/v1/heatmap/{z}/{x}/{y}.png?user_id=${USERNAME}`,
-    { attribution: '&copy; iNaturalist', maxZoom: 19, opacity: 0.55 }
+    { attribution: '&copy; iNaturalist', maxZoom: 17, maxNativeZoom: 17, opacity: 1 }
   ).addTo(map);
 
   // 4. Cluster de marcadores
@@ -143,65 +147,56 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
     });
   }
 
-  // 6. Cache por área (evita repetir la misma petición si paneas poco)
+  // 6. Cache por área + paginación por bbox
   const areaCache = new Map();
   let pendingController = null;
   let debounceTimer = null;
 
-async function fetchArea(bounds) {
-  const key = [
-    bounds.getSouth().toFixed(2), bounds.getWest().toFixed(2),
-    bounds.getNorth().toFixed(2), bounds.getEast().toFixed(2)
-  ].join(',');
+  async function fetchArea(bounds) {
+    const key = [
+      bounds.getSouth().toFixed(2), bounds.getWest().toFixed(2),
+      bounds.getNorth().toFixed(2), bounds.getEast().toFixed(2)
+    ].join(',');
 
-  const hit = areaCache.get(key);
-  if (hit && (Date.now() - hit.ts) < AREA_CACHE_TTL_MS) {
-    return hit.data;
-  }
+    const hit = areaCache.get(key);
+    if (hit && (Date.now() - hit.ts) < AREA_CACHE_TTL_MS) return hit.data;
 
-  if (pendingController) pendingController.abort();
-  pendingController = new AbortController();
-  const signal = pendingController.signal;
+    if (pendingController) pendingController.abort();
+    pendingController = new AbortController();
+    const signal = pendingController.signal;
 
-  const perPage = 200;
-  const MAX_PAGES = 25;              // tope de seguridad: 25 × 200 = 5000 obs
-  const all = [];
-  let page = 1;
-  let total = null;
+    const perPage = 200;
+    const MAX_PAGES = 25;
+    const all = [];
+    let page = 1;
+    let total = null;
 
-  while (true) {
-    const url = `https://api.inaturalist.org/v1/observations` +
-      `?user_id=${USERNAME}` +
-      `&swlat=${bounds.getSouth()}&swlng=${bounds.getWest()}` +
-      `&nelat=${bounds.getNorth()}&nelng=${bounds.getEast()}` +
-      `&per_page=${perPage}&page=${page}` +
-      `&order_by=observed_on&order=desc`;
+    while (true) {
+      const url = `https://api.inaturalist.org/v1/observations` +
+        `?user_id=${USERNAME}` +
+        `&swlat=${bounds.getSouth()}&swlng=${bounds.getWest()}` +
+        `&nelat=${bounds.getNorth()}&nelng=${bounds.getEast()}` +
+        `&per_page=${perPage}&page=${page}` +
+        `&order_by=observed_on&order=desc`;
 
-    const res = await fetch(url, { signal });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+      const res = await fetch(url, { signal });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
 
-    if (total === null) {
-      total = data.total_results;
-      console.log(`🌐 Área: ${total} obs totales`);
+      if (total === null) total = data.total_results;
+
+      const results = data.results || [];
+      all.push(...results);
+
+      if (all.length >= total)       break;
+      if (results.length < perPage)  break;
+      if (page >= MAX_PAGES)         break;
+      page++;
     }
 
-    const results = data.results || [];
-    all.push(...results);
-    console.log(`  pág ${page}: +${results.length} (${all.length}/${total})`);
-
-    if (all.length >= total)       break;   // ya tenemos todas
-    if (results.length < perPage)  break;   // página incompleta
-    if (page >= MAX_PAGES) {
-      console.warn(`⚠️ Tope de ${MAX_PAGES} páginas alcanzado (${all.length}/${total})`);
-      break;
-    }
-    page++;
+    areaCache.set(key, { ts: Date.now(), data: all });
+    return all;
   }
-
-  areaCache.set(key, { ts: Date.now(), data: all });
-  return all;
-}
 
   // 7. Pintar marcadores
   function renderObs(obs) {
@@ -232,30 +227,12 @@ async function fetchArea(bounds) {
     map.addLayer(markers);
   }
 
-  // 8. Hint de "acerca el zoom"
-  function showHint(show) {
-    let el = document.getElementById('zoom-hint');
-    if (!el) {
-      el = document.createElement('div');
-      el.id = 'zoom-hint';
-      el.style.cssText = 'position:absolute;top:60px;left:50%;transform:translateX(-50%);' +
-        'background:rgba(47,125,92,0.92);color:white;padding:8px 14px;' +
-        'border-radius:8px;font-size:13px;z-index:1000;pointer-events:none;' +
-        'box-shadow:0 2px 8px rgba(0,0,0,0.2);';
-      el.textContent = 'Acerca el zoom para ver observaciones clicables';
-      map.getContainer().appendChild(el);
-    }
-    el.style.display = show ? 'block' : 'none';
-  }
-
-  // 9. Carga según zoom
+  // 8. Carga según zoom (sin hint)
   async function loadVisible() {
     if (map.getZoom() < MIN_ZOOM_FOR_MARKERS) {
       markers.clearLayers();
-      showHint(true);
       return;
     }
-    showHint(false);
     try {
       const obs = await fetchArea(map.getBounds());
       renderObs(obs);
@@ -264,14 +241,14 @@ async function fetchArea(bounds) {
     }
   }
 
-  // 10. Debounce: no lanzar petición en cada pixel que se panea
+  // 9. Debounce
   function onMapMove() {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(loadVisible, DEBOUNCE_MS);
   }
   map.on('moveend zoomend', onMapMove);
 
-  // 11. Arranque
+  // 10. Arranque
   setTimeout(loadVisible, 300);
   setTimeout(() => map.invalidateSize(), 300);
 </script>
