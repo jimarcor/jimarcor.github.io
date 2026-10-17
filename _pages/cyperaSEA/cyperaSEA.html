@@ -1360,7 +1360,7 @@ const speciesHere = new Set(real.map(d => d.ScientificName).filter(Boolean)).siz
 
   const color = "#e67e22";
   if (listHere.length) {
-    html += `<span style="display:block; margin-top:2px; line-height:1.2; color:${color};">${listHere.slice(0, 6).join(", ")}</span>`;
+    html += `<span style="display:block; margin-top:2px; line-height:1.2; color:${color}; font-style:italic;">${listHere.slice(0, 6).join(", ")}</span>`;
     if (listHere.length > 6) html += ` <i>+${listHere.length - 6}</i>`;
   }
 }
