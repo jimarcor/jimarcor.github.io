@@ -125,7 +125,7 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
   // 3. Heatmap de iNaturalist (gradiente de actividad)
   L.tileLayer(
     `https://api.inaturalist.org/v1/heatmap/{z}/{x}/{y}.png?user_id=${USERNAME}`,
-    { attribution: '&copy; iNaturalist', maxZoom: 19, opacity: 0.55 }
+    { attribution: '&copy; iNaturalist', maxZoom: 19, opacity: 1 }
   ).addTo(map);
 
   // 4. Cluster de marcadores
