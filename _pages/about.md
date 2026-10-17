@@ -123,13 +123,13 @@ During my PhD, I recognized a significant knowledge gap in tropical sedge resear
   // 2. Satélite (Esri, gratis)
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    { attribution: '&copy; Esri', maxZoom: 17, maxNativeZoom: 17 }
+    { attribution: '&copy; Esri', maxZoom: 18, maxNativeZoom: 19 }
   ).addTo(map);
 
   // 3. Heatmap (techo también a 17 para que nunca falle)
   L.tileLayer(
     `https://api.inaturalist.org/v1/heatmap/{z}/{x}/{y}.png?user_id=${USERNAME}`,
-    { attribution: '&copy; iNaturalist', maxZoom: 17, maxNativeZoom: 17, opacity: 1 }
+    { attribution: '&copy; iNaturalist', maxZoom: 18, maxNativeZoom: 18, opacity: 1 }
   ).addTo(map);
 
   // 4. Cluster de marcadores
