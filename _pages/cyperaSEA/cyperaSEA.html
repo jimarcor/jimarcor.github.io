@@ -1060,7 +1060,13 @@ function updateKPIs() {
   const speciesWithSeq  = new Set(real.filter(d => d.hasSeq).map(d => d.ScientificName));
   const speciesWithFoto = new Set(real.filter(d => d.hasFoto).map(d => d.ScientificName));
 
-  const pct = (n, t) => t === 0 ? "0%" : Math.round((n / t) * 100) + "%";
+  const pct = (n, t) => {
+  if (t === 0) return "0%";
+  const v = (n / t) * 100;
+  // 0% si es exactamente 0; si no, hasta 2 decimales sin ceros sobrantes
+  if (v === 0) return "0%";
+  return (Math.round(v * 100) / 100).toFixed(2).replace(/\.?0+$/, "") + "%";
+};
 
   const labelMap = {
     "Genus": "Genera", "Species": "Species",
