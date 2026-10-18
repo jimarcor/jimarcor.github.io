@@ -2229,10 +2229,10 @@ function tableData() {
 function matchesQuery(row, query) {
   // Palabras clave especiales
   const photoKw = /^(pictures?|photos?|fotos?|img|images?|pic?)$/i;
-  const seqKw   = /^(sequences?|seqs?|genbank|dna|hybseq?)$/i;
+  const seqKw   = /^(sequences?|seqs?|genbank|dna|hybs?|hybseq?)$/i;
   const specKw  = /^specimens?$/i;
-  const singleKw   = /^(single|singlecountry|single-country)$/i;
-  const regionalKw = /^(regional|multicountry|multi-country)$/i;
+  const singleKw   = /^(single|singlecountry?|single-country?)$/i;
+  const regionalKw = /^(regional|multicountry?|multi-country?)$/i;
 
   const terms = query.split(/\s+/).filter(Boolean);
 
