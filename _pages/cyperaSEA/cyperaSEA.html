@@ -583,6 +583,8 @@ return {
   catalogue:      cat,
   hasCatalogue:   !!(cat && cat !== ""),
   SpecimenURL:    row.SpecimenURL ?? null,
+  altCode:        String(row?.["Alternate code"] ?? row?.["Alternate Code"] ?? row?.["alternate code"] ?? "").trim() || null,
+  locality:       String(row?.["Locality details (verbatimGeounit)"] ?? row?.["Locality details (verbatimGeounit)"] ?? row?.["Locality"] ?? "").trim() || null,
   AphiaID:        row.AphiaID ?? taxon?.AphiaID ?? null,
   ScientificName: sci,
   Genus:          row.Genus ?? taxon?.Genus ?? firstWord(sci),
@@ -2027,14 +2029,20 @@ function photoListHtml(photos) {
 
 // ---- Columnas vista Specimens -----------------------------------------
 const specimensColumns = [
-  { key: "catalogue",      label: "Catalogue",
-  render: row => {
-    if (!row.catalogue) return "—";
-    if (row.SpecimenURL) {
-      return `<a href="${row.SpecimenURL}" target="_blank" rel="noopener">${row.catalogue}</a>`;
-    }
-    return `<code>${row.catalogue}</code>`;
-  } },
+   { key: "catalogue",      label: "Catalogue",
+    render: row => {
+      if (row.catalogues && row.catalogues.length) {
+        return row.catalogues.map(c => {
+          if (c.url) return `<a href="${c.url}" target="_blank" rel="noopener">${c.cat}</a>`;
+          return `<code>${c.cat}</code>`;
+        }).join(", ");
+      }
+      if (!row.catalogue) return "—";
+      if (row.SpecimenURL) {
+        return `<a href="${row.SpecimenURL}" target="_blank" rel="noopener">${row.catalogue}</a>`;
+      }
+      return `<code>${row.catalogue}</code>`;
+    } },
   { key: "ScientificName", label: "Scientific name",
     render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${formatSciName(row.ScientificName)}</a>` },
   { key: "Rank",           label: "Rank",
@@ -2073,29 +2081,73 @@ function tableData() {
   let rows;
 
   if (tableState.view === "specimens") {
-    rows = filtered().filter(d => d.hasCatalogue).map(d => {
-      const photoCats = (fotoByCat.get(d.catalogue) || [])
-        .map(photoMeta)
-        .filter(p => p.catalogue || p.organ);
-      const seqCats = (seqByCat.get(d.catalogue) || []).map(sq =>
-        String(catOf(sq) ?? sq.catalogue ?? sq.Catalogue ?? sq.id ?? "").trim()
-      ).filter(Boolean);
+    const filteredSpecs = filtered().filter(d => d.hasCatalogue);
+
+    // Agrupar por (Alternate code + Locality Details)
+    const groups = new Map();
+    const singles = [];
+
+    for (const d of filteredSpecs) {
+      const key = (d.altCode && d.locality) ? `${d.altCode}||${d.locality}` : null;
+      if (!key) { singles.push(d); continue; }
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(d);
+    }
+
+    const buildRow = (specs) => {
+      const first = specs[0];
+
+      // Catálogos únicos (por si hubiera duplicados exactos)
+      const seenCat = new Set();
+      const catalogues = [];
+      for (const s of specs) {
+        if (!s.catalogue) continue;
+        if (seenCat.has(s.catalogue)) continue;
+        seenCat.add(s.catalogue);
+        catalogues.push({ cat: s.catalogue, url: s.SpecimenURL || null });
+      }
+
+      // Fotos y secuencias agregadas de todo el grupo
+      const photoMap = new Map();
+      const seqSet   = new Set();
+      let hasFoto = false, hasSeq = false;
+
+      for (const s of specs) {
+        if (s.hasFoto) hasFoto = true;
+        if (s.hasSeq)  hasSeq  = true;
+
+        (fotoByCat.get(s.catalogue) || []).forEach(p => {
+          const m = photoMeta(p);
+          if (!m.catalogue && !m.organ) return;
+          const k = m.catalogue + "|" + m.organ;
+          if (!photoMap.has(k)) photoMap.set(k, m);
+        });
+
+        (seqByCat.get(s.catalogue) || []).forEach(sq => {
+          const id = String(catOf(sq) ?? sq.catalogue ?? sq.Catalogue ?? sq.id ?? "").trim();
+          if (id) seqSet.add(id);
+        });
+      }
 
       return {
-        catalogue:      d.catalogue,
-        SpecimenURL:    d.SpecimenURL,
-        AphiaID:        d.AphiaID,
-        ScientificName: d.ScientificName,
-        Genus:          d.Genus,
-        Rank:           d.Rank,
-        geounit:        d.geounit,
-        Section:        d.Section,
-        hasFoto:        d.hasFoto,
-        hasSeq:         d.hasSeq,
-        photoCats,
-        seqCats,
+        catalogue:      first.catalogue,     // se mantiene por compatibilidad
+        catalogues,                          // ← NUEVO: array de {cat, url}
+        SpecimenURL:    first.SpecimenURL,
+        AphiaID:        first.AphiaID,
+        ScientificName: first.ScientificName,
+        Genus:          first.Genus,
+        Rank:           first.Rank,
+        geounit:        first.geounit,
+        Section:        first.Section,
+        hasFoto, hasSeq,
+        photoCats:      [...photoMap.values()],
+        seqCats:        [...seqSet],
       };
-    });
+    };
+
+    rows = [];
+    for (const [, specs] of groups) rows.push(buildRow(specs));
+    for (const d of singles) rows.push(buildRow([d]));
   } else {
     const f = filtered().filter(d => d.hasCatalogue);
     const specsBySci = d3.group(f, s => s.ScientificName);
@@ -2193,6 +2245,10 @@ function matchesQuery(row, query) {
       });
       continue;
     }
+    if (k === "catalogues" && Array.isArray(v) && v.length && typeof v[0] === "object") {
+      v.forEach(c => { if (c.cat) values.push(String(c.cat).toLowerCase()); });
+      continue;
+    }
     if (Array.isArray(v)) v.forEach(x => values.push(String(x).toLowerCase()));
     else values.push(String(v).toLowerCase());
   }
@@ -2258,10 +2314,11 @@ function renderTable() {
     // Contador de taxa y specimens en la cabecera
   const countsEl = d3.select("#table-counts");
   if (tableState.view === "specimens") {
+    const totalSpecimens = data.reduce((s, r) => s + (r.catalogues?.length || 1), 0);
     const uniqueSpecies = new Set(
       data.map(r => r.ScientificName).filter(Boolean)
     ).size;
-    countsEl.text(`${data.length} specimens · ${uniqueSpecies} species`);
+    countsEl.text(`${totalSpecimens} specimens · ${uniqueSpecies} species`);
   } else {
     const uniqueSpecies = new Set(
       data.filter(r => r.Rank === "Species").map(r => r.ScientificName).filter(Boolean)
