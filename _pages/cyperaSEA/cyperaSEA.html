@@ -2029,6 +2029,8 @@ function photoListHtml(photos) {
 
 // ---- Columnas vista Specimens -----------------------------------------
 const specimensColumns = [
+  { key: "ScientificName", label: "Scientific name",
+    render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${formatSciName(row.ScientificName)}</a>` },
    { key: "catalogue",      label: "Catalogue",
     render: row => {
       if (row.catalogues && row.catalogues.length) {
@@ -2043,10 +2045,8 @@ const specimensColumns = [
       }
       return `<code>${row.catalogue}</code>`;
     } },
-  { key: "ScientificName", label: "Scientific name",
-    render: row => `<a href="${APHIA_URL}${row.AphiaID}" target="_blank" rel="noopener">${formatSciName(row.ScientificName)}</a>` },
-  { key: "Rank",           label: "Rank",
-    render: row => row.Rank ?? "—" },
+  { key: "altCode", label: "Alt. code",
+    render: row => row.altCode ? `<code>${row.altCode}</code>` : "—" },
   { key: "geounit",        label: "Geounit",
     render: row => row.geounit ?? "—" },
   { key: "photoCats",      label: "Photos",
@@ -2130,9 +2130,11 @@ function tableData() {
       }
 
       return {
-        catalogue:      first.catalogue,     // se mantiene por compatibilidad
-        catalogues,                          // ← NUEVO: array de {cat, url}
+        catalogue:      first.catalogue,
+        catalogues,
         SpecimenURL:    first.SpecimenURL,
+        altCode:        first.altCode,
+        locality:       first.locality,
         AphiaID:        first.AphiaID,
         ScientificName: first.ScientificName,
         Genus:          first.Genus,
