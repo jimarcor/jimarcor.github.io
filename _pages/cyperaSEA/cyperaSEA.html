@@ -537,6 +537,17 @@ const catOf = row =>
     ?? row?.CatalogueNumber
     ?? row?.catalogue
   );
+
+function photoMeta(p) {
+  const cat = String(catOf(p) ?? "").trim();
+  const organ = (p?.["Organ/Structure"] ?? p?.["organ/structure"] ??
+                 p?.["Organ / Structure"] ?? p?.["Organ"] ??
+                 p?.["organ"] ?? p?.["Structure"] ?? "").toString().trim();
+  const url = p?.["cyperaceae.org"] ?? p?.["Cyperaceae.org"] ??
+              p?.["URL"] ?? p?.["url"] ?? p?.["PhotoURL"] ?? p?.["Photo URL"] ?? null;
+  return { catalogue: cat, organ, url: url ? String(url).trim() : null };
+}
+
 const normSci = v => v == null ? null : String(v).trim();
 const normGU  = v => v == null ? null : String(v).trim();
 const firstWord = s => s == null ? null : String(s).trim().split(/\s+/)[0];
@@ -1989,6 +2000,25 @@ function catList(cats) {
        + (extra > 0 ? ` <span class="cat-more">+${extra}</span>` : "");
 }
 
+function photoListHtml(photos) {
+  if (!photos || !photos.length) return "—";
+  const seen = new Set();
+  const items = [];
+  for (const p of photos) {
+    const key = (p.catalogue || "") + "|" + (p.organ || "");
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const label = p.organ || p.catalogue || "photo";
+    const title = p.catalogue ? ` title="Catalogue: ${p.catalogue}"` : "";
+    if (p.url) {
+      items.push(`<a href="${p.url}" target="_blank" rel="noopener"${title}>${label}</a>`);
+    } else {
+      items.push(`<code${title}>${label}</code>`);
+    }
+  }
+  return `<span class="cat-count">${items.length}</span> ${items.join(", ")}`;
+}
+
 // ---- Columnas vista Specimens -----------------------------------------
 const specimensColumns = [
   { key: "catalogue",      label: "Catalogue",
@@ -2006,7 +2036,7 @@ const specimensColumns = [
   { key: "geounit",        label: "Geounit",
     render: row => row.geounit ?? "—" },
   { key: "photoCats",      label: "Photos",
-    render: row => catList(row.photoCats) },
+    render: row => photoListHtml(row.photoCats) },
   { key: "seqCats",        label: "Sequences",
     render: row => catList(row.seqCats) },
 ];
@@ -2038,9 +2068,9 @@ function tableData() {
 
   if (tableState.view === "specimens") {
     rows = filtered().filter(d => d.hasCatalogue).map(d => {
-      const photoCats = (fotoByCat.get(d.catalogue) || []).map(p =>
-        String(catOf(p) ?? p.catalogue ?? p.Catalogue ?? p.id ?? "").trim()
-      ).filter(Boolean);
+      const photoCats = (fotoByCat.get(d.catalogue) || [])
+        .map(photoMeta)
+        .filter(p => p.catalogue || p.organ);
       const seqCats = (seqByCat.get(d.catalogue) || []).map(sq =>
         String(catOf(sq) ?? sq.catalogue ?? sq.Catalogue ?? sq.id ?? "").trim()
       ).filter(Boolean);
@@ -2072,16 +2102,19 @@ function tableData() {
     rows = taxaRows.map(t => {
       const specs = specsBySci.get(t.ScientificName) || [];
 
-      const photoCats = new Set();
+      const photoCats = new Map();
       const seqCats   = new Set();
       let hasFoto = false, hasSeq = false;
-            for (const s of specs) {
+
+      for (const s of specs) {
         if (s.hasFoto) hasFoto = true;
         if (s.hasSeq)  hasSeq  = true;
 
         (fotoByCat.get(s.catalogue) || []).forEach(p => {
-          const id = catOf(p);
-          if (id) photoCats.add(id);
+          const m = photoMeta(p);
+          if (!m.catalogue && !m.organ) return;
+          const key = m.catalogue + "|" + m.organ;
+          if (!photoCats.has(key)) photoCats.set(key, m);
         });
 
         (seqByCat.get(s.catalogue) || []).forEach(sq => {
@@ -2113,7 +2146,7 @@ function tableData() {
         hasFoto,
         hasSeq,
         specimenCats:   specs.map(s => s.catalogue).filter(Boolean),
-        photoCats:      [...photoCats],
+        photoCats:      [...photoCats.values()],
         seqCats:        [...seqCats],
       };
     });
@@ -2147,6 +2180,13 @@ function matchesQuery(row, query) {
   const values = [];
   for (const [k, v] of Object.entries(row)) {
     if (v == null) continue;
+    if (k === "photoCats" && Array.isArray(v) && v.length && typeof v[0] === "object") {
+      v.forEach(p => {
+        if (p.catalogue) values.push(String(p.catalogue).toLowerCase());
+        if (p.organ)     values.push(String(p.organ).toLowerCase());
+      });
+      continue;
+    }
     if (Array.isArray(v)) v.forEach(x => values.push(String(x).toLowerCase()));
     else values.push(String(v).toLowerCase());
   }
