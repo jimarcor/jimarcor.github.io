@@ -34,5 +34,5 @@ Overall, IAPT Grant Research 2022 has allowed a considerable increase in the kno
 
 
 <h3>Main results</h3>
-<a href="/files/pdf/research/Márquez-Corro et al 2023 IOPB.pdf"><img src='/images/research/Marquez-Corro et al 2023 IOPB.JPG' style='height: 200px'></a>
-<a href="/files/pdf/research/García-Moro et al 2025 IOPB.pdf"><img src='/images/research/García-Moro et al 2025 IOPB.png' style='height: 200px'></a>
+<a href="/files/pdf/research/Márquez-Corro et al 2023 IOPB.pdf"><img src='/images/research/Marquez-Corro et al 2023 IOPB.jpg' style='height: 200px'></a>
+<a href="/files/pdf/research/García-Moro et al 2025 IOPB.pdf"><img src='/images/research/Citometro.png' style='height: 200px'></a>
