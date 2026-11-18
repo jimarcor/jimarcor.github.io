@@ -31,3 +31,8 @@ Overall, IAPT Grant Research 2022 has allowed a considerable increase in the kno
 <a href="https://www.iaptglobal.org/awarded-grants/#comp-l6cslx3u__1b04625f-f39b-4915-b398-15ee48f79498">Awarded IAPT page</a>
 
 <a href="https://jimarcor.github.io/expeditions/Chile/">Read about the expedition here</a>
+
+
+<h3>Main results</h3>
+<a href="/files/pdf/research/Márquez-Corro et al 2023 IOPB.pdf"><img src='/images/research/Marquez-Corro et al 2023 IOPB.JPG' style='height: 200px'></a>
+<a href="/files/pdf/research/García-Moro et al 2025 IOPB.pdf"><img src='/images/research/García-Moro et al 2025 IOPB.png' style='height: 200px'></a>
