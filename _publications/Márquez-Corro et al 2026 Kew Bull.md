@@ -5,7 +5,7 @@ permalink: /publication/Márquez-Corro et al 2026 Kew Bull
 date: 2026-12-31
 venue: 'Kew Bulletin'
 paperurl: '/files/pdf/research/Márquez-Corro et al 2026 Kew Bull.pdf'
-quartile: Q3
+quartile: Q4
 open_access: true
 type: article       # options: article, book, book_chapter, etc.
 first_author: true
